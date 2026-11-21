@@ -1,0 +1,17 @@
+{
+  "index_type": "numpy_flat_exact",
+  "chunk_size_tokens": 512,
+  "overlap_fraction": 0.15,
+  "overlap_tokens": 77,
+  "chunk_tokenizer": "Qwen/Qwen3-1.7B",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_dimension": 384,
+  "pooling": "CLS",
+  "embedding_max_sequence_length": 512,
+  "long_chunk_strategy": "split with embedding-model tokenizer; token-weighted mean of segment CLS vectors; L2 normalize",
+  "normalization": "L2",
+  "similarity": "cosine (dot product over normalized vectors)",
+  "document_count": 16,
+  "chunk_count": 24,
+  "built_at": "2026-11-21T21:29:11+05:30"
+}
