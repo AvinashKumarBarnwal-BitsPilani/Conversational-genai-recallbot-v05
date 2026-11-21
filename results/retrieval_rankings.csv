@@ -1,0 +1,961 @@
+question_id,category,chunk_size,method,rank,chunk_id,document_id,section,version,score,chunk_answer_span_overlap,cumulative_answer_span_hit,gold_document_id
+Q001,other,128,dense,1,KB-002-C128-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7064590454,0,0,KB-002
+Q001,other,128,dense,2,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.7003717422,0,0,KB-002
+Q001,other,128,dense,3,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.6959826946,0,0,KB-002
+Q001,other,128,dense,4,KB-001-C128-0002,KB-001,Purpose and scope,1.0,0.6833538413,0,0,KB-002
+Q001,other,128,dense,5,KB-001-C128-0006,KB-001,This policy is kept so that an assistant can explain why an older order,1.0,0.6822268963,0,0,KB-002
+Q001,other,128,bm25,1,KB-001-C128-0002,KB-001,Purpose and scope,1.0,12.5756827967,0,0,KB-002
+Q001,other,128,bm25,2,KB-015-C128-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,12.4922607373,0,0,KB-002
+Q001,other,128,bm25,3,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,11.1804445916,1,1,KB-002
+Q001,other,128,bm25,4,KB-002-C128-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,10.0817888092,0,1,KB-002
+Q001,other,128,bm25,5,KB-004-C128-0001,KB-004,Product Exchange Policy,1.1,10.0471050011,0,1,KB-002
+Q001,other,128,hybrid,1,KB-001-C128-0002,KB-001,Purpose and scope,1.0,0.0320184426,0,0,KB-002
+Q001,other,128,hybrid,2,KB-002-C128-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0320184426,0,0,KB-002
+Q001,other,128,hybrid,3,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.0161290323,0,0,KB-002
+Q001,other,128,hybrid,4,KB-015-C128-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,0.0161290323,0,0,KB-002
+Q001,other,128,hybrid,5,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0158730159,0,0,KB-002
+Q002,other,128,dense,1,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.7735741138,1,1,KB-002
+Q002,other,128,dense,2,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.7400367260,0,1,KB-002
+Q002,other,128,dense,3,KB-009-C128-0003,KB-009,Warranty coverage,1.0,0.7398567796,0,1,KB-002
+Q002,other,128,dense,4,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.7186102867,0,1,KB-002
+Q002,other,128,dense,5,KB-001-C128-0002,KB-001,Purpose and scope,1.0,0.7033647299,0,1,KB-002
+Q002,other,128,bm25,1,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,15.1214365337,0,0,KB-002
+Q002,other,128,bm25,2,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,10.4262648619,1,1,KB-002
+Q002,other,128,bm25,3,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,9.1037828821,0,1,KB-002
+Q002,other,128,bm25,4,KB-009-C128-0003,KB-009,Warranty coverage,1.0,7.9891976034,0,1,KB-002
+Q002,other,128,bm25,5,KB-010-C128-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,7.8543688318,0,1,KB-002
+Q002,other,128,hybrid,1,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.0325224749,1,1,KB-002
+Q002,other,128,hybrid,2,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.0320184426,0,1,KB-002
+Q002,other,128,hybrid,3,KB-009-C128-0003,KB-009,Warranty coverage,1.0,0.0314980159,0,1,KB-002
+Q002,other,128,hybrid,4,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.0161290323,0,1,KB-002
+Q002,other,128,hybrid,5,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0158730159,0,1,KB-002
+Q003,other,128,dense,1,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.7525878549,1,1,KB-001
+Q003,other,128,dense,2,KB-001-C128-0006,KB-001,This policy is kept so that an assistant can explain why an older order,1.0,0.7232428193,0,1,KB-001
+Q003,other,128,dense,3,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7207318544,0,1,KB-001
+Q003,other,128,dense,4,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.7187523842,0,1,KB-001
+Q003,other,128,dense,5,KB-001-C128-0002,KB-001,Purpose and scope,1.0,0.6918975711,0,1,KB-001
+Q003,other,128,bm25,1,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,12.2954794177,1,1,KB-001
+Q003,other,128,bm25,2,KB-001-C128-0005,KB-001,Return request and inspection,1.0,11.3775085231,0,1,KB-001
+Q003,other,128,bm25,3,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,9.7884652915,0,1,KB-001
+Q003,other,128,bm25,4,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,9.5186193103,0,1,KB-001
+Q003,other,128,bm25,5,KB-016-C128-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,8.6724337339,0,1,KB-001
+Q003,other,128,hybrid,1,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.0327868852,1,1,KB-001
+Q003,other,128,hybrid,2,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0317460317,0,1,KB-001
+Q003,other,128,hybrid,3,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.0312500000,0,1,KB-001
+Q003,other,128,hybrid,4,KB-001-C128-0005,KB-001,Return request and inspection,1.0,0.0161290323,0,1,KB-001
+Q003,other,128,hybrid,5,KB-001-C128-0006,KB-001,This policy is kept so that an assistant can explain why an older order,1.0,0.0161290323,0,1,KB-001
+Q004,exact_code_or_id,128,dense,1,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.7444804311,1,1,KB-002
+Q004,exact_code_or_id,128,dense,2,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.7294019461,0,1,KB-002
+Q004,exact_code_or_id,128,dense,3,KB-003-C128-0003,KB-003,Indicative processing estimates,1.3,0.6879840493,0,1,KB-002
+Q004,exact_code_or_id,128,dense,4,KB-009-C128-0004,KB-009,Basic diagnostics,1.0,0.6784268022,0,1,KB-002
+Q004,exact_code_or_id,128,dense,5,KB-001-C128-0002,KB-001,Purpose and scope,1.0,0.6771776080,0,1,KB-002
+Q004,exact_code_or_id,128,bm25,1,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,13.5491402932,0,0,KB-002
+Q004,exact_code_or_id,128,bm25,2,KB-001-C128-0002,KB-001,Purpose and scope,1.0,11.5997427374,0,0,KB-002
+Q004,exact_code_or_id,128,bm25,3,KB-009-C128-0004,KB-009,Basic diagnostics,1.0,10.4497869267,0,0,KB-002
+Q004,exact_code_or_id,128,bm25,4,KB-015-C128-0004,KB-015,PROMO-GOLD-SHIP is an illustrative identifier for the Gold standard,1.2,10.0004050675,0,0,KB-002
+Q004,exact_code_or_id,128,bm25,5,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,8.7358624192,1,1,KB-002
+Q004,exact_code_or_id,128,hybrid,1,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.0325224749,0,0,KB-002
+Q004,exact_code_or_id,128,hybrid,2,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.0317780580,1,1,KB-002
+Q004,exact_code_or_id,128,hybrid,3,KB-001-C128-0002,KB-001,Purpose and scope,1.0,0.0315136476,0,1,KB-002
+Q004,exact_code_or_id,128,hybrid,4,KB-009-C128-0004,KB-009,Basic diagnostics,1.0,0.0314980159,0,1,KB-002
+Q004,exact_code_or_id,128,hybrid,5,KB-003-C128-0003,KB-003,Indicative processing estimates,1.3,0.0158730159,0,1,KB-002
+Q005,exact_code_or_id,128,dense,1,KB-007-C128-0003,KB-007,Error codes,1.2,0.7236400843,1,1,KB-007
+Q005,exact_code_or_id,128,dense,2,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.7077624798,0,1,KB-007
+Q005,exact_code_or_id,128,dense,3,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.7039664984,0,1,KB-007
+Q005,exact_code_or_id,128,dense,4,KB-007-C128-0001,KB-007,Return Authorisation and Error Codes,1.2,0.6948583126,0,1,KB-007
+Q005,exact_code_or_id,128,dense,5,KB-007-C128-0004,KB-007,Error codes,1.2,0.6762944460,0,1,KB-007
+Q005,exact_code_or_id,128,bm25,1,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,4.7681843646,0,0,KB-007
+Q005,exact_code_or_id,128,bm25,2,KB-007-C128-0003,KB-007,Error codes,1.2,3.9021130059,1,1,KB-007
+Q005,exact_code_or_id,128,bm25,3,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,3.3921649867,0,1,KB-007
+Q005,exact_code_or_id,128,bm25,4,KB-014-C128-0001,KB-014,Customer Support Service Levels and Escalation,1.0,1.8041898794,0,1,KB-007
+Q005,exact_code_or_id,128,bm25,5,KB-006-C128-0003,KB-006,Order status codes,1.4,1.7861680049,0,1,KB-007
+Q005,exact_code_or_id,128,hybrid,1,KB-007-C128-0003,KB-007,Error codes,1.2,0.0325224749,1,1,KB-007
+Q005,exact_code_or_id,128,hybrid,2,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0163934426,0,1,KB-007
+Q005,exact_code_or_id,128,hybrid,3,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.0161290323,0,1,KB-007
+Q005,exact_code_or_id,128,hybrid,4,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.0158730159,0,1,KB-007
+Q005,exact_code_or_id,128,hybrid,5,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.0158730159,0,1,KB-007
+Q006,exact_code_or_id,128,dense,1,KB-007-C128-0004,KB-007,Error codes,1.2,0.7555952668,1,0,KB-007
+Q006,exact_code_or_id,128,dense,2,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.7332701683,0,0,KB-007
+Q006,exact_code_or_id,128,dense,3,KB-007-C128-0003,KB-007,Error codes,1.2,0.7203730345,1,1,KB-007
+Q006,exact_code_or_id,128,dense,4,KB-007-C128-0001,KB-007,Return Authorisation and Error Codes,1.2,0.7032604218,0,1,KB-007
+Q006,exact_code_or_id,128,dense,5,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.6988307238,0,1,KB-007
+Q006,exact_code_or_id,128,bm25,1,KB-007-C128-0004,KB-007,Error codes,1.2,8.1380264840,1,0,KB-007
+Q006,exact_code_or_id,128,bm25,2,KB-009-C128-0004,KB-009,Basic diagnostics,1.0,7.1755828085,0,0,KB-007
+Q006,exact_code_or_id,128,bm25,3,KB-007-C128-0003,KB-007,Error codes,1.2,6.9855622095,1,1,KB-007
+Q006,exact_code_or_id,128,bm25,4,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,6.5834881878,0,1,KB-007
+Q006,exact_code_or_id,128,bm25,5,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,6.2662464028,0,1,KB-007
+Q006,exact_code_or_id,128,hybrid,1,KB-007-C128-0004,KB-007,Error codes,1.2,0.0327868852,1,0,KB-007
+Q006,exact_code_or_id,128,hybrid,2,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.0317540323,0,0,KB-007
+Q006,exact_code_or_id,128,hybrid,3,KB-007-C128-0003,KB-007,Error codes,1.2,0.0317460317,1,1,KB-007
+Q006,exact_code_or_id,128,hybrid,4,KB-009-C128-0004,KB-009,Basic diagnostics,1.0,0.0161290323,0,1,KB-007
+Q006,exact_code_or_id,128,hybrid,5,KB-007-C128-0001,KB-007,Return Authorisation and Error Codes,1.2,0.0156250000,0,1,KB-007
+Q007,exact_code_or_id,128,dense,1,KB-006-C128-0002,KB-006,How to read a status,1.4,0.6769876480,1,1,KB-006
+Q007,exact_code_or_id,128,dense,2,KB-006-C128-0003,KB-006,Order status codes,1.4,0.6235561371,0,1,KB-006
+Q007,exact_code_or_id,128,dense,3,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.5962114930,0,1,KB-006
+Q007,exact_code_or_id,128,dense,4,KB-005-C128-0004,KB-005,Delivery instructions,2.2,0.5878595710,0,1,KB-006
+Q007,exact_code_or_id,128,dense,5,KB-007-C128-0003,KB-007,Error codes,1.2,0.5608984232,0,1,KB-006
+Q007,exact_code_or_id,128,bm25,1,KB-006-C128-0003,KB-006,Order status codes,1.4,5.8636812069,0,0,KB-006
+Q007,exact_code_or_id,128,bm25,2,KB-006-C128-0002,KB-006,How to read a status,1.4,5.6114463807,1,1,KB-006
+Q007,exact_code_or_id,128,bm25,3,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,4.7681843646,0,1,KB-006
+Q007,exact_code_or_id,128,bm25,4,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,3.3921649867,0,1,KB-006
+Q007,exact_code_or_id,128,bm25,5,KB-014-C128-0001,KB-014,Customer Support Service Levels and Escalation,1.0,1.8041898794,0,1,KB-006
+Q007,exact_code_or_id,128,hybrid,1,KB-006-C128-0002,KB-006,How to read a status,1.4,0.0325224749,1,1,KB-006
+Q007,exact_code_or_id,128,hybrid,2,KB-006-C128-0003,KB-006,Order status codes,1.4,0.0325224749,0,1,KB-006
+Q007,exact_code_or_id,128,hybrid,3,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.0314980159,0,1,KB-006
+Q007,exact_code_or_id,128,hybrid,4,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0158730159,0,1,KB-006
+Q007,exact_code_or_id,128,hybrid,5,KB-005-C128-0004,KB-005,Delivery instructions,2.2,0.0156250000,0,1,KB-006
+Q008,exact_code_or_id,128,dense,1,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.7170659304,0,0,KB-006
+Q008,exact_code_or_id,128,dense,2,KB-006-C128-0003,KB-006,Order status codes,1.4,0.7006120682,1,1,KB-006
+Q008,exact_code_or_id,128,dense,3,KB-005-C128-0004,KB-005,Delivery instructions,2.2,0.6118881106,0,1,KB-006
+Q008,exact_code_or_id,128,dense,4,KB-005-C128-0003,KB-005,Delivery windows and preferences,2.2,0.5922046900,0,1,KB-006
+Q008,exact_code_or_id,128,dense,5,KB-006-C128-0005,KB-006,The,1.4,0.5852138996,0,1,KB-006
+Q008,exact_code_or_id,128,bm25,1,KB-006-C128-0003,KB-006,Order status codes,1.4,9.4252661985,1,1,KB-006
+Q008,exact_code_or_id,128,bm25,2,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,6.7843299734,0,1,KB-006
+Q008,exact_code_or_id,128,bm25,3,KB-012-C128-0001,KB-012,ShopSphere Membership Benefits,1.0,5.8618279397,0,1,KB-006
+Q008,exact_code_or_id,128,bm25,4,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,5.6131983717,0,1,KB-006
+Q008,exact_code_or_id,128,bm25,5,KB-005-C128-0004,KB-005,Delivery instructions,2.2,5.4607398648,0,1,KB-006
+Q008,exact_code_or_id,128,hybrid,1,KB-006-C128-0003,KB-006,Order status codes,1.4,0.0325224749,1,1,KB-006
+Q008,exact_code_or_id,128,hybrid,2,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.0325224749,0,1,KB-006
+Q008,exact_code_or_id,128,hybrid,3,KB-005-C128-0004,KB-005,Delivery instructions,2.2,0.0312576313,0,1,KB-006
+Q008,exact_code_or_id,128,hybrid,4,KB-012-C128-0001,KB-012,ShopSphere Membership Benefits,1.0,0.0158730159,0,1,KB-006
+Q008,exact_code_or_id,128,hybrid,5,KB-005-C128-0003,KB-005,Delivery windows and preferences,2.2,0.0156250000,0,1,KB-006
+Q009,exact_code_or_id,128,dense,1,KB-008-C128-0002,KB-008,Supported payment methods,1.5,0.6926124096,1,1,KB-008
+Q009,exact_code_or_id,128,dense,2,KB-008-C128-0005,KB-008,Reconciliation and disputes,1.5,0.5829281807,0,1,KB-008
+Q009,exact_code_or_id,128,dense,3,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.5643035173,0,1,KB-008
+Q009,exact_code_or_id,128,dense,4,KB-008-C128-0004,KB-008,"ShopSphere staff never ask for a full card number, CVV, U",1.5,0.5628021359,0,1,KB-008
+Q009,exact_code_or_id,128,dense,5,KB-007-C128-0001,KB-007,Return Authorisation and Error Codes,1.2,0.5611755848,0,1,KB-008
+Q009,exact_code_or_id,128,bm25,1,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,5.3989351816,0,0,KB-008
+Q009,exact_code_or_id,128,bm25,2,KB-008-C128-0002,KB-008,Supported payment methods,1.5,3.9817834139,1,1,KB-008
+Q009,exact_code_or_id,128,bm25,3,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,3.4580224327,0,1,KB-008
+Q009,exact_code_or_id,128,bm25,4,KB-007-C128-0003,KB-007,Error codes,1.2,2.4973985364,0,1,KB-008
+Q009,exact_code_or_id,128,bm25,5,KB-003-C128-0004,KB-003,Refund identifiers,1.3,2.3410329045,0,1,KB-008
+Q009,exact_code_or_id,128,hybrid,1,KB-008-C128-0002,KB-008,Supported payment methods,1.5,0.0325224749,1,1,KB-008
+Q009,exact_code_or_id,128,hybrid,2,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0163934426,0,1,KB-008
+Q009,exact_code_or_id,128,hybrid,3,KB-008-C128-0005,KB-008,Reconciliation and disputes,1.5,0.0161290323,0,1,KB-008
+Q009,exact_code_or_id,128,hybrid,4,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.0158730159,0,1,KB-008
+Q009,exact_code_or_id,128,hybrid,5,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.0158730159,0,1,KB-008
+Q010,exact_code_or_id,128,dense,1,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.7647125721,0,0,KB-008
+Q010,exact_code_or_id,128,dense,2,KB-003-C128-0003,KB-003,Indicative processing estimates,1.3,0.7545900941,0,0,KB-008
+Q010,exact_code_or_id,128,dense,3,KB-003-C128-0006,KB-003,Use “initiated” when ShopSphere has,1.3,0.7539699674,0,0,KB-008
+Q010,exact_code_or_id,128,dense,4,KB-015-C128-0003,KB-015,Discount codes,1.2,0.7427362204,0,0,KB-008
+Q010,exact_code_or_id,128,dense,5,KB-015-C128-0004,KB-015,PROMO-GOLD-SHIP is an illustrative identifier for the Gold standard,1.2,0.7341890335,0,0,KB-008
+Q010,exact_code_or_id,128,bm25,1,KB-008-C128-0002,KB-008,Supported payment methods,1.5,15.9059321783,1,1,KB-008
+Q010,exact_code_or_id,128,bm25,2,KB-003-C128-0006,KB-003,Use “initiated” when ShopSphere has,1.3,12.7439647009,0,1,KB-008
+Q010,exact_code_or_id,128,bm25,3,KB-003-C128-0005,KB-003,If the stated initiation,1.3,12.1201108015,0,1,KB-008
+Q010,exact_code_or_id,128,bm25,4,KB-011-C128-0003,KB-011,Cancellation request flow,1.1,9.7053861711,0,1,KB-008
+Q010,exact_code_or_id,128,bm25,5,KB-003-C128-0004,KB-003,Refund identifiers,1.3,9.3723143665,0,1,KB-008
+Q010,exact_code_or_id,128,hybrid,1,KB-003-C128-0006,KB-003,Use “initiated” when ShopSphere has,1.3,0.0320020481,0,0,KB-008
+Q010,exact_code_or_id,128,hybrid,2,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.0163934426,0,0,KB-008
+Q010,exact_code_or_id,128,hybrid,3,KB-008-C128-0002,KB-008,Supported payment methods,1.5,0.0163934426,1,1,KB-008
+Q010,exact_code_or_id,128,hybrid,4,KB-003-C128-0003,KB-003,Indicative processing estimates,1.3,0.0161290323,0,1,KB-008
+Q010,exact_code_or_id,128,hybrid,5,KB-003-C128-0005,KB-003,If the stated initiation,1.3,0.0158730159,0,1,KB-008
+Q011,other,128,dense,1,KB-003-C128-0002,KB-003,Refund lifecycle,1.3,0.7953752279,1,1,KB-003
+Q011,other,128,dense,2,KB-003-C128-0005,KB-003,If the stated initiation,1.3,0.7643097043,0,1,KB-003
+Q011,other,128,dense,3,KB-014-C128-0002,KB-014,Support channels,1.0,0.7257176638,0,1,KB-003
+Q011,other,128,dense,4,KB-001-C128-0005,KB-001,Return request and inspection,1.0,0.7056796551,0,1,KB-003
+Q011,other,128,dense,5,KB-003-C128-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.7028532028,0,1,KB-003
+Q011,other,128,bm25,1,KB-003-C128-0002,KB-003,Refund lifecycle,1.3,17.1219039145,1,1,KB-003
+Q011,other,128,bm25,2,KB-001-C128-0005,KB-001,Return request and inspection,1.0,11.0676390553,0,1,KB-003
+Q011,other,128,bm25,3,KB-002-C128-0006,KB-002,Authorisation and pickup,2.0,10.3708339926,0,1,KB-003
+Q011,other,128,bm25,4,KB-003-C128-0001,KB-003,Refund Processing and Payment Timelines,1.3,9.6976149510,0,1,KB-003
+Q011,other,128,bm25,5,KB-007-C128-0002,KB-007,Return identifiers,1.2,8.9091050329,0,1,KB-003
+Q011,other,128,hybrid,1,KB-003-C128-0002,KB-003,Refund lifecycle,1.3,0.0327868852,1,1,KB-003
+Q011,other,128,hybrid,2,KB-001-C128-0005,KB-001,Return request and inspection,1.0,0.0317540323,0,1,KB-003
+Q011,other,128,hybrid,3,KB-003-C128-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0310096154,0,1,KB-003
+Q011,other,128,hybrid,4,KB-003-C128-0005,KB-003,If the stated initiation,1.3,0.0161290323,0,1,KB-003
+Q011,other,128,hybrid,5,KB-002-C128-0006,KB-002,Authorisation and pickup,2.0,0.0158730159,0,1,KB-003
+Q012,other,128,dense,1,KB-003-C128-0002,KB-003,Refund lifecycle,1.3,0.8619714379,1,1,KB-003
+Q012,other,128,dense,2,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.7710590959,0,1,KB-003
+Q012,other,128,dense,3,KB-003-C128-0005,KB-003,If the stated initiation,1.3,0.7649614811,0,1,KB-003
+Q012,other,128,dense,4,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7609068751,0,1,KB-003
+Q012,other,128,dense,5,KB-002-C128-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7563813329,0,1,KB-003
+Q012,other,128,bm25,1,KB-003-C128-0002,KB-003,Refund lifecycle,1.3,14.2958276436,1,1,KB-003
+Q012,other,128,bm25,2,KB-001-C128-0005,KB-001,Return request and inspection,1.0,9.7980260508,0,1,KB-003
+Q012,other,128,bm25,3,KB-014-C128-0002,KB-014,Support channels,1.0,8.6679253367,0,1,KB-003
+Q012,other,128,bm25,4,KB-015-C128-0005,KB-015,Fraud prevention,1.2,7.9768786487,0,1,KB-003
+Q012,other,128,bm25,5,KB-014-C128-0001,KB-014,Customer Support Service Levels and Escalation,1.0,7.3269841943,0,1,KB-003
+Q012,other,128,hybrid,1,KB-003-C128-0002,KB-003,Refund lifecycle,1.3,0.0327868852,1,1,KB-003
+Q012,other,128,hybrid,2,KB-001-C128-0005,KB-001,Return request and inspection,1.0,0.0161290323,0,1,KB-003
+Q012,other,128,hybrid,3,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0161290323,0,1,KB-003
+Q012,other,128,hybrid,4,KB-003-C128-0005,KB-003,If the stated initiation,1.3,0.0158730159,0,1,KB-003
+Q012,other,128,hybrid,5,KB-014-C128-0002,KB-014,Support channels,1.0,0.0158730159,0,1,KB-003
+Q013,other,128,dense,1,KB-013-C128-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.8365713358,1,1,KB-013
+Q013,other,128,dense,2,KB-002-C128-0005,KB-002,Excluded products and exceptions,2.0,0.8319106102,0,1,KB-013
+Q013,other,128,dense,3,KB-011-C128-0002,KB-011,When an order can be cancelled,1.1,0.7496925592,0,1,KB-013
+Q013,other,128,dense,4,KB-004-C128-0005,KB-004,Stock and failed exchange,1.1,0.7457018495,0,1,KB-013
+Q013,other,128,dense,5,KB-013-C128-0004,KB-013,Packaging,1.3,0.7383890152,0,1,KB-013
+Q013,other,128,bm25,1,KB-013-C128-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,13.4981579833,1,1,KB-013
+Q013,other,128,bm25,2,KB-004-C128-0005,KB-004,Stock and failed exchange,1.1,10.5457911242,0,1,KB-013
+Q013,other,128,bm25,3,KB-002-C128-0005,KB-002,Excluded products and exceptions,2.0,9.8432894489,0,1,KB-013
+Q013,other,128,bm25,4,KB-013-C128-0003,KB-013,"Before creating a pickup, show the order",1.3,8.6642544840,0,1,KB-013
+Q013,other,128,bm25,5,KB-007-C128-0001,KB-007,Return Authorisation and Error Codes,1.2,7.7417256753,0,1,KB-013
+Q013,other,128,hybrid,1,KB-013-C128-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.0327868852,1,1,KB-013
+Q013,other,128,hybrid,2,KB-002-C128-0005,KB-002,Excluded products and exceptions,2.0,0.0320020481,0,1,KB-013
+Q013,other,128,hybrid,3,KB-004-C128-0005,KB-004,Stock and failed exchange,1.1,0.0317540323,0,1,KB-013
+Q013,other,128,hybrid,4,KB-011-C128-0002,KB-011,When an order can be cancelled,1.1,0.0158730159,0,1,KB-013
+Q013,other,128,hybrid,5,KB-013-C128-0003,KB-013,"Before creating a pickup, show the order",1.3,0.0156250000,0,1,KB-013
+Q014,other,128,dense,1,KB-013-C128-0004,KB-013,Packaging,1.3,0.6563327909,0,0,KB-013
+Q014,other,128,dense,2,KB-013-C128-0002,KB-013,Pickup eligibility,1.3,0.6476877332,1,1,KB-013
+Q014,other,128,dense,3,KB-013-C128-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.6400972605,0,1,KB-013
+Q014,other,128,dense,4,KB-002-C128-0005,KB-002,Excluded products and exceptions,2.0,0.6329388618,0,1,KB-013
+Q014,other,128,dense,5,KB-005-C128-0003,KB-005,Delivery windows and preferences,2.2,0.6193268299,0,1,KB-013
+Q014,other,128,bm25,1,KB-002-C128-0005,KB-002,Excluded products and exceptions,2.0,9.5738641135,0,0,KB-013
+Q014,other,128,bm25,2,KB-013-C128-0002,KB-013,Pickup eligibility,1.3,9.3536515683,1,1,KB-013
+Q014,other,128,bm25,3,KB-013-C128-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,8.7705128378,0,1,KB-013
+Q014,other,128,bm25,4,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,6.2725424924,0,1,KB-013
+Q014,other,128,bm25,5,KB-004-C128-0005,KB-004,Stock and failed exchange,1.1,5.2301887773,0,1,KB-013
+Q014,other,128,hybrid,1,KB-013-C128-0002,KB-013,Pickup eligibility,1.3,0.0322580645,1,1,KB-013
+Q014,other,128,hybrid,2,KB-002-C128-0005,KB-002,Excluded products and exceptions,2.0,0.0320184426,0,1,KB-013
+Q014,other,128,hybrid,3,KB-013-C128-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.0317460317,0,1,KB-013
+Q014,other,128,hybrid,4,KB-013-C128-0004,KB-013,Packaging,1.3,0.0163934426,0,1,KB-013
+Q014,other,128,hybrid,5,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.0156250000,0,1,KB-013
+Q015,exact_code_or_id,128,dense,1,KB-007-C128-0001,KB-007,Return Authorisation and Error Codes,1.2,0.7185122967,1,1,KB-007
+Q015,exact_code_or_id,128,dense,2,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.6933400035,0,1,KB-007
+Q015,exact_code_or_id,128,dense,3,KB-007-C128-0006,KB-007,Audit fields,1.2,0.6699215174,0,1,KB-007
+Q015,exact_code_or_id,128,dense,4,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.6661473513,0,1,KB-007
+Q015,exact_code_or_id,128,dense,5,KB-007-C128-0004,KB-007,Error codes,1.2,0.6598489285,0,1,KB-007
+Q015,exact_code_or_id,128,bm25,1,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,4.7681843646,0,0,KB-007
+Q015,exact_code_or_id,128,bm25,2,KB-007-C128-0001,KB-007,Return Authorisation and Error Codes,1.2,4.3606402315,1,1,KB-007
+Q015,exact_code_or_id,128,bm25,3,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,3.8289102606,0,1,KB-007
+Q015,exact_code_or_id,128,bm25,4,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,3.3921649867,0,1,KB-007
+Q015,exact_code_or_id,128,bm25,5,KB-014-C128-0001,KB-014,Customer Support Service Levels and Escalation,1.0,1.8041898794,0,1,KB-007
+Q015,exact_code_or_id,128,hybrid,1,KB-007-C128-0001,KB-007,Return Authorisation and Error Codes,1.2,0.0325224749,1,1,KB-007
+Q015,exact_code_or_id,128,hybrid,2,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.0314980159,0,1,KB-007
+Q015,exact_code_or_id,128,hybrid,3,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0163934426,0,1,KB-007
+Q015,exact_code_or_id,128,hybrid,4,KB-007-C128-0002,KB-007,Return identifiers,1.2,0.0161290323,0,1,KB-007
+Q015,exact_code_or_id,128,hybrid,5,KB-007-C128-0006,KB-007,Audit fields,1.2,0.0158730159,0,1,KB-007
+Q016,other,128,dense,1,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.7802137136,1,1,KB-005
+Q016,other,128,dense,2,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,0.7770738006,0,1,KB-005
+Q016,other,128,dense,3,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,0.7038986683,0,1,KB-005
+Q016,other,128,dense,4,KB-016-C128-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.6824006438,0,1,KB-005
+Q016,other,128,dense,5,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,0.6698086262,0,1,KB-005
+Q016,other,128,bm25,1,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,13.0021615939,1,1,KB-005
+Q016,other,128,bm25,2,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,9.0963036482,0,1,KB-005
+Q016,other,128,bm25,3,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,7.2641842847,0,1,KB-005
+Q016,other,128,bm25,4,KB-016-C128-0006,KB-016,Version comparison,1.0,7.1203016585,0,1,KB-005
+Q016,other,128,bm25,5,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,6.3188170316,0,1,KB-005
+Q016,other,128,hybrid,1,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0327868852,1,1,KB-005
+Q016,other,128,hybrid,2,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,0.0322580645,0,1,KB-005
+Q016,other,128,hybrid,3,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,0.0312576313,0,1,KB-005
+Q016,other,128,hybrid,4,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,0.0158730159,0,1,KB-005
+Q016,other,128,hybrid,5,KB-016-C128-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.0156250000,0,1,KB-005
+Q017,other,128,dense,1,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,0.7897570133,0,0,KB-005
+Q017,other,128,dense,2,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.7678695917,1,1,KB-005
+Q017,other,128,dense,3,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,0.7296303511,0,1,KB-005
+Q017,other,128,dense,4,KB-016-C128-0003,KB-016,Historical delivery estimates,1.0,0.6805052161,0,1,KB-005
+Q017,other,128,dense,5,KB-006-C128-0002,KB-006,How to read a status,1.4,0.6775499582,0,1,KB-005
+Q017,other,128,bm25,1,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,13.6921402548,1,1,KB-005
+Q017,other,128,bm25,2,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,9.5620576536,0,1,KB-005
+Q017,other,128,bm25,3,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,7.4090550832,0,1,KB-005
+Q017,other,128,bm25,4,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,6.3188170316,0,1,KB-005
+Q017,other,128,bm25,5,KB-011-C128-0002,KB-011,When an order can be cancelled,1.1,5.6866213158,0,1,KB-005
+Q017,other,128,hybrid,1,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0325224749,1,1,KB-005
+Q017,other,128,hybrid,2,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,0.0325224749,0,1,KB-005
+Q017,other,128,hybrid,3,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,0.0317460317,0,1,KB-005
+Q017,other,128,hybrid,4,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0156250000,0,1,KB-005
+Q017,other,128,hybrid,5,KB-016-C128-0003,KB-016,Historical delivery estimates,1.0,0.0156250000,0,1,KB-005
+Q018,exact_code_or_id,128,dense,1,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.7848544121,1,0,KB-006
+Q018,exact_code_or_id,128,dense,2,KB-006-C128-0003,KB-006,Order status codes,1.4,0.7803201675,1,1,KB-006
+Q018,exact_code_or_id,128,dense,3,KB-005-C128-0004,KB-005,Delivery instructions,2.2,0.7153347135,0,1,KB-006
+Q018,exact_code_or_id,128,dense,4,KB-005-C128-0005,KB-005,Late or lost shipments,2.2,0.6855022907,0,1,KB-006
+Q018,exact_code_or_id,128,dense,5,KB-006-C128-0002,KB-006,How to read a status,1.4,0.6803439260,0,1,KB-006
+Q018,exact_code_or_id,128,bm25,1,KB-006-C128-0003,KB-006,Order status codes,1.4,11.6094242880,1,1,KB-006
+Q018,exact_code_or_id,128,bm25,2,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,10.6800847088,1,1,KB-006
+Q018,exact_code_or_id,128,bm25,3,KB-005-C128-0005,KB-005,Late or lost shipments,2.2,10.0119608485,0,1,KB-006
+Q018,exact_code_or_id,128,bm25,4,KB-013-C128-0005,KB-013,Missed pickup,1.3,8.1177187629,0,1,KB-006
+Q018,exact_code_or_id,128,bm25,5,KB-005-C128-0003,KB-005,Delivery windows and preferences,2.2,8.0580884546,0,1,KB-006
+Q018,exact_code_or_id,128,hybrid,1,KB-006-C128-0003,KB-006,Order status codes,1.4,0.0325224749,1,1,KB-006
+Q018,exact_code_or_id,128,hybrid,2,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.0325224749,1,1,KB-006
+Q018,exact_code_or_id,128,hybrid,3,KB-005-C128-0005,KB-005,Late or lost shipments,2.2,0.0314980159,0,1,KB-006
+Q018,exact_code_or_id,128,hybrid,4,KB-005-C128-0004,KB-005,Delivery instructions,2.2,0.0158730159,0,1,KB-006
+Q018,exact_code_or_id,128,hybrid,5,KB-013-C128-0005,KB-013,Missed pickup,1.3,0.0156250000,0,1,KB-006
+Q019,other,128,dense,1,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.8136890531,0,0,KB-009
+Q019,other,128,dense,2,KB-009-C128-0002,KB-009,Product family,1.0,0.7931145430,1,1,KB-009
+Q019,other,128,dense,3,KB-009-C128-0003,KB-009,Warranty coverage,1.0,0.6685600281,0,1,KB-009
+Q019,other,128,dense,4,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.6291367412,0,1,KB-009
+Q019,other,128,dense,5,KB-009-C128-0004,KB-009,Basic diagnostics,1.0,0.6002244949,0,1,KB-009
+Q019,other,128,bm25,1,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,12.2431726959,0,0,KB-009
+Q019,other,128,bm25,2,KB-009-C128-0002,KB-009,Product family,1.0,10.4555993979,1,1,KB-009
+Q019,other,128,bm25,3,KB-009-C128-0003,KB-009,Warranty coverage,1.0,8.2277532705,0,1,KB-009
+Q019,other,128,bm25,4,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,5.3989351816,0,1,KB-009
+Q019,other,128,bm25,5,KB-009-C128-0004,KB-009,Basic diagnostics,1.0,5.1586301210,0,1,KB-009
+Q019,other,128,hybrid,1,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.0327868852,0,0,KB-009
+Q019,other,128,hybrid,2,KB-009-C128-0002,KB-009,Product family,1.0,0.0322580645,1,1,KB-009
+Q019,other,128,hybrid,3,KB-009-C128-0003,KB-009,Warranty coverage,1.0,0.0317460317,0,1,KB-009
+Q019,other,128,hybrid,4,KB-009-C128-0004,KB-009,Basic diagnostics,1.0,0.0307692308,0,1,KB-009
+Q019,other,128,hybrid,5,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.0156250000,0,1,KB-009
+Q020,other,128,dense,1,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.7421048880,0,0,KB-009
+Q020,other,128,dense,2,KB-009-C128-0002,KB-009,Product family,1.0,0.6982504725,0,0,KB-009
+Q020,other,128,dense,3,KB-009-C128-0003,KB-009,Warranty coverage,1.0,0.6598956585,1,1,KB-009
+Q020,other,128,dense,4,KB-009-C128-0005,KB-009,Return or warranty path,1.0,0.5820936561,0,1,KB-009
+Q020,other,128,dense,5,KB-015-C128-0002,KB-015,Gift cards,1.2,0.5709209442,0,1,KB-009
+Q020,other,128,bm25,1,KB-003-C128-0004,KB-003,Refund identifiers,1.3,11.3732576147,0,0,KB-009
+Q020,other,128,bm25,2,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,10.2906693623,0,0,KB-009
+Q020,other,128,bm25,3,KB-009-C128-0003,KB-009,Warranty coverage,1.0,10.2625879596,1,1,KB-009
+Q020,other,128,bm25,4,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,8.5601190976,0,1,KB-009
+Q020,other,128,bm25,5,KB-003-C128-0003,KB-003,Indicative processing estimates,1.3,7.2298473319,0,1,KB-009
+Q020,other,128,hybrid,1,KB-009-C128-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.0325224749,0,0,KB-009
+Q020,other,128,hybrid,2,KB-009-C128-0003,KB-009,Warranty coverage,1.0,0.0317460317,1,1,KB-009
+Q020,other,128,hybrid,3,KB-003-C128-0004,KB-003,Refund identifiers,1.3,0.0163934426,0,1,KB-009
+Q020,other,128,hybrid,4,KB-009-C128-0002,KB-009,Product family,1.0,0.0161290323,0,1,KB-009
+Q020,other,128,hybrid,5,KB-009-C128-0005,KB-009,Return or warranty path,1.0,0.0156250000,0,1,KB-009
+Q021,other,128,dense,1,KB-011-C128-0002,KB-011,When an order can be cancelled,1.1,0.7985894084,0,0,KB-011
+Q021,other,128,dense,2,KB-011-C128-0003,KB-011,Cancellation request flow,1.1,0.7850589752,0,0,KB-011
+Q021,other,128,dense,3,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,0.7753534913,1,1,KB-011
+Q021,other,128,dense,4,KB-011-C128-0004,KB-011,Payment reversal,1.1,0.7587189078,0,1,KB-011
+Q021,other,128,dense,5,KB-002-C128-0005,KB-002,Excluded products and exceptions,2.0,0.7523952127,0,1,KB-011
+Q021,other,128,bm25,1,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,13.6096438111,1,1,KB-011
+Q021,other,128,bm25,2,KB-011-C128-0003,KB-011,Cancellation request flow,1.1,9.0994040091,0,1,KB-011
+Q021,other,128,bm25,3,KB-016-C128-0006,KB-016,Version comparison,1.0,6.5279438522,0,1,KB-011
+Q021,other,128,bm25,4,KB-001-C128-0004,KB-001,Items excluded from ordinary change-of-mind returns,1.0,6.1999703807,0,1,KB-011
+Q021,other,128,bm25,5,KB-006-C128-0002,KB-006,How to read a status,1.4,5.9296316477,0,1,KB-011
+Q021,other,128,hybrid,1,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,0.0322664585,1,1,KB-011
+Q021,other,128,hybrid,2,KB-011-C128-0003,KB-011,Cancellation request flow,1.1,0.0322580645,0,1,KB-011
+Q021,other,128,hybrid,3,KB-011-C128-0002,KB-011,When an order can be cancelled,1.1,0.0163934426,0,1,KB-011
+Q021,other,128,hybrid,4,KB-016-C128-0006,KB-016,Version comparison,1.0,0.0158730159,0,1,KB-011
+Q021,other,128,hybrid,5,KB-001-C128-0004,KB-001,Items excluded from ordinary change-of-mind returns,1.0,0.0156250000,0,1,KB-011
+Q022,exact_code_or_id,128,dense,1,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.6230428219,0,0,KB-006
+Q022,exact_code_or_id,128,dense,2,KB-007-C128-0006,KB-007,Audit fields,1.2,0.6159512997,0,0,KB-006
+Q022,exact_code_or_id,128,dense,3,KB-014-C128-0004,KB-014,Priority handling,1.0,0.6139614582,0,0,KB-006
+Q022,exact_code_or_id,128,dense,4,KB-008-C128-0004,KB-008,"ShopSphere staff never ask for a full card number, CVV, U",1.5,0.6119996905,0,0,KB-006
+Q022,exact_code_or_id,128,dense,5,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.6026625633,0,0,KB-006
+Q022,exact_code_or_id,128,bm25,1,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,5.7807495376,0,0,KB-006
+Q022,exact_code_or_id,128,bm25,2,KB-006-C128-0003,KB-006,Order status codes,1.4,5.4127905748,1,1,KB-006
+Q022,exact_code_or_id,128,bm25,3,KB-010-C128-0003,KB-010,Damaged item,1.2,5.3495282592,0,1,KB-006
+Q022,exact_code_or_id,128,bm25,4,KB-006-C128-0002,KB-006,How to read a status,1.4,5.1785541224,1,1,KB-006
+Q022,exact_code_or_id,128,bm25,5,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,4.8819634423,0,1,KB-006
+Q022,exact_code_or_id,128,hybrid,1,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,0.0307692308,0,0,KB-006
+Q022,exact_code_or_id,128,hybrid,2,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.0163934426,0,0,KB-006
+Q022,exact_code_or_id,128,hybrid,3,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0163934426,0,0,KB-006
+Q022,exact_code_or_id,128,hybrid,4,KB-006-C128-0003,KB-006,Order status codes,1.4,0.0161290323,1,1,KB-006
+Q022,exact_code_or_id,128,hybrid,5,KB-007-C128-0006,KB-007,Audit fields,1.2,0.0161290323,0,1,KB-006
+Q023,other,128,dense,1,KB-001-C128-0005,KB-001,Return request and inspection,1.0,0.6597161293,0,0,KB-014
+Q023,other,128,dense,2,KB-011-C128-0004,KB-011,Payment reversal,1.1,0.6503951550,0,0,KB-014
+Q023,other,128,dense,3,KB-010-C128-0005,KB-010,Remedy and communication,1.2,0.6493619680,0,0,KB-014
+Q023,other,128,dense,4,KB-004-C128-0002,KB-004,Exchange options,1.1,0.6457931399,0,0,KB-014
+Q023,other,128,dense,5,KB-002-C128-0004,KB-002,Condition and packaging,2.0,0.6453553438,0,0,KB-014
+Q023,other,128,bm25,1,KB-008-C128-0002,KB-008,Supported payment methods,1.5,6.9584459039,0,0,KB-014
+Q023,other,128,bm25,2,KB-008-C128-0004,KB-008,"ShopSphere staff never ask for a full card number, CVV, U",1.5,6.2015857956,0,0,KB-014
+Q023,other,128,bm25,3,KB-014-C128-0004,KB-014,Priority handling,1.0,6.0075579634,0,0,KB-014
+Q023,other,128,bm25,4,KB-014-C128-0003,KB-014,Use RETURNS,1.0,4.9604565281,1,0,KB-014
+Q023,other,128,bm25,5,KB-014-C128-0002,KB-014,Support channels,1.0,4.6893047427,1,1,KB-014
+Q023,other,128,hybrid,1,KB-001-C128-0005,KB-001,Return request and inspection,1.0,0.0163934426,0,0,KB-014
+Q023,other,128,hybrid,2,KB-008-C128-0002,KB-008,Supported payment methods,1.5,0.0163934426,0,0,KB-014
+Q023,other,128,hybrid,3,KB-008-C128-0004,KB-008,"ShopSphere staff never ask for a full card number, CVV, U",1.5,0.0161290323,0,0,KB-014
+Q023,other,128,hybrid,4,KB-011-C128-0004,KB-011,Payment reversal,1.1,0.0161290323,0,0,KB-014
+Q023,other,128,hybrid,5,KB-010-C128-0005,KB-010,Remedy and communication,1.2,0.0158730159,0,0,KB-014
+Q024,other,128,dense,1,KB-014-C128-0002,KB-014,Support channels,1.0,0.7794431448,1,1,KB-014
+Q024,other,128,dense,2,KB-013-C128-0003,KB-013,"Before creating a pickup, show the order",1.3,0.6328995824,0,1,KB-014
+Q024,other,128,dense,3,KB-014-C128-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.6190102100,0,1,KB-014
+Q024,other,128,dense,4,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.6085438728,0,1,KB-014
+Q024,other,128,dense,5,KB-007-C128-0006,KB-007,Audit fields,1.2,0.6033058763,0,1,KB-014
+Q024,other,128,bm25,1,KB-014-C128-0002,KB-014,Support channels,1.0,17.5816346571,1,1,KB-014
+Q024,other,128,bm25,2,KB-014-C128-0001,KB-014,Customer Support Service Levels and Escalation,1.0,10.2744778103,0,1,KB-014
+Q024,other,128,bm25,3,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,7.2525775861,0,1,KB-014
+Q024,other,128,bm25,4,KB-014-C128-0004,KB-014,Priority handling,1.0,3.6442693136,0,1,KB-014
+Q024,other,128,bm25,5,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,3.4580224327,0,1,KB-014
+Q024,other,128,hybrid,1,KB-014-C128-0002,KB-014,Support channels,1.0,0.0327868852,1,1,KB-014
+Q024,other,128,hybrid,2,KB-014-C128-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0320020481,0,1,KB-014
+Q024,other,128,hybrid,3,KB-013-C128-0003,KB-013,"Before creating a pickup, show the order",1.3,0.0161290323,0,1,KB-014
+Q024,other,128,hybrid,4,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0158730159,0,1,KB-014
+Q024,other,128,hybrid,5,KB-007-C128-0005,KB-007,The assistant should explain errors in plain language,1.2,0.0156250000,0,1,KB-014
+Q025,other,128,dense,1,KB-002-C128-0004,KB-002,Condition and packaging,2.0,0.8073682785,1,1,KB-002
+Q025,other,128,dense,2,KB-001-C128-0004,KB-001,Items excluded from ordinary change-of-mind returns,1.0,0.7685025334,0,1,KB-002
+Q025,other,128,dense,3,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.7260060310,0,1,KB-002
+Q025,other,128,dense,4,KB-002-C128-0003,KB-002,Standard return windows,2.0,0.7144091129,0,1,KB-002
+Q025,other,128,dense,5,KB-015-C128-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,0.7125614285,0,1,KB-002
+Q025,other,128,bm25,1,KB-003-C128-0004,KB-003,Refund identifiers,1.3,8.9062087824,0,0,KB-002
+Q025,other,128,bm25,2,KB-004-C128-0003,KB-004,Eligible exchange reasons,1.1,8.4312034635,0,0,KB-002
+Q025,other,128,bm25,3,KB-013-C128-0002,KB-013,Pickup eligibility,1.3,6.1373951349,0,0,KB-002
+Q025,other,128,bm25,4,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,6.0794467931,0,0,KB-002
+Q025,other,128,bm25,5,KB-001-C128-0004,KB-001,Items excluded from ordinary change-of-mind returns,1.0,6.0057551095,0,0,KB-002
+Q025,other,128,hybrid,1,KB-001-C128-0004,KB-001,Items excluded from ordinary change-of-mind returns,1.0,0.0315136476,0,0,KB-002
+Q025,other,128,hybrid,2,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.0314980159,0,0,KB-002
+Q025,other,128,hybrid,3,KB-002-C128-0004,KB-002,Condition and packaging,2.0,0.0163934426,1,1,KB-002
+Q025,other,128,hybrid,4,KB-003-C128-0004,KB-003,Refund identifiers,1.3,0.0163934426,0,1,KB-002
+Q025,other,128,hybrid,5,KB-004-C128-0003,KB-004,Eligible exchange reasons,1.1,0.0161290323,0,1,KB-002
+Q026,paraphrased_no_answer_keyword,128,dense,1,KB-010-C128-0005,KB-010,Remedy and communication,1.2,0.6885762215,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,dense,2,KB-014-C128-0004,KB-014,Priority handling,1.0,0.6714341640,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,dense,3,KB-014-C128-0002,KB-014,Support channels,1.0,0.6493417621,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,dense,4,KB-005-C128-0005,KB-005,Late or lost shipments,2.2,0.6329605579,1,1,KB-005
+Q026,paraphrased_no_answer_keyword,128,dense,5,KB-003-C128-0005,KB-003,If the stated initiation,1.3,0.6137148142,0,1,KB-005
+Q026,paraphrased_no_answer_keyword,128,bm25,1,KB-014-C128-0004,KB-014,Priority handling,1.0,5.6331155129,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,bm25,2,KB-012-C128-0001,KB-012,ShopSphere Membership Benefits,1.0,5.2430091946,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,bm25,3,KB-010-C128-0005,KB-010,Remedy and communication,1.2,5.1849229654,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,bm25,4,KB-005-C128-0004,KB-005,Delivery instructions,2.2,4.8842630003,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,bm25,5,KB-014-C128-0001,KB-014,Customer Support Service Levels and Escalation,1.0,4.8020623148,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,hybrid,1,KB-014-C128-0004,KB-014,Priority handling,1.0,0.0325224749,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,hybrid,2,KB-010-C128-0005,KB-010,Remedy and communication,1.2,0.0322664585,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,hybrid,3,KB-012-C128-0001,KB-012,ShopSphere Membership Benefits,1.0,0.0161290323,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,hybrid,4,KB-014-C128-0002,KB-014,Support channels,1.0,0.0158730159,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,128,hybrid,5,KB-005-C128-0004,KB-005,Delivery instructions,2.2,0.0156250000,0,0,KB-005
+Q027,paraphrased_no_answer_keyword,128,dense,1,KB-010-C128-0005,KB-010,Remedy and communication,1.2,0.7078619599,0,0,KB-010
+Q027,paraphrased_no_answer_keyword,128,dense,2,KB-010-C128-0002,KB-010,Report window and evidence,1.2,0.7048991919,1,1,KB-010
+Q027,paraphrased_no_answer_keyword,128,dense,3,KB-014-C128-0003,KB-014,Use RETURNS,1.0,0.6748614311,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,128,dense,4,KB-010-C128-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.6481456757,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,128,dense,5,KB-010-C128-0003,KB-010,Damaged item,1.2,0.6369305849,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,128,bm25,1,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,11.6819409407,0,0,KB-010
+Q027,paraphrased_no_answer_keyword,128,bm25,2,KB-010-C128-0005,KB-010,Remedy and communication,1.2,9.1079758339,0,0,KB-010
+Q027,paraphrased_no_answer_keyword,128,bm25,3,KB-015-C128-0002,KB-015,Gift cards,1.2,6.9595022172,0,0,KB-010
+Q027,paraphrased_no_answer_keyword,128,bm25,4,KB-011-C128-0003,KB-011,Cancellation request flow,1.1,5.9930756850,0,0,KB-010
+Q027,paraphrased_no_answer_keyword,128,bm25,5,KB-013-C128-0003,KB-013,"Before creating a pickup, show the order",1.3,5.9005632873,0,0,KB-010
+Q027,paraphrased_no_answer_keyword,128,hybrid,1,KB-010-C128-0005,KB-010,Remedy and communication,1.2,0.0325224749,0,0,KB-010
+Q027,paraphrased_no_answer_keyword,128,hybrid,2,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0163934426,0,0,KB-010
+Q027,paraphrased_no_answer_keyword,128,hybrid,3,KB-010-C128-0002,KB-010,Report window and evidence,1.2,0.0161290323,1,1,KB-010
+Q027,paraphrased_no_answer_keyword,128,hybrid,4,KB-014-C128-0003,KB-014,Use RETURNS,1.0,0.0158730159,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,128,hybrid,5,KB-015-C128-0002,KB-015,Gift cards,1.2,0.0158730159,0,1,KB-010
+Q028,paraphrased_no_answer_keyword,128,dense,1,KB-002-C128-0007,KB-002,Customer communication,2.0,0.6724291444,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,dense,2,KB-003-C128-0005,KB-003,If the stated initiation,1.3,0.6645847559,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,dense,3,KB-008-C128-0005,KB-008,Reconciliation and disputes,1.5,0.6610687971,1,1,KB-008
+Q028,paraphrased_no_answer_keyword,128,dense,4,KB-003-C128-0002,KB-003,Refund lifecycle,1.3,0.6535154581,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,128,dense,5,KB-011-C128-0004,KB-011,Payment reversal,1.1,0.6430611610,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,128,bm25,1,KB-003-C128-0001,KB-003,Refund Processing and Payment Timelines,1.3,9.0196795993,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,bm25,2,KB-008-C128-0002,KB-008,Supported payment methods,1.5,9.0060929240,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,bm25,3,KB-003-C128-0003,KB-003,Indicative processing estimates,1.3,8.3725227105,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,bm25,4,KB-006-C128-0004,KB-006,Shipment scan codes,1.4,8.2983189190,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,bm25,5,KB-014-C128-0004,KB-014,Priority handling,1.0,7.9637293693,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,hybrid,1,KB-002-C128-0007,KB-002,Customer communication,2.0,0.0163934426,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,hybrid,2,KB-003-C128-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0163934426,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,hybrid,3,KB-003-C128-0005,KB-003,If the stated initiation,1.3,0.0161290323,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,hybrid,4,KB-008-C128-0002,KB-008,Supported payment methods,1.5,0.0161290323,0,0,KB-008
+Q028,paraphrased_no_answer_keyword,128,hybrid,5,KB-003-C128-0003,KB-003,Indicative processing estimates,1.3,0.0158730159,0,0,KB-008
+Q029,paraphrased_no_answer_keyword,128,dense,1,KB-010-C128-0005,KB-010,Remedy and communication,1.2,0.6757059097,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,128,dense,2,KB-011-C128-0004,KB-011,Payment reversal,1.1,0.6741022468,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,128,dense,3,KB-014-C128-0003,KB-014,Use RETURNS,1.0,0.6674997807,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,128,dense,4,KB-013-C128-0004,KB-013,Packaging,1.3,0.6640683413,1,1,KB-013
+Q029,paraphrased_no_answer_keyword,128,dense,5,KB-010-C128-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.6436342001,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,128,bm25,1,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,11.1517665034,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,128,bm25,2,KB-013-C128-0005,KB-013,Missed pickup,1.3,8.8975338848,1,0,KB-013
+Q029,paraphrased_no_answer_keyword,128,bm25,3,KB-014-C128-0004,KB-014,Priority handling,1.0,8.3485430965,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,128,bm25,4,KB-007-C128-0004,KB-007,Error codes,1.2,8.2115604133,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,128,bm25,5,KB-013-C128-0004,KB-013,Packaging,1.3,7.9570070526,1,1,KB-013
+Q029,paraphrased_no_answer_keyword,128,hybrid,1,KB-013-C128-0004,KB-013,Packaging,1.3,0.0310096154,1,1,KB-013
+Q029,paraphrased_no_answer_keyword,128,hybrid,2,KB-010-C128-0004,KB-010,Missing item in a multi-item order,1.2,0.0163934426,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,128,hybrid,3,KB-010-C128-0005,KB-010,Remedy and communication,1.2,0.0163934426,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,128,hybrid,4,KB-011-C128-0004,KB-011,Payment reversal,1.1,0.0161290323,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,128,hybrid,5,KB-013-C128-0005,KB-013,Missed pickup,1.3,0.0161290323,1,1,KB-013
+Q030,other,128,dense,1,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.7265739441,0,0,KB-002
+Q030,other,128,dense,2,KB-001-C128-0006,KB-001,This policy is kept so that an assistant can explain why an older order,1.0,0.7193329334,0,0,KB-002
+Q030,other,128,dense,3,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.7179280519,1,0,KB-002
+Q030,other,128,dense,4,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.6964542866,0,0,KB-002
+Q030,other,128,dense,5,KB-001-C128-0002,KB-001,Purpose and scope,1.0,0.6938952208,0,0,KB-002
+Q030,other,128,bm25,1,KB-002-C128-0003,KB-002,Standard return windows,2.0,13.1617608405,1,1,KB-002
+Q030,other,128,bm25,2,KB-001-C128-0006,KB-001,This policy is kept so that an assistant can explain why an older order,1.0,11.7451417819,0,1,KB-002
+Q030,other,128,bm25,3,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,10.5491379033,1,1,KB-002
+Q030,other,128,bm25,4,KB-002-C128-0004,KB-002,Condition and packaging,2.0,10.0518583622,0,1,KB-002
+Q030,other,128,bm25,5,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,9.5259221872,0,1,KB-002
+Q030,other,128,hybrid,1,KB-001-C128-0006,KB-001,This policy is kept so that an assistant can explain why an older order,1.0,0.0322580645,0,0,KB-002
+Q030,other,128,hybrid,2,KB-001-C128-0003,KB-001,Return eligibility in 2025,1.0,0.0317780580,0,0,KB-002
+Q030,other,128,hybrid,3,KB-002-C128-0002,KB-002,Purpose and version rule,2.0,0.0317460317,1,0,KB-002
+Q030,other,128,hybrid,4,KB-002-C128-0003,KB-002,Standard return windows,2.0,0.0163934426,1,1,KB-002
+Q030,other,128,hybrid,5,KB-001-C128-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0156250000,0,1,KB-002
+Q031,paraphrased_no_answer_keyword,128,dense,1,KB-016-C128-0003,KB-016,Historical delivery estimates,1.0,0.6968880296,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,dense,2,KB-005-C128-0005,KB-005,Late or lost shipments,2.2,0.6638170481,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,dense,3,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,0.6419284940,1,1,KB-016
+Q031,paraphrased_no_answer_keyword,128,dense,4,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,0.6360044479,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,128,dense,5,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.6358126402,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,128,bm25,1,KB-016-C128-0003,KB-016,Historical delivery estimates,1.0,12.3120691999,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,bm25,2,KB-006-C128-0002,KB-006,How to read a status,1.4,10.2344328199,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,bm25,3,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,8.5036335506,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,bm25,4,KB-016-C128-0006,KB-016,Version comparison,1.0,7.6125681140,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,bm25,5,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,7.2533303939,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,hybrid,1,KB-016-C128-0003,KB-016,Historical delivery estimates,1.0,0.0327868852,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,hybrid,2,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,0.0314980159,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,hybrid,3,KB-005-C128-0005,KB-005,Late or lost shipments,2.2,0.0161290323,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,hybrid,4,KB-006-C128-0002,KB-006,How to read a status,1.4,0.0161290323,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,128,hybrid,5,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,0.0158730159,1,1,KB-016
+Q032,other,128,dense,1,KB-016-C128-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.7358283997,0,0,KB-005
+Q032,other,128,dense,2,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,0.6991343498,0,0,KB-005
+Q032,other,128,dense,3,KB-016-C128-0006,KB-016,Version comparison,1.0,0.6987965703,0,0,KB-005
+Q032,other,128,dense,4,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,0.6964491606,0,0,KB-005
+Q032,other,128,dense,5,KB-005-C128-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.6961054206,1,1,KB-005
+Q032,other,128,bm25,1,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,15.5689339931,0,0,KB-005
+Q032,other,128,bm25,2,KB-016-C128-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,15.3436197396,0,0,KB-005
+Q032,other,128,bm25,3,KB-006-C128-0002,KB-006,How to read a status,1.4,12.2279393456,0,0,KB-005
+Q032,other,128,bm25,4,KB-016-C128-0003,KB-016,Historical delivery estimates,1.0,12.1786973983,0,0,KB-005
+Q032,other,128,bm25,5,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,11.8908451245,0,0,KB-005
+Q032,other,128,hybrid,1,KB-016-C128-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.0325224749,0,0,KB-005
+Q032,other,128,hybrid,2,KB-016-C128-0002,KB-016,Purpose and applicability,1.0,0.0310096154,0,0,KB-005
+Q032,other,128,hybrid,3,KB-011-C128-0001,KB-011,Order Cancellation Policy,1.1,0.0163934426,0,0,KB-005
+Q032,other,128,hybrid,4,KB-016-C128-0005,KB-016,"Shipping fees were calculated at checkout using the service, basket",1.0,0.0161290323,0,0,KB-005
+Q032,other,128,hybrid,5,KB-006-C128-0002,KB-006,How to read a status,1.4,0.0158730159,0,0,KB-005
+Q001,other,512,dense,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7355591655,1,1,KB-002
+Q001,other,512,dense,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7327387333,0,1,KB-002
+Q001,other,512,dense,3,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.6620880365,0,1,KB-002
+Q001,other,512,dense,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.6491051316,0,1,KB-002
+Q001,other,512,dense,5,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6353424788,0,1,KB-002
+Q001,other,512,bm25,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,12.6757453796,1,1,KB-002
+Q001,other,512,bm25,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,10.2420154337,0,1,KB-002
+Q001,other,512,bm25,3,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,7.4670768570,0,1,KB-002
+Q001,other,512,bm25,4,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,6.7167950141,0,1,KB-002
+Q001,other,512,bm25,5,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,6.5384209178,0,1,KB-002
+Q001,other,512,hybrid,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0327868852,1,1,KB-002
+Q001,other,512,hybrid,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0322580645,0,1,KB-002
+Q001,other,512,hybrid,3,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.0158730159,0,1,KB-002
+Q001,other,512,hybrid,4,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.0158730159,0,1,KB-002
+Q001,other,512,hybrid,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0156250000,0,1,KB-002
+Q002,other,512,dense,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.7856855392,0,0,KB-002
+Q002,other,512,dense,2,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7212530375,1,1,KB-002
+Q002,other,512,dense,3,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7107750773,0,1,KB-002
+Q002,other,512,dense,4,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.6560341716,0,1,KB-002
+Q002,other,512,dense,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.6505733728,0,1,KB-002
+Q002,other,512,bm25,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,15.1705827838,0,0,KB-002
+Q002,other,512,bm25,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,7.8624516340,0,0,KB-002
+Q002,other,512,bm25,3,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,7.8128045434,1,1,KB-002
+Q002,other,512,bm25,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,7.3539220980,0,1,KB-002
+Q002,other,512,bm25,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,3.4848843153,0,1,KB-002
+Q002,other,512,hybrid,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.0327868852,0,0,KB-002
+Q002,other,512,hybrid,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0320020481,0,0,KB-002
+Q002,other,512,hybrid,3,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0320020481,1,1,KB-002
+Q002,other,512,hybrid,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0307692308,0,1,KB-002
+Q002,other,512,hybrid,5,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.0156250000,0,1,KB-002
+Q003,other,512,dense,1,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7798016667,1,1,KB-001
+Q003,other,512,dense,2,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.7367317080,0,1,KB-001
+Q003,other,512,dense,3,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7343378067,0,1,KB-001
+Q003,other,512,dense,4,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.6622443199,0,1,KB-001
+Q003,other,512,dense,5,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.6475474834,0,1,KB-001
+Q003,other,512,bm25,1,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,13.7679969598,1,1,KB-001
+Q003,other,512,bm25,2,KB-001-C512-0002,KB-001,Return request and inspection,1.0,10.5866036420,0,1,KB-001
+Q003,other,512,bm25,3,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,8.2038077326,0,1,KB-001
+Q003,other,512,bm25,4,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,6.9771159573,0,1,KB-001
+Q003,other,512,bm25,5,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,5.6690989382,0,1,KB-001
+Q003,other,512,hybrid,1,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0327868852,1,1,KB-001
+Q003,other,512,hybrid,2,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0322580645,0,1,KB-001
+Q003,other,512,hybrid,3,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0317460317,0,1,KB-001
+Q003,other,512,hybrid,4,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.0312500000,0,1,KB-001
+Q003,other,512,hybrid,5,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.0153846154,0,1,KB-001
+Q004,exact_code_or_id,512,dense,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7275818586,1,1,KB-002
+Q004,exact_code_or_id,512,dense,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7055631280,0,1,KB-002
+Q004,exact_code_or_id,512,dense,3,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.7027934790,0,1,KB-002
+Q004,exact_code_or_id,512,dense,4,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6870780587,0,1,KB-002
+Q004,exact_code_or_id,512,dense,5,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.6725276709,0,1,KB-002
+Q004,exact_code_or_id,512,bm25,1,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,10.4032148750,0,0,KB-002
+Q004,exact_code_or_id,512,bm25,2,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,7.9076602963,0,0,KB-002
+Q004,exact_code_or_id,512,bm25,3,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,6.8219307896,1,1,KB-002
+Q004,exact_code_or_id,512,bm25,4,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,5.7876972191,0,1,KB-002
+Q004,exact_code_or_id,512,bm25,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,4.9893661810,0,1,KB-002
+Q004,exact_code_or_id,512,hybrid,1,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0325224749,0,0,KB-002
+Q004,exact_code_or_id,512,hybrid,2,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0322664585,1,1,KB-002
+Q004,exact_code_or_id,512,hybrid,3,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0312576313,0,1,KB-002
+Q004,exact_code_or_id,512,hybrid,4,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,0.0161290323,0,1,KB-002
+Q004,exact_code_or_id,512,hybrid,5,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0156250000,0,1,KB-002
+Q005,exact_code_or_id,512,dense,1,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.7355371118,1,1,KB-007
+Q005,exact_code_or_id,512,dense,2,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.7277739644,0,1,KB-007
+Q005,exact_code_or_id,512,dense,3,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.6172221899,0,1,KB-007
+Q005,exact_code_or_id,512,dense,4,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.5853955150,0,1,KB-007
+Q005,exact_code_or_id,512,dense,5,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.5806084871,0,1,KB-007
+Q005,exact_code_or_id,512,bm25,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,3.8573506809,0,0,KB-007
+Q005,exact_code_or_id,512,bm25,2,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,3.4968361249,1,1,KB-007
+Q005,exact_code_or_id,512,bm25,3,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,3.0884360252,0,1,KB-007
+Q005,exact_code_or_id,512,bm25,4,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,1.7176376136,0,1,KB-007
+Q005,exact_code_or_id,512,bm25,5,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,1.4076332674,0,1,KB-007
+Q005,exact_code_or_id,512,hybrid,1,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.0325224749,1,1,KB-007
+Q005,exact_code_or_id,512,hybrid,2,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0312576313,0,1,KB-007
+Q005,exact_code_or_id,512,hybrid,3,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0312500000,0,1,KB-007
+Q005,exact_code_or_id,512,hybrid,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0163934426,0,1,KB-007
+Q005,exact_code_or_id,512,hybrid,5,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.0161290323,0,1,KB-007
+Q006,exact_code_or_id,512,dense,1,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.7477693558,0,0,KB-007
+Q006,exact_code_or_id,512,dense,2,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.7371641994,1,1,KB-007
+Q006,exact_code_or_id,512,dense,3,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.6828104854,0,1,KB-007
+Q006,exact_code_or_id,512,dense,4,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,0.6658933163,0,1,KB-007
+Q006,exact_code_or_id,512,dense,5,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.6580343246,0,1,KB-007
+Q006,exact_code_or_id,512,bm25,1,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,8.1674304327,1,1,KB-007
+Q006,exact_code_or_id,512,bm25,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,5.2015061784,0,1,KB-007
+Q006,exact_code_or_id,512,bm25,3,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,4.8994828750,0,1,KB-007
+Q006,exact_code_or_id,512,bm25,4,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,4.4736504903,0,1,KB-007
+Q006,exact_code_or_id,512,bm25,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,4.4452657543,0,1,KB-007
+Q006,exact_code_or_id,512,hybrid,1,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.0325224749,1,1,KB-007
+Q006,exact_code_or_id,512,hybrid,2,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.0322664585,0,1,KB-007
+Q006,exact_code_or_id,512,hybrid,3,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0161290323,0,1,KB-007
+Q006,exact_code_or_id,512,hybrid,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0158730159,0,1,KB-007
+Q006,exact_code_or_id,512,hybrid,5,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,0.0156250000,0,1,KB-007
+Q007,exact_code_or_id,512,dense,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.6313946247,1,1,KB-006
+Q007,exact_code_or_id,512,dense,2,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.5636396408,0,1,KB-006
+Q007,exact_code_or_id,512,dense,3,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.5256996751,0,1,KB-006
+Q007,exact_code_or_id,512,dense,4,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.5220780373,0,1,KB-006
+Q007,exact_code_or_id,512,dense,5,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.5151727200,0,1,KB-006
+Q007,exact_code_or_id,512,bm25,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,8.2277584897,1,1,KB-006
+Q007,exact_code_or_id,512,bm25,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,3.8573506809,0,1,KB-006
+Q007,exact_code_or_id,512,bm25,3,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,1.7176376136,0,1,KB-006
+Q007,exact_code_or_id,512,bm25,4,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,1.4076332674,0,1,KB-006
+Q007,exact_code_or_id,512,bm25,5,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,1.3527179345,0,1,KB-006
+Q007,exact_code_or_id,512,hybrid,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0327868852,1,1,KB-006
+Q007,exact_code_or_id,512,hybrid,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0161290323,0,1,KB-006
+Q007,exact_code_or_id,512,hybrid,3,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.0161290323,0,1,KB-006
+Q007,exact_code_or_id,512,hybrid,4,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.0158730159,0,1,KB-006
+Q007,exact_code_or_id,512,hybrid,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0158730159,0,1,KB-006
+Q008,exact_code_or_id,512,dense,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.6808972359,1,1,KB-006
+Q008,exact_code_or_id,512,dense,2,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.5761733055,0,1,KB-006
+Q008,exact_code_or_id,512,dense,3,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.5721978545,0,1,KB-006
+Q008,exact_code_or_id,512,dense,4,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.5608496666,0,1,KB-006
+Q008,exact_code_or_id,512,dense,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.5557579994,0,1,KB-006
+Q008,exact_code_or_id,512,bm25,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,9.4222183134,1,1,KB-006
+Q008,exact_code_or_id,512,bm25,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,4.2768320463,0,1,KB-006
+Q008,exact_code_or_id,512,bm25,3,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,3.6531479661,0,1,KB-006
+Q008,exact_code_or_id,512,bm25,4,KB-012-C512-0001,KB-012,ShopSphere Membership Benefits,1.0,3.5958040314,0,1,KB-006
+Q008,exact_code_or_id,512,bm25,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,1.9467963135,0,1,KB-006
+Q008,exact_code_or_id,512,hybrid,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0327868852,1,1,KB-006
+Q008,exact_code_or_id,512,hybrid,2,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0314980159,0,1,KB-006
+Q008,exact_code_or_id,512,hybrid,3,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0307692308,0,1,KB-006
+Q008,exact_code_or_id,512,hybrid,4,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.0161290323,0,1,KB-006
+Q008,exact_code_or_id,512,hybrid,5,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0161290323,0,1,KB-006
+Q009,exact_code_or_id,512,dense,1,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.6196060181,1,1,KB-008
+Q009,exact_code_or_id,512,dense,2,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,0.5788325071,0,1,KB-008
+Q009,exact_code_or_id,512,dense,3,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.5733125210,0,1,KB-008
+Q009,exact_code_or_id,512,dense,4,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.5609747171,0,1,KB-008
+Q009,exact_code_or_id,512,dense,5,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.5581102967,0,1,KB-008
+Q009,exact_code_or_id,512,bm25,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,4.2018179006,0,0,KB-008
+Q009,exact_code_or_id,512,bm25,2,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,2.8257171735,1,1,KB-008
+Q009,exact_code_or_id,512,bm25,3,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,2.5486304232,0,1,KB-008
+Q009,exact_code_or_id,512,bm25,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,1.3408338525,0,1,KB-008
+Q009,exact_code_or_id,512,bm25,5,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,1.2211793525,0,1,KB-008
+Q009,exact_code_or_id,512,hybrid,1,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.0325224749,1,1,KB-008
+Q009,exact_code_or_id,512,hybrid,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0163934426,0,1,KB-008
+Q009,exact_code_or_id,512,hybrid,3,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,0.0161290323,0,1,KB-008
+Q009,exact_code_or_id,512,hybrid,4,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0158730159,0,1,KB-008
+Q009,exact_code_or_id,512,hybrid,5,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.0158730159,0,1,KB-008
+Q010,exact_code_or_id,512,dense,1,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.7470285892,0,0,KB-008
+Q010,exact_code_or_id,512,dense,2,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.7465527058,0,0,KB-008
+Q010,exact_code_or_id,512,dense,3,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,0.7406976223,0,0,KB-008
+Q010,exact_code_or_id,512,dense,4,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.7398303151,0,0,KB-008
+Q010,exact_code_or_id,512,dense,5,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.7337056398,0,0,KB-008
+Q010,exact_code_or_id,512,bm25,1,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,10.4278016827,1,1,KB-008
+Q010,exact_code_or_id,512,bm25,2,KB-003-C512-0002,KB-003,If the stated,1.3,8.8200929000,0,1,KB-008
+Q010,exact_code_or_id,512,bm25,3,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,8.0375550448,0,1,KB-008
+Q010,exact_code_or_id,512,bm25,4,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,6.0074876290,0,1,KB-008
+Q010,exact_code_or_id,512,bm25,5,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,5.9505206453,0,1,KB-008
+Q010,exact_code_or_id,512,hybrid,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0317540323,0,0,KB-008
+Q010,exact_code_or_id,512,hybrid,2,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.0312576313,0,0,KB-008
+Q010,exact_code_or_id,512,hybrid,3,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0163934426,0,0,KB-008
+Q010,exact_code_or_id,512,hybrid,4,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.0163934426,1,1,KB-008
+Q010,exact_code_or_id,512,hybrid,5,KB-003-C512-0002,KB-003,If the stated,1.3,0.0161290323,0,1,KB-008
+Q011,other,512,dense,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.7892103195,1,1,KB-003
+Q011,other,512,dense,2,KB-003-C512-0002,KB-003,If the stated,1.3,0.7704296112,0,1,KB-003
+Q011,other,512,dense,3,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.7506331801,0,1,KB-003
+Q011,other,512,dense,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.7290870547,0,1,KB-003
+Q011,other,512,dense,5,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.6769533753,0,1,KB-003
+Q011,other,512,bm25,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,11.7762317574,1,1,KB-003
+Q011,other,512,bm25,2,KB-001-C512-0002,KB-001,Return request and inspection,1.0,7.1354591342,0,1,KB-003
+Q011,other,512,bm25,3,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,7.0030354555,0,1,KB-003
+Q011,other,512,bm25,4,KB-003-C512-0002,KB-003,If the stated,1.3,6.1006887457,0,1,KB-003
+Q011,other,512,bm25,5,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,5.7233054029,0,1,KB-003
+Q011,other,512,hybrid,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0327868852,1,1,KB-003
+Q011,other,512,hybrid,2,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0317540323,0,1,KB-003
+Q011,other,512,hybrid,3,KB-003-C512-0002,KB-003,If the stated,1.3,0.0317540323,0,1,KB-003
+Q011,other,512,hybrid,4,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.0312576313,0,1,KB-003
+Q011,other,512,hybrid,5,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0158730159,0,1,KB-003
+Q012,other,512,dense,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.8369246721,1,1,KB-003
+Q012,other,512,dense,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7983560562,0,1,KB-003
+Q012,other,512,dense,3,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7949320674,0,1,KB-003
+Q012,other,512,dense,4,KB-003-C512-0002,KB-003,If the stated,1.3,0.7796998024,0,1,KB-003
+Q012,other,512,dense,5,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.7524866462,0,1,KB-003
+Q012,other,512,bm25,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,7.6323790551,1,1,KB-003
+Q012,other,512,bm25,2,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,7.0669961213,0,1,KB-003
+Q012,other,512,bm25,3,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,6.2871747621,0,1,KB-003
+Q012,other,512,bm25,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,6.1761700760,0,1,KB-003
+Q012,other,512,bm25,5,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,4.5550162168,0,1,KB-003
+Q012,other,512,hybrid,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0327868852,1,1,KB-003
+Q012,other,512,hybrid,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0320020481,0,1,KB-003
+Q012,other,512,hybrid,3,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0161290323,0,1,KB-003
+Q012,other,512,hybrid,4,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0158730159,0,1,KB-003
+Q012,other,512,hybrid,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0156250000,0,1,KB-003
+Q013,other,512,dense,1,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.8369457722,1,1,KB-013
+Q013,other,512,dense,2,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.8197771907,0,1,KB-013
+Q013,other,512,dense,3,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7474914789,0,1,KB-013
+Q013,other,512,dense,4,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,0.7438753843,0,1,KB-013
+Q013,other,512,dense,5,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.7336567640,0,1,KB-013
+Q013,other,512,bm25,1,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,8.9889964778,1,1,KB-013
+Q013,other,512,bm25,2,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,7.1664895056,0,1,KB-013
+Q013,other,512,bm25,3,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,6.4624489552,0,1,KB-013
+Q013,other,512,bm25,4,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,5.5349514930,0,1,KB-013
+Q013,other,512,bm25,5,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,5.5329353239,0,1,KB-013
+Q013,other,512,hybrid,1,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.0327868852,1,1,KB-013
+Q013,other,512,hybrid,2,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.0320020481,0,1,KB-013
+Q013,other,512,hybrid,3,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,0.0317540323,0,1,KB-013
+Q013,other,512,hybrid,4,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0312576313,0,1,KB-013
+Q013,other,512,hybrid,5,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.0156250000,0,1,KB-013
+Q014,other,512,dense,1,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.6649205685,1,1,KB-013
+Q014,other,512,dense,2,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.6299231648,0,1,KB-013
+Q014,other,512,dense,3,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.6271957159,0,1,KB-013
+Q014,other,512,dense,4,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.5785253048,0,1,KB-013
+Q014,other,512,dense,5,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.5759544969,0,1,KB-013
+Q014,other,512,bm25,1,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,7.7758175029,1,1,KB-013
+Q014,other,512,bm25,2,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,5.8887108251,0,1,KB-013
+Q014,other,512,bm25,3,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,3.5379749433,0,1,KB-013
+Q014,other,512,bm25,4,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,3.4117065928,0,1,KB-013
+Q014,other,512,bm25,5,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,3.2385198167,0,1,KB-013
+Q014,other,512,hybrid,1,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.0327868852,1,1,KB-013
+Q014,other,512,hybrid,2,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.0320020481,0,1,KB-013
+Q014,other,512,hybrid,3,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.0317540323,0,1,KB-013
+Q014,other,512,hybrid,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0158730159,0,1,KB-013
+Q014,other,512,hybrid,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0156250000,0,1,KB-013
+Q015,exact_code_or_id,512,dense,1,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.7089461088,1,1,KB-007
+Q015,exact_code_or_id,512,dense,2,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.6855415106,0,1,KB-007
+Q015,exact_code_or_id,512,dense,3,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.5933712721,0,1,KB-007
+Q015,exact_code_or_id,512,dense,4,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.5606912374,0,1,KB-007
+Q015,exact_code_or_id,512,dense,5,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.5498020649,0,1,KB-007
+Q015,exact_code_or_id,512,bm25,1,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,5.5655172250,1,1,KB-007
+Q015,exact_code_or_id,512,bm25,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,3.8573506809,0,1,KB-007
+Q015,exact_code_or_id,512,bm25,3,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,3.1981097556,0,1,KB-007
+Q015,exact_code_or_id,512,bm25,4,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,3.0884360252,0,1,KB-007
+Q015,exact_code_or_id,512,bm25,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,1.7176376136,0,1,KB-007
+Q015,exact_code_or_id,512,hybrid,1,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.0327868852,1,1,KB-007
+Q015,exact_code_or_id,512,hybrid,2,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.0320020481,0,1,KB-007
+Q015,exact_code_or_id,512,hybrid,3,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0310096154,0,1,KB-007
+Q015,exact_code_or_id,512,hybrid,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0161290323,0,1,KB-007
+Q015,exact_code_or_id,512,hybrid,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0158730159,0,1,KB-007
+Q016,other,512,dense,1,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.7706881166,1,1,KB-005
+Q016,other,512,dense,2,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.7190904617,0,1,KB-005
+Q016,other,512,dense,3,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,0.7155879140,0,1,KB-005
+Q016,other,512,dense,4,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6717304587,0,1,KB-005
+Q016,other,512,dense,5,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.6623681188,0,1,KB-005
+Q016,other,512,bm25,1,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,6.4722530078,0,0,KB-005
+Q016,other,512,bm25,2,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,5.7473262062,1,1,KB-005
+Q016,other,512,bm25,3,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,4.9912789443,0,1,KB-005
+Q016,other,512,bm25,4,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,4.4704816007,0,1,KB-005
+Q016,other,512,bm25,5,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,4.1369114507,0,1,KB-005
+Q016,other,512,hybrid,1,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0325224749,1,1,KB-005
+Q016,other,512,hybrid,2,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,0.0322664585,0,1,KB-005
+Q016,other,512,hybrid,3,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.0315136476,0,1,KB-005
+Q016,other,512,hybrid,4,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.0158730159,0,1,KB-005
+Q016,other,512,hybrid,5,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0156250000,0,1,KB-005
+Q017,other,512,dense,1,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.7693401575,1,1,KB-005
+Q017,other,512,dense,2,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,0.7307168245,0,1,KB-005
+Q017,other,512,dense,3,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.7278573513,0,1,KB-005
+Q017,other,512,dense,4,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.6685503721,0,1,KB-005
+Q017,other,512,dense,5,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6630357504,0,1,KB-005
+Q017,other,512,bm25,1,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,7.7940462520,0,0,KB-005
+Q017,other,512,bm25,2,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,6.6842573058,1,1,KB-005
+Q017,other,512,bm25,3,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,5.5095865232,0,1,KB-005
+Q017,other,512,bm25,4,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,4.4704816007,0,1,KB-005
+Q017,other,512,bm25,5,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,4.1357262928,0,1,KB-005
+Q017,other,512,hybrid,1,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0325224749,1,1,KB-005
+Q017,other,512,hybrid,2,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,0.0325224749,0,1,KB-005
+Q017,other,512,hybrid,3,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.0317460317,0,1,KB-005
+Q017,other,512,hybrid,4,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.0156250000,0,1,KB-005
+Q017,other,512,hybrid,5,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0156250000,0,1,KB-005
+Q018,exact_code_or_id,512,dense,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.7579840422,1,1,KB-006
+Q018,exact_code_or_id,512,dense,2,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.7006116509,0,1,KB-006
+Q018,exact_code_or_id,512,dense,3,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.6560820341,0,1,KB-006
+Q018,exact_code_or_id,512,dense,4,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.6511925459,0,1,KB-006
+Q018,exact_code_or_id,512,dense,5,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.6373383999,0,1,KB-006
+Q018,exact_code_or_id,512,bm25,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,12.3138402584,1,1,KB-006
+Q018,exact_code_or_id,512,bm25,2,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,8.7636123132,0,1,KB-006
+Q018,exact_code_or_id,512,bm25,3,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,7.3214512359,0,1,KB-006
+Q018,exact_code_or_id,512,bm25,4,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,5.9882512969,0,1,KB-006
+Q018,exact_code_or_id,512,bm25,5,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,4.8663025416,0,1,KB-006
+Q018,exact_code_or_id,512,hybrid,1,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0327868852,1,1,KB-006
+Q018,exact_code_or_id,512,hybrid,2,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.0322580645,0,1,KB-006
+Q018,exact_code_or_id,512,hybrid,3,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0317460317,0,1,KB-006
+Q018,exact_code_or_id,512,hybrid,4,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.0312500000,0,1,KB-006
+Q018,exact_code_or_id,512,hybrid,5,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0153846154,0,1,KB-006
+Q019,other,512,dense,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.8544921875,1,1,KB-009
+Q019,other,512,dense,2,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.5830199122,0,1,KB-009
+Q019,other,512,dense,3,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.5696716309,0,1,KB-009
+Q019,other,512,dense,4,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.5657968521,0,1,KB-009
+Q019,other,512,dense,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.5594835877,0,1,KB-009
+Q019,other,512,bm25,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,13.3142908976,1,1,KB-009
+Q019,other,512,bm25,2,KB-009-C512-0002,KB-009,Return or warranty path,1.0,3.5388288304,0,1,KB-009
+Q019,other,512,bm25,3,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,3.4662209819,0,1,KB-009
+Q019,other,512,bm25,4,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,2.6378504941,0,1,KB-009
+Q019,other,512,bm25,5,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,2.6314148203,0,1,KB-009
+Q019,other,512,hybrid,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.0327868852,1,1,KB-009
+Q019,other,512,hybrid,2,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0317540323,0,1,KB-009
+Q019,other,512,hybrid,3,KB-009-C512-0002,KB-009,Return or warranty path,1.0,0.0161290323,0,1,KB-009
+Q019,other,512,hybrid,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0158730159,0,1,KB-009
+Q019,other,512,hybrid,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0158730159,0,1,KB-009
+Q020,other,512,dense,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.7684915066,1,1,KB-009
+Q020,other,512,dense,2,KB-009-C512-0002,KB-009,Return or warranty path,1.0,0.5851099491,0,1,KB-009
+Q020,other,512,dense,3,KB-003-C512-0002,KB-003,If the stated,1.3,0.5421359539,0,1,KB-009
+Q020,other,512,dense,4,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.5382685661,0,1,KB-009
+Q020,other,512,dense,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.5372189283,0,1,KB-009
+Q020,other,512,bm25,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,12.4172935357,1,1,KB-009
+Q020,other,512,bm25,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,6.9351626545,0,1,KB-009
+Q020,other,512,bm25,3,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,5.6404154264,0,1,KB-009
+Q020,other,512,bm25,4,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,4.0538250313,0,1,KB-009
+Q020,other,512,bm25,5,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,3.3179635977,0,1,KB-009
+Q020,other,512,hybrid,1,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.0327868852,1,1,KB-009
+Q020,other,512,hybrid,2,KB-009-C512-0002,KB-009,Return or warranty path,1.0,0.0161290323,0,1,KB-009
+Q020,other,512,hybrid,3,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0161290323,0,1,KB-009
+Q020,other,512,hybrid,4,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0158730159,0,1,KB-009
+Q020,other,512,hybrid,5,KB-003-C512-0002,KB-003,If the stated,1.3,0.0158730159,0,1,KB-009
+Q021,other,512,dense,1,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.8259514570,1,1,KB-011
+Q021,other,512,dense,2,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.7687557340,0,1,KB-011
+Q021,other,512,dense,3,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7343050241,0,1,KB-011
+Q021,other,512,dense,4,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7289239764,0,1,KB-011
+Q021,other,512,dense,5,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.7247740626,0,1,KB-011
+Q021,other,512,bm25,1,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,9.3175111632,1,1,KB-011
+Q021,other,512,bm25,2,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,5.7062054144,0,1,KB-011
+Q021,other,512,bm25,3,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,4.8659841049,0,1,KB-011
+Q021,other,512,bm25,4,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,4.6408402711,0,1,KB-011
+Q021,other,512,bm25,5,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,4.3261318785,0,1,KB-011
+Q021,other,512,hybrid,1,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.0327868852,1,1,KB-011
+Q021,other,512,hybrid,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0312576313,0,1,KB-011
+Q021,other,512,hybrid,3,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.0310096154,0,1,KB-011
+Q021,other,512,hybrid,4,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.0161290323,0,1,KB-011
+Q021,other,512,hybrid,5,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.0161290323,0,1,KB-011
+Q022,exact_code_or_id,512,dense,1,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.6232948303,0,0,KB-006
+Q022,exact_code_or_id,512,dense,2,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.6084877253,0,0,KB-006
+Q022,exact_code_or_id,512,dense,3,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.5948770046,0,0,KB-006
+Q022,exact_code_or_id,512,dense,4,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.5920515060,0,0,KB-006
+Q022,exact_code_or_id,512,dense,5,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.5868704319,0,0,KB-006
+Q022,exact_code_or_id,512,bm25,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,6.6954074408,0,0,KB-006
+Q022,exact_code_or_id,512,bm25,2,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,6.5456232824,1,1,KB-006
+Q022,exact_code_or_id,512,bm25,3,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,2.9301140474,0,1,KB-006
+Q022,exact_code_or_id,512,bm25,4,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,2.4629298305,0,1,KB-006
+Q022,exact_code_or_id,512,bm25,5,KB-012-C512-0001,KB-012,ShopSphere Membership Benefits,1.0,2.3236582972,0,1,KB-006
+Q022,exact_code_or_id,512,hybrid,1,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0320020481,0,0,KB-006
+Q022,exact_code_or_id,512,hybrid,2,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,0.0312500000,0,0,KB-006
+Q022,exact_code_or_id,512,hybrid,3,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.0163934426,0,0,KB-006
+Q022,exact_code_or_id,512,hybrid,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0163934426,0,0,KB-006
+Q022,exact_code_or_id,512,hybrid,5,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0161290323,1,1,KB-006
+Q023,other,512,dense,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6840561628,0,0,KB-014
+Q023,other,512,dense,2,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.6685010195,0,0,KB-014
+Q023,other,512,dense,3,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.6594018340,0,0,KB-014
+Q023,other,512,dense,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.6429650187,0,0,KB-014
+Q023,other,512,dense,5,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.6413727999,0,0,KB-014
+Q023,other,512,bm25,1,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,6.8189054865,0,0,KB-014
+Q023,other,512,bm25,2,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,6.7203823874,1,1,KB-014
+Q023,other,512,bm25,3,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,3.8354013266,0,1,KB-014
+Q023,other,512,bm25,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,2.4417605980,0,1,KB-014
+Q023,other,512,bm25,5,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,2.3102561486,0,1,KB-014
+Q023,other,512,hybrid,1,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0317540323,0,0,KB-014
+Q023,other,512,hybrid,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0314980159,0,0,KB-014
+Q023,other,512,hybrid,3,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.0312576313,0,0,KB-014
+Q023,other,512,hybrid,4,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0163934426,0,0,KB-014
+Q023,other,512,hybrid,5,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.0163934426,0,0,KB-014
+Q024,other,512,dense,1,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.6814664602,1,1,KB-014
+Q024,other,512,dense,2,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.6226998568,0,1,KB-014
+Q024,other,512,dense,3,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6092527509,0,1,KB-014
+Q024,other,512,dense,4,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,0.5954973698,0,1,KB-014
+Q024,other,512,dense,5,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.5922090411,0,1,KB-014
+Q024,other,512,bm25,1,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,15.2850365700,1,1,KB-014
+Q024,other,512,bm25,2,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,4.2946286370,0,1,KB-014
+Q024,other,512,bm25,3,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,3.5339737103,0,1,KB-014
+Q024,other,512,bm25,4,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,2.1423491202,0,1,KB-014
+Q024,other,512,bm25,5,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,2.0421994115,0,1,KB-014
+Q024,other,512,hybrid,1,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0327868852,1,1,KB-014
+Q024,other,512,hybrid,2,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.0307692308,0,1,KB-014
+Q024,other,512,hybrid,3,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.0161290323,0,1,KB-014
+Q024,other,512,hybrid,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0161290323,0,1,KB-014
+Q024,other,512,hybrid,5,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0158730159,0,1,KB-014
+Q025,other,512,dense,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7476923466,1,1,KB-002
+Q025,other,512,dense,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7400480509,0,1,KB-002
+Q025,other,512,dense,3,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,0.6978366971,0,1,KB-002
+Q025,other,512,dense,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.6966091394,0,1,KB-002
+Q025,other,512,dense,5,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.6910355091,0,1,KB-002
+Q025,other,512,bm25,1,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,5.6322021113,0,0,KB-002
+Q025,other,512,bm25,2,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,5.5493376627,0,0,KB-002
+Q025,other,512,bm25,3,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,5.4909102868,0,0,KB-002
+Q025,other,512,bm25,4,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,4.8530439910,1,1,KB-002
+Q025,other,512,bm25,5,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,4.4700427344,0,1,KB-002
+Q025,other,512,hybrid,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0320184426,1,1,KB-002
+Q025,other,512,hybrid,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0320020481,0,1,KB-002
+Q025,other,512,hybrid,3,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.0315136476,0,1,KB-002
+Q025,other,512,hybrid,4,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0163934426,0,1,KB-002
+Q025,other,512,hybrid,5,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,0.0158730159,0,1,KB-002
+Q026,paraphrased_no_answer_keyword,512,dense,1,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.6823063493,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,512,dense,2,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.6255476475,1,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,dense,3,KB-003-C512-0002,KB-003,If the stated,1.3,0.6227604151,0,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,dense,4,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.5789108276,0,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,dense,5,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.5757303238,0,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,bm25,1,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,7.3313529394,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,512,bm25,2,KB-012-C512-0001,KB-012,ShopSphere Membership Benefits,1.0,3.7093767297,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,512,bm25,3,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,3.5862613932,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,512,bm25,4,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,3.2795265991,1,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,bm25,5,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,2.9214039676,0,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,hybrid,1,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0327868852,0,0,KB-005
+Q026,paraphrased_no_answer_keyword,512,hybrid,2,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.0161290323,1,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,hybrid,3,KB-012-C512-0001,KB-012,ShopSphere Membership Benefits,1.0,0.0161290323,0,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,hybrid,4,KB-003-C512-0002,KB-003,If the stated,1.3,0.0158730159,0,1,KB-005
+Q026,paraphrased_no_answer_keyword,512,hybrid,5,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0158730159,0,1,KB-005
+Q027,paraphrased_no_answer_keyword,512,dense,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.6754545569,1,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,dense,2,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.6097471714,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,dense,3,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,0.5996854305,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,dense,4,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.5873216391,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,dense,5,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.5861573219,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,bm25,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,8.3177921319,1,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,bm25,2,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,4.8380944742,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,bm25,3,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,4.4334185963,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,bm25,4,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,4.0265065158,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,bm25,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,3.9144131800,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,hybrid,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0327868852,1,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,hybrid,2,KB-007-C512-0002,KB-007,The assistant should explain errors in plain,1.2,0.0161290323,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,hybrid,3,KB-015-C512-0001,KB-015,"Gift Cards, Discount Codes and Promotion Rules",1.2,0.0161290323,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,hybrid,4,KB-004-C512-0002,KB-004,Stock and failed exchange,1.1,0.0158730159,0,1,KB-010
+Q027,paraphrased_no_answer_keyword,512,hybrid,5,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.0158730159,0,1,KB-010
+Q028,paraphrased_no_answer_keyword,512,dense,1,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.6739960909,1,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,dense,2,KB-003-C512-0002,KB-003,If the stated,1.3,0.6730504632,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,dense,3,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6700057983,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,dense,4,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.6631527543,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,dense,5,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.6562491655,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,bm25,1,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,9.1729710213,1,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,bm25,2,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,8.8515207650,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,bm25,3,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,8.3582686044,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,bm25,4,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,5.4187107619,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,bm25,5,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,5.1538100286,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,hybrid,1,KB-008-C512-0001,KB-008,Payment Methods and Payment Reference Codes,1.5,0.0327868852,1,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,hybrid,2,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.0320020481,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,hybrid,3,KB-003-C512-0002,KB-003,If the stated,1.3,0.0161290323,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,hybrid,4,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0158730159,0,1,KB-008
+Q028,paraphrased_no_answer_keyword,512,hybrid,5,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.0156250000,0,1,KB-008
+Q029,paraphrased_no_answer_keyword,512,dense,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.6671392918,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,512,dense,2,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.6518247128,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,512,dense,3,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.6510804892,1,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,dense,4,KB-003-C512-0002,KB-003,If the stated,1.3,0.6420501471,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,dense,5,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6257409453,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,bm25,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,7.8226121587,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,512,bm25,2,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,7.2422121035,1,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,bm25,3,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,7.2160763955,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,bm25,4,KB-007-C512-0001,KB-007,Return Authorisation and Error Codes,1.2,5.8690308385,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,bm25,5,KB-009-C512-0001,KB-009,Wireless Audio Products and Warranty,1.0,4.9814999287,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,hybrid,1,KB-010-C512-0001,KB-010,"Damaged, Incorrect or Missing Items",1.2,0.0327868852,0,0,KB-013
+Q029,paraphrased_no_answer_keyword,512,hybrid,2,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.0320020481,1,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,hybrid,3,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.0161290323,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,hybrid,4,KB-014-C512-0001,KB-014,Customer Support Service Levels and Escalation,1.0,0.0158730159,0,1,KB-013
+Q029,paraphrased_no_answer_keyword,512,hybrid,5,KB-003-C512-0002,KB-003,If the stated,1.3,0.0156250000,0,1,KB-013
+Q030,other,512,dense,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.7566130161,1,1,KB-002
+Q030,other,512,dense,2,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.7453173399,0,1,KB-002
+Q030,other,512,dense,3,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.7419058681,0,1,KB-002
+Q030,other,512,dense,4,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.6908107996,0,1,KB-002
+Q030,other,512,dense,5,KB-003-C512-0001,KB-003,Refund Processing and Payment Timelines,1.3,0.6894720793,0,1,KB-002
+Q030,other,512,bm25,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,14.3221868346,1,1,KB-002
+Q030,other,512,bm25,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,11.1422270303,0,1,KB-002
+Q030,other,512,bm25,3,KB-001-C512-0002,KB-001,Return request and inspection,1.0,10.3351688486,0,1,KB-002
+Q030,other,512,bm25,4,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,6.6678923712,0,1,KB-002
+Q030,other,512,bm25,5,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,5.3247679283,0,1,KB-002
+Q030,other,512,hybrid,1,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.0327868852,1,1,KB-002
+Q030,other,512,hybrid,2,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.0320020481,0,1,KB-002
+Q030,other,512,hybrid,3,KB-001-C512-0002,KB-001,Return request and inspection,1.0,0.0320020481,0,1,KB-002
+Q030,other,512,hybrid,4,KB-002-C512-0002,KB-002,Excluded products and exceptions,2.0,0.0156250000,0,1,KB-002
+Q030,other,512,hybrid,5,KB-004-C512-0001,KB-004,Product Exchange Policy,1.1,0.0156250000,0,1,KB-002
+Q031,paraphrased_no_answer_keyword,512,dense,1,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.6686449647,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,512,dense,2,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.6675003171,0,0,KB-016
+Q031,paraphrased_no_answer_keyword,512,dense,3,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.6546412110,1,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,dense,4,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,0.6384050250,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,dense,5,KB-013-C512-0001,KB-013,Reverse Pickup Scheduling and Packaging Guide,1.3,0.6220488548,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,bm25,1,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,12.1457993745,1,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,bm25,2,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,8.3979784819,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,bm25,3,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,8.1631052283,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,bm25,4,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,8.0406106014,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,bm25,5,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,5.9984530750,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,hybrid,1,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.0322664585,1,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,hybrid,2,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,0.0317540323,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,hybrid,3,KB-005-C512-0002,KB-005,Late or lost shipments,2.2,0.0163934426,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,hybrid,4,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0161290323,0,1,KB-016
+Q031,paraphrased_no_answer_keyword,512,hybrid,5,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.0158730159,0,1,KB-016
+Q032,other,512,dense,1,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.7741944790,0,0,KB-005
+Q032,other,512,dense,2,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,0.7212939262,0,0,KB-005
+Q032,other,512,dense,3,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.7099792361,1,1,KB-005
+Q032,other,512,dense,4,KB-002-C512-0001,KB-002,Returns and Refunds Policy — 2026 (Current),2.0,0.6721485257,0,1,KB-005
+Q032,other,512,dense,5,KB-001-C512-0001,KB-001,Returns and Refunds Policy — 2025 (Superseded),1.0,0.6613512039,0,1,KB-005
+Q032,other,512,bm25,1,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,16.4052214457,0,0,KB-005
+Q032,other,512,bm25,2,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,9.6866572398,0,0,KB-005
+Q032,other,512,bm25,3,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,8.5236037475,0,0,KB-005
+Q032,other,512,bm25,4,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,8.4832127693,0,0,KB-005
+Q032,other,512,bm25,5,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,7.4465332725,1,1,KB-005
+Q032,other,512,hybrid,1,KB-016-C512-0001,KB-016,Shipping and Delivery Policy — 2025 (Superseded),1.0,0.0327868852,0,0,KB-005
+Q032,other,512,hybrid,2,KB-016-C512-0002,KB-016,"Shipping fees were calculated at checkout using the service,",1.0,0.0317540323,0,0,KB-005
+Q032,other,512,hybrid,3,KB-005-C512-0001,KB-005,"Shipping, Delivery and Delivery Windows",2.2,0.0312576313,1,1,KB-005
+Q032,other,512,hybrid,4,KB-011-C512-0001,KB-011,Order Cancellation Policy,1.1,0.0161290323,0,1,KB-005
+Q032,other,512,hybrid,5,KB-006-C512-0001,KB-006,Order and Shipment Status Codes,1.4,0.0158730159,0,1,KB-005
