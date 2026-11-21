@@ -1,0 +1,6 @@
+{
+  "status": "pending_release",
+  "release_date": "2026-11-24",
+  "probes": [],
+  "note": "Populate with the five LMS surprise probes on release. Preserve their wording and add domain-specific expected behaviour; do not invent the LMS probes in advance."
+}

@@ -1,0 +1,30 @@
+{
+  "synthetic_fixture": true,
+  "slots": [
+    {
+      "slot_id": "PICK-20261128-E1",
+      "date": "2026-11-28",
+      "window_start": "18:00",
+      "window_end": "20:00",
+      "postal_area": "Bengaluru",
+      "status": "available"
+    },
+    {
+      "slot_id": "PICK-20261128-E2",
+      "date": "2026-11-28",
+      "window_start": "20:00",
+      "window_end": "22:00",
+      "postal_area": "Bengaluru",
+      "status": "available"
+    },
+    {
+      "slot_id": "PICK-20261127-E1",
+      "date": "2026-11-27",
+      "window_start": "18:00",
+      "window_end": "20:00",
+      "postal_area": "Bengaluru",
+      "status": "available"
+    }
+  ],
+  "note": "These are deterministic test slots only. The later scheduler tool must check actual fixture state and only return available options."
+}

@@ -1,0 +1,36 @@
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Model downloads and caches
+.cache/
+hf_cache/
+models/
+
+# Temporary files
+*.log
+*.tmp
+
+# Keep generated evidence and final memory in the project submission; do not ignore logs/results.

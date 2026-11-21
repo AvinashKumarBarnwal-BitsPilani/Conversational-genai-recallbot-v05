@@ -1,0 +1,97 @@
+{
+  "customers": [
+    {
+      "customer_id": "CUST-MAYA-1042",
+      "display_name": "Maya Rao",
+      "membership_tier": "Gold",
+      "city": "Bengaluru"
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "ORD-74021",
+      "customer_id": "CUST-MAYA-1042",
+      "order_date": "2026-11-12",
+      "delivery_date": "2026-11-15",
+      "order_status": "ORD-DEL",
+      "payment_method": "UPI",
+      "payment_status": "PAY-CAP",
+      "items": [
+        {
+          "sku": "SKU-AUR-220",
+          "name": "AUR-220 Wireless Earbuds",
+          "quantity": 1,
+          "unit_price": 2499,
+          "category": "electronics"
+        },
+        {
+          "sku": "SKU-PHC-11",
+          "name": "Protective Phone Case",
+          "quantity": 1,
+          "unit_price": 499,
+          "category": "accessory"
+        }
+      ],
+      "existing_return": null,
+      "saved_address_id": "ADDR-MAYA-01",
+      "address_summary": "Customer saved Bengaluru delivery address (masked summary)"
+    },
+    {
+      "order_id": "ORD-88216",
+      "customer_id": "CUST-MAYA-1042",
+      "order_date": "2026-11-08",
+      "delivery_date": "2026-11-17",
+      "order_status": "ORD-DEL",
+      "payment_method": "Card",
+      "payment_status": "PAY-CAP",
+      "items": [
+        {
+          "sku": "SKU-BAG-410",
+          "name": "Everyday Laptop Bag",
+          "quantity": 1,
+          "unit_price": 1899,
+          "category": "bags"
+        }
+      ],
+      "delivery_note": "Customer reported late delivery; complaint outcome must come from an actual case tool run."
+    },
+    {
+      "order_id": "ORD-66310",
+      "customer_id": "CUST-MAYA-1042",
+      "order_date": "2026-10-18",
+      "delivery_date": "2026-10-21",
+      "order_status": "ORD-DEL",
+      "payment_method": "UPI",
+      "payment_status": "PAY-CAP",
+      "items": [
+        {
+          "sku": "SKU-CHG-45",
+          "name": "45W USB-C Charger",
+          "quantity": 1,
+          "unit_price": 1299,
+          "category": "electronics"
+        }
+      ],
+      "customer_decision_episode": "Customer said they chose an exchange rather than a refund."
+    },
+    {
+      "order_id": "ORD-55208",
+      "customer_id": "CUST-MAYA-1042",
+      "order_date": "2026-11-19",
+      "delivery_date": null,
+      "order_status": "ORD-SHIP",
+      "payment_method": "Card",
+      "payment_status": "PAY-CAP",
+      "items": [
+        {
+          "sku": "SKU-MUG-02",
+          "name": "Ceramic Travel Mug",
+          "quantity": 1,
+          "unit_price": 699,
+          "category": "home"
+        }
+      ],
+      "shipment_status": "SHP-TRANS"
+    }
+  ]
+}

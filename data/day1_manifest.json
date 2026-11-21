@@ -1,0 +1,33 @@
+{
+  "variant": "V05",
+  "domain": "E-commerce orders and returns",
+  "twist": "E",
+  "context_window_tokens": 2048,
+  "trim_window_k_turns": 3,
+  "kb_document_count": 16,
+  "kb_word_count": 6579,
+  "kb_word_count_by_file": {
+    "damaged_wrong_missing_items.md": 408,
+    "exchange_policy.md": 423,
+    "gift_cards_promotions.md": 357,
+    "membership_benefits.md": 333,
+    "order_cancellation_policy.md": 349,
+    "order_status_codes.md": 359,
+    "payment_methods_and_codes.md": 396,
+    "refund_processing_guide.md": 454,
+    "return_authorisation_and_error_codes.md": 421,
+    "returns_policy_2025_v1.md": 460,
+    "returns_policy_2026_v2.md": 529,
+    "reverse_pickup_and_packaging.md": 415,
+    "shipping_delivery_policy.md": 488,
+    "shipping_delivery_policy_2025_v1.md": 446,
+    "support_sla_and_escalation.md": 352,
+    "wireless_audio_warranty.md": 389
+  },
+  "kb_question_count": 32,
+  "conversation_turn_count": 40,
+  "probe_count": 16,
+  "twist_probe_count": 2,
+  "created_on": "2026-11-21",
+  "synthetic_data": true
+}

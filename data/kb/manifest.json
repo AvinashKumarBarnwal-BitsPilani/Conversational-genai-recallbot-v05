@@ -1,0 +1,146 @@
+[
+  {
+    "doc_id": "KB-001",
+    "file": "returns_policy_2025_v1.md",
+    "title": "Returns and Refunds Policy — 2025 (Superseded)",
+    "effective_from": "2025-01-01",
+    "effective_to": "2025-12-31",
+    "status": "superseded",
+    "version_control": "delivery_date"
+  },
+  {
+    "doc_id": "KB-002",
+    "file": "returns_policy_2026_v2.md",
+    "title": "Returns and Refunds Policy — 2026 (Current)",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "delivery_date"
+  },
+  {
+    "doc_id": "KB-003",
+    "file": "refund_processing_guide.md",
+    "title": "Refund Processing and Payment Timelines",
+    "effective_from": "2026-02-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-004",
+    "file": "exchange_policy.md",
+    "title": "Product Exchange Policy",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-005",
+    "file": "shipping_delivery_policy.md",
+    "title": "Shipping, Delivery and Delivery Windows",
+    "effective_from": "2026-03-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "order_created_date"
+  },
+  {
+    "doc_id": "KB-006",
+    "file": "order_status_codes.md",
+    "title": "Order and Shipment Status Codes",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-007",
+    "file": "return_authorisation_and_error_codes.md",
+    "title": "Return Authorisation and Error Codes",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-008",
+    "file": "payment_methods_and_codes.md",
+    "title": "Payment Methods and Payment Reference Codes",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-009",
+    "file": "wireless_audio_warranty.md",
+    "title": "Wireless Audio Products and Warranty",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-010",
+    "file": "damaged_wrong_missing_items.md",
+    "title": "Damaged, Incorrect or Missing Items",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-011",
+    "file": "order_cancellation_policy.md",
+    "title": "Order Cancellation Policy",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-012",
+    "file": "membership_benefits.md",
+    "title": "ShopSphere Membership Benefits",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-013",
+    "file": "reverse_pickup_and_packaging.md",
+    "title": "Reverse Pickup Scheduling and Packaging Guide",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-014",
+    "file": "support_sla_and_escalation.md",
+    "title": "Customer Support Service Levels and Escalation",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-015",
+    "file": "gift_cards_promotions.md",
+    "title": "Gift Cards, Discount Codes and Promotion Rules",
+    "effective_from": "2026-01-01",
+    "effective_to": "open",
+    "status": "active",
+    "version_control": "effective_date"
+  },
+  {
+    "doc_id": "KB-016",
+    "file": "shipping_delivery_policy_2025_v1.md",
+    "title": "Shipping and Delivery Policy — 2025 (Superseded)",
+    "effective_from": "2025-01-01",
+    "effective_to": "2025-12-31",
+    "status": "superseded",
+    "version_control": "order_created_date"
+  }
+]

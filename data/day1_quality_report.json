@@ -1,0 +1,13 @@
+{
+  "kb_docs": 16,
+  "kb_words": 6579,
+  "kb_questions": 32,
+  "exact_id_questions": 10,
+  "paraphrase_questions": 5,
+  "version_sensitive_questions": 7,
+  "conversation_turns": 40,
+  "session_a": 25,
+  "session_b": 15,
+  "probes": 16,
+  "twist_probes": 2
+}

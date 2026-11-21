@@ -1,0 +1,200 @@
+[
+  {
+    "probe_id": "P01",
+    "category": "R",
+    "session": "B",
+    "turn": 27,
+    "question": "Which delivery window did I most recently ask you to save?",
+    "expected": "19:00-21:00 (7 pm to 9 pm)",
+    "expected_behavior": "Recall the updated semantic fact, not the superseded 6 pm to 9 pm value.",
+    "source_turns": [
+      7,
+      19
+    ]
+  },
+  {
+    "probe_id": "P02",
+    "category": "R",
+    "session": "B",
+    "turn": 27,
+    "question": "Which city do I usually use for delivery?",
+    "expected": "Bengaluru",
+    "expected_behavior": "Retrieve the semantic profile fact planted once in Session A.",
+    "source_turns": [
+      5
+    ]
+  },
+  {
+    "probe_id": "P03",
+    "category": "U",
+    "session": "B",
+    "turn": 27,
+    "question": "Which channel should routine updates use now?",
+    "expected": "SMS",
+    "expected_behavior": "Return latest value; email must be superseded.",
+    "source_turns": [
+      4,
+      20
+    ]
+  },
+  {
+    "probe_id": "P04",
+    "category": "F",
+    "session": "B",
+    "turn": 30,
+    "question": "What delivery note did I ask you to forget?",
+    "expected": "The bot must state that the note is no longer retained and must not reveal its content.",
+    "expected_behavior": "Deleted fact must not leak from semantic, episodic, reflection or persisted history stores.",
+    "source_turns": [
+      6,
+      24
+    ]
+  },
+  {
+    "probe_id": "P05",
+    "category": "E",
+    "session": "B",
+    "turn": 28,
+    "question": "What pickup did we arrange for my earbuds, and when?",
+    "expected": "Return pickup for SKU-AUR-220 in ORD-74021 on 28 November 2026 after 6 pm; include actual booking/RMA reference if successfully created.",
+    "expected_behavior": "Retrieve the timestamped return-booking episode from disk after restart.",
+    "source_turns": [
+      12,
+      13,
+      14,
+      15,
+      23
+    ]
+  },
+  {
+    "probe_id": "P06",
+    "category": "E",
+    "session": "B",
+    "turn": 29,
+    "question": "What delivery issue did I ask you to register earlier?",
+    "expected": "A late-delivery issue for order ORD-88216; do not invent a formal case reference.",
+    "expected_behavior": "Retrieve the complaint episode from persistent storage; distinguish a customer-reported issue from an official support case.",
+    "source_turns": [
+      10
+    ]
+  },
+  {
+    "probe_id": "P07",
+    "category": "K",
+    "session": "B",
+    "turn": 31,
+    "question": "For an electronics order delivered in November 2026, what is the return window?",
+    "expected": "14 calendar days from delivery under KB-002 (RET-E14).",
+    "expected_behavior": "Ground answer in current policy and cite KB-002; do not use KB-001's historical 7-day rule.",
+    "document_id": "KB-002"
+  },
+  {
+    "probe_id": "P08",
+    "category": "K",
+    "session": "A",
+    "turn": 18,
+    "question": "What does ERR-RMA-04 mean?",
+    "expected": "A return reason is missing or invalid.",
+    "expected_behavior": "Ground answer in KB-007 with the relevant chunk/document citation.",
+    "document_id": "KB-007"
+  },
+  {
+    "probe_id": "P09",
+    "category": "N",
+    "session": "B",
+    "turn": 30,
+    "question": "What is my pet's name?",
+    "expected": "The bot must say it does not know; no such fact is stored in the profile or KB.",
+    "expected_behavior": "Do not invent a personal fact."
+  },
+  {
+    "probe_id": "P10",
+    "category": "S",
+    "session": "A",
+    "turn": 15,
+    "question": "And for Saturday, can it be after 6 pm?",
+    "expected": "Resolve Saturday as the pickup date already being discussed; check an available slot after 6 pm or ask the user to choose among returned slots.",
+    "expected_behavior": "Use active slot-filling state; do not ask which Saturday unless required by the scheduler.",
+    "source_turns": [
+      12,
+      13,
+      14
+    ]
+  },
+  {
+    "probe_id": "P11",
+    "category": "S",
+    "session": "B",
+    "turn": 33,
+    "question": "And what happens next after the pickup is completed?",
+    "expected": "Explain the existing return flow: returns-centre receipt, inspection, then refund initiation if accepted.",
+    "expected_behavior": "Resolve follow-up from the active order/return state and KB context.",
+    "source_turns": [
+      23,
+      32
+    ],
+    "document_id": "KB-003"
+  },
+  {
+    "probe_id": "P12",
+    "category": "N",
+    "session": "B",
+    "turn": 37,
+    "question": "Can you book a pickup for the other item as well?",
+    "expected": "Ask which order and item the customer means; do not create a booking.",
+    "expected_behavior": "Clarify missing order/item slots before any write."
+  },
+  {
+    "probe_id": "P13",
+    "category": "E",
+    "session": "B",
+    "turn": 28,
+    "question": "Which choice did I make for the USB-C charger order?",
+    "expected": "The customer chose an exchange rather than a refund for ORD-66310.",
+    "expected_behavior": "Retrieve the decision episode rather than infer from current earbuds return.",
+    "source_turns": [
+      17
+    ]
+  },
+  {
+    "probe_id": "P14",
+    "category": "K",
+    "session": "B",
+    "turn": 35,
+    "question": "How soon is a UPI refund normally initiated after the return inspection is accepted?",
+    "expected": "Within 1 business day; this is initiation, not bank posting.",
+    "expected_behavior": "Ground in KB-003 and distinguish initiation from posting.",
+    "document_id": "KB-003"
+  },
+  {
+    "probe_id": "P15",
+    "category": "TWIST_SMALL_CONTEXT",
+    "session": "B",
+    "turn": 39,
+    "question": "When the combined instructions, recent conversation, retrieved chunks and memories exceed 2,048 tokens, what should RecallBot do?",
+    "expected": "Enforce the 2,048-token input budget, prioritise system instructions and current task/state, include only the highest-value memories and chunks, trim lower-priority history/content, reserve output tokens, and record what was cut.",
+    "expected_behavior": "Demonstrate actual tokenizer counts, selected items and dropped items in the context assembly trace; keep the complete input within 2,048 tokens and reserve response tokens.",
+    "twist": "E",
+    "source_turns": [
+      1,
+      25,
+      26,
+      39
+    ]
+  },
+  {
+    "probe_id": "P16",
+    "category": "TWIST_SMALL_CONTEXT",
+    "session": "B",
+    "turn": 27,
+    "question": "Can you still recall my latest delivery preference even though it is older than the last three turns?",
+    "expected": "19:00-21:00 (7 pm to 9 pm), retrieved from persistent semantic memory rather than relying only on the last three raw turns.",
+    "expected_behavior": "Show that k=3 applies to short-term raw history while the relevant semantic fact can still be retrieved within the token budget.",
+    "twist": "E",
+    "source_turns": [
+      19,
+      26,
+      27
+    ]
+  }
+]

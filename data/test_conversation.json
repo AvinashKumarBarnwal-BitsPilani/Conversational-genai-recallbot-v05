@@ -1,0 +1,536 @@
+{
+  "project": "RecallBot V05 Mini Project 1",
+  "domain": "E-commerce orders and returns",
+  "variant": "V05",
+  "twist": "E - Small context window",
+  "context_window_tokens": 2048,
+  "trim_window_k_turns": 3,
+  "date_context": "2026-11-21",
+  "user_id": "CUST-MAYA-1042",
+  "session_boundary": {
+    "Session A": {
+      "first_turn": 1,
+      "last_turn": 25
+    },
+    "Session B": {
+      "first_turn": 26,
+      "last_turn": 40
+    }
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "session": "A",
+      "role": "user",
+      "text": "Hi there!",
+      "assistant_expected": "Greet the customer warmly; no memory write.",
+      "tags": [
+        "low_importance"
+      ]
+    },
+    {
+      "turn": 2,
+      "session": "A",
+      "role": "user",
+      "text": "My name is Maya Rao. Please call me Maya.",
+      "assistant_expected": "Acknowledge and extract preferred_name=Maya.",
+      "tags": [
+        "fact:preferred_name"
+      ]
+    },
+    {
+      "turn": 3,
+      "session": "A",
+      "role": "user",
+      "text": "Thanks, that's helpful.",
+      "assistant_expected": "Brief acknowledgement; no memory write.",
+      "tags": [
+        "low_importance"
+      ]
+    },
+    {
+      "turn": 4,
+      "session": "A",
+      "role": "user",
+      "text": "Email is the best way to send me routine order updates.",
+      "assistant_expected": "Extract notification_channel=email.",
+      "tags": [
+        "fact:notification_channel"
+      ]
+    },
+    {
+      "turn": 5,
+      "session": "A",
+      "role": "user",
+      "text": "I usually place orders for delivery in Bengaluru.",
+      "assistant_expected": "Extract preferred_city=Bengaluru.",
+      "tags": [
+        "fact:preferred_city"
+      ]
+    },
+    {
+      "turn": 6,
+      "session": "A",
+      "role": "user",
+      "text": "If I am not home, leave small parcels at the side door when the carrier permits it.",
+      "assistant_expected": "Extract delivery_note=side door; store as a deletable profile fact.",
+      "tags": [
+        "fact:delivery_note",
+        "episode:preference_update"
+      ]
+    },
+    {
+      "turn": 7,
+      "session": "A",
+      "role": "user",
+      "text": "My preferred delivery time is between 6 pm and 9 pm.",
+      "assistant_expected": "Extract preferred_delivery_window=18:00-21:00.",
+      "tags": [
+        "fact:preferred_delivery_window"
+      ]
+    },
+    {
+      "turn": 8,
+      "session": "A",
+      "role": "user",
+      "text": "For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",
+      "assistant_expected": "Extract return_method_preference=home_pickup.",
+      "tags": [
+        "fact:return_method_preference"
+      ]
+    },
+    {
+      "turn": 9,
+      "session": "A",
+      "role": "user",
+      "text": "Please use recyclable packaging whenever that option is available.",
+      "assistant_expected": "Extract packaging_preference=recyclable.",
+      "tags": [
+        "fact:packaging_preference"
+      ]
+    },
+    {
+      "turn": 10,
+      "session": "A",
+      "role": "user",
+      "text": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+      "assistant_expected": "Read the order and record the customer-reported late-delivery complaint as an important episode; do not claim an official case was created unless a real case tool returns a case ID.",
+      "tags": [
+        "episode:complaint",
+        "tool:order_read"
+      ]
+    },
+    {
+      "turn": 11,
+      "session": "A",
+      "role": "user",
+      "text": "Okay, thank you.",
+      "assistant_expected": "Acknowledge; no memory write.",
+      "tags": [
+        "low_importance"
+      ]
+    },
+    {
+      "turn": 12,
+      "session": "A",
+      "role": "user",
+      "text": "I need to return the wireless earbuds from order ORD-74021.",
+      "assistant_expected": "Read the order; identify SKU-AUR-220; ask for the return reason. Do not write yet.",
+      "tags": [
+        "slot_task:start",
+        "tool:get_order"
+      ]
+    },
+    {
+      "turn": 13,
+      "session": "A",
+      "role": "user",
+      "text": "The left earbud does not charge even after I tried the charging case.",
+      "assistant_expected": "Set reason=defective_left_earbud; ask for a pickup date.",
+      "tags": [
+        "slot:reason"
+      ]
+    },
+    {
+      "turn": 14,
+      "session": "A",
+      "role": "user",
+      "text": "Saturday, 28 November 2026 would work.",
+      "assistant_expected": "Set pickup_date=2026-11-28; ask for a time window or retrieve available slots.",
+      "tags": [
+        "slot:pickup_date"
+      ]
+    },
+    {
+      "turn": 15,
+      "session": "A",
+      "role": "user",
+      "text": "And for Saturday, please make it after 6 pm.",
+      "assistant_expected": "Resolve the follow-up against the active pickup task; select an available evening slot only if scheduler confirms it.",
+      "tags": [
+        "state_followup",
+        "slot:pickup_window"
+      ]
+    },
+    {
+      "turn": 16,
+      "session": "A",
+      "role": "user",
+      "text": "Before we continue, what is the electronics return window under the current policy?",
+      "assistant_expected": "Answer from KB-002 with its citation; do not use the 2025 rule.",
+      "tags": [
+        "kb_question"
+      ]
+    },
+    {
+      "turn": 17,
+      "session": "A",
+      "role": "user",
+      "text": "I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month.",
+      "assistant_expected": "Record a decision episode; do not infer this choice applies to the current earbuds.",
+      "tags": [
+        "episode:decision"
+      ]
+    },
+    {
+      "turn": 18,
+      "session": "A",
+      "role": "user",
+      "text": "What does code ERR-RMA-04 mean?",
+      "assistant_expected": "Answer from KB-007 and cite the source chunk.",
+      "tags": [
+        "kb_question",
+        "exact_code"
+      ]
+    },
+    {
+      "turn": 19,
+      "session": "A",
+      "role": "user",
+      "text": "My preferred delivery window has changed to 7 pm to 9 pm.",
+      "assistant_expected": "Supersede the earlier 18:00-21:00 fact; retain the latest value only as active.",
+      "tags": [
+        "fact_update:preferred_delivery_window"
+      ]
+    },
+    {
+      "turn": 20,
+      "session": "A",
+      "role": "user",
+      "text": "Please use SMS instead of email for future routine updates.",
+      "assistant_expected": "Supersede notification_channel=email with notification_channel=SMS.",
+      "tags": [
+        "fact_update:notification_channel"
+      ]
+    },
+    {
+      "turn": 21,
+      "session": "A",
+      "role": "user",
+      "text": "What happens if the driver misses my return pickup?",
+      "assistant_expected": "Answer using KB-013; explain rescheduling on existing RMA, not creating a duplicate.",
+      "tags": [
+        "kb_question"
+      ]
+    },
+    {
+      "turn": 22,
+      "session": "A",
+      "role": "user",
+      "text": "Please repeat the complete return pickup summary so I can confirm it.",
+      "assistant_expected": "Re-present the order, AUR-220 item, defective-left-earbud reason, 28 November date, after-6-pm window and saved-address summary; ask for explicit confirmation. Do not write yet.",
+      "tags": [
+        "state_followup",
+        "kb_question"
+      ]
+    },
+    {
+      "turn": 23,
+      "session": "A",
+      "role": "user",
+      "text": "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.",
+      "assistant_expected": "Only now invoke the database write after revalidating the selected slot; record return/pickup and report the real returned reference.",
+      "tags": [
+        "slot_task:confirmed_write",
+        "episode:return_booking",
+        "tool:database_write"
+      ]
+    },
+    {
+      "turn": 24,
+      "session": "A",
+      "role": "user",
+      "text": "Please forget my saved delivery note about leaving parcels at the side door.",
+      "assistant_expected": "Delete delivery_note from semantic store and any episode/reflection that repeats it; confirm deletion without repeating the value unnecessarily.",
+      "tags": [
+        "forget:delivery_note"
+      ]
+    },
+    {
+      "turn": 25,
+      "session": "A",
+      "role": "user",
+      "text": "Perfect, thanks. Have a good day!",
+      "assistant_expected": "Close politely; no memory write.",
+      "tags": [
+        "low_importance"
+      ]
+    },
+    {
+      "turn": 26,
+      "session": "B",
+      "role": "user",
+      "text": "Hello again, I'm back.",
+      "assistant_expected": "Start Session B in a fresh process; load persistent state from disk.",
+      "tags": [
+        "low_importance",
+        "session_restart"
+      ]
+    },
+    {
+      "turn": 27,
+      "session": "B",
+      "role": "user",
+      "text": "What delivery window do I currently prefer?",
+      "assistant_expected": "Retrieve latest semantic fact: 19:00-21:00.",
+      "tags": [
+        "probe:updated_fact"
+      ]
+    },
+    {
+      "turn": 28,
+      "session": "B",
+      "role": "user",
+      "text": "What did we arrange for my earbuds last time?",
+      "assistant_expected": "Retrieve the return pickup episode, including date/time and actual RMA reference if created.",
+      "tags": [
+        "probe:episodic_recall"
+      ]
+    },
+    {
+      "turn": 29,
+      "session": "B",
+      "role": "user",
+      "text": "What problem did I ask you to register earlier?",
+      "assistant_expected": "Retrieve the delayed-delivery complaint episode for ORD-88216 and its recorded case status.",
+      "tags": [
+        "probe:episodic_recall"
+      ]
+    },
+    {
+      "turn": 30,
+      "session": "B",
+      "role": "user",
+      "text": "What was the delivery note I asked you to forget?",
+      "assistant_expected": "Do not reveal the deleted delivery note from semantic memory, episodes, reflection or history summary; say it is no longer retained.",
+      "tags": [
+        "probe:forgotten"
+      ]
+    },
+    {
+      "turn": 31,
+      "session": "B",
+      "role": "user",
+      "text": "For a 2026 delivery, how many days do I have to return electronic accessories?",
+      "assistant_expected": "Retrieve current KB-002 only and cite its chunk/document ID.",
+      "tags": [
+        "kb_question",
+        "probe:kb"
+      ]
+    },
+    {
+      "turn": 32,
+      "session": "B",
+      "role": "user",
+      "text": "Can you check the latest status of order ORD-74021?",
+      "assistant_expected": "Use get_order and report current order/return status from database.",
+      "tags": [
+        "tool:get_order"
+      ]
+    },
+    {
+      "turn": 33,
+      "session": "B",
+      "role": "user",
+      "text": "And what happens next after the pickup is completed?",
+      "assistant_expected": "Resolve against return state; explain receipt, inspection and refund stages using KB-003.",
+      "tags": [
+        "state_followup",
+        "kb_question"
+      ]
+    },
+    {
+      "turn": 34,
+      "session": "B",
+      "role": "user",
+      "text": "What does RMA-BOOK mean?",
+      "assistant_expected": "Retrieve KB-007 and explain that a pickup slot is confirmed; cite source.",
+      "tags": [
+        "kb_question",
+        "exact_code"
+      ]
+    },
+    {
+      "turn": 35,
+      "session": "B",
+      "role": "user",
+      "text": "How long does ShopSphere normally take to start a UPI refund after inspection acceptance?",
+      "assistant_expected": "Retrieve KB-003; distinguish initiation from bank posting.",
+      "tags": [
+        "kb_question"
+      ]
+    },
+    {
+      "turn": 36,
+      "session": "B",
+      "role": "user",
+      "text": "I want to cancel order ORD-55208. Can you check whether that's possible?",
+      "assistant_expected": "Read the order; if shipped, explain standard cancellation unavailable and do not write.",
+      "tags": [
+        "tool:get_order",
+        "clarification_or_refusal"
+      ]
+    },
+    {
+      "turn": 37,
+      "session": "B",
+      "role": "user",
+      "text": "Can you book a pickup for the other item as well?",
+      "assistant_expected": "Ask which order and item; do not infer an item or create a pickup.",
+      "tags": [
+        "requires_clarification"
+      ]
+    },
+    {
+      "turn": 38,
+      "session": "B",
+      "role": "user",
+      "text": "Got it, appreciate your help.",
+      "assistant_expected": "Acknowledge; low importance.",
+      "tags": [
+        "low_importance"
+      ]
+    },
+    {
+      "turn": 39,
+      "session": "B",
+      "role": "user",
+      "text": "What is the exact token limit your assistant is configured to respect?",
+      "assistant_expected": "Explain project context budget is 2,048 tokens; show budget logic rather than assuming history alone fits.",
+      "tags": [
+        "twist:context_budget"
+      ]
+    },
+    {
+      "turn": 40,
+      "session": "B",
+      "role": "user",
+      "text": "That's all for now. Bye!",
+      "assistant_expected": "Close politely; no memory write.",
+      "tags": [
+        "low_importance"
+      ]
+    }
+  ],
+  "planted_user_facts": [
+    {
+      "key": "preferred_name",
+      "value": "Maya",
+      "source_turn": 2,
+      "updated_by": null,
+      "status": "active"
+    },
+    {
+      "key": "notification_channel",
+      "value": "email",
+      "source_turn": 4,
+      "updated_by": 20,
+      "status": "superseded"
+    },
+    {
+      "key": "preferred_city",
+      "value": "Bengaluru",
+      "source_turn": 5,
+      "updated_by": null,
+      "status": "active"
+    },
+    {
+      "key": "delivery_note",
+      "value": "side door, when carrier permits",
+      "source_turn": 6,
+      "updated_by": 24,
+      "status": "deleted"
+    },
+    {
+      "key": "preferred_delivery_window",
+      "value": "18:00-21:00",
+      "source_turn": 7,
+      "updated_by": 19,
+      "status": "superseded"
+    },
+    {
+      "key": "return_method_preference",
+      "value": "home pickup",
+      "source_turn": 8,
+      "updated_by": null,
+      "status": "active"
+    },
+    {
+      "key": "packaging_preference",
+      "value": "recyclable where available",
+      "source_turn": 9,
+      "updated_by": null,
+      "status": "active"
+    },
+    {
+      "key": "preferred_delivery_window",
+      "value": "19:00-21:00",
+      "source_turn": 19,
+      "updated_by": null,
+      "status": "active"
+    },
+    {
+      "key": "notification_channel",
+      "value": "SMS",
+      "source_turn": 20,
+      "updated_by": null,
+      "status": "active"
+    }
+  ],
+  "important_episodes_expected": [
+    {
+      "episode_id": "EP-000",
+      "source_turn": 6,
+      "type": "preference_event",
+      "summary": "Customer saved a delivery instruction; this episode and any reflection mentioning the instruction must be deleted or redacted when the customer asks to forget that fact at turn 24."
+    },
+    {
+      "episode_id": "EP-001",
+      "source_turn": 10,
+      "type": "complaint",
+      "summary": "Customer reported a late delivery for ORD-88216 and requested a complaint case; use actual case reference returned by system."
+    },
+    {
+      "episode_id": "EP-002",
+      "source_turn": 17,
+      "type": "decision",
+      "summary": "Customer chose exchange rather than refund for USB-C charger order ORD-66310."
+    },
+    {
+      "episode_id": "EP-003",
+      "source_turn": 23,
+      "type": "booking",
+      "summary": "Customer confirmed return pickup for SKU-AUR-220 in ORD-74021 on 28 November 2026 after 6 pm; include actual RMA/pickup reference returned by database."
+    }
+  ],
+  "low_importance_turns": [
+    1,
+    3,
+    11,
+    25,
+    26,
+    38,
+    40
+  ],
+  "notes": "Scripted test design. Assistant actions and references must be generated by actual RecallBot runs; do not fabricate tool outcomes or logs. Session B must run as a separate process."
+}

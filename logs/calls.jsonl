@@ -1,0 +1,1 @@
+{"ts": "2026-11-21T14:57:56.019+05:30", "run_id": "r-20261121-145751-8aa9", "config": "full", "user": "LOCAL-TEST", "session": "A", "turn": 0, "call_type": "chat", "model": "qwen3:1.7b", "input_tokens": 20, "output_tokens": 147, "retrieved_tokens": 0, "latency_ms": 4262, "extra": {"purpose": "local_model_smoke_test"}}

@@ -1,0 +1,28 @@
+{
+  "skill": "return_pickup_workflow",
+  "version": "1.0",
+  "description": "Slot-filling steps for an e-commerce return pickup.",
+  "required_slots": [
+    "customer_id",
+    "order_id",
+    "sku",
+    "reason",
+    "pickup_date",
+    "pickup_time_window",
+    "pickup_address_summary",
+    "explicit_confirmation"
+  ],
+  "steps": [
+    "Authenticate customer context and collect order_id.",
+    "Call get_order(order_id); verify order ownership and list items.",
+    "Identify the exact SKU; ask the customer to select an item if ambiguous.",
+    "Check the delivery-date policy window and existing return state.",
+    "Collect a supported return reason; clarify missing or invalid reasons.",
+    "Check pickup slots from the scheduler; never invent availability.",
+    "Collect pickup date, time window and address summary.",
+    "Show order, item, reason, date, time and address summary.",
+    "Wait for explicit customer confirmation.",
+    "Revalidate availability and invoke the database write once.",
+    "Read after write and report only the real returned RMA/pickup reference and status."
+  ]
+}
