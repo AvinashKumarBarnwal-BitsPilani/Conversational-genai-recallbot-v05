@@ -265,3 +265,36 @@ The historical Task 2(c) replay databases contain no booking: the customer did n
 | Task 2(c) — Context-handling analysis | **Complete** — official probe review, separated supplemental diagnostics, eviction analysis, state/clarification and booking evidence. |
 
 The Task 2(c) results and limitations are reported without claiming that the historical replay booked a pickup or that the small official probe set measures generalization.
+
+
+## Day 3 — Task 2 Summary
+
+Implemented and evaluated the complete conversational dialogue pipeline and short-term memory strategies for RecallBot V05.
+
+### Task 2(a) — Dialogue Pipeline
+- Rule-based NLU and entity extraction.
+- Dialogue State Tracker.
+- Dialogue Manager and tool integration.
+- Qwen NLG through Ollama.
+- Explicit confirmation-gated booking workflow.
+- Labelled NLU evaluation: 40/40 correct.
+
+### Task 2(b) — Short-Term Memory
+- Full conversation history.
+- Trim history (k = 3).
+- Rolling summary + last 2 exchanges.
+- Independent Session A evaluations.
+- Token accounting, comparison chart and reproducible analysis.
+
+### Task 2(c) — Context Handling
+- Official probe evaluation.
+- Supplemental memory-retention diagnostics.
+- Trim information-loss analysis.
+- State follow-up and clarification handling.
+- Booking confirmation and database-write verification.
+
+### Validation
+- Full regression suite: 178 tests passed.
+- Documentation and evaluation artifacts updated.
+
+This completes Day 3 — Task 2(a), 2(b) and 2(c).
