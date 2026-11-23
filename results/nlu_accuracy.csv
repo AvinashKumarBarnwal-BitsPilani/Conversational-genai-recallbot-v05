@@ -1,0 +1,41 @@
+turn,session,utterance,expected_intent,predicted_intent,correct,rule_id,entities
+1,A,Hi there!,greeting,greeting,1,R06_GREETING,{}
+2,A,My name is Maya Rao. Please call me Maya.,provide_user_fact,provide_user_fact,1,R22_USER_FACT,"{""preferred_name"": ""Maya""}"
+3,A,"Thanks, that's helpful.",small_talk,small_talk,1,R23_SMALL_TALK,{}
+4,A,Email is the best way to send me routine order updates.,provide_user_fact,provide_user_fact,1,R22_USER_FACT,"{""notification_channel"": ""email""}"
+5,A,I usually place orders for delivery in Bengaluru.,provide_user_fact,provide_user_fact,1,R22_USER_FACT,"{""city"": ""Bengaluru""}"
+6,A,"If I am not home, leave small parcels at the side door when the carrier permits it.",provide_user_fact,provide_user_fact,1,R22_USER_FACT,"{""delivery_note"": ""side door""}"
+7,A,My preferred delivery time is between 6 pm and 9 pm.,provide_user_fact,provide_user_fact,1,R22_USER_FACT,"{""time_window"": {""start"": ""18:00"", ""end"": ""21:00"", ""raw"": ""between 6 pm and 9 pm""}}"
+8,A,"For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",provide_user_fact,provide_user_fact,1,R22_USER_FACT,{}
+9,A,Please use recyclable packaging whenever that option is available.,provide_user_fact,provide_user_fact,1,R22_USER_FACT,"{""packaging_preference"": ""recyclable""}"
+10,A,I had a frustrating late delivery on order ORD-88216. Please remember that issue.,report_complaint,report_complaint,1,R18_COMPLAINT,"{""order_ids"": [""ORD-88216""]}"
+11,A,"Okay, thank you.",small_talk,small_talk,1,R23_SMALL_TALK,{}
+12,A,I need to return the wireless earbuds from order ORD-74021.,start_return,start_return,1,R11_START_RETURN,"{""order_ids"": [""ORD-74021""]}"
+13,A,The left earbud does not charge even after I tried the charging case.,provide_return_reason,provide_return_reason,1,R12_RETURN_REASON,{}
+14,A,"Saturday, 28 November 2026 would work.",provide_pickup_date,provide_pickup_date,1,R13_PICKUP_DATE,"{""date"": ""2026-11-28""}"
+15,A,"And for Saturday, please make it after 6 pm.",state_followup,state_followup,1,R14_STATE_FOLLOWUP,"{""time_window"": {""start"": ""18:00"", ""end"": null, ""raw"": ""after 6 pm""}}"
+16,A,"Before we continue, what is the electronics return window under the current policy?",knowledge_base_query,knowledge_base_query,1,R20_KB_QUERY,{}
+17,A,I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month.,report_decision,report_decision,1,R19_DECISION,"{""order_ids"": [""ORD-66310""]}"
+18,A,What does code ERR-RMA-04 mean?,knowledge_base_query,knowledge_base_query,1,R20_KB_QUERY,"{""domain_codes"": [""ERR-RMA-04""]}"
+19,A,My preferred delivery window has changed to 7 pm to 9 pm.,update_user_fact,update_user_fact,1,R21_FACT_UPDATE,"{""time_window"": {""start"": ""19:00"", ""end"": ""21:00"", ""raw"": ""7 pm to 9 pm""}}"
+20,A,Please use SMS instead of email for future routine updates.,update_user_fact,update_user_fact,1,R21_FACT_UPDATE,"{""notification_channel"": ""SMS""}"
+21,A,What happens if the driver misses my return pickup?,knowledge_base_query,knowledge_base_query,1,R20_KB_QUERY,{}
+22,A,Please repeat the complete return pickup summary so I can confirm it.,request_task_summary,request_task_summary,1,R04_TASK_SUMMARY,{}
+23,A,"Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.",confirm_action,confirm_action,1,R03_CONFIRM,"{""skus"": [""SKU-AUR-220""], ""time_window"": {""start"": ""18:00"", ""end"": null, ""raw"": ""after 6 pm""}}"
+24,A,Please forget my saved delivery note about leaving parcels at the side door.,forget_request,forget_request,1,R02_FORGET,"{""delivery_note"": ""side door""}"
+25,A,"Perfect, thanks. Have a good day!",closing,closing,1,R07_CLOSING,{}
+26,B,"Hello again, I'm back.",greeting,greeting,1,R06_GREETING,{}
+27,B,What delivery window do I currently prefer?,semantic_memory_query,semantic_memory_query,1,R10_SEMANTIC_QUERY,{}
+28,B,What did we arrange for my earbuds last time?,episodic_memory_query,episodic_memory_query,1,R09_EPISODIC_QUERY,{}
+29,B,What problem did I ask you to register earlier?,episodic_memory_query,episodic_memory_query,1,R09_EPISODIC_QUERY,{}
+30,B,What was the delivery note I asked you to forget?,forgotten_memory_query,forgotten_memory_query,1,R01_FORGOTTEN_QUERY,{}
+31,B,"For a 2026 delivery, how many days do I have to return electronic accessories?",knowledge_base_query,knowledge_base_query,1,R20_KB_QUERY,{}
+32,B,Can you check the latest status of order ORD-74021?,order_status_query,order_status_query,1,R17_ORDER_STATUS,"{""order_ids"": [""ORD-74021""]}"
+33,B,And what happens next after the pickup is completed?,state_followup,state_followup,1,R14_STATE_FOLLOWUP,{}
+34,B,What does RMA-BOOK mean?,knowledge_base_query,knowledge_base_query,1,R20_KB_QUERY,"{""domain_codes"": [""RMA-BOOK""]}"
+35,B,How long does ShopSphere normally take to start a UPI refund after inspection acceptance?,knowledge_base_query,knowledge_base_query,1,R20_KB_QUERY,{}
+36,B,I want to cancel order ORD-55208. Can you check whether that's possible?,order_cancel_eligibility_query,order_cancel_eligibility_query,1,R16_CANCEL_CHECK,"{""order_ids"": [""ORD-55208""]}"
+37,B,Can you book a pickup for the other item as well?,clarification_required,clarification_required,1,R05_CLARIFICATION,{}
+38,B,"Got it, appreciate your help.",small_talk,small_talk,1,R23_SMALL_TALK,{}
+39,B,What is the exact token limit your assistant is configured to respect?,context_budget_query,context_budget_query,1,R08_CONTEXT_BUDGET,{}
+40,B,That's all for now. Bye!,closing,closing,1,R07_CLOSING,{}

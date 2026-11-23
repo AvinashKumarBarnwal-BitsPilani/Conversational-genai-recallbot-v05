@@ -13,9 +13,11 @@ from ..config import TOKENIZER_ID
 
 
 @lru_cache(maxsize=2)
-def load_tokenizer(model_name: str = TOKENIZER_ID):
-    """Load and cache a fast Hugging Face tokenizer for offset-aware chunking."""
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+def load_tokenizer(model_name: str = TOKENIZER_ID, *, local_files_only: bool = False):
+    """Load and cache a fast tokenizer, optionally requiring local cache assets."""
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_name, use_fast=True, local_files_only=local_files_only
+    )
     if not getattr(tokenizer, "is_fast", False):
         raise RuntimeError(
             f"Tokenizer {model_name!r} is not a fast tokenizer; "

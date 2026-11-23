@@ -1,0 +1,996 @@
+{
+  "run_id": "task2b_full_run1",
+  "strategy": "full",
+  "session": "A",
+  "user_id": "CUST-MAYA-1042",
+  "dataset": "data/test_conversation.json",
+  "model": "qwen3:1.7b",
+  "prompt_version": "system_prompt_v1",
+  "workflow_version": "1.0",
+  "database_reset_fingerprint": "b839ab6f76c491f120b796b9189c03ac067b90b7dd027d28d05bc3be8ac2abb2",
+  "expected_user_turns": 25,
+  "status": "interrupted",
+  "turns": [
+    {
+      "turn": 1,
+      "status": "processed",
+      "user_message": "Hi there!",
+      "assistant_response": "Hello! I'm RecallBot. I can help with ShopSphere orders, delivery, returns and refunds. Let me know how I can assist you!",
+      "intent": "greeting",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 1,
+        "last_user_text": "Hi there!",
+        "current_intent": "greeting",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 2,
+      "status": "processed",
+      "user_message": "My name is Maya Rao. Please call me Maya.",
+      "assistant_response": "I understood that as a profile preference. Persistent fact storage and updates will be connected under the long-term memory task.",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 2,
+        "last_user_text": "My name is Maya Rao. Please call me Maya.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "preferred_name": "Maya"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 3,
+      "status": "processed",
+      "user_message": "Thanks, that's helpful.",
+      "assistant_response": "You're welcome. Is there anything else I can help you with?",
+      "intent": "small_talk",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 3,
+        "last_user_text": "Thanks, that's helpful.",
+        "current_intent": "small_talk",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 4,
+      "status": "processed",
+      "user_message": "Email is the best way to send me routine order updates.",
+      "assistant_response": "I understand your preference for receiving routine order updates via email. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 4,
+        "last_user_text": "Email is the best way to send me routine order updates.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "notification_channel": "email"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 5,
+      "status": "processed",
+      "user_message": "I usually place orders for delivery in Bengaluru.",
+      "assistant_response": "I understand your preference for receiving routine order updates via email. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 5,
+        "last_user_text": "I usually place orders for delivery in Bengaluru.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "city": "Bengaluru"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 6,
+      "status": "processed",
+      "user_message": "If I am not home, leave small parcels at the side door when the carrier permits it.",
+      "assistant_response": "I understand your preference for receiving routine order updates via email. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 6,
+        "last_user_text": "If I am not home, leave small parcels at the side door when the carrier permits it.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "delivery_note": "side door"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 7,
+      "status": "processed",
+      "user_message": "My preferred delivery time is between 6 pm and 9 pm.",
+      "assistant_response": "I understand your preference for delivering orders between 6 pm and 9 pm. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 7,
+        "last_user_text": "My preferred delivery time is between 6 pm and 9 pm.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "time_window": {
+            "start": "18:00",
+            "end": "21:00",
+            "raw": "between 6 pm and 9 pm"
+          }
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 8,
+      "status": "processed",
+      "user_message": "For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",
+      "assistant_response": "I understand your preference for picking up returns from your home instead of dropping them at a counter. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 8,
+        "last_user_text": "For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 9,
+      "status": "processed",
+      "user_message": "Please use recyclable packaging whenever that option is available.",
+      "assistant_response": "I understand your preference for using recyclable packaging whenever possible. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 9,
+        "last_user_text": "Please use recyclable packaging whenever that option is available.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "packaging_preference": "recyclable"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 10,
+      "status": "processed",
+      "user_message": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+      "assistant_response": "I can help with an order, return, delivery, or policy question. Could you tell me a little more about what you need?",
+      "intent": "report_complaint",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 10,
+        "last_user_text": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+        "current_intent": "report_complaint",
+        "current_entities": {
+          "order_ids": [
+            "ORD-88216"
+          ]
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 11,
+      "status": "processed",
+      "user_message": "Okay, thank you.",
+      "assistant_response": "You're welcome. Is there anything else I can help you with?",
+      "intent": "small_talk",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 11,
+        "last_user_text": "Okay, thank you.",
+        "current_intent": "small_talk",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 12,
+      "status": "processed",
+      "user_message": "I need to return the wireless earbuds from order ORD-74021.",
+      "assistant_response": "Could you tell me why you want to return this item?",
+      "intent": "start_return",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 12,
+        "last_user_text": "I need to return the wireless earbuds from order ORD-74021.",
+        "current_intent": "start_return",
+        "current_entities": {
+          "order_ids": [
+            "ORD-74021"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021"
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_name": "get_order",
+          "status": "success",
+          "request": {
+            "order_id": "ORD-74021",
+            "customer_id": "CUST-MAYA-1042"
+          },
+          "result": {
+            "order_id": "ORD-74021",
+            "customer_id": "CUST-MAYA-1042",
+            "order_date": "2026-11-12",
+            "delivery_date": "2026-11-15",
+            "order_status": "ORD-DEL",
+            "payment_method": "UPI",
+            "payment_status": "PAY-CAP",
+            "items": [
+              {
+                "sku": "SKU-AUR-220",
+                "name": "AUR-220 Wireless Earbuds",
+                "quantity": 1,
+                "unit_price": 2499,
+                "category": "electronics"
+              },
+              {
+                "sku": "SKU-PHC-11",
+                "name": "Protective Phone Case",
+                "quantity": 1,
+                "unit_price": 499,
+                "category": "accessory"
+              }
+            ],
+            "existing_return": null,
+            "saved_address_id": "ADDR-MAYA-01",
+            "address_summary": "Customer saved Bengaluru delivery address (masked summary)"
+          }
+        }
+      ],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 13,
+      "status": "processed",
+      "user_message": "The left earbud does not charge even after I tried the charging case.",
+      "assistant_response": "Draft response: \"Which date would you prefer for the pickup?\"",
+      "intent": "provide_return_reason",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 13,
+        "last_user_text": "The left earbud does not charge even after I tried the charging case.",
+        "current_intent": "provide_return_reason",
+        "current_entities": {
+          "return_reason": "defective_left_earbud"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_date",
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 14,
+      "status": "processed",
+      "user_message": "Saturday, 28 November 2026 would work.",
+      "assistant_response": "What pickup time window would work for you?",
+      "intent": "provide_pickup_date",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 1891 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 14,
+        "last_user_text": "Saturday, 28 November 2026 would work.",
+        "current_intent": "provide_pickup_date",
+        "current_entities": {
+          "date": "2026-11-28"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 15,
+      "status": "processed",
+      "user_message": "And for Saturday, please make it after 6 pm.",
+      "assistant_response": "More than one pickup slot is available. Please choose one:\n- 18:00â€“20:00 (slot PICK-20261128-E1)\n- 20:00â€“22:00 (slot PICK-20261128-E2)",
+      "intent": "state_followup",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 1988 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 15,
+        "last_user_text": "And for Saturday, please make it after 6 pm.",
+        "current_intent": "state_followup",
+        "current_entities": {
+          "time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          }
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "check_pickup_slots",
+          "status": "success",
+          "result_count": 2
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_name": "check_pickup_slots",
+          "status": "success",
+          "request": {
+            "pickup_date": "2026-11-28",
+            "requested_window": {
+              "start": "18:00",
+              "end": null,
+              "raw": "after 6 pm"
+            },
+            "address_summary": "Customer saved Bengaluru delivery address (masked summary)"
+          },
+          "result": [
+            {
+              "slot_id": "PICK-20261128-E1",
+              "date": "2026-11-28",
+              "window_start": "18:00",
+              "window_end": "20:00",
+              "postal_area": "Bengaluru",
+              "status": "available"
+            },
+            {
+              "slot_id": "PICK-20261128-E2",
+              "date": "2026-11-28",
+              "window_start": "20:00",
+              "window_end": "22:00",
+              "postal_area": "Bengaluru",
+              "status": "available"
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 16,
+      "status": "interrupted",
+      "user_message": "Before we continue, what is the electronics return window under the current policy?",
+      "error": "Turn started NLU/retrieval but was interrupted before a response completed"
+    },
+    {
+      "turn": 17,
+      "status": "not_started",
+      "user_message": "I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month."
+    },
+    {
+      "turn": 18,
+      "status": "not_started",
+      "user_message": "What does code ERR-RMA-04 mean?"
+    },
+    {
+      "turn": 19,
+      "status": "not_started",
+      "user_message": "My preferred delivery window has changed to 7 pm to 9 pm."
+    },
+    {
+      "turn": 20,
+      "status": "not_started",
+      "user_message": "Please use SMS instead of email for future routine updates."
+    },
+    {
+      "turn": 21,
+      "status": "not_started",
+      "user_message": "What happens if the driver misses my return pickup?"
+    },
+    {
+      "turn": 22,
+      "status": "not_started",
+      "user_message": "Please repeat the complete return pickup summary so I can confirm it."
+    },
+    {
+      "turn": 23,
+      "status": "not_started",
+      "user_message": "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm."
+    },
+    {
+      "turn": 24,
+      "status": "not_started",
+      "user_message": "Please forget my saved delivery note about leaving parcels at the side door."
+    },
+    {
+      "turn": 25,
+      "status": "not_started",
+      "user_message": "Perfect, thanks. Have a good day!"
+    }
+  ],
+  "finished_at": "2026-11-23T07:18:35.2803229Z",
+  "successfully_processed_user_turns": 15,
+  "failed_turns": 0,
+  "interrupted_turn": 16,
+  "interruption_reason": "Manually stopped after unexpected Hugging Face Hub access during log token accounting",
+  "customer_facing_qwen_calls": 15,
+  "successful_customer_facing_qwen_calls": 13,
+  "summary_generation_calls": 0,
+  "successful_summary_generation_calls": 0,
+  "tool_calls": 2,
+  "call_records_for_run": 33,
+  "started_at": "2026-11-23T12:40:34.390+05:30"
+}

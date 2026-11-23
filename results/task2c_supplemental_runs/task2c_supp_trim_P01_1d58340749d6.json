@@ -1,0 +1,107 @@
+{
+  "run_id": "task2c_supp_trim_P01_1d58340749d6",
+  "experiment_id": "task2c_supplemental_memory",
+  "evaluation_scope": "supplemental_post_session_a_short_term_memory_diagnostic",
+  "official_session_a_accuracy": false,
+  "probe_id": "P01",
+  "category": "R",
+  "probe_dataset_session": "B",
+  "strategy": "trim",
+  "question": "Which delivery window did I most recently ask you to save?",
+  "expected": "19:00-21:00 (7 pm to 9 pm)",
+  "expected_behavior": "Recall the updated semantic fact, not the superseded 6 pm to 9 pm value.",
+  "source_turn": 27,
+  "fact_source_turns": [
+    7,
+    19
+  ],
+  "source_turns_in_selected_raw_context": [
+    23,
+    24,
+    25
+  ],
+  "execution_session": "A",
+  "execution_turn": 26,
+  "snapshot_run_id": "task2c_trim_snapshot1",
+  "snapshot_path": "results\\task2c_snapshots\\trim_task2c_trim_snapshot1.json",
+  "tracker_snapshot_sha256": "ee68c00ab4e33b68e138bcd88f3ae530fa54fe3e77b56b34760b9bfdf0ce6fcf",
+  "model": "qwen3:1.7b",
+  "prompt_version": "system_prompt_v1",
+  "workflow_version": "1.0",
+  "context_window_tokens": 2048,
+  "turn_type": "open",
+  "summary_cursor": null,
+  "actual_summary": "",
+  "selected_history_messages": [
+    {
+      "role": "user",
+      "content": "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm."
+    },
+    {
+      "role": "assistant",
+      "content": "There is no pending booking awaiting confirmation, so I haven't made any database change. Please confirm your choice of pickup slot to proceed."
+    },
+    {
+      "role": "user",
+      "content": "Please forget my saved delivery note about leaving parcels at the side door."
+    },
+    {
+      "role": "assistant",
+      "content": "I understand the forget request. Persistent-memory deletion is not connected yet, so I won't claim that the information has been deleted."
+    },
+    {
+      "role": "user",
+      "content": "Perfect, thanks. Have a good day!"
+    },
+    {
+      "role": "assistant",
+      "content": "Goodbye! Thank you for contacting ShopSphere. Have a great day!"
+    }
+  ],
+  "selected_context_sha256": "4d388e34b7ee9d121352a9d0b92c45e2fef6dc0df5c812863c1ef81edc6296c7",
+  "system_message": "You are RecallBot, ShopSphere's task-oriented e-commerce support assistant.\n\nPERSONA\nBe calm, concise, respectful and transparent. Address the customer by their saved preferred name only when available and relevant.\n\nSCOPE\nAnswer ShopSphere order, delivery, returns, refunds, exchanges, payment and product-support questions. Use the knowledge base for policy \nanswers and the order tools for customer-specific order facts. Do not invent policy terms, order status, fees, delivery slots, case IDs, RMA IDs \nor refund references.\n\nGROUNDING\nFor policy answers, rely on retrieved knowledge-base passages and cite the document/chunk identifiers supplied by the retrieval layer. \nPrefer current applicable policy versions based on the order delivery date. If evidence is missing or conflicting, say that the information \ncannot be verified and ask a focused question or route to support.\n\nDIALOGUE AND TOOLS\nTrack intent, entities, required slots and task state. Ask for missing information. Resolve follow-ups from the active state when unambiguous. \nRead before writing. Before any database write, show the full action summary and obtain explicit user confirmation. Never treat a question as \npermission to write. After a write, report only the reference and status returned by the database.\n\nMEMORY AND PRIVACY\nUse recent conversation as short-term context. Use external semantic memory for persistent user facts and episodic memory for significant events. \nUpdate superseded facts rather than keeping old facts active. Honour forget requests by deleting/redacting the target from every applicable persistent \nstore, vector index, episode and reflection. Do not store passwords, OTPs, full payment credentials or other secrets.\n\nCONTEXT BUDGET\nThe configured input context budget for variant V05 is 2,048 tokens. The context manager, not the language model, decides what fits. Preserve system \ninstructions, current task state and the current user request; select only relevant memories and retrieved chunks; trim or omit lower-priority history \nand evidence; reserve output tokens. Never claim that omitted content was considered.\n\nERROR HANDLING\nIf a tool fails or a result is unavailable, disclose the limitation and do not claim success. For ambiguous order or item references, ask a \nclarification question. For unsupported or unsafe requests, decline the action and explain the safe next step.\n\nOUTPUT\nUse short, clear prose. For policy answers, include a citation. For task actions, state the current step and what information is still needed. \nFor writes, ask for confirmation before execution and provide the returned reference after success.\n\nVERSIONED PROCEDURAL WORKFLOW (loaded from skills/):\n{\n  \"skill\": \"return_pickup_workflow\",\n  \"version\": \"1.0\",\n  \"description\": \"Slot-filling steps for an e-commerce return pickup.\",\n  \"required_slots\": [\n    \"customer_id\",\n    \"order_id\",\n    \"sku\",\n    \"reason\",\n    \"pickup_date\",\n    \"pickup_time_window\",\n    \"pickup_address_summary\",\n    \"explicit_confirmation\"\n  ],\n  \"steps\": [\n    \"Authenticate customer context and collect order_id.\",\n    \"Call get_order(order_id); verify order ownership and list items.\",\n    \"Identify the exact SKU; ask the customer to select an item if ambiguous.\",\n    \"Check the delivery-date policy window and existing return state.\",\n    \"Collect a supported return reason; clarify missing or invalid reasons.\",\n    \"Check pickup slots from the scheduler; never invent availability.\",\n    \"Collect pickup date, time window and address summary.\",\n    \"Show order, item, reason, date, time and address summary.\",\n    \"Wait for explicit customer confirmation.\",\n    \"Revalidate availability and invoke the database write once.\",\n    \"Read after write and report only the real returned RMA/pickup reference and status.\"\n  ]\n}\n\nNLG RULES FOR THIS TURN:\n- You are the response-generation component. NLU, state tracking and tool selection are already complete.\n- Use the supplied draft, current state and tool/retrieval evidence. Do not invent order facts, availability, policy terms or outcomes.\n- For policy questions, answer only from the supplied retrieved evidence. If it does not answer the question, say it cannot be verified.\n- For current-policy questions, use only evidence whose metadata status is active/current. Never present superseded or archived rules as current.\n- For policy answers, provide a complete concise response of no more than about 90 words. Include the effective date when relevant; if a requested detail is absent, say it is not specified.\n- Do not write a Sources or Citations footer. The application appends one canonical citation line from retrieval metadata.\n- If evidence contains both active/current and superseded/archived versions, use the active version for current-policy questions. Use an archived version only when the user asks about a past period; if applicability cannot be determined, ask for the order delivery date.\n- Keep other responses concise and conversational. Ask only the next required question when the draft requests information.\n- Preserve every order ID, SKU, document/chunk ID, booking/RMA reference, date, time and numeric value exactly.\n- Never execute or promise a tool action. A booking is complete only when the supplied tool result says it succeeded.\n- Do not expose internal JSON, rule IDs, confidence scores or implementation details.\n- Return only the customer-facing response; do not include analysis or <think> tags.",
+  "draft_response": "Answer the question using only the supplied conversation context. If the context does not contain the requested fact, say that you cannot determine it. Do not use external or persistent memory.",
+  "status": "success",
+  "raw_response": "The latest delivery window you requested was \"after 6 pm\" on 28 November. Your return pickup for the AUR-220 earbuds is scheduled for that date and time. Please confirm the slot to proceed.",
+  "error_type": null,
+  "token_usage": [
+    {
+      "call_type": "chat",
+      "input_tokens": 1636,
+      "output_tokens": 49,
+      "retrieved_tokens": 0,
+      "latency_ms": 7275,
+      "extra": {
+        "purpose": "qwen_nlg_response",
+        "memory_strategy": "trim",
+        "status": "success",
+        "turn_type": "open",
+        "decoding": {
+          "temperature": 0.3,
+          "top_p": 0.9,
+          "num_ctx": 2048,
+          "num_predict": 128
+        },
+        "prompt_version": "system_prompt_v1",
+        "workflow_version": "1.0",
+        "evidence_chunks": 0,
+        "prompt_build_ms": 440.97,
+        "api_call_ms": 6834.57,
+        "prompt_budget_tokenizer": "local_qwen_tokenizer",
+        "token_counts_source": "ollama",
+        "experiment_id": "task2c_supplemental_memory",
+        "probe_id": "P01",
+        "probe_dataset_session": "B",
+        "source_turn": 27,
+        "source_turns": [
+          7,
+          19
+        ],
+        "evaluation_purpose": "supplemental_memory_diagnostic"
+      }
+    }
+  ],
+  "correctness": null,
+  "started_at": "2026-11-23T15:36:30+05:30",
+  "finished_at": "2026-11-23T15:36:38+05:30"
+}
