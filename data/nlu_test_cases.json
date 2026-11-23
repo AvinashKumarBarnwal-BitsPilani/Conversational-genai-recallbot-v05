@@ -1,0 +1,309 @@
+{
+  "description": "Forty labelled user utterances taken verbatim from data/test_conversation.json for Task 2(a) NLU evaluation. Labels are the expected primary intent; state-dependent follow-ups remain the dialogue manager/state tracker responsibility.",
+  "label_source": "data/test_conversation.json, turns 1-40",
+  "labelled_utterance_count": 40,
+  "cases": [
+    {
+      "turn": 1,
+      "session": "A",
+      "utterance": "Hi there!",
+      "expected_intent": "greeting"
+    },
+    {
+      "turn": 2,
+      "session": "A",
+      "utterance": "My name is Maya Rao. Please call me Maya.",
+      "expected_intent": "provide_user_fact",
+      "expected_entities": {
+        "preferred_name": "Maya"
+      }
+    },
+    {
+      "turn": 3,
+      "session": "A",
+      "utterance": "Thanks, that's helpful.",
+      "expected_intent": "small_talk"
+    },
+    {
+      "turn": 4,
+      "session": "A",
+      "utterance": "Email is the best way to send me routine order updates.",
+      "expected_intent": "provide_user_fact",
+      "expected_entities": {
+        "notification_channel": "email"
+      }
+    },
+    {
+      "turn": 5,
+      "session": "A",
+      "utterance": "I usually place orders for delivery in Bengaluru.",
+      "expected_intent": "provide_user_fact",
+      "expected_entities": {
+        "city": "Bengaluru"
+      }
+    },
+    {
+      "turn": 6,
+      "session": "A",
+      "utterance": "If I am not home, leave small parcels at the side door when the carrier permits it.",
+      "expected_intent": "provide_user_fact",
+      "expected_entities": {
+        "delivery_note": "side door"
+      }
+    },
+    {
+      "turn": 7,
+      "session": "A",
+      "utterance": "My preferred delivery time is between 6 pm and 9 pm.",
+      "expected_intent": "provide_user_fact",
+      "expected_entities": {
+        "time_window": {
+          "start": "18:00",
+          "end": "21:00",
+          "raw": "between 6 pm and 9 pm"
+        }
+      }
+    },
+    {
+      "turn": 8,
+      "session": "A",
+      "utterance": "For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",
+      "expected_intent": "provide_user_fact"
+    },
+    {
+      "turn": 9,
+      "session": "A",
+      "utterance": "Please use recyclable packaging whenever that option is available.",
+      "expected_intent": "provide_user_fact"
+    },
+    {
+      "turn": 10,
+      "session": "A",
+      "utterance": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+      "expected_intent": "report_complaint",
+      "expected_entities": {
+        "order_ids": [
+          "ORD-88216"
+        ]
+      }
+    },
+    {
+      "turn": 11,
+      "session": "A",
+      "utterance": "Okay, thank you.",
+      "expected_intent": "small_talk"
+    },
+    {
+      "turn": 12,
+      "session": "A",
+      "utterance": "I need to return the wireless earbuds from order ORD-74021.",
+      "expected_intent": "start_return",
+      "expected_entities": {
+        "order_ids": [
+          "ORD-74021"
+        ]
+      }
+    },
+    {
+      "turn": 13,
+      "session": "A",
+      "utterance": "The left earbud does not charge even after I tried the charging case.",
+      "expected_intent": "provide_return_reason"
+    },
+    {
+      "turn": 14,
+      "session": "A",
+      "utterance": "Saturday, 28 November 2026 would work.",
+      "expected_intent": "provide_pickup_date",
+      "expected_entities": {
+        "date": "2026-11-28"
+      }
+    },
+    {
+      "turn": 15,
+      "session": "A",
+      "utterance": "And for Saturday, please make it after 6 pm.",
+      "expected_intent": "state_followup",
+      "expected_entities": {
+        "time_window": {
+          "start": "18:00",
+          "end": null,
+          "raw": "after 6 pm"
+        }
+      }
+    },
+    {
+      "turn": 16,
+      "session": "A",
+      "utterance": "Before we continue, what is the electronics return window under the current policy?",
+      "expected_intent": "knowledge_base_query"
+    },
+    {
+      "turn": 17,
+      "session": "A",
+      "utterance": "I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month.",
+      "expected_intent": "report_decision",
+      "expected_entities": {
+        "order_ids": [
+          "ORD-66310"
+        ]
+      }
+    },
+    {
+      "turn": 18,
+      "session": "A",
+      "utterance": "What does code ERR-RMA-04 mean?",
+      "expected_intent": "knowledge_base_query",
+      "expected_entities": {
+        "domain_codes": [
+          "ERR-RMA-04"
+        ]
+      }
+    },
+    {
+      "turn": 19,
+      "session": "A",
+      "utterance": "My preferred delivery window has changed to 7 pm to 9 pm.",
+      "expected_intent": "update_user_fact"
+    },
+    {
+      "turn": 20,
+      "session": "A",
+      "utterance": "Please use SMS instead of email for future routine updates.",
+      "expected_intent": "update_user_fact",
+      "expected_entities": {
+        "notification_channel": "SMS"
+      }
+    },
+    {
+      "turn": 21,
+      "session": "A",
+      "utterance": "What happens if the driver misses my return pickup?",
+      "expected_intent": "knowledge_base_query"
+    },
+    {
+      "turn": 22,
+      "session": "A",
+      "utterance": "Please repeat the complete return pickup summary so I can confirm it.",
+      "expected_intent": "request_task_summary"
+    },
+    {
+      "turn": 23,
+      "session": "A",
+      "utterance": "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.",
+      "expected_intent": "confirm_action"
+    },
+    {
+      "turn": 24,
+      "session": "A",
+      "utterance": "Please forget my saved delivery note about leaving parcels at the side door.",
+      "expected_intent": "forget_request"
+    },
+    {
+      "turn": 25,
+      "session": "A",
+      "utterance": "Perfect, thanks. Have a good day!",
+      "expected_intent": "closing"
+    },
+    {
+      "turn": 26,
+      "session": "B",
+      "utterance": "Hello again, I'm back.",
+      "expected_intent": "greeting"
+    },
+    {
+      "turn": 27,
+      "session": "B",
+      "utterance": "What delivery window do I currently prefer?",
+      "expected_intent": "semantic_memory_query"
+    },
+    {
+      "turn": 28,
+      "session": "B",
+      "utterance": "What did we arrange for my earbuds last time?",
+      "expected_intent": "episodic_memory_query"
+    },
+    {
+      "turn": 29,
+      "session": "B",
+      "utterance": "What problem did I ask you to register earlier?",
+      "expected_intent": "episodic_memory_query"
+    },
+    {
+      "turn": 30,
+      "session": "B",
+      "utterance": "What was the delivery note I asked you to forget?",
+      "expected_intent": "forgotten_memory_query"
+    },
+    {
+      "turn": 31,
+      "session": "B",
+      "utterance": "For a 2026 delivery, how many days do I have to return electronic accessories?",
+      "expected_intent": "knowledge_base_query"
+    },
+    {
+      "turn": 32,
+      "session": "B",
+      "utterance": "Can you check the latest status of order ORD-74021?",
+      "expected_intent": "order_status_query"
+    },
+    {
+      "turn": 33,
+      "session": "B",
+      "utterance": "And what happens next after the pickup is completed?",
+      "expected_intent": "state_followup"
+    },
+    {
+      "turn": 34,
+      "session": "B",
+      "utterance": "What does RMA-BOOK mean?",
+      "expected_intent": "knowledge_base_query",
+      "expected_entities": {
+        "domain_codes": [
+          "RMA-BOOK"
+        ]
+      }
+    },
+    {
+      "turn": 35,
+      "session": "B",
+      "utterance": "How long does ShopSphere normally take to start a UPI refund after inspection acceptance?",
+      "expected_intent": "knowledge_base_query"
+    },
+    {
+      "turn": 36,
+      "session": "B",
+      "utterance": "I want to cancel order ORD-55208. Can you check whether that's possible?",
+      "expected_intent": "order_cancel_eligibility_query",
+      "expected_entities": {
+        "order_ids": [
+          "ORD-55208"
+        ]
+      }
+    },
+    {
+      "turn": 37,
+      "session": "B",
+      "utterance": "Can you book a pickup for the other item as well?",
+      "expected_intent": "clarification_required"
+    },
+    {
+      "turn": 38,
+      "session": "B",
+      "utterance": "Got it, appreciate your help.",
+      "expected_intent": "small_talk"
+    },
+    {
+      "turn": 39,
+      "session": "B",
+      "utterance": "What is the exact token limit your assistant is configured to respect?",
+      "expected_intent": "context_budget_query"
+    },
+    {
+      "turn": 40,
+      "session": "B",
+      "utterance": "That's all for now. Bye!",
+      "expected_intent": "closing"
+    }
+  ]
+}

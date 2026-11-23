@@ -340,15 +340,15 @@
     "paraphrased_no_answer_keyword": true,
     "version_sensitive": true
   },
-  {
-    "question_id": "Q032",
-    "question": "For an order placed in 2026, what is the current Standard delivery estimate once it has left the fulfilment centre?",
-    "gold_answer_span": "Standard delivery normally takes 3 to 6 business days after dispatch.",
-    "expected_answer": "Standard delivery normally takes 3 to 6 business days after dispatch.",
-    "document_id": "KB-005",
-    "category": "new_version_only",
-    "contains_exact_code_or_id": false,
-    "paraphrased_no_answer_keyword": false,
-    "version_sensitive": true
-  }
+{
+  "question_id": "Q032",
+  "question": "If the preferred delivery window is unavailable, what should ShopSphere offer next?",
+  "gold_answer_span": "If a window is unavailable, offer the nearest available slot or ask the customer to select another day.",
+  "document_id": "KB-005",
+  "category": "new_version_only",
+  "version_sensitive": true,
+  "contains_exact_code_or_id": false,
+  "paraphrased_no_answer_keyword": false
+}
+
 ]

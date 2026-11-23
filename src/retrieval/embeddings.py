@@ -140,7 +140,18 @@ class SentenceTransformerEmbedder:
         from sentence_transformers import SentenceTransformer
 
         self.model_name = model_name
-        self.model = SentenceTransformer(model_name, device=device)
+        init_started = timer()
+        print("[RecallBot] Retrieval model initialization started")
+        try:
+            self.model = SentenceTransformer(
+                model_name, device=device, local_files_only=True
+            )
+        except Exception as exc:
+            raise RuntimeError(
+                f"Local embedding model {model_name!r} is unavailable; "
+                "download it explicitly before running interactive retrieval."
+            ) from exc
+        print(f"[RecallBot] Retrieval model initialization completed: {(timer()-init_started)*1000:.0f} ms")
 
         # Use the current Sentence-Transformers API for the output dimension.
         self.dimension = int(self.model.get_embedding_dimension())
@@ -164,7 +175,15 @@ class SentenceTransformerEmbedder:
         # for the project's chat-model token accounting in the mandatory logs.
         from .tokenizer import load_tokenizer
 
-        self.chat_tokenizer = load_tokenizer(TOKENIZER_ID)
+        try:
+            self.chat_tokenizer = load_tokenizer(
+                TOKENIZER_ID, local_files_only=True
+            )
+        except Exception:
+            # This tokenizer is used only for project-wide log accounting.
+            # Retrieval uses the BGE tokenizer above and must stay available
+            # when the optional Qwen tokenizer is not cached locally.
+            self.chat_tokenizer = None
 
     def encode(
         self,
@@ -255,9 +274,13 @@ class SentenceTransformerEmbedder:
 
         # Count input tokens with Qwen's chat tokenizer for consistent project-
         # wide token accounting. Separately count BGE tokens sent to embeddings.
-        input_tokens = sum(
-            len(self.chat_tokenizer.encode(text, add_special_tokens=False))
-            for text in model_inputs
+        input_tokens = (
+            sum(
+                len(self.chat_tokenizer.encode(text, add_special_tokens=False))
+                for text in model_inputs
+            )
+            if self.chat_tokenizer is not None
+            else 0
         )
         embedding_input_tokens = sum(
             _content_token_count(text, self.embedding_tokenizer)

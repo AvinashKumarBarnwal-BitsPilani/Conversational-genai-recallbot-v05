@@ -1,0 +1,2017 @@
+{
+  "run_id": "task2b_summary_run1",
+  "strategy": "summary",
+  "session": "A",
+  "user_id": "CUST-MAYA-1042",
+  "dataset": "data/test_conversation.json",
+  "model": "qwen3:1.7b",
+  "prompt_version": "system_prompt_v1",
+  "workflow_version": "1.0",
+  "database_reset_fingerprint": "b839ab6f76c491f120b796b9189c03ac067b90b7dd027d28d05bc3be8ac2abb2",
+  "expected_user_turns": 25,
+  "status": "complete",
+  "turns": [
+    {
+      "turn": 1,
+      "status": "processed",
+      "user_message": "Hi there!",
+      "assistant_response": "Hello! I'm RecallBot. I can help with ShopSphere orders, delivery, returns and refunds. Let me know how I can assist you!",
+      "intent": "greeting",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 1,
+        "last_user_text": "Hi there!",
+        "current_intent": "greeting",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 2,
+      "status": "processed",
+      "user_message": "My name is Maya Rao. Please call me Maya.",
+      "assistant_response": "I understood that as a profile preference. Persistent fact storage and updates will be connected under the long-term memory task.",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 2,
+        "last_user_text": "My name is Maya Rao. Please call me Maya.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "preferred_name": "Maya"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 3,
+      "status": "processed",
+      "user_message": "Thanks, that's helpful.",
+      "assistant_response": "You're welcome. Is there anything else I can help you with?",
+      "intent": "small_talk",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 3,
+        "last_user_text": "Thanks, that's helpful.",
+        "current_intent": "small_talk",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 4,
+      "status": "processed",
+      "user_message": "Email is the best way to send me routine order updates.",
+      "assistant_response": "I've noted your preference to receive routine order updates via email. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 4,
+        "last_user_text": "Email is the best way to send me routine order updates.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "notification_channel": "email"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 5,
+      "status": "processed",
+      "user_message": "I usually place orders for delivery in Bengaluru.",
+      "assistant_response": "I've noted your preference to receive routine order updates via email. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 5,
+        "last_user_text": "I usually place orders for delivery in Bengaluru.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "city": "Bengaluru"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 6,
+      "status": "processed",
+      "user_message": "If I am not home, leave small parcels at the side door when the carrier permits it.",
+      "assistant_response": "I've noted your preference to receive routine order updates via email. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 6,
+        "last_user_text": "If I am not home, leave small parcels at the side door when the carrier permits it.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "delivery_note": "side door"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 7,
+      "status": "processed",
+      "user_message": "My preferred delivery time is between 6 pm and 9 pm.",
+      "assistant_response": "I've noted your preference to receive routine order updates via email. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 7,
+        "last_user_text": "My preferred delivery time is between 6 pm and 9 pm.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "time_window": {
+            "start": "18:00",
+            "end": "21:00",
+            "raw": "between 6 pm and 9 pm"
+          }
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 8,
+      "status": "processed",
+      "user_message": "For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",
+      "assistant_response": "I've noted your preference to receive routine order updates via email. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 8,
+        "last_user_text": "For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 9,
+      "status": "processed",
+      "user_message": "Please use recyclable packaging whenever that option is available.",
+      "assistant_response": "I've noted your preference to use recyclable packaging when available. Let me know if there's anything else I can assist you with!",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 9,
+        "last_user_text": "Please use recyclable packaging whenever that option is available.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "packaging_preference": "recyclable"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 10,
+      "status": "processed",
+      "user_message": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+      "assistant_response": "I can help with an order, return, delivery, or policy question. Could you tell me a little more about what you need?",
+      "intent": "report_complaint",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 10,
+        "last_user_text": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+        "current_intent": "report_complaint",
+        "current_entities": {
+          "order_ids": [
+            "ORD-88216"
+          ]
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 11,
+      "status": "processed",
+      "user_message": "Okay, thank you.",
+      "assistant_response": "You're welcome. Is there anything else I can help you with?",
+      "intent": "small_talk",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 11,
+        "last_user_text": "Okay, thank you.",
+        "current_intent": "small_talk",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 12,
+      "status": "processed",
+      "user_message": "I need to return the wireless earbuds from order ORD-74021.",
+      "assistant_response": "Could you tell me why you want to return this item?",
+      "intent": "start_return",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 12,
+        "last_user_text": "I need to return the wireless earbuds from order ORD-74021.",
+        "current_intent": "start_return",
+        "current_entities": {
+          "order_ids": [
+            "ORD-74021"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021"
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_name": "get_order",
+          "status": "success",
+          "request": {
+            "order_id": "ORD-74021",
+            "customer_id": "CUST-MAYA-1042"
+          },
+          "result": {
+            "order_id": "ORD-74021",
+            "customer_id": "CUST-MAYA-1042",
+            "order_date": "2026-11-12",
+            "delivery_date": "2026-11-15",
+            "order_status": "ORD-DEL",
+            "payment_method": "UPI",
+            "payment_status": "PAY-CAP",
+            "items": [
+              {
+                "sku": "SKU-AUR-220",
+                "name": "AUR-220 Wireless Earbuds",
+                "quantity": 1,
+                "unit_price": 2499,
+                "category": "electronics"
+              },
+              {
+                "sku": "SKU-PHC-11",
+                "name": "Protective Phone Case",
+                "quantity": 1,
+                "unit_price": 499,
+                "category": "accessory"
+              }
+            ],
+            "existing_return": null,
+            "saved_address_id": "ADDR-MAYA-01",
+            "address_summary": "Customer saved Bengaluru delivery address (masked summary)"
+          }
+        }
+      ],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 13,
+      "status": "processed",
+      "user_message": "The left earbud does not charge even after I tried the charging case.",
+      "assistant_response": "The left earbud does not charge even after trying the charging case. Please specify a preferred pickup date and time window, and confirm your choice.",
+      "intent": "provide_return_reason",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 13,
+        "last_user_text": "The left earbud does not charge even after I tried the charging case.",
+        "current_intent": "provide_return_reason",
+        "current_entities": {
+          "return_reason": "defective_left_earbud"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_date",
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 14,
+      "status": "processed",
+      "user_message": "Saturday, 28 November 2026 would work.",
+      "assistant_response": "What pickup time window would work for you?",
+      "intent": "provide_pickup_date",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 14,
+        "last_user_text": "Saturday, 28 November 2026 would work.",
+        "current_intent": "provide_pickup_date",
+        "current_entities": {
+          "date": "2026-11-28"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 15,
+      "status": "processed",
+      "user_message": "And for Saturday, please make it after 6 pm.",
+      "assistant_response": "More than one pickup slot is available. Please choose one:  \n- 18:00–20:00 (slot PICK-20261128-E1)  \n- 20:00–22:00 (slot PICK-20261128-E2)  \n\nConfirm your choice.",
+      "intent": "state_followup",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 15,
+        "last_user_text": "And for Saturday, please make it after 6 pm.",
+        "current_intent": "state_followup",
+        "current_entities": {
+          "time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          }
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "check_pickup_slots",
+          "status": "success",
+          "result_count": 2
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_name": "check_pickup_slots",
+          "status": "success",
+          "request": {
+            "pickup_date": "2026-11-28",
+            "requested_window": {
+              "start": "18:00",
+              "end": null,
+              "raw": "after 6 pm"
+            },
+            "address_summary": "Customer saved Bengaluru delivery address (masked summary)"
+          },
+          "result": [
+            {
+              "slot_id": "PICK-20261128-E1",
+              "date": "2026-11-28",
+              "window_start": "18:00",
+              "window_end": "20:00",
+              "postal_area": "Bengaluru",
+              "status": "available"
+            },
+            {
+              "slot_id": "PICK-20261128-E2",
+              "date": "2026-11-28",
+              "window_start": "20:00",
+              "window_end": "22:00",
+              "postal_area": "Bengaluru",
+              "status": "available"
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 16,
+      "status": "processed",
+      "user_message": "Before we continue, what is the electronics return window under the current policy?",
+      "assistant_response": "The retrieved policy information says: insert metal objects or liquid into the charging port. If one side still fails, record which side, the observed indicator behaviour and whether the case charges. This information supports the warranty inspection; it does not itself prove the product is defective.\n\nReturn or warranty path\nWithin the current 14-day electronics return window, a customer may request a return under KB-002. A reported fault should be marked as defective and may require inspection. After that window, direct the customer to the manufacturer's warranty path if the delivery date and product conditions support it. The assistant should not promise immediate replacement before the warranty service confirms the claim.\n\nAccessory\\n\\nSources: KB-009 / KB-009-C128-0004 (version 1.0); KB-002 / KB-002-C128-0002 (version 2.0); KB-002 / KB-002-C128-0001 (version 2.0)",
+      "intent": "knowledge_base_query",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 2004 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 16,
+        "last_user_text": "Before we continue, what is the electronics return window under the current policy?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "search_kb",
+          "status": "success",
+          "candidate_count": 8,
+          "result_count": 3,
+          "version_filter": "active_only"
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_name": "search_kb",
+          "status": "success",
+          "request": {
+            "query": "Before we continue, what is the electronics return window under the current policy?",
+            "top_k": 8,
+            "chunk_size": 128,
+            "rrf_k": 60
+          },
+          "result": [
+            {
+              "doc_id": "KB-001",
+              "document_id": "KB-001",
+              "chunk_id": "KB-001-C128-0006",
+              "title": "Returns and Refunds Policy — 2025 (Superseded)",
+              "section": "This policy is kept so that an assistant can explain why an older order",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2025-12-31",
+              "status": "superseded",
+              "source_file": "returns_policy_2025_v1.md",
+              "content": "received a different eligibility result. For current orders, do not quote the 2025 electronics window of 7 days as if it were still active. The current policy is KB-002, version 2.0, effective 1 January 2026. If the delivery date is missing, ask for the order ID and look up the recorded delivery date before deciding which version applies.",
+              "score": 0.03252247488101534,
+              "rank": 1,
+              "method": "hybrid_rrf",
+              "dense_rank": 2,
+              "bm25_rank": 1,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-001",
+              "document_id": "KB-001",
+              "chunk_id": "KB-001-C128-0003",
+              "title": "Returns and Refunds Policy — 2025 (Superseded)",
+              "section": "Return eligibility in 2025",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2025-12-31",
+              "status": "superseded",
+              "source_file": "returns_policy_2025_v1.md",
+              "content": "could be rejected after inspection. A return request created after the 14-day period was normally ineligible unless a statutory right or a documented service exception applied. The 2025 electronics rule was stricter: headphones, speakers, chargers and other electronic accessories had a 7-calendar-day return window from delivery. This historical 7-day electronics window is not the current rule.\n\nItems excluded from ordinary change-of-mind returns\nPersonalised products, opened hygiene products, downloadable software after activation, gift cards and items marked Final Sale were excluded from ordinary change-of-mind returns. A damaged, defective or incorrectly supplied item could still be reviewed",
+              "score": 0.032266458495966696,
+              "rank": 2,
+              "method": "hybrid_rrf",
+              "dense_rank": 1,
+              "bm25_rank": 3,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-009",
+              "document_id": "KB-009",
+              "chunk_id": "KB-009-C128-0004",
+              "title": "Wireless Audio Products and Warranty",
+              "section": "Basic diagnostics",
+              "version": "1.0",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "wireless_audio_warranty.md",
+              "content": "insert metal objects or liquid into the charging port. If one side still fails, record which side, the observed indicator behaviour and whether the case charges. This information supports the warranty inspection; it does not itself prove the product is defective.\n\nReturn or warranty path\nWithin the current 14-day electronics return window, a customer may request a return under KB-002. A reported fault should be marked as defective and may require inspection. After that window, direct the customer to the manufacturer's warranty path if the delivery date and product conditions support it. The assistant should not promise immediate replacement before the warranty service confirms the claim.\n\nAccessory",
+              "score": 0.031754032258064516,
+              "rank": 3,
+              "method": "hybrid_rrf",
+              "dense_rank": 4,
+              "bm25_rank": 2,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-002",
+              "document_id": "KB-002",
+              "chunk_id": "KB-002-C128-0002",
+              "title": "Returns and Refunds Policy — 2026 (Current)",
+              "section": "Purpose and version rule",
+              "version": "2.0",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "returns_policy_2026_v2.md",
+              "content": "rules in this document, not the archived 2025 rules. If the delivery date is unknown, retrieve the order before calculating the eligibility window.\n\nStandard return windows\nMost eligible, non-personalised products may be returned within 30 calendar days from the recorded delivery date. Electronics and electronic accessories, including headphones, wireless earbuds, speakers, chargers and smart-home accessories, may be returned within 14 calendar days from delivery. The electronics rule is identified internally as RET-E14. The general rule is identified as RET-30. The final day is included until 23:59 in",
+              "score": 0.03149801587301587,
+              "rank": 4,
+              "method": "hybrid_rrf",
+              "dense_rank": 3,
+              "bm25_rank": 4,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-001",
+              "document_id": "KB-001",
+              "chunk_id": "KB-001-C128-0005",
+              "title": "Returns and Refunds Policy — 2025 (Superseded)",
+              "section": "Return request and inspection",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2025-12-31",
+              "status": "superseded",
+              "source_file": "returns_policy_2025_v1.md",
+              "content": "a reason recorded against the RMA. A customer could ask for an explanation of the inspection decision.\n\nRefunds under the archived policy\nFor an accepted return, the refund was initiated after inspection. The refund destination normally followed the original payment method, subject to payment-network limitations. The old policy did not guarantee that a bank or card issuer would post the credit on the same day. Customers were advised to retain the refund reference until the credit appeared on their statement.\n\nVersion handling\nThis policy is kept so that an assistant can explain why an older order received a different eligibility result. For current orders, do not quote the 2025",
+              "score": 0.030090497737556562,
+              "rank": 5,
+              "method": "hybrid_rrf",
+              "dense_rank": 8,
+              "bm25_rank": 5,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-001",
+              "document_id": "KB-001",
+              "chunk_id": "KB-001-C128-0001",
+              "title": "Returns and Refunds Policy — 2025 (Superseded)",
+              "section": "Returns and Refunds Policy — 2025 (Superseded)",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2025-12-31",
+              "status": "superseded",
+              "source_file": "returns_policy_2025_v1.md",
+              "content": "ShopSphere Returns and Refunds Policy — 2025\nDocument ID: KB-001 | Version: 1.0 | Effective: 2025-01-01 to 2025-12-31 | Status: superseded\n\nPurpose and scope\nThis archived policy records the return rules that applied to ShopSphere orders delivered during calendar year 2025. It is retained for historical questions and audit comparisons. It must not be applied to orders delivered on or after 1 January 2026. When a customer asks for the current rule, use",
+              "score": 0.029857397504456328,
+              "rank": 6,
+              "method": "hybrid_rrf",
+              "dense_rank": 6,
+              "bm25_rank": 8,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-002",
+              "document_id": "KB-002",
+              "chunk_id": "KB-002-C128-0001",
+              "title": "Returns and Refunds Policy — 2026 (Current)",
+              "section": "Returns and Refunds Policy — 2026 (Current)",
+              "version": "2.0",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "returns_policy_2026_v2.md",
+              "content": "ShopSphere Returns and Refunds Policy — 2026\nDocument ID: KB-002 | Version: 2.0 | Effective: 2026-01-01 | Status: active\n\nPurpose and version rule\nThis is the current ShopSphere returns policy for orders delivered on or after 1 January 2026. It supersedes KB-001 for those orders. The delivery date determines the applicable policy version. A customer who asks about a current order should receive the rules in this document, not the archived 2025 rules. If the delivery date",
+              "score": 0.02946912242686891,
+              "rank": 7,
+              "method": "hybrid_rrf",
+              "dense_rank": 5,
+              "bm25_rank": 11,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-004",
+              "document_id": "KB-004",
+              "chunk_id": "KB-004-C128-0001",
+              "title": "Product Exchange Policy",
+              "section": "Product Exchange Policy",
+              "version": "1.1",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "exchange_policy.md",
+              "content": "ShopSphere Product Exchange Policy\nDocument ID: KB-004 | Version: 1.1 | Effective: 2026-01-01 | Status: active\n\nExchange options\nAn exchange replaces an eligible item with another item or variant rather than returning the purchase amount. Exchanges are subject to the same delivery-date eligibility windows as returns: 30 days for most eligible products and 14 days for electronics. The exchange service checks stock in the destination fulfilment region before presenting a replacement option. A replacement is not reserved until the customer confirms the exchange summary and the exchange record is created.\n\nEl",
+              "score": 0.029418126757516764,
+              "rank": 8,
+              "method": "hybrid_rrf",
+              "dense_rank": 9,
+              "bm25_rank": 7,
+              "rrf_k": 60,
+              "chunk_size": 128
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "KB-009 / KB-009-C128-0004 (version 1.0)",
+        "KB-002 / KB-002-C128-0002 (version 2.0)",
+        "KB-002 / KB-002-C128-0001 (version 2.0)"
+      ],
+      "completed": false
+    },
+    {
+      "turn": 17,
+      "status": "processed",
+      "user_message": "I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month.",
+      "assistant_response": "More than one pickup slot is available. Please choose one:\n- 18:00–20:00 (slot PICK-20261128-E1)\n- 20:00–22:00 (slot PICK-20261128-E2)",
+      "intent": "report_decision",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 2125 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 17,
+        "last_user_text": "I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month.",
+        "current_intent": "report_decision",
+        "current_entities": {
+          "order_ids": [
+            "ORD-66310"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-CHG-45",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310"
+        },
+        {
+          "tool": "check_pickup_slots",
+          "status": "success",
+          "result_count": 2
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_name": "get_order",
+          "status": "success",
+          "request": {
+            "order_id": "ORD-66310",
+            "customer_id": "CUST-MAYA-1042"
+          },
+          "result": {
+            "order_id": "ORD-66310",
+            "customer_id": "CUST-MAYA-1042",
+            "order_date": "2026-10-18",
+            "delivery_date": "2026-10-21",
+            "order_status": "ORD-DEL",
+            "payment_method": "UPI",
+            "payment_status": "PAY-CAP",
+            "items": [
+              {
+                "sku": "SKU-CHG-45",
+                "name": "45W USB-C Charger",
+                "quantity": 1,
+                "unit_price": 1299,
+                "category": "electronics"
+              }
+            ],
+            "customer_decision_episode": "Customer said they chose an exchange rather than a refund."
+          }
+        },
+        {
+          "tool_name": "check_pickup_slots",
+          "status": "success",
+          "request": {
+            "pickup_date": "2026-11-28",
+            "requested_window": {
+              "start": "18:00",
+              "end": null,
+              "raw": "after 6 pm"
+            },
+            "address_summary": "Customer saved Bengaluru delivery address (masked summary)"
+          },
+          "result": [
+            {
+              "slot_id": "PICK-20261128-E1",
+              "date": "2026-11-28",
+              "window_start": "18:00",
+              "window_end": "20:00",
+              "postal_area": "Bengaluru",
+              "status": "available"
+            },
+            {
+              "slot_id": "PICK-20261128-E2",
+              "date": "2026-11-28",
+              "window_start": "20:00",
+              "window_end": "22:00",
+              "postal_area": "Bengaluru",
+              "status": "available"
+            }
+          ]
+        }
+      ],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 18,
+      "status": "processed",
+      "user_message": "What does code ERR-RMA-04 mean?",
+      "assistant_response": "The retrieved policy information says: the requested SKU is not part of the order. Read the order items and ask the customer to select one of the listed items. ERR-RMA-03 means the item is outside the applicable return window. Explain the policy version and delivery date used. ERR-RMA-04 means a return reason is missing or invalid. Ask a concise question and do not create an RMA until a supported reason is selected. ERR-RMA-05 means the pickup slot is unavailable. Offer only slots returned by the scheduling service. ERR-RMA-06 means a confirmation token or explicit customer confirmation is missing. Do not retry the write\\n\\nSources: KB-007 / KB-007-C128-0003 (version 1.2); KB-006 / KB-006-C128-0003 (version 1.4); KB-006 / KB-006-C128-0004 (version 1.4)",
+      "intent": "knowledge_base_query",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 2217 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 18,
+        "last_user_text": "What does code ERR-RMA-04 mean?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {
+          "domain_codes": [
+            "ERR-RMA-04"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-CHG-45",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "search_kb",
+          "status": "success",
+          "candidate_count": 3,
+          "result_count": 3,
+          "version_filter": "none"
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_name": "search_kb",
+          "status": "success",
+          "request": {
+            "query": "What does code ERR-RMA-04 mean?",
+            "top_k": 3,
+            "chunk_size": 128,
+            "rrf_k": 60
+          },
+          "result": [
+            {
+              "doc_id": "KB-007",
+              "document_id": "KB-007",
+              "chunk_id": "KB-007-C128-0003",
+              "title": "Return Authorisation and Error Codes",
+              "section": "Error codes",
+              "version": "1.2",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "return_authorisation_and_error_codes.md",
+              "content": "the requested SKU is not part of the order. Read the order items and ask the customer to select one of the listed items. ERR-RMA-03 means the item is outside the applicable return window. Explain the policy version and delivery date used. ERR-RMA-04 means a return reason is missing or invalid. Ask a concise question and do not create an RMA until a supported reason is selected. ERR-RMA-05 means the pickup slot is unavailable. Offer only slots returned by the scheduling service. ERR-RMA-06 means a confirmation token or explicit customer confirmation is missing. Do not retry the write",
+              "score": 0.031754032258064516,
+              "rank": 1,
+              "method": "hybrid_rrf",
+              "dense_rank": 2,
+              "bm25_rank": 4,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-006",
+              "document_id": "KB-006",
+              "chunk_id": "KB-006-C128-0003",
+              "title": "Order and Shipment Status Codes",
+              "section": "Order status codes",
+              "version": "1.4",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "order_status_codes.md",
+              "content": "the order was cancelled before dispatch. ORD-RET means a return record exists; it does not necessarily mean the refund is complete.\n\nShipment scan codes\nSHP-LBL means a shipping label was created but the carrier has not yet scanned the parcel. SHP-PICK means the carrier collected the parcel. SHP-TRANS means the parcel is moving between carrier facilities. SHP-OUT means the parcel is out for delivery. SHP-ATT means a delivery attempt was recorded. SHP-DEP means the parcel is held at a local depot. SHP-DLV means the carrier recorded successful delivery. SHP-EX",
+              "score": 0.03131881575727918,
+              "rank": 2,
+              "method": "hybrid_rrf",
+              "dense_rank": 7,
+              "bm25_rank": 1,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-006",
+              "document_id": "KB-006",
+              "chunk_id": "KB-006-C128-0004",
+              "title": "Order and Shipment Status Codes",
+              "section": "Shipment scan codes",
+              "version": "1.4",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "order_status_codes.md",
+              "content": "a local depot. SHP-DLV means the carrier recorded successful delivery. SHP-EXC means an exception needs investigation.\n\nStatus conflicts\nIf the order service says ORD-SHIP while the carrier says SHP-ATT, explain that the order was dispatched and a delivery attempt was recorded. If the order service says ORD-DEL but the customer disputes receipt, open a proof-of-delivery investigation rather than changing the status manually. When two systems disagree, report the timestamps and route the conflict to operations.\n\nWhat the assistant may do\nThe assistant may read status and explain the code. It may not manually change a carrier scan or mark",
+              "score": 0.0304147465437788,
+              "rank": 3,
+              "method": "hybrid_rrf",
+              "dense_rank": 10,
+              "bm25_rank": 2,
+              "rrf_k": 60,
+              "chunk_size": 128
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "KB-007 / KB-007-C128-0003 (version 1.2)",
+        "KB-006 / KB-006-C128-0003 (version 1.4)",
+        "KB-006 / KB-006-C128-0004 (version 1.4)"
+      ],
+      "completed": false
+    },
+    {
+      "turn": 19,
+      "status": "processed",
+      "user_message": "My preferred delivery window has changed to 7 pm to 9 pm.",
+      "assistant_response": "I understood that as a profile preference. Persistent fact storage and updates will be connected under the long-term memory task.",
+      "intent": "update_user_fact",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 2079 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 19,
+        "last_user_text": "My preferred delivery window has changed to 7 pm to 9 pm.",
+        "current_intent": "update_user_fact",
+        "current_entities": {
+          "time_window": {
+            "start": "19:00",
+            "end": "21:00",
+            "raw": "7 pm to 9 pm"
+          }
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-CHG-45",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "19:00",
+            "end": "21:00",
+            "raw": "7 pm to 9 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 20,
+      "status": "processed",
+      "user_message": "Please use SMS instead of email for future routine updates.",
+      "assistant_response": "I understood that as a profile preference. Persistent fact storage and updates will be connected under the long-term memory task.",
+      "intent": "update_user_fact",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 2020 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 20,
+        "last_user_text": "Please use SMS instead of email for future routine updates.",
+        "current_intent": "update_user_fact",
+        "current_entities": {
+          "notification_channel": "SMS"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-CHG-45",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "19:00",
+            "end": "21:00",
+            "raw": "7 pm to 9 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 21,
+      "status": "processed",
+      "user_message": "What happens if the driver misses my return pickup?",
+      "assistant_response": "The retrieved policy information says: the items listed in the return authorisation. Remove or cover old shipping labels so the carrier scans the correct return label. Do not include batteries or hazardous materials unless the carrier instructions explicitly permit them.\n\nMissed pickup\nIf the carrier misses the scheduled pickup, first check the carrier event. If no attempt was recorded, create a reschedule request using the next available slot. If the carrier records an unsuccessful attempt, explain the scan and ask whether the customer wants another available slot. Do not create a second RMA for the same item. Keep the existing RMA identifier and add a pickup reschedule event.\n\nHandover evidence\nAt collection,\\n\\nSources: KB-013 / KB-013-C128-0004 (version 1.3); KB-013 / KB-013-C128-0005 (version 1.3); KB-002 / KB-002-C128-0005 (version 2.0)",
+      "intent": "knowledge_base_query",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 1968 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 21,
+        "last_user_text": "What happens if the driver misses my return pickup?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-CHG-45",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "19:00",
+            "end": "21:00",
+            "raw": "7 pm to 9 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [
+        {
+          "tool": "search_kb",
+          "status": "success",
+          "candidate_count": 3,
+          "result_count": 3,
+          "version_filter": "none"
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_name": "search_kb",
+          "status": "success",
+          "request": {
+            "query": "What happens if the driver misses my return pickup?",
+            "top_k": 3,
+            "chunk_size": 128,
+            "rrf_k": 60
+          },
+          "result": [
+            {
+              "doc_id": "KB-013",
+              "document_id": "KB-013",
+              "chunk_id": "KB-013-C128-0004",
+              "title": "Reverse Pickup Scheduling and Packaging Guide",
+              "section": "Packaging",
+              "version": "1.3",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "reverse_pickup_and_packaging.md",
+              "content": "the items listed in the return authorisation. Remove or cover old shipping labels so the carrier scans the correct return label. Do not include batteries or hazardous materials unless the carrier instructions explicitly permit them.\n\nMissed pickup\nIf the carrier misses the scheduled pickup, first check the carrier event. If no attempt was recorded, create a reschedule request using the next available slot. If the carrier records an unsuccessful attempt, explain the scan and ask whether the customer wants another available slot. Do not create a second RMA for the same item. Keep the existing RMA identifier and add a pickup reschedule event.\n\nHandover evidence\nAt collection,",
+              "score": 0.03278688524590164,
+              "rank": 1,
+              "method": "hybrid_rrf",
+              "dense_rank": 1,
+              "bm25_rank": 1,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-013",
+              "document_id": "KB-013",
+              "chunk_id": "KB-013-C128-0005",
+              "title": "Reverse Pickup Scheduling and Packaging Guide",
+              "section": "Missed pickup",
+              "version": "1.3",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "reverse_pickup_and_packaging.md",
+              "content": "existing RMA identifier and add a pickup reschedule event.\n\nHandover evidence\nAt collection, the carrier should scan the return label and provide a pickup receipt or digital confirmation. The customer should retain the receipt until the return is accepted or the refund is initiated. If the carrier takes the parcel without a scan, escalate with the pickup reference and timestamp.",
+              "score": 0.03225806451612903,
+              "rank": 2,
+              "method": "hybrid_rrf",
+              "dense_rank": 2,
+              "bm25_rank": 2,
+              "rrf_k": 60,
+              "chunk_size": 128
+            },
+            {
+              "doc_id": "KB-002",
+              "document_id": "KB-002",
+              "chunk_id": "KB-002-C128-0005",
+              "title": "Returns and Refunds Policy — 2026 (Current)",
+              "section": "Excluded products and exceptions",
+              "version": "2.0",
+              "effective_from": "2026-01-01",
+              "effective_to": "open",
+              "status": "active",
+              "source_file": "returns_policy_2026_v2.md",
+              "content": ". Only the designated returns supervisor can approve a policy exception; the assistant must not invent one.\n\nAuthorisation and pickup\nA return request must identify the order and item, and capture a reason. The assistant checks delivery date, item eligibility and order status before offering a pickup. A return authorisation is not a completed return. The item must be handed to the carrier and inspected. A pickup can be booked for an available date within seven calendar days after authorisation. The pickup confirmation must show the item, pickup address, date and time window. A database write to create the pickup must happen only after the customer explicitly confirms the complete summary.",
+              "score": 0.031024531024531024,
+              "rank": 3,
+              "method": "hybrid_rrf",
+              "dense_rank": 3,
+              "bm25_rank": 6,
+              "rrf_k": 60,
+              "chunk_size": 128
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "KB-013 / KB-013-C128-0004 (version 1.3)",
+        "KB-013 / KB-013-C128-0005 (version 1.3)",
+        "KB-002 / KB-002-C128-0005 (version 2.0)"
+      ],
+      "completed": false
+    },
+    {
+      "turn": 22,
+      "status": "processed",
+      "user_message": "Please repeat the complete return pickup summary so I can confirm it.",
+      "assistant_response": "Please review the return pickup details:\n- Order: ORD-66310\n- Item SKU: SKU-CHG-45\n- Reason: defective_left_earbud\n- Pickup date: 2026-11-28\n- Pickup window: {'start': '19:00', 'end': '21:00', 'raw': '7 pm to 9 pm'}\n- Address: Customer saved Bengaluru delivery address (masked summary)",
+      "intent": "request_task_summary",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 2100 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 22,
+        "last_user_text": "Please repeat the complete return pickup summary so I can confirm it.",
+        "current_intent": "request_task_summary",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-CHG-45",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "19:00",
+            "end": "21:00",
+            "raw": "7 pm to 9 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 23,
+      "status": "processed",
+      "user_message": "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.",
+      "assistant_response": "There is no pending booking awaiting confirmation, so I haven't made any database change.",
+      "intent": "confirm_action",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 2099 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 23,
+        "last_user_text": "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.",
+        "current_intent": "confirm_action",
+        "current_entities": {
+          "skus": [
+            "SKU-AUR-220"
+          ],
+          "time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          }
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 24,
+      "status": "processed",
+      "user_message": "Please forget my saved delivery note about leaving parcels at the side door.",
+      "assistant_response": "I understand the forget request. Persistent-memory deletion is not connected yet, so I won't claim that the information has been deleted.",
+      "intent": "forget_request",
+      "nlg_status": "fallback:ValueError",
+      "nlg_error": "Qwen NLG prompt needs 1912 tokens, above the safe input budget 1856",
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 24,
+        "last_user_text": "Please forget my saved delivery note about leaving parcels at the side door.",
+        "current_intent": "forget_request",
+        "current_entities": {
+          "delivery_note": "side door"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    },
+    {
+      "turn": 25,
+      "status": "processed",
+      "user_message": "Perfect, thanks. Have a good day!",
+      "assistant_response": "Goodbye! Thank you for contacting ShopSphere.",
+      "intent": "closing",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 25,
+        "last_user_text": "Perfect, thanks. Have a good day!",
+        "current_intent": "closing",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-66310",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-CHG-45",
+            "name": "45W USB-C Charger"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-66310",
+          "item_count": 1
+        }
+      },
+      "tool_calls": [],
+      "tool_results": [],
+      "sources": [],
+      "completed": false
+    }
+  ],
+  "started_at": "2026-11-23T12:51:17+05:30",
+  "finished_at": "2026-11-23T12:53:55+05:30",
+  "successfully_processed_user_turns": 25,
+  "failed_turns": 0,
+  "deterministic_fallback_turns": 9,
+  "customer_facing_qwen_calls": 25,
+  "successful_customer_facing_qwen_calls": 16,
+  "summary_generation_calls": 22,
+  "successful_summary_generation_calls": 22,
+  "tool_calls": 7,
+  "booking_write_events": [],
+  "confirmation_guard_verified": null,
+  "booking_after_explicit_confirmation": null,
+  "call_records_for_run": 82,
+  "summary_cursor": 22,
+  "runtime_database_after": {
+    "synthetic_fixture": true,
+    "slots": [
+      {
+        "slot_id": "PICK-20261128-E1",
+        "date": "2026-11-28",
+        "window_start": "18:00",
+        "window_end": "20:00",
+        "postal_area": "Bengaluru",
+        "status": "available"
+      },
+      {
+        "slot_id": "PICK-20261128-E2",
+        "date": "2026-11-28",
+        "window_start": "20:00",
+        "window_end": "22:00",
+        "postal_area": "Bengaluru",
+        "status": "available"
+      },
+      {
+        "slot_id": "PICK-20261127-E1",
+        "date": "2026-11-27",
+        "window_start": "18:00",
+        "window_end": "20:00",
+        "postal_area": "Bengaluru",
+        "status": "available"
+      }
+    ],
+    "note": "These are deterministic test slots only. The later scheduler tool must check actual fixture state and only return available options.",
+    "bookings": [],
+    "database_type": "runtime_json_pickup_database"
+  },
+  "booking_write_attempted": false
+}

@@ -19,6 +19,18 @@ RUN_ID = os.getenv("RECALLBOT_RUN_ID") or f"r-{datetime.now().astimezone().strft
 LOG_PATH = LOG_DIR / "calls.jsonl"
 
 
+def set_run_id(run_id: str, *, reject_existing: bool = False) -> None:
+    """Set the append-only call-log run identifier for this process."""
+    if not isinstance(run_id, str) or not run_id.strip():
+        raise ValueError("run_id must be a non-empty string")
+    if reject_existing and LOG_PATH.exists():
+        with LOG_PATH.open("r", encoding="utf-8") as stream:
+            if any(json.loads(line).get("run_id") == run_id for line in stream if line.strip()):
+                raise ValueError(f"run_id {run_id!r} already exists in {LOG_PATH}")
+    global RUN_ID
+    RUN_ID = run_id
+
+
 def log_call(*, config: str, user: str, session: str, turn: int,
              call_type: str, model: str, input_tokens: int = 0,
              output_tokens: int = 0, retrieved_tokens: int = 0,
