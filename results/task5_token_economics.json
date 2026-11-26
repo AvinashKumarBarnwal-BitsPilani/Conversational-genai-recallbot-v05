@@ -1,0 +1,151 @@
+{
+  "assumptions": {
+    "daily_users": 25000,
+    "turns_per_conversation": 40,
+    "days_per_month": 30,
+    "turns_per_month": 30000000,
+    "cache_min_tokens": 1024,
+    "cache_ttl_minutes": 5,
+    "cache_writes_per_day_upper_bound": 288,
+    "cache_hit_rate": 0.999712,
+    "token_counts": "Qwen3 tokenizer counts reported by Ollama; GPT-4o's tokenizer would differ slightly",
+    "embeddings": "local BAAI/bge-small-en-v1.5, $0 (not an API cost)"
+  },
+  "configs": {
+    "trim": {
+      "source": "Task 2 official trim run (Session A, turns 1-25; system_prompt_v1 + workflow JSON)",
+      "runs": [
+        "task2b_trim_run2"
+      ],
+      "scripted_turns": 25,
+      "billable_calls": {
+        "chat": 22
+      },
+      "input_tokens_per_turn": 1440.2,
+      "output_tokens_per_turn": 30.9,
+      "chat_calls_per_turn": 0.88,
+      "fixed_prefix_tokens": 1100,
+      "prefix_cacheable": true
+    },
+    "hybrid_mem": {
+      "source": "Task 4 ablation run (Sessions A+B, turns 1-40; system_prompt_v2 + tools)",
+      "runs": [
+        "t4_hybrid_mem_A",
+        "t4_hybrid_mem_B"
+      ],
+      "scripted_turns": 40,
+      "billable_calls": {
+        "chat": 38,
+        "extract": 1,
+        "reflect": 1
+      },
+      "input_tokens_per_turn": 815.3,
+      "output_tokens_per_turn": 36.9,
+      "chat_calls_per_turn": 0.95,
+      "fixed_prefix_tokens": 334,
+      "prefix_cacheable": false
+    },
+    "no_rag (reference)": {
+      "source": "Reference: trim k=3 history with system_prompt_v2, no KB or long-term memory (Task 4 ablation run, Sessions A+B)",
+      "runs": [
+        "t4_no_rag_A",
+        "t4_no_rag_B"
+      ],
+      "scripted_turns": 40,
+      "billable_calls": {
+        "chat": 38
+      },
+      "input_tokens_per_turn": 604.9,
+      "output_tokens_per_turn": 20.6,
+      "chat_calls_per_turn": 0.95,
+      "fixed_prefix_tokens": 334,
+      "prefix_cacheable": false
+    }
+  },
+  "scenarios": [
+    {
+      "config": "trim",
+      "price_row": "GPT-4o (OpenAI)",
+      "monthly_input_tokens": 43206000000,
+      "monthly_output_tokens": 927600000,
+      "monthly_cached_tokens": 29031636480,
+      "cost_no_cache_usd": 117291.0,
+      "cost_with_cache_usd": 81001.45,
+      "saving_pct": 30.9,
+      "cache_applies": true
+    },
+    {
+      "config": "trim",
+      "price_row": "Claude Haiku 5.5",
+      "monthly_input_tokens": 43206000000,
+      "monthly_output_tokens": 927600000,
+      "monthly_cached_tokens": 29031636480,
+      "cost_no_cache_usd": 4784.4,
+      "cost_with_cache_usd": 2171.79,
+      "saving_pct": 54.6,
+      "cache_applies": true
+    },
+    {
+      "config": "hybrid_mem",
+      "price_row": "GPT-4o (OpenAI)",
+      "monthly_input_tokens": 24459750000,
+      "monthly_output_tokens": 1107000000,
+      "monthly_cached_tokens": 0,
+      "cost_no_cache_usd": 72219.38,
+      "cost_with_cache_usd": 72219.38,
+      "saving_pct": 0.0,
+      "cache_applies": false
+    },
+    {
+      "config": "hybrid_mem",
+      "price_row": "Claude Haiku 5.5",
+      "monthly_input_tokens": 24459750000,
+      "monthly_output_tokens": 1107000000,
+      "monthly_cached_tokens": 0,
+      "cost_no_cache_usd": 2999.47,
+      "cost_with_cache_usd": 2999.47,
+      "saving_pct": 0.0,
+      "cache_applies": false
+    },
+    {
+      "config": "no_rag (reference)",
+      "price_row": "GPT-4o (OpenAI)",
+      "monthly_input_tokens": 18147750000,
+      "monthly_output_tokens": 617250000,
+      "monthly_cached_tokens": 0,
+      "cost_no_cache_usd": 51541.88,
+      "cost_with_cache_usd": 51541.88,
+      "saving_pct": 0.0,
+      "cache_applies": false
+    },
+    {
+      "config": "no_rag (reference)",
+      "price_row": "Claude Haiku 5.5",
+      "monthly_input_tokens": 18147750000,
+      "monthly_output_tokens": 617250000,
+      "monthly_cached_tokens": 0,
+      "cost_no_cache_usd": 2123.4,
+      "cost_with_cache_usd": 2123.4,
+      "saving_pct": 0.0,
+      "cache_applies": false
+    }
+  ],
+  "padding_what_if": [
+    {
+      "price_row": "GPT-4o (OpenAI)",
+      "padding_tokens_per_call": 690,
+      "prefix_cost_today_usd": 23797.5,
+      "prefix_cost_if_padded_and_cached_usd": 36480.0,
+      "monthly_change_usd": 12682.5,
+      "input_budget_used_by_padding_pct": 37.2
+    },
+    {
+      "price_row": "Claude Haiku 5.5",
+      "padding_tokens_per_call": 690,
+      "prefix_cost_today_usd": 951.9,
+      "prefix_cost_if_padded_and_cached_usd": 291.84,
+      "monthly_change_usd": -660.06,
+      "input_budget_used_by_padding_pct": 37.2
+    }
+  ]
+}

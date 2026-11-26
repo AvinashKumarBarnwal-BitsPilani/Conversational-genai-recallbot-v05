@@ -1,0 +1,17 @@
+{
+  "n_vectors": 100000,
+  "real_vectors": 104,
+  "random_padding": 99896,
+  "dimension": 384,
+  "k": 5,
+  "ef_construction": 200,
+  "seed": 7,
+  "query_sets": {
+    "kb_questions": 32,
+    "random": 200
+  },
+  "repeats": 3,
+  "search_threads": 1,
+  "faiss_version": "1.16.0",
+  "machine_note": "measured on the student's Windows laptop (CPU only)"
+}
