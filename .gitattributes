@@ -1,0 +1,5 @@
+# Run evidence must stay byte-exact: session manifests record SHA-256 hashes of
+# memory files. Never convert their line endings.
+memory/runs/** -text
+db/runs/** -text
+results/task3_sessions/** -text
