@@ -1,5 +1,9 @@
 # Task 2 — Dialogue Pipeline and Short-Term Memory
 
+![Task 2 at a glance: the dialogue pipeline with its function names, measured input tokens per turn for full, trim and summary history, and the outcomes](../../images/task2-summary.png)
+
+*Figure: Task 2 at a glance: the dialogue pipeline with its function names, measured input tokens per turn for full, trim and summary history, and the outcomes. Generated from the data and result files by `scripts/make_task2_summary_figure.py`.*
+
 **Project:** RecallBot V05 — E-commerce Orders and Returns  
 **Variant:** V05  
 **Context-window constraint:** 2,048 tokens  
@@ -9,6 +13,37 @@
 > This document records implementation and measured evidence for Task 2. NLU accuracy is measured on the labelled scripted set, separately from unit-test counts.
 
 ---
+
+<!-- TOC -->
+## Table of contents
+
+- [1. Requirement mapping](#1-requirement-mapping)
+- [2. Dialogue pipeline — Task 2(a)](#2-dialogue-pipeline--task-2a)
+  - [2.1 Architecture](#21-architecture)
+  - [2.2 NLU approach](#22-nlu-approach)
+  - [2.3 Dialogue State Tracker fields](#23-dialogue-state-tracker-fields)
+  - [2.4 Procedural memory and prompts](#24-procedural-memory-and-prompts)
+  - [2.5 Model and decoding configuration](#25-model-and-decoding-configuration)
+- [3. Short-term memory strategies — Task 2(b)](#3-short-term-memory-strategies--task-2b)
+  - [3.1 Strategy definitions](#31-strategy-definitions)
+  - [3.2 Controlled Session A experiment](#32-controlled-session-a-experiment)
+  - [3.3 Token and latency results](#33-token-and-latency-results)
+  - [3.4 Stage 5 artifacts](#34-stage-5-artifacts)
+  - [3.5 Reproducibility and limitations](#35-reproducibility-and-limitations)
+- [4. Task 2(c) — Context-handling analysis](#4-task-2c--context-handling-analysis)
+  - [4.1 Official Session A probes](#41-official-session-a-probes)
+  - [4.2 Supplemental memory diagnostics](#42-supplemental-memory-diagnostics)
+  - [4.3 First Trim eviction and state evidence](#43-first-trim-eviction-and-state-evidence)
+  - [4.4 Booking safeguard evidence](#44-booking-safeguard-evidence)
+  - [4.5 Scope and limitations](#45-scope-and-limitations)
+- [5. Task 2 completion status](#5-task-2-completion-status)
+- [Day 3 — Task 2 Summary](#day-3--task-2-summary)
+  - [Task 2(a) — Dialogue Pipeline](#task-2a--dialogue-pipeline)
+  - [Task 2(b) — Short-Term Memory](#task-2b--short-term-memory)
+  - [Task 2(c) — Context Handling](#task-2c--context-handling)
+  - [Validation](#validation)
+
+<!-- /TOC -->
 
 ## 1. Requirement mapping
 

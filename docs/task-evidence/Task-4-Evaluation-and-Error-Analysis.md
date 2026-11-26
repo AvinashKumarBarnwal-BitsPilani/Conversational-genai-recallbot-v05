@@ -6,6 +6,21 @@
 
 **Project:** RecallBot V05 — e-commerce orders and returns · **Model:** `qwen3:1.7b` (Ollama), identical prompt (`system_prompt_v2`), decoding and data in every configuration · **Short-term history:** trim k = 3 in all four configurations · **Context budget:** 2,048 tokens.
 
+<!-- TOC -->
+## Table of contents
+
+- [Runs used](#runs-used)
+- [4(a) Ablation and dialogue quality](#4a-ablation-and-dialogue-quality)
+- [4(b) Error analysis — three failed hybrid_mem probes](#4b-error-analysis--three-failed-hybrid_mem-probes)
+  - [P13 — "Which choice did I make for the USB-C charger order?" · stage: memory write](#p13--which-choice-did-i-make-for-the-usb-c-charger-order--stage-memory-write)
+  - [P11 — "And what happens next after the pickup is completed?" · stage: KB retrieval (residual: prompt/NLG)](#p11--and-what-happens-next-after-the-pickup-is-completed--stage-kb-retrieval-residual-promptnlg)
+  - [P15 — "When the combined instructions … exceed 2,048 tokens, what should RecallBot do?" · stage: NLG / prompt](#p15--when-the-combined-instructions--exceed-2048-tokens-what-should-recallbot-do--stage-nlg--prompt)
+- [4(c) Surprise probes](#4c-surprise-probes)
+- [Limitations found in Task 4](#limitations-found-in-task-4)
+- [Reproduction](#reproduction)
+
+<!-- /TOC -->
+
 ## Runs used
 
 | Run IDs | Purpose |
