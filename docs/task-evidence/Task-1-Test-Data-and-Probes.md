@@ -1,5 +1,27 @@
 # Task 1 – Test Data and Probes
 
+![Task 1 at a glance: the 40-turn conversation map, the 16-document knowledge base, the retrieval questions, the probes and the requirement checks](../../images/task1-summary.png)
+
+*Figure: Task 1 at a glance: the 40-turn conversation map, the 16-document knowledge base, the retrieval questions, the probes and the requirement checks. Generated from the data and result files by `scripts/make_task1_summary_figure.py`.*
+
+<!-- TOC -->
+## Table of contents
+
+- [1. Requirement from the mini project](#1-requirement-from-the-mini-project)
+- [2. Implemented data assets](#2-implemented-data-assets)
+  - [2.1 Knowledge base supporting the test data](#21-knowledge-base-supporting-the-test-data)
+  - [2.2 Scripted conversation](#22-scripted-conversation)
+  - [2.3 Events and low-importance turns](#23-events-and-low-importance-turns)
+  - [2.4 Slot-filling workflow and dialogue-state cases](#24-slot-filling-workflow-and-dialogue-state-cases)
+  - [2.5 Knowledge-base questions](#25-knowledge-base-questions)
+  - [2.6 Probe set](#26-probe-set)
+- [3. Validation and test evidence](#3-validation-and-test-evidence)
+- [4. Task 1 completion summary](#4-task-1-completion-summary)
+- [5. Reproduction commands](#5-reproduction-commands)
+- [6. Evidence files](#6-evidence-files)
+
+<!-- /TOC -->
+
 ## 1. Requirement from the mini project
 
 Task 1 requires three primary data assets:

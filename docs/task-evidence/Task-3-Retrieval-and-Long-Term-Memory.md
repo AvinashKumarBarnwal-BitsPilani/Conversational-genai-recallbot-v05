@@ -22,6 +22,22 @@ Every number below is reproducible from `logs/calls.jsonl` or the listed results
 
 ---
 
+<!-- TOC -->
+## Table of contents
+
+- [3(a) Chunking and indexing — complete (Day 2)](#3a-chunking-and-indexing--complete-day-2)
+- [3(b) Dense, BM25 and hybrid — complete (Day 2)](#3b-dense-bm25-and-hybrid--complete-day-2)
+- [3(c) Semantic memory of the user](#3c-semantic-memory-of-the-user)
+- [3(d) Episodic memory](#3d-episodic-memory)
+- [3(e) Context engineering](#3e-context-engineering)
+- [3(f) Twist E — small context window](#3f-twist-e--small-context-window)
+- [Session B in a separate process](#session-b-in-a-separate-process)
+- [Probe results — official t3_hm_01 (manually judged)](#probe-results--official-t3_hm_01-manually-judged)
+- [7. Pilot findings fixed before the official run](#7-pilot-findings-fixed-before-the-official-run)
+- [Reproduction](#reproduction)
+
+<!-- /TOC -->
+
 ## 3(a) Chunking and indexing — complete (Day 2)
 
 Two chunk sizes (128 and 512 Qwen3 tokens), 15% token-counted overlap, BGE CLS-pooled embeddings, metadata (doc ID, section, version, effective dates, status) per chunk, and an exact flat NumPy index justified by corpus size (84 and 24 chunks). See the README's *Retrieval design decisions* section and `index/dense_*/index_manifest.json`.
