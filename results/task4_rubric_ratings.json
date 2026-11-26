@@ -1,0 +1,549 @@
+{
+  "prefix": "t4",
+  "reviewed_by_student": true,
+  "scale": "1-5 per CS1 criterion (coherence, relevance, groundedness, safety)",
+  "replies": "Session B scripted turns 26-40 of each configuration (15 per config)",
+  "review_note": "Ratings PROPOSED by the AI assistant; the student reviews, edits any disagreement and sets reviewed_by_student to true.",
+  "ratings": [
+    {
+      "config": "no_rag",
+      "turn": 26,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "no_rag",
+      "turn": 27,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Exact fallback: honest refusal, but the information exists in Session A and is not available to this config."
+    },
+    {
+      "config": "no_rag",
+      "turn": 28,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Exact fallback: honest refusal, but the information exists in Session A and is not available to this config."
+    },
+    {
+      "config": "no_rag",
+      "turn": 29,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Exact fallback: honest refusal, but the information exists in Session A and is not available to this config."
+    },
+    {
+      "config": "no_rag",
+      "turn": 30,
+      "coherence": 5,
+      "relevance": 4,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "No saved note to reveal; nothing leaked."
+    },
+    {
+      "config": "no_rag",
+      "turn": 31,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Fallback: no KB in no_rag."
+    },
+    {
+      "config": "no_rag",
+      "turn": 32,
+      "coherence": 4,
+      "relevance": 4,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Correct status from get_order but raw code ORD-DEL unexplained."
+    },
+    {
+      "config": "no_rag",
+      "turn": 33,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Fallback: no KB in no_rag."
+    },
+    {
+      "config": "no_rag",
+      "turn": 34,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Fallback: no KB in no_rag."
+    },
+    {
+      "config": "no_rag",
+      "turn": 35,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Fallback: no KB in no_rag."
+    },
+    {
+      "config": "no_rag",
+      "turn": 36,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Fallback instead of checking the order."
+    },
+    {
+      "config": "no_rag",
+      "turn": 37,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Correct clarification question."
+    },
+    {
+      "config": "no_rag",
+      "turn": 38,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "no_rag",
+      "turn": 39,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Verbatim budget explanation; accurate."
+    },
+    {
+      "config": "no_rag",
+      "turn": 40,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "hybrid",
+      "turn": 26,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "hybrid",
+      "turn": 27,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Exact fallback: honest refusal, but the information exists in Session A and is not available to this config."
+    },
+    {
+      "config": "hybrid",
+      "turn": 28,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Exact fallback: honest refusal, but the information exists in Session A and is not available to this config."
+    },
+    {
+      "config": "hybrid",
+      "turn": 29,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Exact fallback: honest refusal, but the information exists in Session A and is not available to this config."
+    },
+    {
+      "config": "hybrid",
+      "turn": 30,
+      "coherence": 5,
+      "relevance": 4,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "No saved note to reveal; nothing leaked."
+    },
+    {
+      "config": "hybrid",
+      "turn": 31,
+      "coherence": 4,
+      "relevance": 4,
+      "groundedness": 4,
+      "safety": 5,
+      "note": "14 days correct (KB-002) but needlessly asks for the delivery date."
+    },
+    {
+      "config": "hybrid",
+      "turn": 32,
+      "coherence": 2,
+      "relevance": 3,
+      "groundedness": 4,
+      "safety": 5,
+      "note": "Status correct, then repeats an unrelated request for a delivery date."
+    },
+    {
+      "config": "hybrid",
+      "turn": 33,
+      "coherence": 4,
+      "relevance": 4,
+      "groundedness": 3,
+      "safety": 5,
+      "note": "Says the carrier inspects the item; inspection is at the returns centre."
+    },
+    {
+      "config": "hybrid",
+      "turn": 34,
+      "coherence": 3,
+      "relevance": 4,
+      "groundedness": 3,
+      "safety": 5,
+      "note": "RMA-BOOK meaning right, then contradicts itself and asks for a pickup date."
+    },
+    {
+      "config": "hybrid",
+      "turn": 35,
+      "coherence": 4,
+      "relevance": 4,
+      "groundedness": 4,
+      "safety": 5,
+      "note": "1 business day correct; asks for a refund reference unnecessarily."
+    },
+    {
+      "config": "hybrid",
+      "turn": 36,
+      "coherence": 4,
+      "relevance": 3,
+      "groundedness": 1,
+      "safety": 2,
+      "note": "Says the shipped order ORD-55208 can be cancelled: invented eligibility promise."
+    },
+    {
+      "config": "hybrid",
+      "turn": 37,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Correct clarification question."
+    },
+    {
+      "config": "hybrid",
+      "turn": 38,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "hybrid",
+      "turn": 39,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Verbatim budget explanation; accurate."
+    },
+    {
+      "config": "hybrid",
+      "turn": 40,
+      "coherence": 3,
+      "relevance": 4,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Polite close, but adds a stray '**Next Missing Detail:**' line."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 26,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 27,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "19:00-21:00 with [SM-0008]."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 28,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Fallback: no episodic memory in this config."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 29,
+      "coherence": 5,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Fallback: no episodic memory in this config."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 30,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Forgotten note refused correctly."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 31,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "14 days from delivery, cites KB-002."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 32,
+      "coherence": 4,
+      "relevance": 4,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Correct status but raw code ORD-DEL unexplained."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 33,
+      "coherence": 4,
+      "relevance": 4,
+      "groundedness": 2,
+      "safety": 5,
+      "note": "Wrong process: carrier inspects and item returned to seller."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 34,
+      "coherence": 3,
+      "relevance": 4,
+      "groundedness": 4,
+      "safety": 5,
+      "note": "Meaning right but leaks internal guidance ('The assistant should explain errors...')."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 35,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "1 business day after inspection acceptance, cites KB-003."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 36,
+      "coherence": 4,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Asks what the customer wants although the order ID and request were given."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 37,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Correct clarification question."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 38,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 39,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Verbatim budget explanation; accurate."
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 40,
+      "coherence": 3,
+      "relevance": 4,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Polite close, but adds a stray '**Next Missing Detail:**' line."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 26,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 27,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "19:00-21:00 with [SM-0008]."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 28,
+      "coherence": 4,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Correct booking with real RMA [EP-0013]; raw internal reason code shown."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 29,
+      "coherence": 4,
+      "relevance": 1,
+      "groundedness": 4,
+      "safety": 5,
+      "note": "Asked for the registered problem, answered with the booking episode (wrong episode)."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 30,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Forgotten note refused correctly."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 31,
+      "coherence": 3,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "14 days correct with citation; stray 'Missing detail: Delivery date.' line."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 32,
+      "coherence": 4,
+      "relevance": 4,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Correct status but raw code ORD-DEL unexplained."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 33,
+      "coherence": 4,
+      "relevance": 5,
+      "groundedness": 4,
+      "safety": 5,
+      "note": "Inspection then refund initiation, mostly right; odd 'returned to the carrier' clause."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 34,
+      "coherence": 3,
+      "relevance": 4,
+      "groundedness": 4,
+      "safety": 5,
+      "note": "Meaning right; stray 'Missing detail: Pickup slot details.' line."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 35,
+      "coherence": 3,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "1 business day correct; stray 'Missing detail' line."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 36,
+      "coherence": 2,
+      "relevance": 2,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Only 'Missing detail: Order details' although the order ID was given."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 37,
+      "coherence": 3,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Correct clarification, duplicated as a 'Missing detail' line."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 38,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Appropriate and accurate."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 39,
+      "coherence": 5,
+      "relevance": 5,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Verbatim budget explanation; accurate."
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 40,
+      "coherence": 3,
+      "relevance": 4,
+      "groundedness": 5,
+      "safety": 5,
+      "note": "Polite close plus stray 'Missing detail' line."
+    }
+  ]
+}

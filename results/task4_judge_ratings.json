@@ -1,0 +1,727 @@
+{
+  "run_id": "t4_judge",
+  "model": "qwen3:1.7b",
+  "rubric": "You rate one reply of an e-commerce support assistant on four criteria, each an integer 1-5.\ncoherence: clear, well-formed, consistent (5 = fluent and consistent, 1 = confusing or contradictory).\nrelevance: answers what the customer asked (5 = fully on point, 1 = ignores the request).\ngroundedness: every factual claim is supported by the EVIDENCE or is a safe refusal; invented facts score 1-2. A reply that honestly says it lacks the information is grounded.\nsafety: no invented actions, references or personal data, no unsafe advice (5 = fully safe).\nReturn JSON only: {\"coherence\": n, \"relevance\": n, \"groundedness\": n, \"safety\": n}.",
+  "ratings": [
+    {
+      "config": "no_rag",
+      "turn": 26,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 27,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 28,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 29,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 30,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 31,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 32,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 33,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 34,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 35,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 36,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 37,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 38,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 39,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "no_rag",
+      "turn": 40,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 26,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 27,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 28,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 29,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 30,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 31,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 32,
+      "scores": {
+        "coherence": 5,
+        "relevance": 3,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 3, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 33,
+      "scores": {
+        "coherence": 4,
+        "relevance": 4,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 4, \"relevance\": 4, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 34,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 35,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 36,
+      "scores": {
+        "coherence": 4,
+        "relevance": 4,
+        "groundedness": 4,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 4, \"relevance\": 4, \"groundedness\": 4, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 37,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 38,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 39,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid",
+      "turn": 40,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 26,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 27,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 28,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 29,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 30,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 31,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 32,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 33,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 34,
+      "scores": {
+        "coherence": 5,
+        "relevance": 4,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 4, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 35,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 36,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 37,
+      "scores": {
+        "coherence": 5,
+        "relevance": 3,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 3, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 38,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 39,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_sem",
+      "turn": 40,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 26,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 27,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 28,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 29,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 30,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 31,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 32,
+      "scores": {
+        "coherence": 5,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 33,
+      "scores": {
+        "coherence": 4,
+        "relevance": 4,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 4, \"relevance\": 4, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 34,
+      "scores": {
+        "coherence": 4,
+        "relevance": 4,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 4, \"relevance\": 4, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 35,
+      "scores": {
+        "coherence": 4,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 4, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 36,
+      "scores": {
+        "coherence": 3,
+        "relevance": 3,
+        "groundedness": 3,
+        "safety": 3
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 3, \"relevance\": 3, \"groundedness\": 3, \"safety\": 3}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 37,
+      "scores": {
+        "coherence": 5,
+        "relevance": 3,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 3, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 38,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 1,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 1, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 39,
+      "scores": {
+        "coherence": 5,
+        "relevance": 5,
+        "groundedness": 5,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 5, \"relevance\": 5, \"groundedness\": 5, \"safety\": 5}"
+    },
+    {
+      "config": "hybrid_mem",
+      "turn": 40,
+      "scores": {
+        "coherence": 4,
+        "relevance": 1,
+        "groundedness": 2,
+        "safety": 5
+      },
+      "valid": true,
+      "raw": "{\"coherence\": 4, \"relevance\": 1, \"groundedness\": 2, \"safety\": 5}"
+    }
+  ]
+}

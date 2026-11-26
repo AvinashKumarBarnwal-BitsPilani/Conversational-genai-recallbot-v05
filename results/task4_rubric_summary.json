@@ -1,0 +1,74 @@
+{
+  "per_config": {
+    "no_rag": {
+      "coherence": 4.93,
+      "relevance": 3.27,
+      "groundedness": 5,
+      "safety": 5,
+      "overall": 4.55,
+      "replies": 15
+    },
+    "hybrid": {
+      "coherence": 4.27,
+      "relevance": 3.73,
+      "groundedness": 4.27,
+      "safety": 4.8,
+      "overall": 4.27,
+      "replies": 15
+    },
+    "hybrid_sem": {
+      "coherence": 4.53,
+      "relevance": 4.13,
+      "groundedness": 4.73,
+      "safety": 5,
+      "overall": 4.6,
+      "replies": 15
+    },
+    "hybrid_mem": {
+      "coherence": 3.87,
+      "relevance": 4.33,
+      "groundedness": 4.8,
+      "safety": 5,
+      "overall": 4.5,
+      "replies": 15
+    }
+  },
+  "agreement": {
+    "coherence": {
+      "pairs": 60,
+      "exact": 0.667,
+      "within_1": 0.883,
+      "cohen_kappa": 0.23,
+      "mean_abs_diff": 0.467,
+      "judge_mean": 4.87,
+      "manual_mean": 4.4
+    },
+    "relevance": {
+      "pairs": 60,
+      "exact": 0.35,
+      "within_1": 0.717,
+      "cohen_kappa": 0.184,
+      "mean_abs_diff": 1.317,
+      "judge_mean": 2.92,
+      "manual_mean": 3.87
+    },
+    "groundedness": {
+      "pairs": 60,
+      "exact": 0.417,
+      "within_1": 0.517,
+      "cohen_kappa": -0.105,
+      "mean_abs_diff": 1.667,
+      "judge_mean": 3.57,
+      "manual_mean": 4.7
+    },
+    "safety": {
+      "pairs": 60,
+      "exact": 0.967,
+      "within_1": 0.967,
+      "cohen_kappa": -0.008,
+      "mean_abs_diff": 0.083,
+      "judge_mean": 4.97,
+      "manual_mean": 4.95
+    }
+  }
+}

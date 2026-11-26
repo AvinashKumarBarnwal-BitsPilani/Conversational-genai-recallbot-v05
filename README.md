@@ -100,7 +100,7 @@ Every real LLM, embedding and tool call must be timed and appended through `src.
 | Task 3(a) | Chunking, embeddings and indexing | Implemented and tested |
 | Task 3(b) | Dense, BM25 and hybrid retrieval | Implemented, evaluated and documented |
 | Task 3(c–f) | Semantic, episodic, context engineering and twist | Completed — official run `t3_hm_01`, probes manually judged 13/16 — see `docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md` |
-| Task 4 | Evaluation, ablation and error analysis | Pending implementation |
+| Task 4 | Evaluation, ablation and error analysis | Completed — 4 configs (5/7/12/15 of 16), rubric + judge agreement, 3 failures traced (P13, P15 fixed; P11 retrieval fixed, NLG fault remains); see `docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md` |
 | Task 5 | Cost and scalability | Pending implementation |
 | Task 6 | Demo video and AI-use declaration | Pending |
 
@@ -110,6 +110,7 @@ Every real LLM, embedding and tool call must be timed and appended through `src.
 - Day 2: Token-aware chunking, BGE embeddings, dense retrieval, custom BM25, custom RRF, answer-span hit-rate evaluation and ranked-list analysis.
 - Day 3: Task 2(a) dialogue pipeline, Task 2(b) short-term memory comparison, and Task 2(c) context-handling analysis completed.
 - Day 4: Task 3(c–f) long-term memory (semantic facts, episodic stream, reflection, forget cascade), 2,048-token context assembler and Session A → B as separate processes; pilot, calibration and official `hybrid_mem` run completed.
+- Day 5: Task 4 four-configuration ablation, manual probe marking and rubric ratings, Qwen-judge agreement, error analysis with fixes at the failing stage, final memory store published to `memory/`.
 
 All reported results are generated from actual local executions and retained in `logs/` and `results/`.
 
@@ -960,3 +961,30 @@ python -m src.dialogue.demo_memory --verify-only --experiment t3_hm_01
 ```
 
 Sections: (1) Session A with the confirmed booking, (2) process restart with PIDs and memory-file hashes, (3) the semantic facts, episodes, reflection and forget tombstone on disk, (4) Session B answers (fact, update, episodes, forgotten fact, cited KB answer, fallback), (5) failure case P13, (6) episodic scoring walkthrough, (7) per-turn token budget. If the PowerShell console shows garbled dashes, run `chcp 65001` first.
+
+
+# Day 5 — Task 4: Evaluation and Error Analysis
+
+**Status:** completed. Full evidence: [`docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md`](docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md).
+
+![Task 4 summary](images/task4-summary.png)
+
+| Config | Probes correct | Mean input tok / turn | Median turn latency | Total tokens | Rubric mean (C/R/G/S) |
+|---|---:|---:|---:|---:|---|
+| no_rag | 5/16 | 637 | 1,585 ms | 33,114 | 4.93 / 3.27 / 5.00 / 5.00 |
+| hybrid | 7/16 | 795 | 1,842 ms | 42,242 | 4.27 / 3.73 / 4.27 / 4.80 |
+| hybrid_sem | 12/16 | 795 | 2,121 ms | 43,026 | 4.53 / 4.13 / 4.73 / 5.00 |
+| hybrid_mem | 15/16 | 835 | 2,439 ms | 49,704 | 3.87 / 4.33 / 4.80 / 5.00 |
+
+- Each memory type unlocks its own probe categories (KB → K; semantic → R, U, twist; episodic → E).
+- Qwen-judge agreement with manual ratings is poor (Cohen's κ ≤ 0.23); manual ratings are reported.
+- 4(b): P13 (memory write) and P15 (NLG) fixed; P11's retrieval fixed but a prompt/NLG fault remains (`t4fix_hybrid_mem`, 15/16).
+- 4(c): no surprise-probe work required by the instructor (`data/surprise_probes.json`).
+- `memory/` now holds the final store after Session B of `t4fix_hybrid_mem` (see `memory/README.md`).
+
+```powershell
+python scripts/run_ablation.py            # 8 sessions, each in its own process
+python scripts/ablation_metrics.py        # 4(a) table from logs + probe_results.csv
+python scripts/build_rubric_results.py    # rubric table + judge agreement
+python scripts/make_task4_summary_figure.py
+```

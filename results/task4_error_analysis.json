@@ -1,0 +1,524 @@
+{
+  "experiment": "t3_hm_01",
+  "after_run": "t4_hybrid_mem",
+  "failures": {
+    "P13": {
+      "question": "Which choice did I make for the USB-C charger order?",
+      "expected": "The customer chose an exchange rather than a refund for ORD-66310.",
+      "answer": "From your history on 2026-11-21 [EP-0013]: Return pickup booked for SKU-AUR-220 in order ORD-74021 on 2026-11-28, 18:00-20:00 (slot PICK-20261128-E1); reason defective_left_earbud; RMA RMA-20261126-69EC2A24, booking PICKUP-20261126-22A27FB9, status confirmed.",
+      "stage": "memory write (episode text lacked the product), surfacing as an episodic ranking error",
+      "dialogue_state": {
+        "current_intent": "episodic_memory_query",
+        "active_task": null,
+        "task_status": "idle"
+      },
+      "ranked_list": [
+        {
+          "episode_id": "EP-0013",
+          "type": "booking",
+          "source_turn": 23,
+          "recency": 0.696581,
+          "importance": 0.9,
+          "relevance": 0.61949,
+          "recency_norm": 0.874781,
+          "importance_norm": 1.0,
+          "relevance_norm": 0.854432,
+          "score": 0.902172
+        },
+        {
+          "episode_id": "EP-0015",
+          "type": "reflection",
+          "source_turn": 25,
+          "recency": 0.69693,
+          "importance": 0.6,
+          "relevance": 0.636575,
+          "recency_norm": 1.0,
+          "importance_norm": 0.5,
+          "relevance_norm": 1.0,
+          "score": 0.85
+        },
+        {
+          "episode_id": "EP-0010",
+          "type": "decision",
+          "source_turn": 17,
+          "recency": 0.695883,
+          "importance": 0.7,
+          "relevance": 0.606348,
+          "recency_norm": 0.62453,
+          "importance_norm": 0.666667,
+          "relevance_norm": 0.742463,
+          "score": 0.696137
+        },
+        {
+          "episode_id": "EP-0009",
+          "type": "task_event",
+          "source_turn": 12,
+          "recency": 0.695302,
+          "importance": 0.5,
+          "relevance": 0.617589,
+          "recency_norm": 0.416179,
+          "importance_norm": 0.333333,
+          "relevance_norm": 0.838239,
+          "score": 0.602356
+        },
+        {
+          "episode_id": "EP-0008",
+          "type": "complaint",
+          "source_turn": 10,
+          "recency": 0.695069,
+          "importance": 0.8,
+          "relevance": 0.555479,
+          "recency_norm": 0.332888,
+          "importance_norm": 0.833333,
+          "relevance_norm": 0.309047,
+          "score": 0.471101
+        },
+        {
+          "episode_id": "EP-0011",
+          "type": "preference_update",
+          "source_turn": 19,
+          "recency": 0.696115,
+          "importance": 0.4,
+          "relevance": 0.578598,
+          "recency_norm": 0.707919,
+          "importance_norm": 0.166667,
+          "relevance_norm": 0.506025,
+          "score": 0.444596
+        }
+      ],
+      "decision_episode": {
+        "episode_id": "EP-0010",
+        "user": "CUST-MAYA-1042",
+        "session": "A",
+        "timestamp": "2026-11-21T10:32:00+05:30",
+        "source_turn": 17,
+        "type": "decision",
+        "description": "Customer chose exchange rather than refund for order ORD-66310.",
+        "importance": 7,
+        "importance_method": "rule",
+        "entities": {
+          "order_id": "ORD-66310",
+          "decision": "chose exchange rather than refund"
+        },
+        "linked_memory_ids": [],
+        "redacted": false
+      },
+      "prompt_excerpt": [
+        "[EP-0013] (long_term_memory, 140 tok) booking: Return pickup booked for SKU-AUR-220 in order ORD-74021 on 2026-11-28, 18:00-20:00 (slot PICK-20261128-E1); reason defective_left_earbud; RMA RMA-20261126-69EC2A24, booking PICKUP-20261126-22A27FB9, status confi",
+        "[EP-0015] (long_term_memory, 148 tok) reflection: 1. The customer opted for an exchange rather than a refund for order ORD-66310, indicating a preference for resolving issues through alternative means. 2. The customer has updated their preferred delivery win",
+        "[EP-0010] (long_term_memory, 43 tok) decision: Customer chose exchange rather than refund for order ORD-66310."
+      ],
+      "fix_check": {
+        "change": "store the customer's own words (redacted) in decision/complaint episodes",
+        "decision_relevance_before": 0.6063,
+        "decision_relevance_after": 0.7986,
+        "decision_rank_before": 3,
+        "decision_rank_after": 1,
+        "ranked_after": [
+          {
+            "episode_id": "EP-0010",
+            "type": "decision",
+            "source_turn": 17,
+            "recency": 0.695883,
+            "importance": 0.7,
+            "relevance": 0.798648,
+            "recency_norm": 0.62453,
+            "importance_norm": 0.666667,
+            "relevance_norm": 1.0,
+            "score": 0.824906
+          },
+          {
+            "episode_id": "EP-0013",
+            "type": "booking",
+            "source_turn": 23,
+            "recency": 0.696581,
+            "importance": 0.9,
+            "relevance": 0.61949,
+            "recency_norm": 0.874781,
+            "importance_norm": 1.0,
+            "relevance_norm": 0.358868,
+            "score": 0.65439
+          },
+          {
+            "episode_id": "EP-0015",
+            "type": "reflection",
+            "source_turn": 25,
+            "recency": 0.69693,
+            "importance": 0.6,
+            "relevance": 0.636575,
+            "recency_norm": 1.0,
+            "importance_norm": 0.5,
+            "relevance_norm": 0.420008,
+            "score": 0.560004
+          },
+          {
+            "episode_id": "EP-0008",
+            "type": "complaint",
+            "source_turn": 10,
+            "recency": 0.695069,
+            "importance": 0.8,
+            "relevance": 0.555479,
+            "recency_norm": 0.332888,
+            "importance_norm": 0.833333,
+            "relevance_norm": 0.129802,
+            "score": 0.381479
+          }
+        ]
+      },
+      "after_run_answer": "From your history on 2026-11-21 [EP-0015]: 1. The customer opted for an exchange rather than a refund for order ORD-66310, indicating a preference for resolving issues through alternative means. 2. The customer initiated a return request for SKU-AUR-220 in order ORD-74021, with a pickup scheduled for 2026-11-28, reflecting a stable preference for returning items via pickup. 3. The customer updated their preferred delivery window to 19:00-21:00 and switched to SMS for routine updates, aligning with their saved preferences for timely and direct communication."
+    },
+    "P11": {
+      "question": "And what happens next after the pickup is completed?",
+      "expected": "Explain the existing return flow: returns-centre receipt, inspection, then refund initiation if accepted.",
+      "answer": "After the pickup is completed, the carrier will inspect the item and issue a pickup receipt or digital confirmation. The customer must retain this receipt until the return is accepted or the refund is initiated. If the carrier does not scan the return label, escalate with the pickup reference and timestamp.\n\nSources: KB-002 / KB-002-C128-0005 (version 2.0); KB-002 / KB-002-C128-0006 (version 2.0); KB-013 / KB-013-C128-0005 (version 1.3)",
+      "stage": "knowledge-base retrieval (refund-stage chunk of KB-003 not retrieved)",
+      "dialogue_state": {
+        "current_intent": "state_followup",
+        "active_task": null,
+        "task_status": "idle"
+      },
+      "prompt_excerpt": [
+        "[KB-002-C128-0005] (retrieved_knowledge, 169 tok) . Only the designated returns supervisor can approve a policy exception; the assistant must not invent one.\n\nAuthorisation and pickup\nA return request must identify the order and item, and capture a reason. The assistant",
+        "[KB-002-C128-0006] (retrieved_knowledge, 169 tok) A database write to create the pickup must happen only after the customer explicitly confirms the complete summary.\n\nRefund handling\nFor an accepted return, the refund is initiated after inspection. The refund method fol",
+        "[KB-013-C128-0005] (retrieved_knowledge, 111 tok) existing RMA identifier and add a pickup reschedule event.\n\nHandover evidence\nAt collection, the carrier should scan the return label and provide a pickup receipt or digital confirmation. The customer should retain the r"
+      ],
+      "ranked_lists": {
+        "dense_top8": [
+          [
+            "KB-002-C128-0005",
+            0.6698
+          ],
+          [
+            "KB-013-C128-0005",
+            0.6588
+          ],
+          [
+            "KB-002-C128-0006",
+            0.6486
+          ],
+          [
+            "KB-013-C128-0003",
+            0.6463
+          ],
+          [
+            "KB-011-C128-0004",
+            0.642
+          ],
+          [
+            "KB-013-C128-0004",
+            0.6405
+          ],
+          [
+            "KB-013-C128-0001",
+            0.6362
+          ],
+          [
+            "KB-005-C128-0004",
+            0.6331
+          ]
+        ],
+        "bm25_top8": [
+          [
+            "KB-010-C128-0004",
+            8.474
+          ],
+          [
+            "KB-002-C128-0005",
+            7.751
+          ],
+          [
+            "KB-007-C128-0005",
+            7.286
+          ],
+          [
+            "KB-004-C128-0005",
+            6.405
+          ],
+          [
+            "KB-002-C128-0006",
+            5.652
+          ],
+          [
+            "KB-013-C128-0001",
+            5.535
+          ],
+          [
+            "KB-014-C128-0004",
+            5.068
+          ],
+          [
+            "KB-013-C128-0004",
+            5.011
+          ]
+        ],
+        "rrf_top8": [
+          [
+            "KB-002-C128-0005",
+            0.03252
+          ],
+          [
+            "KB-002-C128-0006",
+            0.03126
+          ],
+          [
+            "KB-013-C128-0005",
+            0.03021
+          ],
+          [
+            "KB-013-C128-0001",
+            0.03008
+          ],
+          [
+            "KB-004-C128-0005",
+            0.02991
+          ],
+          [
+            "KB-013-C128-0004",
+            0.02986
+          ],
+          [
+            "KB-007-C128-0005",
+            0.02939
+          ],
+          [
+            "KB-011-C128-0004",
+            0.02927
+          ]
+        ],
+        "kb003_ranks": {
+          "KB-003-C128-0001": {
+            "dense": 12,
+            "bm25": 15,
+            "rrf": 12
+          },
+          "KB-003-C128-0002": {
+            "dense": null,
+            "bm25": null,
+            "rrf": null
+          },
+          "KB-003-C128-0003": {
+            "dense": null,
+            "bm25": null,
+            "rrf": null
+          },
+          "KB-003-C128-0004": {
+            "dense": null,
+            "bm25": null,
+            "rrf": null
+          },
+          "KB-003-C128-0005": {
+            "dense": 15,
+            "bm25": null,
+            "rrf": 21
+          },
+          "KB-003-C128-0006": {
+            "dense": null,
+            "bm25": null,
+            "rrf": null
+          }
+        }
+      },
+      "fix_check": {
+        "change": "state-aware query rewrite for a follow-up with no active task: add the return-lifecycle context of the customer's latest booking episode before retrieval",
+        "booking_episode_used": "EP-0013",
+        "rewritten_query": "And what happens next after the pickup is completed? Context: return pickup for a defective item; returns centre, inspection, refund.",
+        "ranked_lists_after": {
+          "dense_top8": [
+            [
+              "KB-003-C128-0001",
+              0.7469
+            ],
+            [
+              "KB-002-C128-0005",
+              0.7387
+            ],
+            [
+              "KB-007-C128-0002",
+              0.7267
+            ],
+            [
+              "KB-002-C128-0006",
+              0.7259
+            ],
+            [
+              "KB-004-C128-0005",
+              0.7237
+            ],
+            [
+              "KB-011-C128-0004",
+              0.7207
+            ],
+            [
+              "KB-001-C128-0005",
+              0.7152
+            ],
+            [
+              "KB-010-C128-0004",
+              0.7073
+            ]
+          ],
+          "bm25_top8": [
+            [
+              "KB-001-C128-0004",
+              14.631
+            ],
+            [
+              "KB-007-C128-0001",
+              13.865
+            ],
+            [
+              "KB-002-C128-0005",
+              13.32
+            ],
+            [
+              "KB-002-C128-0006",
+              12.395
+            ],
+            [
+              "KB-014-C128-0002",
+              11.785
+            ],
+            [
+              "KB-007-C128-0002",
+              11.191
+            ],
+            [
+              "KB-001-C128-0003",
+              11.027
+            ],
+            [
+              "KB-003-C128-0001",
+              10.875
+            ]
+          ],
+          "rrf_top8": [
+            [
+              "KB-002-C128-0005",
+              0.032
+            ],
+            [
+              "KB-002-C128-0006",
+              0.03125
+            ],
+            [
+              "KB-003-C128-0001",
+              0.0311
+            ],
+            [
+              "KB-007-C128-0002",
+              0.03102
+            ],
+            [
+              "KB-010-C128-0004",
+              0.02879
+            ],
+            [
+              "KB-002-C128-0003",
+              0.02857
+            ],
+            [
+              "KB-004-C128-0005",
+              0.02854
+            ],
+            [
+              "KB-014-C128-0002",
+              0.02788
+            ]
+          ],
+          "kb003_ranks": {
+            "KB-003-C128-0001": {
+              "dense": 1,
+              "bm25": 8,
+              "rrf": 3
+            },
+            "KB-003-C128-0002": {
+              "dense": null,
+              "bm25": null,
+              "rrf": null
+            },
+            "KB-003-C128-0003": {
+              "dense": null,
+              "bm25": null,
+              "rrf": null
+            },
+            "KB-003-C128-0004": {
+              "dense": 13,
+              "bm25": 14,
+              "rrf": 12
+            },
+            "KB-003-C128-0005": {
+              "dense": null,
+              "bm25": null,
+              "rrf": null
+            },
+            "KB-003-C128-0006": {
+              "dense": null,
+              "bm25": null,
+              "rrf": null
+            }
+          }
+        }
+      },
+      "after_run_answer": "After the pickup is completed, the carrier will inspect the item and issue a pickup receipt or digital confirmation. The customer must retain this receipt until the return is accepted or the refund is initiated. If the carrier does not scan the return label, escalate with the pickup reference and timestamp.\n\nSources: KB-002 / KB-002-C128-0005 (version 2.0); KB-002 / KB-002-C128-0006 (version 2.0); KB-013 / KB-013-C128-0005 (version 1.3)"
+    },
+    "P15": {
+      "question": "When the combined instructions, recent conversation, retrieved chunks and memories exceed 2,048 tokens, what should RecallBot do?",
+      "expected": "Enforce the 2,048-token input budget, prioritise system instructions and current task/state, include only the highest-value memories and chunks, trim lower-priority history/content, reserve output tokens, and record what was cut.",
+      "answer": "If the combined instructions, recent conversation, retrieved chunks, and memories exceed 2,048 tokens, I should ask for the next missing detail to keep the conversation manageable and within token limits.",
+      "stage": "NLG / prompt (the deterministic draft was correct; the model followed the question instead)",
+      "dialogue_state": {
+        "current_intent": "context_budget_query",
+        "active_task": null,
+        "task_status": "idle"
+      },
+      "same_draft_other_question": {
+        "turn": 39,
+        "question": "What is the exact token limit your assistant is configured to respect?",
+        "answer": "The assistant's token limit is 2,048 tokens per context window. The assistant reserves 160 tokens for its reply and 32 tokens as a safety margin, leaving 1,856 tokens available for input prompts. The instructions, current request, and task state are prioritized, while saved facts, past events, and knowledge-base chunks are included based on relevance. Older conversation turns are truncated and recorded."
+      },
+      "chat_call": {
+        "turn": 54,
+        "input_tokens": 857,
+        "output_tokens": 41,
+        "latency_ms": 3810,
+        "status": "success",
+        "prompt_tokens_by_component": [
+          [
+            "system_prompt_v2",
+            274
+          ],
+          [
+            "TOOLS",
+            55
+          ],
+          [
+            "HISTORY-1",
+            31
+          ],
+          [
+            "HISTORY-2",
+            148
+          ],
+          [
+            "HISTORY-3",
+            149
+          ],
+          [
+            "USER-TURN",
+            27
+          ],
+          [
+            "STATE",
+            18
+          ],
+          [
+            "DRAFT",
+            93
+          ]
+        ]
+      },
+      "fix": "context-budget answers are emitted verbatim by the dialogue manager (no model call)",
+      "after_run_answer": "My context window is 2,048 tokens. I reserve 160 for my reply and 32 as a safety margin, so each prompt gets at most 1,856 input tokens, counted with the Qwen tokenizer. The instructions, your current request and the task state always go in; saved facts, past events and knowledge-base chunks are added by relevance; conversation turns older than the last 3 and any lower-priority item that does not fit are cut, and everything cut is recorded. On the previous turn the prompt used 1,328 of 1,856 input tokens and 23 item(s) were cut."
+    }
+  }
+}

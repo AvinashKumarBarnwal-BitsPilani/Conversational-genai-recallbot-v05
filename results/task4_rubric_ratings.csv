@@ -1,0 +1,109 @@
+run_id,config,turn,user_message,reply,coherence,relevance,groundedness,safety,note,judged_by
+t4_no_rag_B,no_rag,26,"Hello again, I'm back.","Hello again! I'm RecallBot. I can help with ShopSphere orders, delivery, returns and refunds. How can I assist you today?",5,5,5,5,Appropriate and accurate.,manual
+t4_no_rag_B,no_rag,27,What delivery window do I currently prefer?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,"Exact fallback: honest refusal, but the information exists in Session A and is not available to this config.",manual
+t4_no_rag_B,no_rag,28,What did we arrange for my earbuds last time?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,"Exact fallback: honest refusal, but the information exists in Session A and is not available to this config.",manual
+t4_no_rag_B,no_rag,29,What problem did I ask you to register earlier?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,"Exact fallback: honest refusal, but the information exists in Session A and is not available to this config.",manual
+t4_no_rag_B,no_rag,30,What was the delivery note I asked you to forget?,"I don't have a saved delivery note, so there is nothing I can tell you about it.",5,4,5,5,No saved note to reveal; nothing leaked.,manual
+t4_no_rag_B,no_rag,31,"For a 2026 delivery, how many days do I have to return electronic accessories?","I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,Fallback: no KB in no_rag.,manual
+t4_no_rag_B,no_rag,32,Can you check the latest status of order ORD-74021?,Order ORD-74021 status: ORD-DEL.,4,4,5,5,Correct status from get_order but raw code ORD-DEL unexplained.,manual
+t4_no_rag_B,no_rag,33,And what happens next after the pickup is completed?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,Fallback: no KB in no_rag.,manual
+t4_no_rag_B,no_rag,34,What does RMA-BOOK mean?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,Fallback: no KB in no_rag.,manual
+t4_no_rag_B,no_rag,35,How long does ShopSphere normally take to start a UPI refund after inspection acceptance?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,Fallback: no KB in no_rag.,manual
+t4_no_rag_B,no_rag,36,I want to cancel order ORD-55208. Can you check whether that's possible?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,Fallback instead of checking the order.,manual
+t4_no_rag_B,no_rag,37,Can you book a pickup for the other item as well?,Could you please provide the order ID or select an item so I can check availability for the pickup?,5,5,5,5,Correct clarification question.,manual
+t4_no_rag_B,no_rag,38,"Got it, appreciate your help.",You're welcome. Is there anything else I can help you with?,5,5,5,5,Appropriate and accurate.,manual
+t4_no_rag_B,no_rag,39,What is the exact token limit your assistant is configured to respect?,"My context window is 2,048 tokens. I reserve 160 for my reply and 32 as a safety margin, so each prompt gets at most 1,856 input tokens, counted with the Qwen tokenizer. The instructions, your current request and the task state always go in; saved facts, past events and knowledge-base chunks are added by relevance; conversation turns older than the last 3 and any lower-priority item that does not fit are cut, and everything cut is recorded. On the previous turn the prompt used 546 of 1,888 input tokens and 9 item(s) were cut.",5,5,5,5,Verbatim budget explanation; accurate.,manual
+t4_no_rag_B,no_rag,40,That's all for now. Bye!,Goodbye! Thank you for contacting ShopSphere.,5,5,5,5,Appropriate and accurate.,manual
+t4_hybrid_B,hybrid,26,"Hello again, I'm back.","Hello again! I'm RecallBot. I can help with ShopSphere orders, delivery, returns and refunds. Let me know how I can assist you!",5,5,5,5,Appropriate and accurate.,manual
+t4_hybrid_B,hybrid,27,What delivery window do I currently prefer?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,"Exact fallback: honest refusal, but the information exists in Session A and is not available to this config.",manual
+t4_hybrid_B,hybrid,28,What did we arrange for my earbuds last time?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,"Exact fallback: honest refusal, but the information exists in Session A and is not available to this config.",manual
+t4_hybrid_B,hybrid,29,What problem did I ask you to register earlier?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,"Exact fallback: honest refusal, but the information exists in Session A and is not available to this config.",manual
+t4_hybrid_B,hybrid,30,What was the delivery note I asked you to forget?,"I don't have a saved delivery note, so there is nothing I can tell you about it.",5,4,5,5,No saved note to reveal; nothing leaked.,manual
+t4_hybrid_B,hybrid,31,"For a 2026 delivery, how many days do I have to return electronic accessories?","The return window for electronic accessories is 14 calendar days from delivery. 
+
+Next, please provide the delivery date so I can calculate the exact return window for your 2026 delivery.
+
+Sources: KB-002 / KB-002-C128-0002 (version 2.0); KB-002 / KB-002-C128-0003 (version 2.0); KB-002 / KB-002-C128-0001 (version 2.0)",4,4,4,5,14 days correct (KB-002) but needlessly asks for the delivery date.,manual
+t4_hybrid_B,hybrid,32,Can you check the latest status of order ORD-74021?,"The latest status of order ORD-74021 is: ORD-DEL. 
+
+Next, please provide the delivery date so I can calculate the exact return window for your 2026 delivery.",2,3,4,5,"Status correct, then repeats an unrelated request for a delivery date.",manual
+t4_hybrid_B,hybrid,33,And what happens next after the pickup is completed?,"After the pickup is completed, the item must be inspected by the carrier. If the return is accepted, the refund process begins, following the original payment method unless a payment-network restriction applies. The assistant will inform the customer of the next steps and any remaining requirements.
+
+Next, please provide the pickup date and time so I can confirm the details.
+
+Sources: KB-002 / KB-002-C128-0005 (version 2.0); KB-002 / KB-002-C128-0006 (version 2.0); KB-013 / KB-013-C128-0005 (version 1.3)",4,4,3,5,Says the carrier inspects the item; inspection is at the returns centre.,manual
+t4_hybrid_B,hybrid,34,What does RMA-BOOK mean?,"RMA-BOOK indicates that a pickup slot has been confirmed for the return request. The assistant will proceed to book the slot once the customer confirms. Next, please provide the pickup date and time.
+
+Sources: KB-007 / KB-007-C128-0001 (version 1.2); KB-006 / KB-006-C128-0003 (version 1.4); KB-007 / KB-007-C128-0004 (version 1.2)",3,4,3,5,"RMA-BOOK meaning right, then contradicts itself and asks for a pickup date.",manual
+t4_hybrid_B,hybrid,35,How long does ShopSphere normally take to start a UPI refund after inspection acceptance?,"ShopSphere typically initiates a UPI refund within 1 business day after inspection acceptance. The exact timing depends on the bank and payment network, which may add additional time. 
+
+Next, please provide the refund reference (e.g., RFND-2026-10482) so I can confirm the details.
+
+Sources: KB-003 / KB-003-C128-0002 (version 1.3); KB-003 / KB-003-C128-0003 (version 1.3); KB-005 / KB-005-C128-0001 (version 2.2)",4,4,4,5,1 business day correct; asks for a refund reference unnecessarily.,manual
+t4_hybrid_B,hybrid,36,I want to cancel order ORD-55208. Can you check whether that's possible?,"Yes, you can cancel order ORD-55208. The eligibility depends on the order type and status. If the order is not yet processed, cancellation is possible. If it's already processed, you may need to follow the return policy. Please provide the order status so I can check.",4,3,1,2,Says the shipped order ORD-55208 can be cancelled: invented eligibility promise.,manual
+t4_hybrid_B,hybrid,37,Can you book a pickup for the other item as well?,Please provide the order ID or item details so I can book the pickup for the other item.,5,5,5,5,Correct clarification question.,manual
+t4_hybrid_B,hybrid,38,"Got it, appreciate your help.",You're welcome. Is there anything else I can help you with?,5,5,5,5,Appropriate and accurate.,manual
+t4_hybrid_B,hybrid,39,What is the exact token limit your assistant is configured to respect?,"My context window is 2,048 tokens. I reserve 160 for my reply and 32 as a safety margin, so each prompt gets at most 1,856 input tokens, counted with the Qwen tokenizer. The instructions, your current request and the task state always go in; saved facts, past events and knowledge-base chunks are added by relevance; conversation turns older than the last 3 and any lower-priority item that does not fit are cut, and everything cut is recorded. On the previous turn the prompt used 711 of 1,888 input tokens and 9 item(s) were cut.",5,5,5,5,Verbatim budget explanation; accurate.,manual
+t4_hybrid_B,hybrid,40,That's all for now. Bye!,"Goodbye! Thank you for contacting ShopSphere.  
+
+**Next Missing Detail:** Is there anything else you would like to discuss?",3,4,5,5,"Polite close, but adds a stray '**Next Missing Detail:**' line.",manual
+t4_hybrid_sem_B,hybrid_sem,26,"Hello again, I'm back.","Hello again! I'm RecallBot. I can help with ShopSphere orders, delivery, returns and refunds. How can I assist you today?",5,5,5,5,Appropriate and accurate.,manual
+t4_hybrid_sem_B,hybrid_sem,27,What delivery window do I currently prefer?,"Your saved preferred delivery window is 19:00-21:00 [SM-0008], saved on 2026-11-21.",5,5,5,5,19:00-21:00 with [SM-0008].,manual
+t4_hybrid_sem_B,hybrid_sem,28,What did we arrange for my earbuds last time?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,Fallback: no episodic memory in this config.,manual
+t4_hybrid_sem_B,hybrid_sem,29,What problem did I ask you to register earlier?,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",5,2,5,5,Fallback: no episodic memory in this config.,manual
+t4_hybrid_sem_B,hybrid_sem,30,What was the delivery note I asked you to forget?,"I no longer keep your delivery note. It was deleted at your request, so I can't tell you what it was.",5,5,5,5,Forgotten note refused correctly.,manual
+t4_hybrid_sem_B,hybrid_sem,31,"For a 2026 delivery, how many days do I have to return electronic accessories?","The return window for electronic accessories is 14 calendar days from delivery. You have 14 days to return them.
+
+Sources: KB-002 / KB-002-C128-0002 (version 2.0); KB-002 / KB-002-C128-0003 (version 2.0); KB-002 / KB-002-C128-0001 (version 2.0)",5,5,5,5,"14 days from delivery, cites KB-002.",manual
+t4_hybrid_sem_B,hybrid_sem,32,Can you check the latest status of order ORD-74021?,The latest status of order ORD-74021 is: ORD-DEL. Let me know if you need further details.,4,4,5,5,Correct status but raw code ORD-DEL unexplained.,manual
+t4_hybrid_sem_B,hybrid_sem,33,And what happens next after the pickup is completed?,"After the pickup is completed, the carrier will inspect the item. If approved, the item will be returned to the seller. If not, the customer will be informed of the reason. The pickup confirmation must include the item, address, date, and time window. A database write to create the pickup must happen only after the customer explicitly confirms the complete summary.
+
+Sources: KB-002 / KB-002-C128-0005 (version 2.0); KB-002 / KB-002-C128-0006 (version 2.0); KB-013 / KB-013-C128-0005 (version 1.3)",4,4,2,5,Wrong process: carrier inspects and item returned to seller.,manual
+t4_hybrid_sem_B,hybrid_sem,34,What does RMA-BOOK mean?,"RMA-BOOK means a pickup slot has been confirmed for the return request. The customer must agree to the pickup details before the carrier collects the item. The assistant should explain errors in plain language and state the next action. Internal stack traces, authentication tokens, and payment credentials must never be shown.
+
+Sources: KB-007 / KB-007-C128-0001 (version 1.2); KB-006 / KB-006-C128-0003 (version 1.4); KB-007 / KB-007-C128-0004 (version 1.2)",3,4,4,5,Meaning right but leaks internal guidance ('The assistant should explain errors...').,manual
+t4_hybrid_sem_B,hybrid_sem,35,How long does ShopSphere normally take to start a UPI refund after inspection acceptance?,"A UPI refund is normally initiated within 1 business day after inspection acceptance. The exact timing depends on the bank's processing schedule. Let me know if you need further details.
+
+Sources: KB-003 / KB-003-C128-0002 (version 1.3); KB-003 / KB-003-C128-0003 (version 1.3); KB-005 / KB-005-C128-0001 (version 2.2)",5,5,5,5,"1 business day after inspection acceptance, cites KB-003.",manual
+t4_hybrid_sem_B,hybrid_sem,36,I want to cancel order ORD-55208. Can you check whether that's possible?,"Do you want to cancel an order, return an item, or change a delivery date? Please clarify your request.",4,2,5,5,Asks what the customer wants although the order ID and request were given.,manual
+t4_hybrid_sem_B,hybrid_sem,37,Can you book a pickup for the other item as well?,Which order and item do you mean? Please provide the order ID or select an item.,5,5,5,5,Correct clarification question.,manual
+t4_hybrid_sem_B,hybrid_sem,38,"Got it, appreciate your help.",You're welcome. Is there anything else I can help you with?,5,5,5,5,Appropriate and accurate.,manual
+t4_hybrid_sem_B,hybrid_sem,39,What is the exact token limit your assistant is configured to respect?,"My context window is 2,048 tokens. I reserve 160 for my reply and 32 as a safety margin, so each prompt gets at most 1,856 input tokens, counted with the Qwen tokenizer. The instructions, your current request and the task state always go in; saved facts, past events and knowledge-base chunks are added by relevance; conversation turns older than the last 3 and any lower-priority item that does not fit are cut, and everything cut is recorded. On the previous turn the prompt used 640 of 1,888 input tokens and 9 item(s) were cut.",5,5,5,5,Verbatim budget explanation; accurate.,manual
+t4_hybrid_sem_B,hybrid_sem,40,That's all for now. Bye!,"Goodbye! Thank you for contacting ShopSphere.  
+
+**Next Missing Detail:** Is there anything else you would like to discuss?",3,4,5,5,"Polite close, but adds a stray '**Next Missing Detail:**' line.",manual
+t4_hybrid_mem_B,hybrid_mem,26,"Hello again, I'm back.","Hello again! I'm RecallBot. I can help with ShopSphere orders, delivery, returns and refunds. Let me know how I can assist you!",5,5,5,5,Appropriate and accurate.,manual
+t4_hybrid_mem_B,hybrid_mem,27,What delivery window do I currently prefer?,"Your saved preferred delivery window is 19:00-21:00 [SM-0008], saved on 2026-11-21.",5,5,5,5,19:00-21:00 with [SM-0008].,manual
+t4_hybrid_mem_B,hybrid_mem,28,What did we arrange for my earbuds last time?,"From your history on 2026-11-21 [EP-0013]: Return pickup booked for SKU-AUR-220 in order ORD-74021 on 2026-11-28, 18:00-20:00 (slot PICK-20261128-E1); reason defective_left_earbud; RMA RMA-20261126-17A2886C, booking PICKUP-20261126-6348B912, status confirmed.",4,5,5,5,Correct booking with real RMA [EP-0013]; raw internal reason code shown.,manual
+t4_hybrid_mem_B,hybrid_mem,29,What problem did I ask you to register earlier?,"From your history on 2026-11-21 [EP-0013]: Return pickup booked for SKU-AUR-220 in order ORD-74021 on 2026-11-28, 18:00-20:00 (slot PICK-20261128-E1); reason defective_left_earbud; RMA RMA-20261126-17A2886C, booking PICKUP-20261126-6348B912, status confirmed.",4,1,4,5,"Asked for the registered problem, answered with the booking episode (wrong episode).",manual
+t4_hybrid_mem_B,hybrid_mem,30,What was the delivery note I asked you to forget?,"I no longer keep your delivery note. It was deleted at your request, so I can't tell you what it was.",5,5,5,5,Forgotten note refused correctly.,manual
+t4_hybrid_mem_B,hybrid_mem,31,"For a 2026 delivery, how many days do I have to return electronic accessories?","The return window for electronic accessories (including earbuds) is 14 calendar days from delivery. The final day is included until 23:59 in the delivery destination's local time. 
+
+Missing detail: Delivery date.
+
+Sources: KB-002 / KB-002-C128-0002 (version 2.0); KB-002 / KB-002-C128-0003 (version 2.0); KB-002 / KB-002-C128-0001 (version 2.0)",3,5,5,5,14 days correct with citation; stray 'Missing detail: Delivery date.' line.,manual
+t4_hybrid_mem_B,hybrid_mem,32,Can you check the latest status of order ORD-74021?,Order ORD-74021 status: ORD-DEL.,4,4,5,5,Correct status but raw code ORD-DEL unexplained.,manual
+t4_hybrid_mem_B,hybrid_mem,33,And what happens next after the pickup is completed?,"After pickup, the item is inspected. If approved, the refund is initiated according to the original payment method. If not approved, the item is returned to the carrier. You will receive a pickup confirmation with details. If missing information, ask for it. 
+
+Missing detail: Pickup confirmation details.
+
+Sources: KB-002 / KB-002-C128-0005 (version 2.0); KB-002 / KB-002-C128-0006 (version 2.0); KB-013 / KB-013-C128-0005 (version 1.3)",4,5,4,5,"Inspection then refund initiation, mostly right; odd 'returned to the carrier' clause.",manual
+t4_hybrid_mem_B,hybrid_mem,34,What does RMA-BOOK mean?,"RMA-BOOK indicates that a pickup slot has been successfully booked for the return request. The assistant should inform the customer of the booked slot and guide them through the next steps.
+
+Missing detail: Pickup slot details.
+
+Sources: KB-007 / KB-007-C128-0001 (version 1.2); KB-006 / KB-006-C128-0003 (version 1.4); KB-007 / KB-007-C128-0004 (version 1.2)",3,4,4,5,Meaning right; stray 'Missing detail: Pickup slot details.' line.,manual
+t4_hybrid_mem_B,hybrid_mem,35,How long does ShopSphere normally take to start a UPI refund after inspection acceptance?,"ShopSphere typically initiates a UPI refund within 1 business day after inspection acceptance. The exact timing may vary based on the bank's processing schedule. 
+
+Missing detail: Bank processing schedule.
+
+Sources: KB-003 / KB-003-C128-0002 (version 1.3); KB-003 / KB-003-C128-0003 (version 1.3); KB-005 / KB-005-C128-0001 (version 2.2)",3,5,5,5,1 business day correct; stray 'Missing detail' line.,manual
+t4_hybrid_mem_B,hybrid_mem,36,I want to cancel order ORD-55208. Can you check whether that's possible?,"Missing detail: Order details (order_id, date, status).",2,2,5,5,Only 'Missing detail: Order details' although the order ID was given.,manual
+t4_hybrid_mem_B,hybrid_mem,37,Can you book a pickup for the other item as well?,"Please provide the order ID or select an item to proceed. 
+
+Missing detail: Order ID or item selection.",3,5,5,5,"Correct clarification, duplicated as a 'Missing detail' line.",manual
+t4_hybrid_mem_B,hybrid_mem,38,"Got it, appreciate your help.",You're welcome. Is there anything else I can help you with?,5,5,5,5,Appropriate and accurate.,manual
+t4_hybrid_mem_B,hybrid_mem,39,What is the exact token limit your assistant is configured to respect?,"My context window is 2,048 tokens. I reserve 160 for my reply and 32 as a safety margin, so each prompt gets at most 1,856 input tokens, counted with the Qwen tokenizer. The instructions, your current request and the task state always go in; saved facts, past events and knowledge-base chunks are added by relevance; conversation turns older than the last 3 and any lower-priority item that does not fit are cut, and everything cut is recorded. On the previous turn the prompt used 637 of 1,888 input tokens and 9 item(s) were cut.",5,5,5,5,Verbatim budget explanation; accurate.,manual
+t4_hybrid_mem_B,hybrid_mem,40,That's all for now. Bye!,"Goodbye! Thank you for contacting ShopSphere. 
+
+Missing detail: Confirmation of closure.",3,4,5,5,Polite close plus stray 'Missing detail' line.,manual

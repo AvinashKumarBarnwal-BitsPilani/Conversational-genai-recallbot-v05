@@ -1,0 +1,5 @@
+config,runs,acc_R,acc_U,acc_F,acc_E,acc_K,acc_N,acc_S,acc_TWIST_SMALL_CONTEXT,acc_overall,mean_input_tokens_per_turn,median_chat_latency_ms,median_turn_latency_ms,total_tokens,chat_fallbacks,mean_retrieved_tokens_per_turn
+no_rag,t4_no_rag_A + t4_no_rag_B,0/2,0/1,1/1,0/3,0/3,2/2,1/2,1/2,5/16,636.8,1589.5,1585.0,33114,0,0
+hybrid,t4_hybrid_A + t4_hybrid_B,0/2,0/1,1/1,0/3,2/3,2/2,1/2,1/2,7/16,795.3,2034.5,1841.5,42242,0,90.3
+hybrid_sem,t4_hybrid_sem_A + t4_hybrid_sem_B,2/2,1/1,1/1,0/3,3/3,2/2,1/2,2/2,12/16,794.7,2105.5,2120.5,43026,0,94.0
+hybrid_mem,t4_hybrid_mem_A + t4_hybrid_mem_B,2/2,1/1,1/1,3/3,3/3,2/2,1/2,2/2,15/16,835.2,2180.0,2439.0,49704,0,119.4

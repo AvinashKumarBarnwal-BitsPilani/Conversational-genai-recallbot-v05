@@ -3,3 +3,5 @@
 memory/runs/** -text
 db/runs/** -text
 results/task3_sessions/** -text
+memory/*.json -text
+memory/*.npy -text

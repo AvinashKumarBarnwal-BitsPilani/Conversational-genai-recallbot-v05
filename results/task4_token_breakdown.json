@@ -1,0 +1,86 @@
+{
+  "no_rag": {
+    "chat": {
+      "calls": 50,
+      "tokens": 32406
+    },
+    "nlu": {
+      "calls": 54,
+      "tokens": 708
+    },
+    "tool": {
+      "calls": 6,
+      "tokens": 0
+    }
+  },
+  "hybrid": {
+    "chat": {
+      "calls": 50,
+      "tokens": 41318
+    },
+    "embed": {
+      "calls": 10,
+      "tokens": 216
+    },
+    "nlu": {
+      "calls": 54,
+      "tokens": 708
+    },
+    "tool": {
+      "calls": 16,
+      "tokens": 0
+    }
+  },
+  "hybrid_sem": {
+    "chat": {
+      "calls": 49,
+      "tokens": 40965
+    },
+    "embed": {
+      "calls": 53,
+      "tokens": 1040
+    },
+    "extract": {
+      "calls": 10,
+      "tokens": 313
+    },
+    "nlu": {
+      "calls": 54,
+      "tokens": 708
+    },
+    "tool": {
+      "calls": 16,
+      "tokens": 0
+    }
+  },
+  "hybrid_mem": {
+    "chat": {
+      "calls": 49,
+      "tokens": 45825
+    },
+    "embed": {
+      "calls": 68,
+      "tokens": 1557
+    },
+    "extract": {
+      "calls": 10,
+      "tokens": 313
+    },
+    "importance": {
+      "calls": 15,
+      "tokens": 465
+    },
+    "nlu": {
+      "calls": 54,
+      "tokens": 708
+    },
+    "reflect": {
+      "calls": 1,
+      "tokens": 836
+    },
+    "tool": {
+      "calls": 16,
+      "tokens": 0
+    }
+  }
+}
