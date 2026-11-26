@@ -42,6 +42,7 @@
 - [Task 2(c) — Context-Handling Analysis](#task-2c--context-handling-analysis)
 - [Day 4 — Task 3(c–f): Long-Term Memory and Context Engineering](#day-4--task-3cf-long-term-memory-and-context-engineering)
 - [Day 5 — Task 4: Evaluation and Error Analysis](#day-5--task-4-evaluation-and-error-analysis)
+- [Day 6 — Task 5: Cost and Scale](#day-6--task-5-cost-and-scale)
 
 <!-- /TOC -->
 
@@ -140,7 +141,7 @@ Every real LLM, embedding and tool call must be timed and appended through `src.
 | Task 3(b) | Dense, BM25 and hybrid retrieval | Implemented, evaluated and documented — [evidence](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md#3b-dense-bm25-and-hybrid--complete-day-2) |
 | Task 3(c–f) | Semantic, episodic, context engineering and twist | Completed — official run `t3_hm_01`, probes manually judged 13/16 — [evidence](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md) |
 | Task 4 | Evaluation, ablation and error analysis | Completed — 4 configs (5/7/12/15 of 16), rubric + judge agreement, 3 failures traced (P13, P15 fixed; P11 retrieval fixed, NLG fault remains); [evidence](docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md) |
-| Task 5 | Cost and scalability | Pending implementation |
+| Task 5 | Cost and scalability | Completed — GPT-4o monthly cost (trim $117.3k / $81.0k cached; hybrid_mem $72.2k, prefix too short to cache), 127.9 M vectors after a year, HNSW M=32 ef=200 recommended — [evidence](docs/task-evidence/Task-5-Cost-and-Scale.md) |
 | Task 6 | Demo video and AI-use declaration | Pending |
 
 ## Task evidence documents
@@ -153,7 +154,7 @@ Each task has a detailed evidence document (with a summary figure and its own ta
 | Task 2 — Dialogue pipeline and short-term memory | 4 | [Task-2-Dialogue-Pipeline-and-Short-Term-Memory.md](docs/task-evidence/Task-2-Dialogue-Pipeline-and-Short-Term-Memory.md) | [task2-summary.png](images/task2-summary.png) |
 | Task 3 — Retrieval and long-term memory | 6 | [Task-3-Retrieval-and-Long-Term-Memory.md](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md) | [task3-summary.png](images/task3-summary.png) |
 | Task 4 — Evaluation and error analysis | 4 | [Task-4-Evaluation-and-Error-Analysis.md](docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md) | [task4-summary.png](images/task4-summary.png) |
-| Task 5 — Cost and scale | 2 | [Task-5-Cost-and-Scale.md](docs/task-evidence/Task-5-Cost-and-Scale.md) (pending) | — |
+| Task 5 — Cost and scale | 2 | [Task-5-Cost-and-Scale.md](docs/task-evidence/Task-5-Cost-and-Scale.md) | [task5-summary.png](images/task5-summary.png) |
 | Task 6 — Demo video and AI-use declaration | 2 | [Task-6-Demo-and-AI-Use-Declaration.md](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md) (pending) | — |
 
 Design notes: [Task 3 long-term memory design](docs/design/Task-3-Long-Term-Memory-Design.md).
@@ -165,6 +166,7 @@ Design notes: [Task 3 long-term memory design](docs/design/Task-3-Long-Term-Memo
 - Day 3: Task 2(a) dialogue pipeline, Task 2(b) short-term memory comparison, and Task 2(c) context-handling analysis completed.
 - Day 4: Task 3(c–f) long-term memory (semantic facts, episodic stream, reflection, forget cascade), 2,048-token context assembler and Session A → B as separate processes; pilot, calibration and official `hybrid_mem` run completed.
 - Day 5: Task 4 four-configuration ablation, manual probe marking and rubric ratings, Qwen-judge agreement, error analysis with fixes at the failing stage, final memory store published to `memory/`.
+- Day 6: Task 5 token economics from the logs (CS3 GPT-4o row, prefix-caching check), one-year vector sizing by the CS3 formula, and a measured flat vs HNSW benchmark on 100,000 vectors.
 
 All reported results are generated from actual local executions and retained in `logs/` and `results/`.
 
@@ -1049,4 +1051,27 @@ python scripts/run_ablation.py            # 8 sessions, each in its own process
 python scripts/ablation_metrics.py        # 4(a) table from logs + probe_results.csv
 python scripts/build_rubric_results.py    # rubric table + judge agreement
 python scripts/make_task4_summary_figure.py
+```
+
+
+# Day 6 — Task 5: Cost and Scale
+
+**Status:** completed. Full evidence: [Task 5 — Cost and Scale](docs/task-evidence/Task-5-Cost-and-Scale.md).
+
+![Task 5 summary](images/task5-summary.png)
+
+| Question | Answer | Source |
+|---|---|---|
+| Monthly cost, 25,000 users/day, GPT-4o (CS3 slide 17) | trim **$117.3k** → **$81.0k** with prefix caching; hybrid_mem **$72.2k** (334-token prefix is below the 1,024 minimum) | `results/task5_token_economics.json` |
+| Pad hybrid_mem's prefix to make it cacheable? | No: +$12.7k/month on GPT-4o and 37% of the input budget | same |
+| Vectors after one year | **127.9 M** (realistic) to 182.5 M (upper bound); episodes are 99.9% | `results/task5_vector_sizing.json` |
+| Memory (CS3 formula, d = 384) | flat **196.5 GB**, HNSW M=16 **213.0 GB** (budget 236–295 GB) | same |
+| Measured on 100k vectors | flat 4.53 ms; HNSW M=32, ef=200: **0.43 ms, recall@5 0.962** | `results/task5_ann_benchmark_clustered.csv` |
+| Recommendation | **HNSW, M = 32, ef_search = 200** | Task 5 doc |
+
+```powershell
+python scripts/token_economics.py
+python scripts/vector_index_sizing.py
+python scripts/benchmark_ann.py --padding clustered --run-id <new_id>
+python scripts/make_task5_summary_figure.py
 ```

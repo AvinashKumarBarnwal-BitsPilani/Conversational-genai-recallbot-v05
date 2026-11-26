@@ -1,0 +1,52 @@
+{
+  "measured_per_conversation": {
+    "experiment": "t4_hybrid_mem",
+    "semantic_vectors": 6,
+    "episodic_vectors": 14,
+    "kb_chunks_128": 84
+  },
+  "assumptions": {
+    "daily_users": 25000,
+    "days": 365,
+    "dimension": 384,
+    "M": 16,
+    "formula_source": "CS3 Lecture 3 slides 48-49 (hnswlib per-vector estimate)"
+  },
+  "bytes_per_vector": {
+    "flat": 1536,
+    "hnsw_m16": 1665,
+    "hnsw_m8": 1601,
+    "hnsw_m32": 1793,
+    "hnsw_m64": 2049
+  },
+  "scenarios": [
+    {
+      "scenario": "realistic (returning users; facts supersede, episodes accumulate)",
+      "kb_chunks": 84,
+      "semantic_vectors": 150000,
+      "episodic_vectors": 127750000,
+      "total_vectors": 127900084,
+      "flat_gb": 196.5,
+      "hnsw_m16_gb": 213.0,
+      "hnsw_graph_overhead_pct": 8.4,
+      "practical_budget_gb": [
+        235.7,
+        294.7
+      ]
+    },
+    {
+      "scenario": "upper bound (every conversation adds facts and episodes)",
+      "kb_chunks": 84,
+      "semantic_vectors": 54750000,
+      "episodic_vectors": 127750000,
+      "total_vectors": 182500084,
+      "flat_gb": 280.3,
+      "hnsw_m16_gb": 303.9,
+      "hnsw_graph_overhead_pct": 8.4,
+      "practical_budget_gb": [
+        336.4,
+        420.5
+      ]
+    }
+  ]
+}
