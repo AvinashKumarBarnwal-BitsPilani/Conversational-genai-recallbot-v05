@@ -1,0 +1,6072 @@
+{
+  "experiment": "t4fix_hybrid_mem",
+  "config": "hybrid_mem",
+  "session": "A",
+  "run_id": "t4fix_hybrid_mem_A",
+  "user_id": "CUST-MAYA-1042",
+  "model": "qwen3:1.7b",
+  "turns": [
+    {
+      "turn": 1,
+      "probe_id": null,
+      "user_message": "Hi there!",
+      "assistant_response": "Hello! I'm RecallBot. I can help with ShopSphere orders, delivery, returns and refunds. What can I assist you with today?",
+      "intent": "greeting",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 1,
+        "last_user_text": "Hi there!",
+        "current_intent": "greeting",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 401,
+        "input_budget": 1888,
+        "output_reserve": 128,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 32,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 3
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 16
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 21
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 40,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 32,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 2,
+      "probe_id": null,
+      "user_message": "My name is Maya Rao. Please call me Maya.",
+      "assistant_response": "Thanks. I've saved your preferred name: Maya. What would you like help with today?",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "created",
+          "memory_id": "SM-0001"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 2,
+        "last_user_text": "My name is Maya Rao. Please call me Maya.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "preferred_name": "Maya"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 442,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 42,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 32
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 11
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 11
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 32,
+            "ids": [
+              "HISTORY-1"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 39,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 42,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 3,
+      "probe_id": null,
+      "user_message": "Thanks, that's helpful.",
+      "assistant_response": "You're welcome. Is there anything else I can help you with?",
+      "intent": "small_talk",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 3,
+        "last_user_text": "Thanks, that's helpful.",
+        "current_intent": "small_talk",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 480,
+        "input_budget": 1888,
+        "output_reserve": 128,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 52,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 32
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 6
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 14
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 62,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 37,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 52,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 4,
+      "probe_id": null,
+      "user_message": "Email is the best way to send me routine order updates.",
+      "assistant_response": "Thanks. I've saved your notification channel for routine updates: email. What would you like help with next?",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "created",
+          "memory_id": "SM-0002"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 4,
+        "last_user_text": "Email is the best way to send me routine order updates.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "notification_channel": "email"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 516,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 32
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 20
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 12
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 14
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 82,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 43,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 5,
+      "probe_id": null,
+      "user_message": "I usually place orders for delivery in Bengaluru.",
+      "assistant_response": "Thanks. I've saved your usual delivery city: Bengaluru. What would you like help with next?",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "created",
+          "memory_id": "SM-0003"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 5,
+        "last_user_text": "I usually place orders for delivery in Bengaluru.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "city": "Bengaluru"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 515,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 20
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 34
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 10
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 13
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 84,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 40,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 6,
+      "probe_id": null,
+      "user_message": "If I am not home, leave small parcels at the side door when the carrier permits it.",
+      "assistant_response": "Thanks. I've saved your delivery note: side door. What would you like help with next?",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "created",
+          "memory_id": "SM-0004"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 6,
+        "last_user_text": "If I am not home, leave small parcels at the side door when the carrier permits it.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "delivery_note": "side door"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 524,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 20
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 34
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 19
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 12
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 85,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 48,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 7,
+      "probe_id": null,
+      "user_message": "My preferred delivery time is between 6 pm and 9 pm.",
+      "assistant_response": "Thanks. I've saved your preferred delivery window: 18:00-21:00. What would you like help with next?",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "created",
+          "memory_id": "SM-0005"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 7,
+        "last_user_text": "My preferred delivery time is between 6 pm and 9 pm.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "time_window": {
+            "start": "18:00",
+            "end": "21:00",
+            "raw": "between 6 pm and 9 pm"
+          }
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 549,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 34
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 39
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 14
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 23
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 104,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 54,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 8,
+      "probe_id": null,
+      "user_message": "For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",
+      "assistant_response": "Thanks. I've saved your preferred return method: pickup from home. What would you like help with next?",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "created",
+          "memory_id": "SM-0006"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 8,
+        "last_user_text": "For returns, I prefer a pickup from my home instead of dropping the parcel at a counter.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 556,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 39
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 45
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 19
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 14
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 115,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 50,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 9,
+      "probe_id": null,
+      "user_message": "Please use recyclable packaging whenever that option is available.",
+      "assistant_response": "Thanks. I've saved your packaging preference: recyclable. What would you like help with next?",
+      "intent": "provide_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "created",
+          "memory_id": "SM-0007"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 9,
+        "last_user_text": "Please use recyclable packaging whenever that option is available.",
+        "current_intent": "provide_user_fact",
+        "current_entities": {
+          "packaging_preference": "recyclable"
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 556,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 39
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 45
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 41
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 11
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 12
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 125,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 40,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 10,
+      "probe_id": null,
+      "user_message": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+      "assistant_response": "Thanks for letting me know. I've noted the late delivery issue for order ORD-88216. What would you like help with next?",
+      "intent": "report_complaint",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216"
+        },
+        {
+          "tool": "episodic_memory_write",
+          "status": "success",
+          "episode_id": "EP-0008",
+          "type": "complaint"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 10,
+        "last_user_text": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+        "current_intent": "report_complaint",
+        "current_entities": {
+          "order_ids": [
+            "ORD-88216"
+          ]
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 592,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 45
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 41
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 21
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 45
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 117,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 84,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 11,
+      "probe_id": null,
+      "user_message": "Okay, thank you.",
+      "assistant_response": "You're welcome. Is there anything else I can help you with?",
+      "intent": "small_talk",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 11,
+        "last_user_text": "Okay, thank you.",
+        "current_intent": "small_talk",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 552,
+        "input_budget": 1888,
+        "output_reserve": 128,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 41
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 52
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 5
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 14
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 124,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 37,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 12,
+      "probe_id": null,
+      "user_message": "I need to return the wireless earbuds from order ORD-74021.",
+      "assistant_response": "What return reason would you like to use for ORD-74021?",
+      "intent": "start_return",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021"
+        },
+        {
+          "tool": "episodic_memory_write",
+          "status": "success",
+          "episode_id": "EP-0009",
+          "type": "task_event"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 12,
+        "last_user_text": "I need to return the wireless earbuds from order ORD-74021.",
+        "current_intent": "start_return",
+        "current_entities": {
+          "order_ids": [
+            "ORD-74021"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 704,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 17
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 52
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 19
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 19
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 163
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 12
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 17,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 102,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 194,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 13,
+      "probe_id": null,
+      "user_message": "The left earbud does not charge even after I tried the charging case.",
+      "assistant_response": "Could you please confirm the date you prefer for the pickup?",
+      "intent": "provide_return_reason",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 13,
+        "last_user_text": "The left earbud does not charge even after I tried the charging case.",
+        "current_intent": "provide_return_reason",
+        "current_entities": {
+          "return_reason": "defective_left_earbud"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_date",
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 704,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 15
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 52
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 36
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 15
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 167
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 9
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 15,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 107,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 191,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 14,
+      "probe_id": null,
+      "user_message": "Saturday, 28 November 2026 would work.",
+      "assistant_response": "Could you please confirm the pickup time window you prefer?",
+      "intent": "provide_pickup_date",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 14,
+        "last_user_text": "Saturday, 28 November 2026 would work.",
+        "current_intent": "provide_pickup_date",
+        "current_entities": {
+          "date": "2026-11-28"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": null,
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_time_window",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 685,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 15
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 36
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 14
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 174
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 9
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 15,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 82,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 197,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 15,
+      "probe_id": null,
+      "user_message": "And for Saturday, please make it after 6 pm.",
+      "assistant_response": "Please confirm your preferred slot for Saturday, after 6 pm. Available slots:\n- 18:00–20:00 (PICK-20261128-E1)\n- 20:00–22:00 (PICK-20261128-E2)",
+      "intent": "state_followup",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "check_pickup_slots",
+          "status": "success",
+          "result_count": 2
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 15,
+        "last_user_text": "And for Saturday, please make it after 6 pm.",
+        "current_intent": "state_followup",
+        "current_entities": {
+          "time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          }
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 764,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 36
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 25
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 12
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 186
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 68
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 88,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 266,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 16,
+      "probe_id": null,
+      "user_message": "Before we continue, what is the electronics return window under the current policy?",
+      "assistant_response": "The electronics return window for this case is 14 calendar days from delivery. The customer may return the product within this period. The assistant does not promise immediate replacement before the warranty service confirms the claim. \n\nWhat is the customer's preferred slot for Saturday, after 6 pm?\n\nSources: KB-009 / KB-009-C128-0004 (version 1.0); KB-002 / KB-002-C128-0002 (version 2.0); KB-002 / KB-002-C128-0001 (version 2.0)",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "search_kb",
+          "status": "success",
+          "candidate_count": 8,
+          "result_count": 3,
+          "version_filter": "active_only"
+        }
+      ],
+      "sources": [
+        "KB-009 / KB-009-C128-0004 (version 1.0)",
+        "KB-002 / KB-002-C128-0002 (version 2.0)",
+        "KB-002 / KB-002-C128-0001 (version 2.0)"
+      ],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 16,
+        "last_user_text": "Before we continue, what is the electronics return window under the current policy?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 1306,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 507,
+        "overhead_tokens": 70,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 25
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 84
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 15
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 186
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 44
+          },
+          {
+            "id": "KB-009-C128-0004",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          },
+          {
+            "id": "KB-002-C128-0002",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          },
+          {
+            "id": "KB-002-C128-0001",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 136,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 245,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "retrieved_knowledge",
+            "memory_type": "semantic_kb",
+            "home": "external (KB index, hybrid RRF)",
+            "tokens": 507,
+            "ids": [
+              "KB-009-C128-0004",
+              "KB-002-C128-0002",
+              "KB-002-C128-0001"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 70,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 17,
+      "probe_id": null,
+      "user_message": "I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month.",
+      "assistant_response": "Thanks for letting me know that you chose exchange rather than refund for order ORD-66310. I've noted that in your history. I won't apply that choice to your current return unless you ask.",
+      "intent": "report_decision",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "episodic_memory_write",
+          "status": "success",
+          "episode_id": "EP-0010",
+          "type": "decision"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 17,
+        "last_user_text": "I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month.",
+        "current_intent": "report_decision",
+        "current_entities": {
+          "order_ids": [
+            "ORD-66310"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 928,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 25
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 84
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 155
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 25
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 185
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 44
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 264,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 254,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 18,
+      "probe_id": null,
+      "user_message": "What does code ERR-RMA-04 mean?",
+      "assistant_response": "Code ERR-RMA-04 means the return reason is missing or invalid. Please provide a valid reason for the return so we can proceed.\n\nSources: KB-007 / KB-007-C128-0003 (version 1.2); KB-006 / KB-006-C128-0003 (version 1.4); KB-006 / KB-006-C128-0004 (version 1.4)",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "search_kb",
+          "status": "success",
+          "candidate_count": 8,
+          "result_count": 3,
+          "version_filter": "none"
+        }
+      ],
+      "sources": [
+        "KB-007 / KB-007-C128-0003 (version 1.2)",
+        "KB-006 / KB-006-C128-0003 (version 1.4)",
+        "KB-006 / KB-006-C128-0004 (version 1.4)"
+      ],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 18,
+        "last_user_text": "What does code ERR-RMA-04 mean?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {
+          "domain_codes": [
+            "ERR-RMA-04"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 1474,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 507,
+        "overhead_tokens": 70,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 84
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 155
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 69
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 11
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 186
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 44
+          },
+          {
+            "id": "KB-007-C128-0003",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          },
+          {
+            "id": "KB-006-C128-0003",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          },
+          {
+            "id": "KB-006-C128-0004",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 308,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 241,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "retrieved_knowledge",
+            "memory_type": "semantic_kb",
+            "home": "external (KB index, hybrid RRF)",
+            "tokens": 507,
+            "ids": [
+              "KB-007-C128-0003",
+              "KB-006-C128-0003",
+              "KB-006-C128-0004"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 70,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 25,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 19,
+      "probe_id": null,
+      "user_message": "My preferred delivery window has changed to 7 pm to 9 pm.",
+      "assistant_response": "Thanks. I've updated your preferred delivery window from 18:00-21:00 to 19:00-21:00.",
+      "intent": "update_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "updated",
+          "memory_id": "SM-0008"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 19,
+        "last_user_text": "My preferred delivery window has changed to 7 pm to 9 pm.",
+        "current_intent": "update_user_fact",
+        "current_entities": {
+          "time_window": {
+            "start": "19:00",
+            "end": "21:00",
+            "raw": "7 pm to 9 pm"
+          }
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 994,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 155
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 69
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 123
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 15
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 186
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 36
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 347,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 237,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 25,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 84,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 20,
+      "probe_id": null,
+      "user_message": "Please use SMS instead of email for future routine updates.",
+      "assistant_response": "Thanks. I've updated your notification channel for routine updates from email to SMS.",
+      "intent": "update_user_fact",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "semantic_memory_write",
+          "status": "success",
+          "action": "updated",
+          "memory_id": "SM-0009"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 20,
+        "last_user_text": "Please use SMS instead of email for future routine updates.",
+        "current_intent": "update_user_fact",
+        "current_entities": {
+          "notification_channel": "SMS"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 866,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 69
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 123
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 51
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 11
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 186
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 16
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 243,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 213,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 25,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 84,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 155,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 21,
+      "probe_id": null,
+      "user_message": "What happens if the driver misses my return pickup?",
+      "assistant_response": "If the driver misses the scheduled pickup, first check the carrier event. If no attempt was recorded, create a reschedule request using the next available slot. If the carrier records an unsuccessful attempt, escalate with the pickup reference and timestamp. Do not create a second RMA for the same item. Keep the existing RMA identifier and add a pickup reschedule event.\n\nSources: KB-013 / KB-013-C128-0004 (version 1.3); KB-013 / KB-013-C128-0005 (version 1.3); KB-002 / KB-002-C128-0005 (version 2.0)",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "search_kb",
+          "status": "success",
+          "candidate_count": 8,
+          "result_count": 3,
+          "version_filter": "none"
+        }
+      ],
+      "sources": [
+        "KB-013 / KB-013-C128-0004 (version 1.3)",
+        "KB-013 / KB-013-C128-0005 (version 1.3)",
+        "KB-002 / KB-002-C128-0005 (version 2.0)"
+      ],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 21,
+        "last_user_text": "What happens if the driver misses my return pickup?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 1306,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 449,
+        "overhead_tokens": 68,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 123
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 51
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 10
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 186
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 44
+          },
+          {
+            "id": "KB-013-C128-0004",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          },
+          {
+            "id": "KB-013-C128-0005",
+            "component": "retrieved_knowledge",
+            "tokens": 111
+          },
+          {
+            "id": "KB-002-C128-0005",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 201,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 240,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "retrieved_knowledge",
+            "memory_type": "semantic_kb",
+            "home": "external (KB index, hybrid RRF)",
+            "tokens": 449,
+            "ids": [
+              "KB-013-C128-0004",
+              "KB-013-C128-0005",
+              "KB-002-C128-0005"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 68,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 25,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 84,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 155,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 69,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 22,
+      "probe_id": null,
+      "user_message": "Please repeat the complete return pickup summary so I can confirm it.",
+      "assistant_response": "Please review the return pickup details:\n- Order: ORD-74021\n- Item SKU: SKU-AUR-220\n- Reason: defective_left_earbud\n- Pickup date: 2026-11-28\n- Pickup window: 18:00-20:00\n- Slot: PICK-20261128-E1\n- Address: Customer saved Bengaluru delivery address (masked summary)\n\nThis is the earliest slot matching your requested time. Other available option(s): 20:00–22:00 (slot PICK-20261128-E2). Reply no if you prefer one of these instead.\n\nWould you like me to confirm this pickup booking? Please reply yes or no.",
+      "intent": "request_task_summary",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "check_pickup_slots",
+          "status": "success",
+          "result_count": 2
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 22,
+        "last_user_text": "Please repeat the complete return pickup summary so I can confirm it.",
+        "current_intent": "request_task_summary",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "awaiting_confirmation",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": "20:00"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": true,
+        "confirmation_status": "pending",
+        "confirmation_mismatch": false,
+        "pending_action": {
+          "tool": "book_slot",
+          "arguments": {
+            "customer_id": "CUST-MAYA-1042",
+            "order_id": "ORD-74021",
+            "sku": "SKU-AUR-220",
+            "reason": "defective_left_earbud",
+            "pickup_date": "2026-11-28",
+            "pickup_time_window": {
+              "start": "18:00",
+              "end": "20:00"
+            },
+            "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+            "slot_id": "PICK-20261128-E1"
+          },
+          "status": "awaiting_confirmation"
+        },
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021",
+          "item_count": 2
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 1010,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 11
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 51
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 166
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 13
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 182
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 169
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 11,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 244,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 364,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 25,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 84,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 155,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 69,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 123,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 23,
+      "probe_id": null,
+      "user_message": "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.",
+      "assistant_response": "Your return pickup has been booked. Reference: RMA-20261126-AAA3511C. Status: confirmed.",
+      "intent": "confirm_action",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "book_slot",
+          "status": "success"
+        },
+        {
+          "tool": "episodic_memory_write",
+          "status": "success",
+          "episode_id": "EP-0013",
+          "type": "booking"
+        }
+      ],
+      "sources": [],
+      "completed": true,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 23,
+        "last_user_text": "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.",
+        "current_intent": "confirm_action",
+        "current_entities": {
+          "skus": [
+            "SKU-AUR-220"
+          ],
+          "time_window": {
+            "start": "18:00",
+            "end": null,
+            "raw": "after 6 pm"
+          }
+        },
+        "active_task": "return_pickup",
+        "task_status": "completed",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": "20:00"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": true
+        },
+        "missing_slots": [],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "confirmed",
+        "confirmation_mismatch": false,
+        "pending_action": {
+          "tool": "book_slot",
+          "arguments": {
+            "customer_id": "CUST-MAYA-1042",
+            "order_id": "ORD-74021",
+            "sku": "SKU-AUR-220",
+            "reason": "defective_left_earbud",
+            "pickup_date": "2026-11-28",
+            "pickup_time_window": {
+              "start": "18:00",
+              "end": "20:00"
+            },
+            "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+            "slot_id": "PICK-20261128-E1"
+          },
+          "status": "completed"
+        },
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "status": "success",
+          "booking_id": "PICKUP-20261126-12E28A43",
+          "rma_id": "RMA-20261126-AAA3511C",
+          "booking_status": "confirmed",
+          "slot_id": "PICK-20261128-E1",
+          "order_id": "ORD-74021"
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 1086,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 63,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 23
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 166
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 182
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 28
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 237
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 31
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 23,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 375,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 296,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 63,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 25,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 84,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 155,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 69,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 123,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 51,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 24,
+      "probe_id": null,
+      "user_message": "Please forget my saved delivery note about leaving parcels at the side door.",
+      "assistant_response": "Done. I've deleted your saved delivery note from my records, including any history that mentioned it.",
+      "intent": "forget_request",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_forget",
+          "status": "success",
+          "keys": [
+            "delivery_note"
+          ],
+          "facts_removed": [
+            "SM-0004"
+          ],
+          "episodes_deleted": [
+            "EP-0004"
+          ],
+          "episodes_redacted": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 24,
+        "last_user_text": "Please forget my saved delivery note about leaving parcels at the side door.",
+        "current_intent": "forget_request",
+        "current_entities": {
+          "delivery_note": "side door"
+        },
+        "active_task": "return_pickup",
+        "task_status": "completed",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": "20:00"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": true
+        },
+        "missing_slots": [],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "confirmed",
+        "confirmation_mismatch": false,
+        "pending_action": {
+          "tool": "book_slot",
+          "arguments": {
+            "customer_id": "CUST-MAYA-1042",
+            "order_id": "ORD-74021",
+            "sku": "SKU-AUR-220",
+            "reason": "defective_left_earbud",
+            "pickup_date": "2026-11-28",
+            "pickup_time_window": {
+              "start": "18:00",
+              "end": "20:00"
+            },
+            "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+            "slot_id": "PICK-20261128-E1"
+          },
+          "status": "completed"
+        },
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "status": "success",
+          "booking_id": "PICKUP-20261126-12E28A43",
+          "rma_id": "RMA-20261126-AAA3511C",
+          "booking_status": "confirmed",
+          "slot_id": "PICK-20261128-E1",
+          "order_id": "ORD-74021"
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 1097,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 63,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 23
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 166
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 182
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 60
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 237
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 20
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 23,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 408,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 274,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 63,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 25,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 84,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 155,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 69,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 123,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 51,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-20",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 25,
+      "probe_id": null,
+      "user_message": "Perfect, thanks. Have a good day!",
+      "assistant_response": "Goodbye! Thank you for contacting ShopSphere.",
+      "intent": "closing",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "A",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 25,
+        "last_user_text": "Perfect, thanks. Have a good day!",
+        "current_intent": "closing",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "completed",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-74021",
+          "sku": "SKU-AUR-220",
+          "reason": "defective_left_earbud",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "18:00",
+            "end": "20:00"
+          },
+          "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+          "explicit_confirmation": true
+        },
+        "missing_slots": [],
+        "available_order_items": [
+          {
+            "sku": "SKU-AUR-220",
+            "name": "AUR-220 Wireless Earbuds"
+          },
+          {
+            "sku": "SKU-PHC-11",
+            "name": "Protective Phone Case"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "confirmed",
+        "confirmation_mismatch": false,
+        "pending_action": {
+          "tool": "book_slot",
+          "arguments": {
+            "customer_id": "CUST-MAYA-1042",
+            "order_id": "ORD-74021",
+            "sku": "SKU-AUR-220",
+            "reason": "defective_left_earbud",
+            "pickup_date": "2026-11-28",
+            "pickup_time_window": {
+              "start": "18:00",
+              "end": "20:00"
+            },
+            "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+            "slot_id": "PICK-20261128-E1"
+          },
+          "status": "completed"
+        },
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "status": "success",
+          "booking_id": "PICKUP-20261126-12E28A43",
+          "rma_id": "RMA-20261126-AAA3511C",
+          "booking_status": "confirmed",
+          "slot_id": "PICK-20261128-E1",
+          "order_id": "ORD-74021"
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 949,
+        "input_budget": 1888,
+        "output_reserve": 128,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 63,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 23
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 182
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 60
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 37
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 9
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 236
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 10
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 23,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 279,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 255,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 63,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 20,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 39,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 41,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 52,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 19,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 25,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 84,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 155,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 69,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 123,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 51,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-20",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-21",
+            "component": "conversation_history",
+            "tokens": 166,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    }
+  ],
+  "reflection": {
+    "episode_id": "EP-0015",
+    "user": "CUST-MAYA-1042",
+    "session": "A",
+    "timestamp": "2026-11-21T10:50:00+05:30",
+    "source_turn": 25,
+    "type": "reflection",
+    "description": "1. The customer reported a late delivery for order ORD-88216, indicating a preference for earlier delivery windows, which was addressed by adjusting the preferred delivery window to 19:00-21:00. 2. The customer opted for an exchange rather than a refund for order ORD-66310, reflecting a stable preference for the exchange method. 3. The customer booked a return pickup for SKU-AUR-220 in order ORD-74021, confirming a consistent preference for the pickup method and a specific return date and time.",
+    "importance": 6,
+    "importance_method": "rule",
+    "entities": {
+      "session": "A"
+    },
+    "linked_memory_ids": [
+      "EP-0008",
+      "EP-0009",
+      "EP-0010",
+      "EP-0011",
+      "EP-0012",
+      "EP-0013"
+    ],
+    "redacted": false
+  },
+  "session_info": {
+    "run_id": "t4fix_hybrid_mem_A",
+    "pid": 22308,
+    "parent_pid": 118448,
+    "started_at": "2026-11-26T19:42:29+05:30",
+    "status": "complete",
+    "use_nlg": true,
+    "episodic_weighting": "A_relevance_focused",
+    "saved_hashes": {
+      "semantic_facts.json": "94b7c8d733d01a4b24de27bb6a12403f34eebcf21c5ea10b784844d6890b2e1a",
+      "semantic_vectors.npy": "f93fcb8f5704802c98929d6b215996fd72238ce55539034a3387866d2512f3f9",
+      "semantic_index.json": "f6634be8ba7ec4ffadd8ddd6de48388a82af3867fdc35236d76df2822c9707be",
+      "episodes.json": "70258639c06cc6e556f6b02d5cf9dfadefd44d2f4af07b267ad2d7e82bfd6f53",
+      "episodic_vectors.npy": "63f49ad4e01d0044046fc04490830123ece4d340b549919d82917c46c6010da6",
+      "episodic_index.json": "4614da7ae46b572998ea363a3bdee91ce06b74624192ff6b82d917a32475d981",
+      "forget_tombstones.json": "5a5a2bb538aba2f83427c6c2c01287ba4760ea608905b27eafd72a488aa40469"
+    },
+    "finished_at": "2026-11-26T19:43:53+05:30",
+    "turns": 25,
+    "memory_counts": {
+      "active_facts": 6,
+      "all_fact_records": 8,
+      "episodes": 14,
+      "reflections": 1,
+      "tombstones": 1
+    },
+    "transcript": "results\\task3_sessions\\t4fix_hybrid_mem_session_A.json"
+  }
+}

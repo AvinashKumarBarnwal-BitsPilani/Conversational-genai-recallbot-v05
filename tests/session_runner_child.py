@@ -1,6 +1,6 @@
 """Child process for test_run_session: one session with fakes and a temp log.
 
-Usage: python tests/session_runner_child.py <A|B> <tmp_dir>
+Usage: python tests/session_runner_child.py <A|B> <tmp_dir> [config]
 """
 from __future__ import annotations
 
@@ -20,6 +20,7 @@ from src.retrieval.models import KnowledgeChunk  # noqa: E402
 from memory_fakes import FakeEmbedder, FakeOllamaClient  # noqa: E402
 
 session, tmp = sys.argv[1], Path(sys.argv[2])
+config = sys.argv[3] if len(sys.argv) > 3 else "hybrid_mem"
 logger_module.LOG_PATH = tmp / "calls.jsonl"  # never touch the real evidence log
 embedder = FakeEmbedder()
 
@@ -33,7 +34,8 @@ def fake_index_loader(_path: Path) -> DenseIndex:
 extract_llm = LoggedLLM(client=FakeOllamaClient(json.dumps({"facts": [
     {"key": "return_method_preference", "value": "pickup from my home"}]})))
 run_session(
-    session=session, config="hybrid_mem", experiment="t3_test", use_nlg=False,
+    session=session, config=config, experiment=f"t3_test_{config}" if config != "hybrid_mem" else "t3_test",
+    use_nlg=False,
     memory_root=tmp / "memory", db_root=tmp / "db", sessions_dir=tmp / "sessions",
     memory_kwargs={
         "embedder": embedder,

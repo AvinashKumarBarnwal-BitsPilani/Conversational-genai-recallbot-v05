@@ -1,0 +1,52 @@
+{
+  "synthetic_fixture": true,
+  "slots": [
+    {
+      "slot_id": "PICK-20261128-E1",
+      "date": "2026-11-28",
+      "window_start": "18:00",
+      "window_end": "20:00",
+      "postal_area": "Bengaluru",
+      "status": "booked",
+      "booking_id": "PICKUP-20261126-6348B912"
+    },
+    {
+      "slot_id": "PICK-20261128-E2",
+      "date": "2026-11-28",
+      "window_start": "20:00",
+      "window_end": "22:00",
+      "postal_area": "Bengaluru",
+      "status": "available"
+    },
+    {
+      "slot_id": "PICK-20261127-E1",
+      "date": "2026-11-27",
+      "window_start": "18:00",
+      "window_end": "20:00",
+      "postal_area": "Bengaluru",
+      "status": "available"
+    }
+  ],
+  "note": "These are deterministic test slots only. The later scheduler tool must check actual fixture state and only return available options.",
+  "bookings": [
+    {
+      "booking_id": "PICKUP-20261126-6348B912",
+      "rma_id": "RMA-20261126-17A2886C",
+      "customer_id": "CUST-MAYA-1042",
+      "order_id": "ORD-74021",
+      "sku": "SKU-AUR-220",
+      "reason": "defective_left_earbud",
+      "pickup_date": "2026-11-28",
+      "pickup_time_window": {
+        "start": "18:00",
+        "end": "20:00"
+      },
+      "pickup_address_summary": "Customer saved Bengaluru delivery address (masked summary)",
+      "slot_id": "PICK-20261128-E1",
+      "booking_status": "confirmed",
+      "created_at": "2026-11-26T19:38:20+05:30",
+      "confirmation_received": true
+    }
+  ],
+  "database_type": "runtime_json_pickup_database"
+}

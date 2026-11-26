@@ -1,0 +1,76 @@
+{
+  "experiment": "t4_hybrid",
+  "config": "hybrid",
+  "model": "qwen3:1.7b",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "sessions": {
+    "A": {
+      "run_id": "t4_hybrid_A",
+      "pid": 120064,
+      "parent_pid": 109468,
+      "started_at": "2026-11-26T19:32:07+05:30",
+      "status": "complete",
+      "use_nlg": true,
+      "episodic_weighting": "A_relevance_focused",
+      "saved_hashes": {
+        "semantic_facts.json": "12fd1beef7b94e48fc064268fdcf570af38e3957e41ff28cb2aece5bcd6450b7",
+        "semantic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+        "semantic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+        "episodes.json": "1e58c4b6e03cb33aef31df086dd53231cd2de8946090029b40bb7a10736f3391",
+        "episodic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+        "episodic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+        "forget_tombstones.json": "c71bbebfd58757767a2e52934e1dfb85dad5564ee10d84ef9c689d52f424ee18"
+      },
+      "finished_at": "2026-11-26T19:33:13+05:30",
+      "turns": 25,
+      "memory_counts": {
+        "active_facts": 0,
+        "all_fact_records": 0,
+        "episodes": 0,
+        "reflections": 0,
+        "tombstones": 0
+      },
+      "transcript": "results\\task3_sessions\\t4_hybrid_session_A.json"
+    },
+    "B": {
+      "run_id": "t4_hybrid_B",
+      "pid": 93764,
+      "parent_pid": 121060,
+      "started_at": "2026-11-26T19:33:14+05:30",
+      "status": "complete",
+      "use_nlg": true,
+      "episodic_weighting": "A_relevance_focused",
+      "loaded_hashes": {
+        "semantic_facts.json": "12fd1beef7b94e48fc064268fdcf570af38e3957e41ff28cb2aece5bcd6450b7",
+        "semantic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+        "semantic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+        "episodes.json": "1e58c4b6e03cb33aef31df086dd53231cd2de8946090029b40bb7a10736f3391",
+        "episodic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+        "episodic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+        "forget_tombstones.json": "c71bbebfd58757767a2e52934e1dfb85dad5564ee10d84ef9c689d52f424ee18"
+      },
+      "loaded_hashes_match_session_a": true,
+      "session_a_pid": 120064,
+      "different_process_from_session_a": true,
+      "saved_hashes": {
+        "semantic_facts.json": "12fd1beef7b94e48fc064268fdcf570af38e3957e41ff28cb2aece5bcd6450b7",
+        "semantic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+        "semantic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+        "episodes.json": "1e58c4b6e03cb33aef31df086dd53231cd2de8946090029b40bb7a10736f3391",
+        "episodic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+        "episodic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+        "forget_tombstones.json": "c71bbebfd58757767a2e52934e1dfb85dad5564ee10d84ef9c689d52f424ee18"
+      },
+      "finished_at": "2026-11-26T19:34:35+05:30",
+      "turns": 15,
+      "memory_counts": {
+        "active_facts": 0,
+        "all_fact_records": 0,
+        "episodes": 0,
+        "reflections": 0,
+        "tombstones": 0
+      },
+      "transcript": "results\\task3_sessions\\t4_hybrid_session_B.json"
+    }
+  }
+}

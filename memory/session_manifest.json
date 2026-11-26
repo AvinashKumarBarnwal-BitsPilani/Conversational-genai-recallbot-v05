@@ -1,0 +1,76 @@
+{
+  "experiment": "t4fix_hybrid_mem",
+  "config": "hybrid_mem",
+  "model": "qwen3:1.7b",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "sessions": {
+    "A": {
+      "run_id": "t4fix_hybrid_mem_A",
+      "pid": 22308,
+      "parent_pid": 118448,
+      "started_at": "2026-11-26T19:42:29+05:30",
+      "status": "complete",
+      "use_nlg": true,
+      "episodic_weighting": "A_relevance_focused",
+      "saved_hashes": {
+        "semantic_facts.json": "94b7c8d733d01a4b24de27bb6a12403f34eebcf21c5ea10b784844d6890b2e1a",
+        "semantic_vectors.npy": "f93fcb8f5704802c98929d6b215996fd72238ce55539034a3387866d2512f3f9",
+        "semantic_index.json": "f6634be8ba7ec4ffadd8ddd6de48388a82af3867fdc35236d76df2822c9707be",
+        "episodes.json": "70258639c06cc6e556f6b02d5cf9dfadefd44d2f4af07b267ad2d7e82bfd6f53",
+        "episodic_vectors.npy": "63f49ad4e01d0044046fc04490830123ece4d340b549919d82917c46c6010da6",
+        "episodic_index.json": "4614da7ae46b572998ea363a3bdee91ce06b74624192ff6b82d917a32475d981",
+        "forget_tombstones.json": "5a5a2bb538aba2f83427c6c2c01287ba4760ea608905b27eafd72a488aa40469"
+      },
+      "finished_at": "2026-11-26T19:43:53+05:30",
+      "turns": 25,
+      "memory_counts": {
+        "active_facts": 6,
+        "all_fact_records": 8,
+        "episodes": 14,
+        "reflections": 1,
+        "tombstones": 1
+      },
+      "transcript": "results\\task3_sessions\\t4fix_hybrid_mem_session_A.json"
+    },
+    "B": {
+      "run_id": "t4fix_hybrid_mem_B",
+      "pid": 110392,
+      "parent_pid": 28900,
+      "started_at": "2026-11-26T19:43:54+05:30",
+      "status": "complete",
+      "use_nlg": true,
+      "episodic_weighting": "A_relevance_focused",
+      "loaded_hashes": {
+        "semantic_facts.json": "94b7c8d733d01a4b24de27bb6a12403f34eebcf21c5ea10b784844d6890b2e1a",
+        "semantic_vectors.npy": "f93fcb8f5704802c98929d6b215996fd72238ce55539034a3387866d2512f3f9",
+        "semantic_index.json": "f6634be8ba7ec4ffadd8ddd6de48388a82af3867fdc35236d76df2822c9707be",
+        "episodes.json": "70258639c06cc6e556f6b02d5cf9dfadefd44d2f4af07b267ad2d7e82bfd6f53",
+        "episodic_vectors.npy": "63f49ad4e01d0044046fc04490830123ece4d340b549919d82917c46c6010da6",
+        "episodic_index.json": "4614da7ae46b572998ea363a3bdee91ce06b74624192ff6b82d917a32475d981",
+        "forget_tombstones.json": "5a5a2bb538aba2f83427c6c2c01287ba4760ea608905b27eafd72a488aa40469"
+      },
+      "loaded_hashes_match_session_a": true,
+      "session_a_pid": 22308,
+      "different_process_from_session_a": true,
+      "saved_hashes": {
+        "semantic_facts.json": "94b7c8d733d01a4b24de27bb6a12403f34eebcf21c5ea10b784844d6890b2e1a",
+        "semantic_vectors.npy": "f93fcb8f5704802c98929d6b215996fd72238ce55539034a3387866d2512f3f9",
+        "semantic_index.json": "f6634be8ba7ec4ffadd8ddd6de48388a82af3867fdc35236d76df2822c9707be",
+        "episodes.json": "70258639c06cc6e556f6b02d5cf9dfadefd44d2f4af07b267ad2d7e82bfd6f53",
+        "episodic_vectors.npy": "63f49ad4e01d0044046fc04490830123ece4d340b549919d82917c46c6010da6",
+        "episodic_index.json": "4614da7ae46b572998ea363a3bdee91ce06b74624192ff6b82d917a32475d981",
+        "forget_tombstones.json": "5a5a2bb538aba2f83427c6c2c01287ba4760ea608905b27eafd72a488aa40469"
+      },
+      "finished_at": "2026-11-26T19:45:47+05:30",
+      "turns": 15,
+      "memory_counts": {
+        "active_facts": 6,
+        "all_fact_records": 8,
+        "episodes": 14,
+        "reflections": 1,
+        "tombstones": 1
+      },
+      "transcript": "results\\task3_sessions\\t4fix_hybrid_mem_session_B.json"
+    }
+  }
+}

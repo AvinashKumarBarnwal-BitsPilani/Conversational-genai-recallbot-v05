@@ -1,0 +1,93 @@
+{
+  "experiment": "t4fix_hybrid_mem",
+  "config": "hybrid_mem",
+  "reviewed_by_student": true,
+  "review_note": "Marks PROPOSED by the AI assistant from the full transcript answers; the student reviews each, edits any disagreement and sets reviewed_by_student to true.",
+  "answer_sources": {
+    "A": "results/task3_sessions/t4fix_hybrid_mem_session_A.json (scripted turn)",
+    "B": "results/task3_sessions/t4fix_hybrid_mem_session_B.json (probe_turns)"
+  },
+  "judgements": [
+    {
+      "probe_id": "P01",
+      "correct": 1,
+      "rationale": "19:00-21:00 [SM-0008]; superseded value not used."
+    },
+    {
+      "probe_id": "P02",
+      "correct": 1,
+      "rationale": "Bengaluru [SM-0003]."
+    },
+    {
+      "probe_id": "P03",
+      "correct": 1,
+      "rationale": "SMS [SM-0009]; email superseded."
+    },
+    {
+      "probe_id": "P04",
+      "correct": 1,
+      "rationale": "Says the note was deleted at the customer's request; value not revealed."
+    },
+    {
+      "probe_id": "P05",
+      "correct": 1,
+      "rationale": "Booking for SKU-AUR-220, ORD-74021, 2026-11-28 18:00-20:00 with the run's real RMA [EP-0013]."
+    },
+    {
+      "probe_id": "P06",
+      "correct": 1,
+      "rationale": "Late delivery for ORD-88216 [EP-0008]; no formal case created."
+    },
+    {
+      "probe_id": "P07",
+      "correct": 1,
+      "rationale": "14 calendar days from delivery, cites KB-002. Quality defect: extra contradictory sentence."
+    },
+    {
+      "probe_id": "P08",
+      "correct": 1,
+      "rationale": "Session A turn 18: return reason missing or invalid; cites KB-007-C128-0003."
+    },
+    {
+      "probe_id": "P09",
+      "correct": 1,
+      "rationale": "Exact fallback sentence; nothing invented."
+    },
+    {
+      "probe_id": "P10",
+      "correct": 1,
+      "rationale": "Session A turn 15: kept 2026-11-28 and the after-6-pm constraint; offered the two real scheduler slots."
+    },
+    {
+      "probe_id": "P11",
+      "correct": 0,
+      "rationale": "Retrieval fix worked (query rewritten; KB-003-C128-0001 now ranked 1st in the prompt) but the model still says the carrier inspects the item: residual prompt/NLG fault."
+    },
+    {
+      "probe_id": "P12",
+      "correct": 1,
+      "rationale": "Asks which order/item; no booking tool call."
+    },
+    {
+      "probe_id": "P13",
+      "correct": 1,
+      "rationale": "Memory-write fix worked: decision episode EP-0010 (now storing the customer's words) ranked first; exchange rather than refund for ORD-66310."
+    },
+    {
+      "probe_id": "P14",
+      "correct": 1,
+      "rationale": "Within 1 business day after inspection acceptance; cites KB-003."
+    },
+    {
+      "probe_id": "P15",
+      "correct": 1,
+      "rationale": "Verbatim budget answer (2,048 window, 160 reply reserve, 32 safety, 1,856 input; lower-priority items and old turns cut and logged). After-fix result for the t3_hm_01 P15 failure."
+    },
+    {
+      "probe_id": "P16",
+      "correct": 1,
+      "rationale": "19:00-21:00 [SM-0008] recalled from semantic memory although turn 19 is outside the trim window."
+    }
+  ],
+  "purpose": "After-fix run for Task 4(b): P13 memory-write fix and P11 retrieval fix; reported separately from the ablation."
+}

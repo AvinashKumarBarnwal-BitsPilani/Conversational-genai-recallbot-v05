@@ -45,6 +45,7 @@ NO_RETRIEVAL_INTENTS = frozenset({
     "forgotten_memory_query", "provide_user_fact", "update_user_fact",
 })
 MEMORY_QUERY_INTENTS = frozenset({"semantic_memory_query", "episodic_memory_query"})
+_NEXT_STAGE_RE = re.compile(r"\bwhat happens next\b|\bwhat(?:'s| is) next\b|\bnext step\b|\bafter (?:the )?pickup\b", re.I)
 
 
 class ToolGateway(Protocol):
@@ -373,7 +374,14 @@ class DialogueManager:
         # If this session has no active return workflow, answer from retrieved
         # KB evidence; do not manufacture Session A state in a new session.
         if intent == "state_followup":
-            return self._knowledge_base_answer(text, nlu, calls)
+            search_query = text
+            if self.use_context_assembler and _NEXT_STAGE_RE.search(text):
+                # Task 4(b) fix for P11 (retrieval stage): a follow-up such as
+                # "what happens next after the pickup?" shares no words with the
+                # refund-lifecycle chunk; state the lifecycle topic explicitly.
+                search_query = f"{text} (next stage of the return and refund process)"
+                calls.append({"tool": "query_rewrite", "status": "success", "query": search_query})
+            return self._knowledge_base_answer(text, nlu, calls, search_query=search_query)
 
         if intent in {"provide_user_fact", "update_user_fact"} or is_fact_like(text, nlu):
             return self._handle_user_fact(text, nlu, calls)
@@ -548,7 +556,7 @@ class DialogueManager:
         episode = self._remember(
             calls, "complaint",
             f"Customer reported a {issue} for {subject}{order_note}. Recorded as a customer-reported issue; "
-            "no formal complaint case was created.",
+            f"no formal complaint case was created. Customer's words: \"{text.strip()}\"",
             entities={"order_id": order_ids[0] if order_ids else None, "issue": issue},
         )
         noted = " I've noted this issue in your history." if episode is not None else ""
@@ -566,8 +574,11 @@ class DialogueManager:
             decision = f"chose {match.group(1).lower()} rather than {match.group(2).lower()}"
         else:
             decision = "reported a decision"
+        # Task 4(b) fix for P13 (memory-write stage): the generated summary dropped
+        # the product ("USB-C charger"), so the episode was not relevant to a
+        # question naming it. Keep the customer's own words in the episode.
         episode = self._remember(
-            calls, "decision", f"Customer {decision} for {subject}.",
+            calls, "decision", f"Customer {decision} for {subject}. Customer's words: \"{text.strip()}\"",
             entities={"order_id": order_ids[0] if order_ids else None, "decision": decision},
         )
         noted = " I've noted that in your history." if episode is not None else ""
@@ -772,7 +783,9 @@ class DialogueManager:
         }
         return manifest_status.get(doc_id, "unknown")
 
-    def _knowledge_base_answer(self, text: str, nlu: Mapping[str, Any], calls: list[dict[str, Any]]) -> dict[str, Any]:
+    def _knowledge_base_answer(
+        self, text: str, nlu: Mapping[str, Any], calls: list[dict[str, Any]], *, search_query: str | None = None,
+    ) -> dict[str, Any]:
         if self.config == "no_rag":
             # Ablation: short-term memory only, no knowledge-base retrieval.
             return self._result(
@@ -780,10 +793,10 @@ class DialogueManager:
                 "conversation history above contains the answer; otherwise reply exactly: " + FALLBACK_SENTENCE,
                 nlu=nlu, tool_calls=calls, fallback_reply=FALLBACK_SENTENCE,
             )
-        return self._knowledge_base_answer_with_retrieval(text, nlu, calls)
+        return self._knowledge_base_answer_with_retrieval(text, nlu, calls, search_query=search_query)
 
     def _knowledge_base_answer_with_retrieval(
-        self, text: str, nlu: Mapping[str, Any], calls: list[dict[str, Any]]
+        self, text: str, nlu: Mapping[str, Any], calls: list[dict[str, Any]], *, search_query: str | None = None,
     ) -> dict[str, Any]:
         # Current-policy questions need a wider candidate pool because archived
         # versions can otherwise occupy most of a small top-k result list.
@@ -798,7 +811,7 @@ class DialogueManager:
         retrieval_started = timer()
         print("[RecallBot] Retrieval started")
         try:
-            candidate_hits = list(self.tools.search_kb(text, top_k=search_top_k))
+            candidate_hits = list(self.tools.search_kb(search_query or text, top_k=search_top_k))
             print(f"[RecallBot] Retrieval completed: {(timer()-retrieval_started)*1000:.0f} ms")
         except Exception as exc:
             calls.append({"tool": "search_kb", "status": "failed", "error_type": type(exc).__name__})

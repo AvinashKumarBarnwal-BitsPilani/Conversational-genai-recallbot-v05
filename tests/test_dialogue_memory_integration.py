@@ -107,3 +107,30 @@ def test_hybrid_config_keeps_dialogue_working_without_long_term_memory(tmp_path)
     assert "won't be saved" in results[2]["reply"]
     assert results[23]["completed"] is True  # the booking task itself is unaffected
     assert not logger.of_type("extract") and not logger.of_type("importance")
+
+
+def test_decision_and_complaint_episodes_keep_the_customers_words(tmp_path):
+    """Task 4(b) P13 fix: the product named by the customer must be retrievable."""
+    _, memory, _, _, _ = run_session_a(tmp_path)
+    decision = memory.episodic.episodes(USER, ["decision"])[0]
+    complaint = memory.episodic.episodes(USER, ["complaint"])[0]
+    assert "USB-C charger" in decision.description
+    assert "frustrating late delivery" in complaint.description
+
+
+def test_next_stage_followup_is_rewritten_for_retrieval_only_in_task4_configs(tmp_path):
+    """Task 4(b) P11 fix: retrieval query states the lifecycle topic; Task 2 configs unchanged."""
+    queries = {}
+    for config in ("hybrid_mem", "trim"):
+        class Capture(OfflineKBTools):
+            def search_kb(self, query, top_k=3):
+                queries[config] = query
+                return super().search_kb(query, top_k)
+        tools = Capture(orders_path=ROOT / "db" / "seed_orders.json",
+                        seed_slots_path=ROOT / "db" / "seed_pickup_slots.json",
+                        runtime_slots_path=tmp_path / f"{config}.json", logger=None)
+        manager = DialogueManager(tracker=DialogueStateTracker(session_id="B", user_id=USER), tools=tools,
+                                  user_id=USER, config=config, logger=None, token_counter=lambda t: len(t.split()))
+        manager.handle_turn("And what happens next after the pickup is completed?", turn=33)
+    assert queries["hybrid_mem"].endswith("(next stage of the return and refund process)")
+    assert queries["trim"] == "And what happens next after the pickup is completed?"

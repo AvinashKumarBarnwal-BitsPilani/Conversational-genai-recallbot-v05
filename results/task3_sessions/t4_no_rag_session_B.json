@@ -1,0 +1,5948 @@
+{
+  "experiment": "t4_no_rag",
+  "config": "no_rag",
+  "session": "B",
+  "run_id": "t4_no_rag_B",
+  "user_id": "CUST-MAYA-1042",
+  "model": "qwen3:1.7b",
+  "turns": [
+    {
+      "turn": 26,
+      "probe_id": null,
+      "user_message": "Hello again, I'm back.",
+      "assistant_response": "Hello again! I'm RecallBot. I can help with ShopSphere orders, delivery, returns and refunds. How can I assist you today?",
+      "intent": "greeting",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 26,
+        "last_user_text": "Hello again, I'm back.",
+        "current_intent": "greeting",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 406,
+        "input_budget": 1888,
+        "output_reserve": 128,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 32,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 7
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 21
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 45,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 32,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 27,
+      "probe_id": null,
+      "user_message": "What delivery window do I currently prefer?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "semantic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 27,
+        "last_user_text": "What delivery window do I currently prefer?",
+        "current_intent": "semantic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 471,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 42,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 36
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 8
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 36,
+            "ids": [
+              "HISTORY-1"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 64,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 42,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 28,
+      "probe_id": null,
+      "user_message": "What did we arrange for my earbuds last time?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "episodic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 28,
+        "last_user_text": "What did we arrange for my earbuds last time?",
+        "current_intent": "episodic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 518,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 52,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 36
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 12
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 20
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 67,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 70,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 52,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 29,
+      "probe_id": null,
+      "user_message": "What problem did I ask you to register earlier?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "episodic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 29,
+        "last_user_text": "What problem did I ask you to register earlier?",
+        "current_intent": "episodic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 561,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 36
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 35
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 10
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 20
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 102,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 68,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 30,
+      "probe_id": null,
+      "user_message": "What was the delivery note I asked you to forget?",
+      "assistant_response": "I don't have a saved delivery note, so there is nothing I can tell you about it.",
+      "intent": "forgotten_memory_query",
+      "nlg_status": "verbatim",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 30,
+        "last_user_text": "What was the delivery note I asked you to forget?",
+        "current_intent": "forgotten_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": null
+    },
+    {
+      "turn": 31,
+      "probe_id": null,
+      "user_message": "For a 2026 delivery, how many days do I have to return electronic accessories?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 31,
+        "last_user_text": "For a 2026 delivery, how many days do I have to return electronic accessories?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 576,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 35
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 33
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 20
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 48
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 99,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 86,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 32,
+      "probe_id": null,
+      "user_message": "Can you check the latest status of order ORD-74021?",
+      "assistant_response": "Order ORD-74021 status: ORD-DEL.",
+      "intent": "order_status_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        },
+        {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-74021"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 32,
+        "last_user_text": "Can you check the latest status of order ORD-74021?",
+        "current_intent": "order_status_query",
+        "current_entities": {
+          "order_ids": [
+            "ORD-74021"
+          ]
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 546,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 33
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 43
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 16
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 14
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 107,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 48,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 33,
+      "probe_id": null,
+      "user_message": "And what happens next after the pickup is completed?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "state_followup",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 33,
+        "last_user_text": "And what happens next after the pickup is completed?",
+        "current_intent": "state_followup",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 571,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 43
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 10
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 48
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 104,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 76,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 34,
+      "probe_id": null,
+      "user_message": "What does RMA-BOOK mean?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 34,
+        "last_user_text": "What does RMA-BOOK mean?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {
+          "domain_codes": [
+            "RMA-BOOK"
+          ]
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 571,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 43
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 33
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 8
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 48
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 106,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 74,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 35,
+      "probe_id": null,
+      "user_message": "How long does ShopSphere normally take to start a UPI refund after inspection acceptance?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 35,
+        "last_user_text": "How long does ShopSphere normally take to start a UPI refund after inspection acceptance?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 568,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 33
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 48
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 94,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 83,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 36,
+      "probe_id": null,
+      "user_message": "I want to cancel order ORD-55208. Can you check whether that's possible?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "order_cancel_eligibility_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 36,
+        "last_user_text": "I want to cancel order ORD-55208. Can you check whether that's possible?",
+        "current_intent": "order_cancel_eligibility_query",
+        "current_entities": {
+          "order_ids": [
+            "ORD-55208"
+          ]
+        },
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 563,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 33
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 40
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 21
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 21
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 26
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 104,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 68,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 37,
+      "probe_id": null,
+      "user_message": "Can you book a pickup for the other item as well?",
+      "assistant_response": "Could you please provide the order ID or select an item so I can check availability for the pickup?",
+      "intent": "clarification_required",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 37,
+        "last_user_text": "Can you book a pickup for the other item as well?",
+        "current_intent": "clarification_required",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": true,
+        "clarification_prompt": "Which order and item do you mean? Please provide the order ID or select an item.",
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 554,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 40
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 44
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 12
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 18
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 115,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 48,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 38,
+      "probe_id": null,
+      "user_message": "Got it, appreciate your help.",
+      "assistant_response": "You're welcome. Is there anything else I can help you with?",
+      "intent": "small_talk",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 38,
+        "last_user_text": "Got it, appreciate your help.",
+        "current_intent": "small_talk",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 546,
+        "input_budget": 1888,
+        "output_reserve": 128,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 40
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 44
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 32
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 7
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 14
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 116,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 39,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 39,
+      "probe_id": null,
+      "user_message": "What is the exact token limit your assistant is configured to respect?",
+      "assistant_response": "My context window is 2,048 tokens. I reserve 160 for my reply and 32 as a safety margin, so each prompt gets at most 1,856 input tokens, counted with the Qwen tokenizer. The instructions, your current request and the task state always go in; saved facts, past events and knowledge-base chunks are added by relevance; conversation turns older than the last 3 and any lower-priority item that does not fit are cut, and everything cut is recorded. On the previous turn the prompt used 546 of 1,888 input tokens and 9 item(s) were cut.",
+      "intent": "context_budget_query",
+      "nlg_status": "verbatim",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 39,
+        "last_user_text": "What is the exact token limit your assistant is configured to respect?",
+        "current_intent": "context_budget_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": null
+    },
+    {
+      "turn": 40,
+      "probe_id": null,
+      "user_message": "That's all for now. Bye!",
+      "assistant_response": "Goodbye! Thank you for contacting ShopSphere.",
+      "intent": "closing",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 40,
+        "last_user_text": "That's all for now. Bye!",
+        "current_intent": "closing",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 627,
+        "input_budget": 1888,
+        "output_reserve": 128,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 32
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 21
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 149
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 8
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 16
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 10
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 202,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 34,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    }
+  ],
+  "reflection": null,
+  "probe_turns": [
+    {
+      "turn": 42,
+      "probe_id": "P01",
+      "user_message": "Which delivery window did I most recently ask you to save?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "semantic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 42,
+        "last_user_text": "Which delivery window did I most recently ask you to save?",
+        "current_intent": "semantic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 647,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 21
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 149
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 18
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 12
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 188,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 68,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 43,
+      "probe_id": "P02",
+      "user_message": "Which city do I usually use for delivery?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "semantic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 43,
+        "last_user_text": "Which city do I usually use for delivery?",
+        "current_intent": "semantic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 658,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 149
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 18
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 35
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 9
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 202,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 65,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 44,
+      "probe_id": "P03",
+      "user_message": "Which channel should routine updates use now?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "semantic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 44,
+        "last_user_text": "Which channel should routine updates use now?",
+        "current_intent": "semantic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 540,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 18
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 35
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 32
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 8
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 85,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 64,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 45,
+      "probe_id": "P04",
+      "user_message": "What delivery note did I ask you to forget?",
+      "assistant_response": "I don't have a saved delivery note, so there is nothing I can tell you about it.",
+      "intent": "forgotten_memory_query",
+      "nlg_status": "verbatim",
+      "nlg_error": null,
+      "tool_calls": [],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 45,
+        "last_user_text": "What delivery note did I ask you to forget?",
+        "current_intent": "forgotten_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": null
+    },
+    {
+      "turn": 46,
+      "probe_id": "P05",
+      "user_message": "What pickup did we arrange for my earbuds, and when?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "episodic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 46,
+        "last_user_text": "What pickup did we arrange for my earbuds, and when?",
+        "current_intent": "episodic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 556,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 32
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 14
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 20
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 93,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 72,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 47,
+      "probe_id": "P06",
+      "user_message": "What delivery issue did I ask you to register earlier?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "episodic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 47,
+        "last_user_text": "What delivery issue did I ask you to register earlier?",
+        "current_intent": "episodic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 558,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 31
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 37
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 11
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 20
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 98,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 69,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 48,
+      "probe_id": "P07",
+      "user_message": "For an electronics order delivered in November 2026, what is the return window?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 48,
+        "last_user_text": "For an electronics order delivered in November 2026, what is the return window?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 577,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 37
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 34
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 19
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 48
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 101,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 85,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 49,
+      "probe_id": "P09",
+      "user_message": "What is my pet's name?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "semantic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 49,
+        "last_user_text": "What is my pet's name?",
+        "current_intent": "semantic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 567,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 37
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 34
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 42
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 7
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 113,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 63,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 50,
+      "probe_id": "P11",
+      "user_message": "And what happens next after the pickup is completed?",
+      "assistant_response": "You will receive a confirmation email within 24 hours of pickup. If you have any issues with the delivery, contact ShopSphere support within 14 days of delivery.",
+      "intent": "state_followup",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 50,
+        "last_user_text": "And what happens next after the pickup is completed?",
+        "current_intent": "state_followup",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 573,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 34
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 42
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 10
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 48
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 106,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 76,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-20",
+            "component": "conversation_history",
+            "tokens": 37,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 51,
+      "probe_id": "P12",
+      "user_message": "Can you book a pickup for the other item as well?",
+      "assistant_response": "Could you please provide the order ID or select an item to book a pickup for?",
+      "intent": "clarification_required",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 51,
+        "last_user_text": "Can you book a pickup for the other item as well?",
+        "current_intent": "clarification_required",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": true,
+        "clarification_prompt": "Which order and item do you mean? Please provide the order ID or select an item.",
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 556,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 42
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 45
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 12
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 18
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 117,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 48,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-20",
+            "component": "conversation_history",
+            "tokens": 37,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-21",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 52,
+      "probe_id": "P13",
+      "user_message": "Which choice did I make for the USB-C charger order?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "episodic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 52,
+        "last_user_text": "Which choice did I make for the USB-C charger order?",
+        "current_intent": "episodic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 565,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 30
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 45
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 29
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 12
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 20
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 104,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 70,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-20",
+            "component": "conversation_history",
+            "tokens": 37,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-21",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-22",
+            "component": "conversation_history",
+            "tokens": 42,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 53,
+      "probe_id": "P14",
+      "user_message": "How soon is a UPI refund normally initiated after the return inspection is accepted?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 53,
+        "last_user_text": "How soon is a UPI refund normally initiated after the return inspection is accepted?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 582,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 45
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 29
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 35
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 16
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 48
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 109,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 82,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-20",
+            "component": "conversation_history",
+            "tokens": 37,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-21",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-22",
+            "component": "conversation_history",
+            "tokens": 42,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-23",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 54,
+      "probe_id": "P15",
+      "user_message": "When the combined instructions, recent conversation, retrieved chunks and memories exceed 2,048 tokens, what should RecallBot do?",
+      "assistant_response": "My context window is 2,048 tokens. I reserve 160 for my reply and 32 as a safety margin, so each prompt gets at most 1,856 input tokens, counted with the Qwen tokenizer. The instructions, your current request and the task state always go in; saved facts, past events and knowledge-base chunks are added by relevance; conversation turns older than the last 3 and any lower-priority item that does not fit are cut, and everything cut is recorded. On the previous turn the prompt used 582 of 1,856 input tokens and 23 item(s) were cut.",
+      "intent": "context_budget_query",
+      "nlg_status": "verbatim",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 54,
+        "last_user_text": "When the combined instructions, recent conversation, retrieved chunks and memories exceed 2,048 tokens, what should RecallBot do?",
+        "current_intent": "context_budget_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": null
+    },
+    {
+      "turn": 55,
+      "probe_id": "P16",
+      "user_message": "Can you still recall my latest delivery preference even though it is older than the last three turns?",
+      "assistant_response": "The conversation history does not contain the answer. I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "semantic_memory_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "success",
+          "facts": [],
+          "episodes": []
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "B",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 55,
+        "last_user_text": "Can you still recall my latest delivery preference even though it is older than the last three turns?",
+        "current_intent": "semantic_memory_query",
+        "current_entities": {},
+        "active_task": null,
+        "task_status": "idle",
+        "slots": {
+          "customer_id": null,
+          "order_id": null,
+          "sku": null,
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "customer_id",
+          "order_id",
+          "sku",
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": null
+      },
+      "context_assembly": {
+        "profile": "memory",
+        "total_input_tokens": 704,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 35
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 39
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 164
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 19
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 18
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 38
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 238,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 75,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 36,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-3",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-4",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-5",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-6",
+            "component": "conversation_history",
+            "tokens": 43,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-7",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-8",
+            "component": "conversation_history",
+            "tokens": 33,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-9",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-10",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-11",
+            "component": "conversation_history",
+            "tokens": 44,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-12",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-13",
+            "component": "conversation_history",
+            "tokens": 21,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-14",
+            "component": "conversation_history",
+            "tokens": 149,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-15",
+            "component": "conversation_history",
+            "tokens": 18,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-16",
+            "component": "conversation_history",
+            "tokens": 35,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-17",
+            "component": "conversation_history",
+            "tokens": 32,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-18",
+            "component": "conversation_history",
+            "tokens": 31,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-19",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-20",
+            "component": "conversation_history",
+            "tokens": 37,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-21",
+            "component": "conversation_history",
+            "tokens": 34,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-22",
+            "component": "conversation_history",
+            "tokens": 42,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-23",
+            "component": "conversation_history",
+            "tokens": 30,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-24",
+            "component": "conversation_history",
+            "tokens": 45,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-25",
+            "component": "conversation_history",
+            "tokens": 29,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    }
+  ],
+  "session_info": {
+    "run_id": "t4_no_rag_B",
+    "pid": 116912,
+    "parent_pid": 121784,
+    "started_at": "2026-11-26T19:31:23+05:30",
+    "status": "complete",
+    "use_nlg": true,
+    "episodic_weighting": "A_relevance_focused",
+    "loaded_hashes": {
+      "semantic_facts.json": "12fd1beef7b94e48fc064268fdcf570af38e3957e41ff28cb2aece5bcd6450b7",
+      "semantic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+      "semantic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+      "episodes.json": "1e58c4b6e03cb33aef31df086dd53231cd2de8946090029b40bb7a10736f3391",
+      "episodic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+      "episodic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+      "forget_tombstones.json": "c71bbebfd58757767a2e52934e1dfb85dad5564ee10d84ef9c689d52f424ee18"
+    },
+    "loaded_hashes_match_session_a": true,
+    "session_a_pid": 120248,
+    "different_process_from_session_a": true,
+    "saved_hashes": {
+      "semantic_facts.json": "12fd1beef7b94e48fc064268fdcf570af38e3957e41ff28cb2aece5bcd6450b7",
+      "semantic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+      "semantic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+      "episodes.json": "1e58c4b6e03cb33aef31df086dd53231cd2de8946090029b40bb7a10736f3391",
+      "episodic_vectors.npy": "14772b683e726436d5948ad3fff2b43d036ef2ebbe3458aafed6004e05a40706",
+      "episodic_index.json": "62c6f3ba7de1c84b24239ce22b892977d9ff9173fd4373ea01c6e7956ab442f5",
+      "forget_tombstones.json": "c71bbebfd58757767a2e52934e1dfb85dad5564ee10d84ef9c689d52f424ee18"
+    },
+    "finished_at": "2026-11-26T19:32:06+05:30",
+    "turns": 15,
+    "memory_counts": {
+      "active_facts": 0,
+      "all_fact_records": 0,
+      "episodes": 0,
+      "reflections": 0,
+      "tombstones": 0
+    },
+    "transcript": "results\\task3_sessions\\t4_no_rag_session_B.json"
+  }
+}
