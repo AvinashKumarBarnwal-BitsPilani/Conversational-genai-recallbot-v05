@@ -1,0 +1,119 @@
+{
+  "experiment": "t3_hm_01",
+  "run_id": "t3_hm_01_A",
+  "match_rule": "same key and source turn; content words of one value contained in the other",
+  "rules_plus_llm_fallback": {
+    "predicted": 9,
+    "true_positive": 9,
+    "planted": 9,
+    "precision": 1.0,
+    "recall": 1.0,
+    "missed": []
+  },
+  "rules_only": {
+    "predicted": 8,
+    "true_positive": 8,
+    "planted": 9,
+    "precision": 1.0,
+    "recall": 0.8889,
+    "missed": [
+      "turn 8 return_method_preference"
+    ]
+  },
+  "llm_fallback_turns": [
+    8
+  ],
+  "extraction_attempted_turns": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    19,
+    20
+  ],
+  "filler_turns": [
+    1,
+    3,
+    11,
+    25
+  ],
+  "filler_turns_with_records": [],
+  "filler_turns_with_extraction_attempts": [],
+  "predictions": [
+    {
+      "key": "preferred_name",
+      "value": "Maya",
+      "source_turn": 2,
+      "method": "rule",
+      "status": "active",
+      "evidence": "semantic_facts.json"
+    },
+    {
+      "key": "notification_channel",
+      "value": "email",
+      "source_turn": 4,
+      "method": "rule",
+      "status": "superseded",
+      "evidence": "semantic_facts.json"
+    },
+    {
+      "key": "preferred_city",
+      "value": "Bengaluru",
+      "source_turn": 5,
+      "method": "rule",
+      "status": "active",
+      "evidence": "semantic_facts.json"
+    },
+    {
+      "key": "preferred_delivery_window",
+      "value": "18:00-21:00",
+      "source_turn": 7,
+      "method": "rule",
+      "status": "superseded",
+      "evidence": "semantic_facts.json"
+    },
+    {
+      "key": "return_method_preference",
+      "value": "pickup from home",
+      "source_turn": 8,
+      "method": "llm",
+      "status": "active",
+      "evidence": "semantic_facts.json"
+    },
+    {
+      "key": "packaging_preference",
+      "value": "recyclable",
+      "source_turn": 9,
+      "method": "rule",
+      "status": "active",
+      "evidence": "semantic_facts.json"
+    },
+    {
+      "key": "preferred_delivery_window",
+      "value": "19:00-21:00",
+      "source_turn": 19,
+      "method": "rule",
+      "status": "active",
+      "evidence": "semantic_facts.json"
+    },
+    {
+      "key": "notification_channel",
+      "value": "SMS",
+      "source_turn": 20,
+      "method": "rule",
+      "status": "active",
+      "evidence": "semantic_facts.json"
+    },
+    {
+      "key": "delivery_note",
+      "value": "side door",
+      "source_turn": 6,
+      "method": "rule",
+      "status": "deleted_by_forget",
+      "evidence": "extract log row + tombstone fingerprint"
+    }
+  ]
+}

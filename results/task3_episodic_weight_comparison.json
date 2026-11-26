@@ -1,0 +1,46 @@
+{
+  "experiment": "t3_hm_01",
+  "memory": "memory/runs/t3_hm_01 after Session A",
+  "now": "2026-11-24T10:04:00+05:30",
+  "recency": "0.995 ** hours (logical clock)",
+  "min_relevance": 0.5,
+  "candidates": 14,
+  "summary": {
+    "A": {
+      "name": "A_relevance_focused",
+      "weights": [
+        0.2,
+        0.3,
+        0.5
+      ],
+      "hit_at_1": 0.5833,
+      "mrr": 0.7569,
+      "e_probe_hit_at_1": 0.6667,
+      "queries": 12
+    },
+    "B": {
+      "name": "B_recency_focused",
+      "weights": [
+        0.4,
+        0.3,
+        0.3
+      ],
+      "hit_at_1": 0.4167,
+      "mrr": 0.6069,
+      "e_probe_hit_at_1": 0.3333,
+      "queries": 12
+    },
+    "C": {
+      "name": "C_equal",
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "hit_at_1": 0.4167,
+      "mrr": 0.6458,
+      "e_probe_hit_at_1": 0.3333,
+      "queries": 12
+    }
+  }
+}

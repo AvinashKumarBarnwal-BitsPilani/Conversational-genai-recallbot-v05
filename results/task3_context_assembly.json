@@ -1,0 +1,475 @@
+{
+  "experiment": "t3_hm_01",
+  "official_turns": {
+    "27": {
+      "user_message": "What delivery window do I currently prefer?",
+      "intent": "semantic_memory_query",
+      "assistant_response": "Your saved preferred delivery window is 19:00-21:00 [SM-0008], saved on 2026-11-21.",
+      "profile": "memory",
+      "total_input_tokens": 938,
+      "input_budget": 1856,
+      "output_reserve": 160,
+      "context_window": 2048,
+      "retrieved_tokens": 456,
+      "overhead_tokens": 51,
+      "token_count_method": "qwen3_chat_template+ollama_offset",
+      "included": [
+        {
+          "id": "system_prompt_v2",
+          "component": "system",
+          "tokens": 274
+        },
+        {
+          "id": "TOOLS",
+          "component": "tools",
+          "tokens": 55
+        },
+        {
+          "id": "HISTORY-1",
+          "component": "conversation_history",
+          "tokens": 36
+        },
+        {
+          "id": "USER-TURN",
+          "component": "current_task",
+          "tokens": 8
+        },
+        {
+          "id": "STATE",
+          "component": "current_task",
+          "tokens": 18
+        },
+        {
+          "id": "DRAFT",
+          "component": "current_task",
+          "tokens": 40
+        },
+        {
+          "id": "SM-0008",
+          "component": "long_term_memory",
+          "tokens": 43
+        },
+        {
+          "id": "SM-0003",
+          "component": "long_term_memory",
+          "tokens": 31
+        },
+        {
+          "id": "SM-0006",
+          "component": "long_term_memory",
+          "tokens": 33
+        },
+        {
+          "id": "EP-0011",
+          "component": "long_term_memory",
+          "tokens": 61
+        },
+        {
+          "id": "EP-0015",
+          "component": "long_term_memory",
+          "tokens": 148
+        },
+        {
+          "id": "EP-0013",
+          "component": "long_term_memory",
+          "tokens": 140
+        }
+      ],
+      "dropped": [],
+      "component_table": [
+        {
+          "component": "system",
+          "memory_type": "procedural",
+          "home": "external file skills/ -> prompt",
+          "tokens": 274,
+          "ids": [
+            "system_prompt_v2"
+          ]
+        },
+        {
+          "component": "tools",
+          "memory_type": "procedural",
+          "home": "model-native (prompt)",
+          "tokens": 55,
+          "ids": [
+            "TOOLS"
+          ]
+        },
+        {
+          "component": "conversation_history",
+          "memory_type": "short_term",
+          "home": "model-native (prompt)",
+          "tokens": 36,
+          "ids": [
+            "HISTORY-1"
+          ]
+        },
+        {
+          "component": "current_task",
+          "memory_type": "working",
+          "home": "model-native (prompt)",
+          "tokens": 66,
+          "ids": [
+            "USER-TURN",
+            "STATE",
+            "DRAFT"
+          ]
+        },
+        {
+          "component": "long_term_memory",
+          "memory_type": "episodic/semantic",
+          "home": "external (episodic stream + vector index)/external (semantic store + vector index)",
+          "tokens": 456,
+          "ids": [
+            "SM-0008",
+            "SM-0003",
+            "SM-0006",
+            "EP-0011",
+            "EP-0015",
+            "EP-0013"
+          ]
+        },
+        {
+          "component": "chat template and section headings",
+          "memory_type": "-",
+          "home": "model-native",
+          "tokens": 51,
+          "ids": []
+        }
+      ],
+      "prompt_version": "system_prompt_v2"
+    },
+    "31": {
+      "user_message": "For a 2026 delivery, how many days do I have to return electronic accessories?",
+      "intent": "knowledge_base_query",
+      "assistant_response": "The return window for electronic accessories (headphones, wireless earbuds, speakers, chargers, smart-home accessories) is 14 calendar days from delivery. The final day is included until 23:59 in the delivery destination's local time. \n\nPlease provide the delivery date to confirm eligibility.\n\nSources: KB-002 / KB-002-C128-0002 (version 2.0); KB-002 / KB-002-C128-0003 (version 2.0); KB-002 / KB-002-C128-0001 (version 2.0)",
+      "profile": "knowledge",
+      "total_input_tokens": 1318,
+      "input_budget": 1856,
+      "output_reserve": 160,
+      "context_window": 2048,
+      "retrieved_tokens": 507,
+      "overhead_tokens": 70,
+      "token_count_method": "qwen3_chat_template+ollama_offset",
+      "included": [
+        {
+          "id": "system_prompt_v2",
+          "component": "system",
+          "tokens": 274
+        },
+        {
+          "id": "TOOLS",
+          "component": "tools",
+          "tokens": 55
+        },
+        {
+          "id": "HISTORY-1",
+          "component": "conversation_history",
+          "tokens": 148
+        },
+        {
+          "id": "HISTORY-2",
+          "component": "conversation_history",
+          "tokens": 146
+        },
+        {
+          "id": "HISTORY-3",
+          "component": "conversation_history",
+          "tokens": 36
+        },
+        {
+          "id": "USER-TURN",
+          "component": "current_task",
+          "tokens": 20
+        },
+        {
+          "id": "STATE",
+          "component": "current_task",
+          "tokens": 18
+        },
+        {
+          "id": "DRAFT",
+          "component": "current_task",
+          "tokens": 44
+        },
+        {
+          "id": "KB-002-C128-0002",
+          "component": "retrieved_knowledge",
+          "tokens": 169
+        },
+        {
+          "id": "KB-002-C128-0003",
+          "component": "retrieved_knowledge",
+          "tokens": 169
+        },
+        {
+          "id": "KB-002-C128-0001",
+          "component": "retrieved_knowledge",
+          "tokens": 169
+        }
+      ],
+      "dropped": [],
+      "component_table": [
+        {
+          "component": "system",
+          "memory_type": "procedural",
+          "home": "external file skills/ -> prompt",
+          "tokens": 274,
+          "ids": [
+            "system_prompt_v2"
+          ]
+        },
+        {
+          "component": "tools",
+          "memory_type": "procedural",
+          "home": "model-native (prompt)",
+          "tokens": 55,
+          "ids": [
+            "TOOLS"
+          ]
+        },
+        {
+          "component": "conversation_history",
+          "memory_type": "short_term",
+          "home": "model-native (prompt)",
+          "tokens": 330,
+          "ids": [
+            "HISTORY-1",
+            "HISTORY-2",
+            "HISTORY-3"
+          ]
+        },
+        {
+          "component": "current_task",
+          "memory_type": "working",
+          "home": "model-native (prompt)",
+          "tokens": 82,
+          "ids": [
+            "USER-TURN",
+            "STATE",
+            "DRAFT"
+          ]
+        },
+        {
+          "component": "retrieved_knowledge",
+          "memory_type": "semantic_kb",
+          "home": "external (KB index, hybrid RRF)",
+          "tokens": 507,
+          "ids": [
+            "KB-002-C128-0002",
+            "KB-002-C128-0003",
+            "KB-002-C128-0001"
+          ]
+        },
+        {
+          "component": "chat template and section headings",
+          "memory_type": "-",
+          "home": "model-native",
+          "tokens": 70,
+          "ids": []
+        }
+      ],
+      "prompt_version": "system_prompt_v2"
+    }
+  },
+  "stress_replay": {
+    "kb_candidates_before_version_filter": [
+      "KB-002-C512-0001",
+      "KB-001-C512-0001",
+      "KB-001-C512-0002",
+      "KB-016-C512-0001",
+      "KB-016-C512-0002",
+      "KB-009-C512-0001",
+      "KB-004-C512-0001",
+      "KB-002-C512-0002",
+      "KB-013-C512-0001",
+      "KB-014-C512-0001"
+    ],
+    "description": "Session B turn 31 rebuilt with 512-token chunks, top-5 active KB hits, memory at the memory-question thresholds and the full Session B history (no trim).",
+    "user_message": "For a 2026 delivery, how many days do I have to return electronic accessories?",
+    "content_tokens_offered": 3707,
+    "profile": "knowledge",
+    "total_input_tokens": 1836,
+    "input_budget": 1856,
+    "output_reserve": 160,
+    "context_window": 2048,
+    "retrieved_tokens": 1332,
+    "overhead_tokens": 57,
+    "token_count_method": "qwen3_chat_template+ollama_offset",
+    "included": [
+      {
+        "id": "system_prompt_v2",
+        "component": "system",
+        "tokens": 274
+      },
+      {
+        "id": "TOOLS",
+        "component": "tools",
+        "tokens": 55
+      },
+      {
+        "id": "HISTORY-5",
+        "component": "conversation_history",
+        "tokens": 36
+      },
+      {
+        "id": "USER-TURN",
+        "component": "current_task",
+        "tokens": 20
+      },
+      {
+        "id": "STATE",
+        "component": "current_task",
+        "tokens": 18
+      },
+      {
+        "id": "DRAFT",
+        "component": "current_task",
+        "tokens": 44
+      },
+      {
+        "id": "SM-0008",
+        "component": "long_term_memory",
+        "tokens": 43
+      },
+      {
+        "id": "EP-0013",
+        "component": "long_term_memory",
+        "tokens": 140
+      },
+      {
+        "id": "EP-0010",
+        "component": "long_term_memory",
+        "tokens": 43
+      },
+      {
+        "id": "KB-002-C512-0001",
+        "component": "retrieved_knowledge",
+        "tokens": 553
+      },
+      {
+        "id": "KB-009-C512-0001",
+        "component": "retrieved_knowledge",
+        "tokens": 553
+      }
+    ],
+    "dropped": [
+      {
+        "id": "KB-004-C512-0001",
+        "component": "retrieved_knowledge",
+        "tokens": 553,
+        "reason": "budget: would reach 2109 > 1856"
+      },
+      {
+        "id": "KB-002-C512-0002",
+        "component": "retrieved_knowledge",
+        "tokens": 302,
+        "reason": "budget: would reach 1858 > 1856"
+      },
+      {
+        "id": "KB-013-C512-0001",
+        "component": "retrieved_knowledge",
+        "tokens": 547,
+        "reason": "budget: would reach 2103 > 1856"
+      },
+      {
+        "id": "EP-0015",
+        "component": "long_term_memory",
+        "tokens": 148,
+        "reason": "budget: would reach 1895 > 1856"
+      },
+      {
+        "id": "HISTORY-4",
+        "component": "conversation_history",
+        "tokens": 146,
+        "reason": "budget: would reach 1992 > 1856"
+      },
+      {
+        "id": "HISTORY-3",
+        "component": "conversation_history",
+        "tokens": 148,
+        "reason": "budget: would reach 1994 > 1856"
+      },
+      {
+        "id": "HISTORY-2",
+        "component": "conversation_history",
+        "tokens": 48,
+        "reason": "budget: would reach 1894 > 1856"
+      },
+      {
+        "id": "HISTORY-1",
+        "component": "conversation_history",
+        "tokens": 36,
+        "reason": "budget: would reach 1882 > 1856"
+      }
+    ],
+    "component_table": [
+      {
+        "component": "system",
+        "memory_type": "procedural",
+        "home": "external file skills/ -> prompt",
+        "tokens": 274,
+        "ids": [
+          "system_prompt_v2"
+        ]
+      },
+      {
+        "component": "tools",
+        "memory_type": "procedural",
+        "home": "model-native (prompt)",
+        "tokens": 55,
+        "ids": [
+          "TOOLS"
+        ]
+      },
+      {
+        "component": "conversation_history",
+        "memory_type": "short_term",
+        "home": "model-native (prompt)",
+        "tokens": 36,
+        "ids": [
+          "HISTORY-5"
+        ]
+      },
+      {
+        "component": "current_task",
+        "memory_type": "working",
+        "home": "model-native (prompt)",
+        "tokens": 82,
+        "ids": [
+          "USER-TURN",
+          "STATE",
+          "DRAFT"
+        ]
+      },
+      {
+        "component": "long_term_memory",
+        "memory_type": "episodic/semantic",
+        "home": "external (episodic stream + vector index)/external (semantic store + vector index)",
+        "tokens": 226,
+        "ids": [
+          "SM-0008",
+          "EP-0013",
+          "EP-0010"
+        ]
+      },
+      {
+        "component": "retrieved_knowledge",
+        "memory_type": "semantic_kb",
+        "home": "external (KB index, hybrid RRF)",
+        "tokens": 1106,
+        "ids": [
+          "KB-002-C512-0001",
+          "KB-009-C512-0001"
+        ]
+      },
+      {
+        "component": "chat template and section headings",
+        "memory_type": "-",
+        "home": "model-native",
+        "tokens": 57,
+        "ids": []
+      }
+    ]
+  }
+}

@@ -99,7 +99,7 @@ Every real LLM, embedding and tool call must be timed and appended through `src.
 | Task 2 | Dialogue pipeline and short-term memory | Completed — Task 2(a), 2(b) and 2(c) implemented, evaluated and documented |
 | Task 3(a) | Chunking, embeddings and indexing | Implemented and tested |
 | Task 3(b) | Dense, BM25 and hybrid retrieval | Implemented, evaluated and documented |
-| Task 3(c–f) | Semantic, episodic, context engineering and twist | Pending implementation |
+| Task 3(c–f) | Semantic, episodic, context engineering and twist | Completed — official run `t3_hm_01`, probes manually judged 13/16 — see `docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md` |
 | Task 4 | Evaluation, ablation and error analysis | Pending implementation |
 | Task 5 | Cost and scalability | Pending implementation |
 | Task 6 | Demo video and AI-use declaration | Pending |
@@ -109,6 +109,7 @@ Every real LLM, embedding and tool call must be timed and appended through `src.
 - Day 1: Project foundation, synthetic e-commerce knowledge base, retrieval questions, scripted conversation and probes.
 - Day 2: Token-aware chunking, BGE embeddings, dense retrieval, custom BM25, custom RRF, answer-span hit-rate evaluation and ranked-list analysis.
 - Day 3: Task 2(a) dialogue pipeline, Task 2(b) short-term memory comparison, and Task 2(c) context-handling analysis completed.
+- Day 4: Task 3(c–f) long-term memory (semantic facts, episodic stream, reflection, forget cascade), 2,048-token context assembler and Session A → B as separate processes; pilot, calibration and official `hybrid_mem` run completed.
 
 All reported results are generated from actual local executions and retained in `logs/` and `results/`.
 
@@ -911,3 +912,51 @@ State follow-up, clarification and confirmation-gated booking behavior are suppo
 The results are limited to the supplied scripted conversation and probe set; they are not generalized to unseen customer traffic.
 
 **Task 2(c) is completed and documented.**
+# Day 4 — Task 3(c–f): Long-Term Memory and Context Engineering
+
+**Status:** implemented, tested (226 tests, no model calls) and run live. Official run: `t3_hm_01` (config `hybrid_mem`). Full evidence: [`docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md`](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md); design: [`docs/design/Task-3-Long-Term-Memory-Design.md`](docs/design/Task-3-Long-Term-Memory-Design.md).
+
+### What was added
+
+| Component | Path | Role |
+|---|---|---|
+| Semantic memory | `src/memory/semantic_memory.py`, `fact_extractor.py` | Keyed user facts (rules first, Qwen JSON fallback); update supersedes; deletable vector index |
+| Episodic memory | `src/memory/episodic_memory.py`, `reflection.py` | Time-stamped events with rule-based importance; recency + importance + relevance score; end-of-session reflection |
+| Forget cascade | `src/memory/forgetting.py`, `memory_manager.py` | Deletes facts and vectors, deletes/redacts episodes and reflections, hash-only tombstone |
+| Context assembler | `src/context/context_assembler.py`, `skills/system_prompt_v2.txt` | 1,856-token input budget (2,048 − 160 reply − 32 safety), whole-item cuts with a drop log |
+| Session runner | `src/dialogue/run_session.py` | One session per process; Session B loads memory only from disk and verifies file hashes |
+
+### Headline results (official `t3_hm_01`)
+
+| Measure | Result | Source |
+|---|---|---|
+| Fact extraction, rules + Qwen fallback | precision 1.00, recall 1.00 (9/9; rules only 0.89) | `results/task3_semantic_memory_metrics.json` |
+| Episodic weighting kept | A (0.2 / 0.3 / 0.5): hit@1 0.583, MRR 0.757 vs B 0.417 / 0.607, C 0.417 / 0.646 | `results/task3_episodic_weight_comparison.csv` |
+| Session B separate process | PIDs 106348 → 99088; loaded memory hashes equal Session A's | `memory/runs/t3_hm_01/session_manifest.json` |
+| Budget | 0 fallbacks in 51 chat calls; max prompt 1,465 / 1,856; assembler count = Ollama count on every call | `logs/calls.jsonl` |
+| Forget after restart | "side door" absent from all memory files and the Session B transcript | `memory/runs/t3_hm_01/` |
+| Probes (manually judged) | 13/16 — failures P11 (retrieval), P13 (episodic scoring), P15 (NLG) | `results/probe_results.csv` |
+
+### Reproduce the official run
+
+```powershell
+python -m src.dialogue.run_session --session A --config hybrid_mem --experiment t3_hm_01
+python scripts/compare_episodic_weightings.py --experiment t3_hm_01
+python -m src.dialogue.run_session --session B --config hybrid_mem --experiment t3_hm_01 --weighting A
+python scripts/evaluate_semantic_extraction.py --experiment t3_hm_01
+python scripts/context_assembly_report.py --experiment t3_hm_01 --run-id t3_hm_01_budget_stress2
+```
+
+A rerun needs a new experiment name: memory directories, transcripts and run IDs are never overwritten. Runs `t3_hm_pilot_*` and `t3_calibration` are the pilot and threshold calibration; `t3_hm_01_budget_stress` was superseded by `t3_hm_01_budget_stress2`.
+
+### Demo: Task 3 in one command
+
+```powershell
+# Live: Session A and Session B run as two separate processes (~5-6 min with qwen3:1.7b), then verified
+python -m src.dialogue.demo_memory
+
+# Instant: explain an existing run (no chat-model calls; section 6 makes one logged embedding call)
+python -m src.dialogue.demo_memory --verify-only --experiment t3_hm_01
+```
+
+Sections: (1) Session A with the confirmed booking, (2) process restart with PIDs and memory-file hashes, (3) the semantic facts, episodes, reflection and forget tombstone on disk, (4) Session B answers (fact, update, episodes, forgotten fact, cited KB answer, fallback), (5) failure case P13, (6) episodic scoring walkthrough, (7) per-turn token budget. If the PowerShell console shows garbled dashes, run `chcp 65001` first.

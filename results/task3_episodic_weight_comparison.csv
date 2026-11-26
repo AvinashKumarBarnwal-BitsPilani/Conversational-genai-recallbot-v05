@@ -1,0 +1,37 @@
+weighting,w_recency,w_importance,w_relevance,query_id,source,gold,gold_rank,hit_at_1,top1,top1_type,top1_score,top3
+A_relevance_focused,0.2,0.3,0.5,Q-E01,probe P05,EP-0013,1,1,EP-0013,booking,0.9684,EP-0013|EP-0009|EP-0015
+A_relevance_focused,0.2,0.3,0.5,Q-E02,probe P06,EP-0008,1,1,EP-0008,complaint,0.8166,EP-0008|EP-0013|EP-0011
+A_relevance_focused,0.2,0.3,0.5,Q-E03,probe P13,EP-0010,3,0,EP-0013,booking,0.9022,EP-0013|EP-0015|EP-0010
+A_relevance_focused,0.2,0.3,0.5,Q-E04,conversation turn 28,EP-0013,1,1,EP-0013,booking,0.9297,EP-0013|EP-0009|EP-0015
+A_relevance_focused,0.2,0.3,0.5,Q-E05,conversation turn 29,EP-0008,2,0,EP-0013,booking,0.8761,EP-0013|EP-0008|EP-0014
+A_relevance_focused,0.2,0.3,0.5,Q-E06,paraphrase,EP-0008,1,1,EP-0008,complaint,0.8166,EP-0008|EP-0013|EP-0015
+A_relevance_focused,0.2,0.3,0.5,Q-E07,paraphrase,EP-0013,1,1,EP-0013,booking,0.89,EP-0013|EP-0009|EP-0015
+A_relevance_focused,0.2,0.3,0.5,Q-E08,paraphrase,EP-0010,1,1,EP-0010,decision,0.8249,EP-0010|EP-0015|EP-0013
+A_relevance_focused,0.2,0.3,0.5,Q-E09,paraphrase,EP-0009,2,0,EP-0013,booking,0.8085,EP-0013|EP-0009|EP-0015
+A_relevance_focused,0.2,0.3,0.5,Q-E10,"paraphrase, recency-sensitive",EP-0012,2,0,EP-0011,preference_update,0.6916,EP-0011|EP-0012|EP-0015
+A_relevance_focused,0.2,0.3,0.5,Q-E11,"paraphrase, recency-sensitive",EP-0014,1,1,EP-0014,forget_event,0.6833,EP-0014|EP-0015|EP-0012
+A_relevance_focused,0.2,0.3,0.5,Q-E12,paraphrase,EP-0015,4,0,EP-0008,complaint,0.7139,EP-0008|EP-0014|EP-0010
+B_recency_focused,0.4,0.3,0.3,Q-E01,probe P05,EP-0013,1,1,EP-0013,booking,0.9368,EP-0013|EP-0015|EP-0009
+B_recency_focused,0.4,0.3,0.3,Q-E02,probe P06,EP-0008,3,0,EP-0013,booking,0.8506,EP-0013|EP-0015|EP-0008
+B_recency_focused,0.4,0.3,0.3,Q-E03,probe P13,EP-0010,3,0,EP-0013,booking,0.9062,EP-0013|EP-0015|EP-0010
+B_recency_focused,0.4,0.3,0.3,Q-E04,conversation turn 28,EP-0013,1,1,EP-0013,booking,0.9228,EP-0013|EP-0015|EP-0009
+B_recency_focused,0.4,0.3,0.3,Q-E05,conversation turn 29,EP-0008,5,0,EP-0013,booking,0.8906,EP-0013|EP-0015|EP-0014
+B_recency_focused,0.4,0.3,0.3,Q-E06,paraphrase,EP-0008,2,0,EP-0013,booking,0.765,EP-0013|EP-0008|EP-0015
+B_recency_focused,0.4,0.3,0.3,Q-E07,paraphrase,EP-0013,1,1,EP-0013,booking,0.8989,EP-0013|EP-0015|EP-0010
+B_recency_focused,0.4,0.3,0.3,Q-E08,paraphrase,EP-0010,3,0,EP-0013,booking,0.7791,EP-0013|EP-0015|EP-0010
+B_recency_focused,0.4,0.3,0.3,Q-E09,paraphrase,EP-0009,3,0,EP-0013,booking,0.8384,EP-0013|EP-0015|EP-0009
+B_recency_focused,0.4,0.3,0.3,Q-E10,"paraphrase, recency-sensitive",EP-0012,4,0,EP-0015,reflection,0.72,EP-0015|EP-0013|EP-0011
+B_recency_focused,0.4,0.3,0.3,Q-E11,"paraphrase, recency-sensitive",EP-0014,1,1,EP-0014,forget_event,0.6666,EP-0014|EP-0013|EP-0015
+B_recency_focused,0.4,0.3,0.3,Q-E12,paraphrase,EP-0015,1,1,EP-0015,reflection,0.7134,EP-0015|EP-0013|EP-0014
+C_equal,0.3333,0.3333,0.3333,Q-E01,probe P05,EP-0013,1,1,EP-0013,booking,0.9473,EP-0013|EP-0015|EP-0009
+C_equal,0.3333,0.3333,0.3333,Q-E02,probe P06,EP-0008,2,0,EP-0013,booking,0.8479,EP-0013|EP-0008|EP-0015
+C_equal,0.3333,0.3333,0.3333,Q-E03,probe P13,EP-0010,3,0,EP-0013,booking,0.9097,EP-0013|EP-0015|EP-0010
+C_equal,0.3333,0.3333,0.3333,Q-E04,conversation turn 28,EP-0013,1,1,EP-0013,booking,0.9281,EP-0013|EP-0015|EP-0009
+C_equal,0.3333,0.3333,0.3333,Q-E05,conversation turn 29,EP-0008,3,0,EP-0013,booking,0.8924,EP-0013|EP-0015|EP-0008
+C_equal,0.3333,0.3333,0.3333,Q-E06,paraphrase,EP-0008,2,0,EP-0013,booking,0.7528,EP-0013|EP-0008|EP-0015
+C_equal,0.3333,0.3333,0.3333,Q-E07,paraphrase,EP-0013,1,1,EP-0013,booking,0.9016,EP-0013|EP-0015|EP-0010
+C_equal,0.3333,0.3333,0.3333,Q-E08,paraphrase,EP-0010,2,0,EP-0013,booking,0.7685,EP-0013|EP-0010|EP-0015
+C_equal,0.3333,0.3333,0.3333,Q-E09,paraphrase,EP-0009,3,0,EP-0013,booking,0.839,EP-0013|EP-0015|EP-0009
+C_equal,0.3333,0.3333,0.3333,Q-E10,"paraphrase, recency-sensitive",EP-0012,4,0,EP-0015,reflection,0.6889,EP-0015|EP-0013|EP-0011
+C_equal,0.3333,0.3333,0.3333,Q-E11,"paraphrase, recency-sensitive",EP-0014,1,1,EP-0014,forget_event,0.6388,EP-0014|EP-0013|EP-0015
+C_equal,0.3333,0.3333,0.3333,Q-E12,paraphrase,EP-0015,1,1,EP-0015,reflection,0.6816,EP-0015|EP-0013|EP-0008

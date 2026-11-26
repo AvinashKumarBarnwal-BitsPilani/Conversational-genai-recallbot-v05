@@ -192,20 +192,44 @@ def extract_entities(text: str) -> dict[str, Any]:
     return entities
 
 
+# A question either ends with "?" or opens with a question word/auxiliary.
+_QUESTION = r"(?:.*\?\s*$|\s*(?:what|which|who|when|where|how|do|does|did|can|could|would|is|are|have|has)\b)"
+_IS_QUESTION = rf"^(?={_QUESTION})"
+_NOT_QUESTION = rf"^(?!{_QUESTION})"
+
 # Each rule is intentionally small and readable. Order matters: specific
 # action/confirmation patterns must run before broad policy or fact patterns.
 _INTENT_RULES: tuple[tuple[str, re.Pattern[str], str], ...] = (
-    ("forgotten_memory_query", re.compile(r"\b(what was|what is)\b.*\b(asked you to forget|told you to forget|forgotten)\b", re.I), "R01_FORGOTTEN_QUERY"),
-    ("forget_request", re.compile(r"\b(forget|delete|remove)\b.*\b(saved|memory|remember|note|fact|preference)\b|\bforget\b", re.I), "R02_FORGET"),
+    ("forgotten_memory_query", re.compile(
+        r"\b(what was|what is)\b.*\b(asked you to forget|told you to forget|forgotten)\b"
+        rf"|{_IS_QUESTION}.*\b(?:ask(?:ed)? you to|told you to)\s+(?:forget|delete|remove)\b", re.I | re.S),
+        "R01_FORGOTTEN_QUERY"),
+    # A question about a forget request must never be treated as a new forget
+    # request: that would delete data in response to a question.
+    ("forget_request", re.compile(
+        rf"{_NOT_QUESTION}.*(?:\b(forget|delete|remove)\b.*\b(saved|memory|remember|note|fact|preference)\b|\bforget\b)",
+        re.I | re.S), "R02_FORGET"),
     ("cancel_action", re.compile(r"^\s*(?:no,?\s*)?(?:cancel (?:the|this|that) (?:pickup|booking|return)|cancel that|do not book|don't book|do not proceed|don't proceed|stop the booking|never mind|nevermind)\b", re.I), "R03A_CANCEL"),
     ("confirm_action", re.compile(r"^\s*(yes|yep|i confirm|confirmed|go ahead|please proceed)\b", re.I), "R03_CONFIRM"),
     ("request_task_summary", re.compile(r"\b(repeat|show|read back)\b.*\b(summary|details|pickup|booking)\b|\bcomplete .*summary\b", re.I), "R04_TASK_SUMMARY"),
     ("clarification_required", re.compile(r"\b(other item|another item|which item|which order|not sure which)\b", re.I), "R05_CLARIFICATION"),
     ("greeting", re.compile(r"^\s*(hi|hello|hey|good morning|good afternoon|good evening)\b", re.I), "R06_GREETING"),
     ("closing", re.compile(r"\b(that's all for now|thats all for now|bye|goodbye|have a good day)\b", re.I), "R07_CLOSING"),
-    ("context_budget_query", re.compile(r"\b(token limit|context window|context budget|configured to respect)\b", re.I), "R08_CONTEXT_BUDGET"),
-    ("episodic_memory_query", re.compile(r"\b(what did we arrange|what problem did i ask you to register|what did i book|what happened last time)\b", re.I), "R09_EPISODIC_QUERY"),
-    ("semantic_memory_query", re.compile(r"\b(what .* do i currently prefer|what do i prefer|what is my current preference)\b", re.I), "R10_SEMANTIC_QUERY"),
+    ("context_budget_query", re.compile(r"\b(token limit|context window|context budget|configured to respect|\d[\d,]*[- ]tokens?)\b", re.I), "R08_CONTEXT_BUDGET"),
+    # Questions about what happened before (events), then about saved
+    # profile details (facts). Both require a question form.
+    ("episodic_memory_query", re.compile(
+        r"\b(what did we arrange|what problem did i ask you to register|what did i book|what happened last time)\b"
+        rf"|{_IS_QUESTION}.*\b(?:did|have) (?:we|i|you)\b.*\b(?:arrange|book|schedule|register|report|complain|"
+        r"choose|chose|decide|make|start|ask you to (?:register|record|note|log))\w*\b"
+        rf"|{_IS_QUESTION}.*\b(?:last time|last session|earlier session|previous(?:ly)? (?:session|visit|chat))\b",
+        re.I | re.S), "R09_EPISODIC_QUERY"),
+    ("semantic_memory_query", re.compile(
+        r"\b(what .* do i currently prefer|what do i prefer|what is my current preference)\b"
+        rf"|{_IS_QUESTION}.*\b(?:my|i|me)\b.*\b(?:prefer\w*|usual(?:ly)?|name|city|channel|"
+        r"delivery (?:window|note|time|preference)|packaging|saved|save|recall|remember)\b"
+        rf"|{_IS_QUESTION}.*\b(?:routine updates|notification channel)\b.*\b(?:now|currently)\b",
+        re.I | re.S), "R10_SEMANTIC_QUERY"),
     ("start_return", re.compile(r"\b(need|want|would like) to return\b|\breturn the .+ from order\b", re.I), "R11_START_RETURN"),
     ("provide_return_reason", re.compile(r"\b(does not charge|doesn't charge|not charging|defective|damaged|not working|stopped working)\b", re.I), "R12_RETURN_REASON"),
     ("provide_pickup_date", _DATE_RE, "R13_PICKUP_DATE"),
