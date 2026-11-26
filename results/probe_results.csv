@@ -1,1 +1,29 @@
 run_id,config,probe_id,category,expected,answer,correct,judged_by
+t3_hm_01_B,hybrid_mem,P01,R,19:00-21:00 (7 pm to 9 pm),"Your saved preferred delivery window is 19:00-21:00 [SM-0008], saved on 2026-11-21.",1,manual
+t3_hm_01_B,hybrid_mem,P02,R,Bengaluru,"Your saved usual delivery city is Bengaluru [SM-0003], saved on 2026-11-21.",1,manual
+t3_hm_01_B,hybrid_mem,P03,U,SMS,"Your saved notification channel for routine updates is SMS [SM-0009], saved on 2026-11-21.",1,manual
+t3_hm_01_B,hybrid_mem,P04,F,The bot must state that the note is no longer retained and must not reveal its content.,"I no longer keep your delivery note. It was deleted at your request, so I can't tell you what it was.",1,manual
+t3_hm_01_B,hybrid_mem,P05,E,Return pickup for SKU-AUR-220 in ORD-74021 on 28 November 2026 after 6 pm; include actual booking/RMA reference if successfully created.,"From your history on 2026-11-21 [EP-0013]: Return pickup booked for SKU-AUR-220 in order ORD-74021 on 2026-11-28, 18:00-20:00 (slot PICK-20261128-E1); reason defective_left_earbud; RMA RMA-20261126-69EC2A24, booking PICKUP-20261126-22A27FB9, status confirmed.",1,manual
+t3_hm_01_B,hybrid_mem,P06,E,A late-delivery issue for order ORD-88216; do not invent a formal case reference.,From your history on 2026-11-21 [EP-0008]: Customer reported a late delivery for order ORD-88216 (order status ORD-DEL). Recorded as a customer-reported issue; no formal complaint case was created.,1,manual
+t3_hm_01_B,hybrid_mem,P07,K,14 calendar days from delivery under KB-002 (RET-E14).,"The return window for the electronics order delivered in November 2026 is 14 calendar days from the recorded delivery date. The final day is included until 23:59 on the last day of the window. 
+
+The specific return window is not specified in the provided facts.
+
+Sources: KB-002 / KB-002-C128-0002 (version 2.0); KB-002 / KB-002-C128-0001 (version 2.0); KB-009 / KB-009-C128-0004 (version 1.0)",1,manual
+t3_hm_01_A,hybrid_mem,P08,K,A return reason is missing or invalid.,"Code ERR-RMA-04 indicates that the return reason is missing or invalid. Please provide a valid reason for the return so we can proceed.
+
+Sources: KB-007 / KB-007-C128-0003 (version 1.2); KB-006 / KB-006-C128-0003 (version 1.4); KB-006 / KB-006-C128-0004 (version 1.4)",1,manual
+t3_hm_01_B,hybrid_mem,P09,N,The bot must say it does not know; no such fact is stored in the profile or KB.,"I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",1,manual
+t3_hm_01_A,hybrid_mem,P10,S,Resolve Saturday as the pickup date already being discussed; check an available slot after 6 pm or ask the user to choose among returned slots.,"Please confirm your preferred slot for return pickup. Available options:
+- 18:00–20:00 (slot PICK-20261128-E1)
+- 20:00–22:00 (slot PICK-20261128-E2)",1,manual
+t3_hm_01_B,hybrid_mem,P11,S,"Explain the existing return flow: returns-centre receipt, inspection, then refund initiation if accepted.","After the pickup is completed, the carrier will inspect the item and issue a pickup receipt or digital confirmation. The customer must retain this receipt until the return is accepted or the refund is initiated. If the carrier does not scan the return label, escalate with the pickup reference and timestamp.
+
+Sources: KB-002 / KB-002-C128-0005 (version 2.0); KB-002 / KB-002-C128-0006 (version 2.0); KB-013 / KB-013-C128-0005 (version 1.3)",0,manual
+t3_hm_01_B,hybrid_mem,P12,N,Ask which order and item the customer means; do not create a booking.,Could you please provide the order ID or item details for the other item you wish to pickup?,1,manual
+t3_hm_01_B,hybrid_mem,P13,E,The customer chose an exchange rather than a refund for ORD-66310.,"From your history on 2026-11-21 [EP-0013]: Return pickup booked for SKU-AUR-220 in order ORD-74021 on 2026-11-28, 18:00-20:00 (slot PICK-20261128-E1); reason defective_left_earbud; RMA RMA-20261126-69EC2A24, booking PICKUP-20261126-22A27FB9, status confirmed.",0,manual
+t3_hm_01_B,hybrid_mem,P14,K,"Within 1 business day; this is initiation, not bank posting.","A UPI refund is normally initiated within 1 business day after the return inspection is accepted. The exact timing depends on the payment provider and may vary. The refund process is tracked in the order service, and support will communicate the current stage exactly.
+
+Sources: KB-003 / KB-003-C128-0002 (version 1.3); KB-003 / KB-003-C128-0001 (version 1.3); KB-003 / KB-003-C128-0005 (version 1.3)",1,manual
+t3_hm_01_B,hybrid_mem,P15,TWIST_SMALL_CONTEXT,"Enforce the 2,048-token input budget, prioritise system instructions and current task/state, include only the highest-value memories and chunks, trim lower-priority history/content, reserve output tokens, and record what was cut.","If the combined instructions, recent conversation, retrieved chunks, and memories exceed 2,048 tokens, I should ask for the next missing detail to keep the conversation manageable and within token limits.",0,manual
+t3_hm_01_B,hybrid_mem,P16,TWIST_SMALL_CONTEXT,"19:00-21:00 (7 pm to 9 pm), retrieved from persistent semantic memory rather than relying only on the last three raw turns.",Your saved delivery preference of 19:00-21:00 remains active. It was last updated on 2026-11-21 [EP-0011].,1,manual

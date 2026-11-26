@@ -11,7 +11,7 @@ turn,session,utterance,expected_intent,predicted_intent,correct,rule_id,entities
 10,A,I had a frustrating late delivery on order ORD-88216. Please remember that issue.,report_complaint,report_complaint,1,R18_COMPLAINT,"{""order_ids"": [""ORD-88216""]}"
 11,A,"Okay, thank you.",small_talk,small_talk,1,R23_SMALL_TALK,{}
 12,A,I need to return the wireless earbuds from order ORD-74021.,start_return,start_return,1,R11_START_RETURN,"{""order_ids"": [""ORD-74021""]}"
-13,A,The left earbud does not charge even after I tried the charging case.,provide_return_reason,provide_return_reason,1,R12_RETURN_REASON,{}
+13,A,The left earbud does not charge even after I tried the charging case.,provide_return_reason,provide_return_reason,1,R12_RETURN_REASON,"{""return_reason"": ""defective_left_earbud""}"
 14,A,"Saturday, 28 November 2026 would work.",provide_pickup_date,provide_pickup_date,1,R13_PICKUP_DATE,"{""date"": ""2026-11-28""}"
 15,A,"And for Saturday, please make it after 6 pm.",state_followup,state_followup,1,R14_STATE_FOLLOWUP,"{""time_window"": {""start"": ""18:00"", ""end"": null, ""raw"": ""after 6 pm""}}"
 16,A,"Before we continue, what is the electronics return window under the current policy?",knowledge_base_query,knowledge_base_query,1,R20_KB_QUERY,{}

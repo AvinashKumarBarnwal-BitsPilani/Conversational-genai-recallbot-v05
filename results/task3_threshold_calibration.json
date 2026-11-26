@@ -1,0 +1,311 @@
+{
+  "memory_source": "memory/runs/t3_hm_pilot (pilot Session A)",
+  "embedding_model": "BAAI/bge-small-en-v1.5 (CLS pooling, query instruction on queries)",
+  "fact_scores": {
+    "max_negative": 0.7042,
+    "min_positive_relevant": 0.6633
+  },
+  "episode_scores": {
+    "max_negative_turn": 0.8789,
+    "min_gold": 0.5437
+  },
+  "negatives": [
+    "P09 (never stated)",
+    "turn 10",
+    "turn 12",
+    "turn 13",
+    "turn 14",
+    "turn 16",
+    "turn 18",
+    "turn 21",
+    "turn 32"
+  ],
+  "rows": [
+    {
+      "query": "What delivery window do I currently prefer?",
+      "source": "turn 27",
+      "kind": "fact",
+      "relevant_key": "preferred_delivery_window",
+      "relevant_score": 0.8207026720046997,
+      "best_fact": "SM-0008 preferred_delivery_window",
+      "best_fact_score": 0.8207,
+      "best_irrelevant_fact_score": 0.6762,
+      "best_episode_score": 0.7876
+    },
+    {
+      "query": "Which delivery window did I most recently ask you to save?",
+      "source": "P01",
+      "kind": "fact",
+      "relevant_key": "preferred_delivery_window",
+      "relevant_score": 0.7245399951934814,
+      "best_fact": "SM-0008 preferred_delivery_window",
+      "best_fact_score": 0.7245,
+      "best_irrelevant_fact_score": 0.5921,
+      "best_episode_score": 0.7784
+    },
+    {
+      "query": "Which city do I usually use for delivery?",
+      "source": "P02",
+      "kind": "fact",
+      "relevant_key": "preferred_city",
+      "relevant_score": 0.7618845701217651,
+      "best_fact": "SM-0003 preferred_city",
+      "best_fact_score": 0.7619,
+      "best_irrelevant_fact_score": 0.6629,
+      "best_episode_score": 0.6512
+    },
+    {
+      "query": "Which channel should routine updates use now?",
+      "source": "P03",
+      "kind": "fact",
+      "relevant_key": "notification_channel",
+      "relevant_score": 0.7522696852684021,
+      "best_fact": "SM-0009 notification_channel",
+      "best_fact_score": 0.7523,
+      "best_irrelevant_fact_score": 0.4798,
+      "best_episode_score": 0.7008
+    },
+    {
+      "query": "Can you still recall my latest delivery preference even though it is older than the last three turns?",
+      "source": "P16",
+      "kind": "fact",
+      "relevant_key": "preferred_delivery_window",
+      "relevant_score": 0.663270890712738,
+      "best_fact": "SM-0008 preferred_delivery_window",
+      "best_fact_score": 0.6633,
+      "best_irrelevant_fact_score": 0.5954,
+      "best_episode_score": 0.7508
+    },
+    {
+      "query": "What is my pet's name?",
+      "source": "P09 (never stated)",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0001 preferred_name",
+      "best_fact_score": 0.5883,
+      "best_irrelevant_fact_score": 0.5883,
+      "best_episode_score": 0.5263
+    },
+    {
+      "query": "I had a frustrating late delivery on order ORD-88216. Please remember that issue.",
+      "source": "turn 10",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0008 preferred_delivery_window",
+      "best_fact_score": 0.6616,
+      "best_irrelevant_fact_score": 0.6616,
+      "best_episode_score": 0.8789
+    },
+    {
+      "query": "I need to return the wireless earbuds from order ORD-74021.",
+      "source": "turn 12",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0006 return_method_preference",
+      "best_fact_score": 0.6356,
+      "best_irrelevant_fact_score": 0.6356,
+      "best_episode_score": 0.8653
+    },
+    {
+      "query": "The left earbud does not charge even after I tried the charging case.",
+      "source": "turn 13",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0006 return_method_preference",
+      "best_fact_score": 0.4443,
+      "best_irrelevant_fact_score": 0.4443,
+      "best_episode_score": 0.645
+    },
+    {
+      "query": "Saturday, 28 November 2026 would work.",
+      "source": "turn 14",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0008 preferred_delivery_window",
+      "best_fact_score": 0.6067,
+      "best_irrelevant_fact_score": 0.6067,
+      "best_episode_score": 0.5748
+    },
+    {
+      "query": "Before we continue, what is the electronics return window under the current policy?",
+      "source": "turn 16",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0006 return_method_preference",
+      "best_fact_score": 0.628,
+      "best_irrelevant_fact_score": 0.628,
+      "best_episode_score": 0.6791
+    },
+    {
+      "query": "What does code ERR-RMA-04 mean?",
+      "source": "turn 18",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0009 notification_channel",
+      "best_fact_score": 0.4875,
+      "best_irrelevant_fact_score": 0.4875,
+      "best_episode_score": 0.5934
+    },
+    {
+      "query": "What happens if the driver misses my return pickup?",
+      "source": "turn 21",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0006 return_method_preference",
+      "best_fact_score": 0.7042,
+      "best_irrelevant_fact_score": 0.7042,
+      "best_episode_score": 0.6973
+    },
+    {
+      "query": "Can you check the latest status of order ORD-74021?",
+      "source": "turn 32",
+      "kind": "fact",
+      "relevant_key": null,
+      "relevant_score": null,
+      "best_fact": "SM-0008 preferred_delivery_window",
+      "best_fact_score": 0.6526,
+      "best_irrelevant_fact_score": 0.6526,
+      "best_episode_score": 0.7898
+    },
+    {
+      "query": "What pickup did we arrange for my earbuds, and when?",
+      "source": "Q-E01",
+      "kind": "episode",
+      "gold": [
+        "EP-0013"
+      ],
+      "gold_score": 0.6832,
+      "best_episode": "EP-0013",
+      "best_episode_score": 0.6832
+    },
+    {
+      "query": "What delivery issue did I ask you to register earlier?",
+      "source": "Q-E02",
+      "kind": "episode",
+      "gold": [
+        "EP-0008"
+      ],
+      "gold_score": 0.7031,
+      "best_episode": "EP-0008",
+      "best_episode_score": 0.7031
+    },
+    {
+      "query": "Which choice did I make for the USB-C charger order?",
+      "source": "Q-E03",
+      "kind": "episode",
+      "gold": [
+        "EP-0010"
+      ],
+      "gold_score": 0.6063,
+      "best_episode": "EP-0015",
+      "best_episode_score": 0.652
+    },
+    {
+      "query": "What did we arrange for my earbuds last time?",
+      "source": "Q-E04",
+      "kind": "episode",
+      "gold": [
+        "EP-0013"
+      ],
+      "gold_score": 0.7018,
+      "best_episode": "EP-0009",
+      "best_episode_score": 0.7233
+    },
+    {
+      "query": "What problem did I ask you to register earlier?",
+      "source": "Q-E05",
+      "kind": "episode",
+      "gold": [
+        "EP-0008"
+      ],
+      "gold_score": 0.6122,
+      "best_episode": "EP-0014",
+      "best_episode_score": 0.6303
+    },
+    {
+      "query": "Did I report a late parcel on any of my orders?",
+      "source": "Q-E06",
+      "kind": "episode",
+      "gold": [
+        "EP-0008"
+      ],
+      "gold_score": 0.749,
+      "best_episode": "EP-0008",
+      "best_episode_score": 0.749
+    },
+    {
+      "query": "Is there a return reference for the earbuds I sent back?",
+      "source": "Q-E07",
+      "kind": "episode",
+      "gold": [
+        "EP-0013"
+      ],
+      "gold_score": 0.7553,
+      "best_episode": "EP-0009",
+      "best_episode_score": 0.807
+    },
+    {
+      "query": "Did I go for a refund or an exchange on ORD-66310?",
+      "source": "Q-E08",
+      "kind": "episode",
+      "gold": [
+        "EP-0010"
+      ],
+      "gold_score": 0.8688,
+      "best_episode": "EP-0010",
+      "best_episode_score": 0.8688
+    },
+    {
+      "query": "When did I start the return for the AUR-220 earbuds?",
+      "source": "Q-E09",
+      "kind": "episode",
+      "gold": [
+        "EP-0009"
+      ],
+      "gold_score": 0.8376,
+      "best_episode": "EP-0009",
+      "best_episode_score": 0.8376
+    },
+    {
+      "query": "What was the most recent change I made to my saved preferences?",
+      "source": "Q-E10",
+      "kind": "episode",
+      "gold": [
+        "EP-0012"
+      ],
+      "gold_score": 0.679,
+      "best_episode": "EP-0011",
+      "best_episode_score": 0.6949
+    },
+    {
+      "query": "What did I ask you to remove from memory most recently?",
+      "source": "Q-E11",
+      "kind": "episode",
+      "gold": [
+        "EP-0014"
+      ],
+      "gold_score": 0.6434,
+      "best_episode": "EP-0014",
+      "best_episode_score": 0.6434
+    },
+    {
+      "query": "What did you conclude about my account at the end of our last conversation?",
+      "source": "Q-E12",
+      "kind": "episode",
+      "gold": [
+        "EP-0015"
+      ],
+      "gold_score": 0.5437,
+      "best_episode": "EP-0014",
+      "best_episode_score": 0.5903
+    }
+  ]
+}

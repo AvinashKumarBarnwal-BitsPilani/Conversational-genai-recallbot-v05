@@ -40,7 +40,7 @@ DECODING_PRESETS: dict[str, dict[str, Any]] = {
 }
 
 _PROTECTED_VALUE_RE = re.compile(
-    r"\b(?:ORD|SKU|PICKUP|RMA|RET|ERR|PAY|SHP|KB)-[A-Z0-9]+(?:-[A-Z0-9]+)*\b"
+    r"\b(?:ORD|SKU|PICKUP|RMA|RET|ERR|PAY|SHP|KB|SM|EP)-[A-Z0-9]+(?:-[A-Z0-9]+)*\b"
     r"|\b\d{4}-\d{2}-\d{2}\b"
     r"|\b\d{2}:\d{2}\b"
     r"|\b\d+(?:\.\d+)?%\b",
@@ -437,8 +437,15 @@ class QwenNLG:
         turn_type: str = "task",
         conversation_history: Sequence[Mapping[str, Any]] | None = None,
         conversation_summary: str | None = None,
+        prebuilt_messages: Sequence[Mapping[str, str]] | None = None,
+        prebuilt_retrieved_tokens: int | None = None,
+        context_assembly: Mapping[str, Any] | None = None,
     ) -> str:
         """Generate one grounded response and log prompt preparation + API result.
+
+        Task 4 configs pass ``prebuilt_messages`` from the ContextAssembler,
+        which has already enforced the token budget; Task 2 configs keep the
+        original prompt builder.
 
         On a model or prompt-preparation failure, this method logs the failed
         call and raises. The Dialogue Manager retains its deterministic fallback.
@@ -461,17 +468,20 @@ class QwenNLG:
         try:
             prompt_started = timer()
             print("[RecallBot] Prompt preparation started")
-            messages, safe_evidence = self._build_messages(
-                draft_response=draft_response,
-                user_message=user_message,
-                intent=intent,
-                state=state,
-                evidence=evidence,
-                sources=sources,
-                turn_type=turn_type,
-                conversation_history=conversation_history,
-                conversation_summary=conversation_summary,
-            )
+            if prebuilt_messages is not None:
+                messages = [{"role": str(m["role"]), "content": str(m["content"])} for m in prebuilt_messages]
+            else:
+                messages, safe_evidence = self._build_messages(
+                    draft_response=draft_response,
+                    user_message=user_message,
+                    intent=intent,
+                    state=state,
+                    evidence=evidence,
+                    sources=sources,
+                    turn_type=turn_type,
+                    conversation_history=conversation_history,
+                    conversation_summary=conversation_summary,
+                )
             prompt_build_ms = timer() - prompt_started
             print(f"[RecallBot] Prompt preparation completed: {prompt_build_ms*1000:.0f} ms")
 
@@ -548,8 +558,9 @@ class QwenNLG:
                     else self._count_tokens(generated_content) if generated_content
                     else 0
                 )
-                retrieved_tokens = sum(
-                    self._count_tokens(item["content"]) for item in safe_evidence
+                retrieved_tokens = (
+                    int(prebuilt_retrieved_tokens) if prebuilt_retrieved_tokens is not None
+                    else sum(self._count_tokens(item["content"]) for item in safe_evidence)
                 )
                 extra = {
                     "purpose": "qwen_nlg_response",
@@ -573,6 +584,13 @@ class QwenNLG:
                     ),
                 }
                 extra.update(context.get("metadata", {}))
+                if context_assembly is not None:
+                    extra["prompt_version"] = context_assembly.get("prompt_version", self.prompt_version)
+                    extra["evidence_chunks"] = sum(
+                        1 for item in context_assembly.get("included", [])
+                        if item.get("component") == "retrieved_knowledge"
+                    )
+                    extra["context_assembly"] = dict(context_assembly)
                 if self._nlg_tokenizer_load_error:
                     extra["tokenizer_load_warning"] = self._nlg_tokenizer_load_error
                 if error_type:

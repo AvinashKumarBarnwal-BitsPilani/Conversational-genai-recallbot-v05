@@ -1,0 +1,18 @@
+{
+  "description": "Episodic retrieval queries for the Task 3(d) weighting comparison. Gold answers are identified by episode type and source turn, because episode IDs are assigned at run time. Queries Q-E01 to Q-E03 are the E-category probes P05, P06 and P13 verbatim; Q-E04 and Q-E05 are scripted Session B turns 28 and 29. The others are additional paraphrases written for this comparison, including recency-sensitive queries.",
+  "evaluated_against": "memory state saved at the end of Session A, queried with the Session B logical clock (2026-11-24 10:00 +05:30 and later)",
+  "queries": [
+    {"query_id": "Q-E01", "source": "probe P05", "query": "What pickup did we arrange for my earbuds, and when?", "gold_type": "booking", "gold_source_turn": 23},
+    {"query_id": "Q-E02", "source": "probe P06", "query": "What delivery issue did I ask you to register earlier?", "gold_type": "complaint", "gold_source_turn": 10},
+    {"query_id": "Q-E03", "source": "probe P13", "query": "Which choice did I make for the USB-C charger order?", "gold_type": "decision", "gold_source_turn": 17},
+    {"query_id": "Q-E04", "source": "conversation turn 28", "query": "What did we arrange for my earbuds last time?", "gold_type": "booking", "gold_source_turn": 23},
+    {"query_id": "Q-E05", "source": "conversation turn 29", "query": "What problem did I ask you to register earlier?", "gold_type": "complaint", "gold_source_turn": 10},
+    {"query_id": "Q-E06", "source": "paraphrase", "query": "Did I report a late parcel on any of my orders?", "gold_type": "complaint", "gold_source_turn": 10},
+    {"query_id": "Q-E07", "source": "paraphrase", "query": "Is there a return reference for the earbuds I sent back?", "gold_type": "booking", "gold_source_turn": 23},
+    {"query_id": "Q-E08", "source": "paraphrase", "query": "Did I go for a refund or an exchange on ORD-66310?", "gold_type": "decision", "gold_source_turn": 17},
+    {"query_id": "Q-E09", "source": "paraphrase", "query": "When did I start the return for the AUR-220 earbuds?", "gold_type": "task_event", "gold_source_turn": 12},
+    {"query_id": "Q-E10", "source": "paraphrase, recency-sensitive", "query": "What was the most recent change I made to my saved preferences?", "gold_type": "preference_update", "gold_source_turn": 20},
+    {"query_id": "Q-E11", "source": "paraphrase, recency-sensitive", "query": "What did I ask you to remove from memory most recently?", "gold_type": "forget_event", "gold_source_turn": 24},
+    {"query_id": "Q-E12", "source": "paraphrase", "query": "What did you conclude about my account at the end of our last conversation?", "gold_type": "reflection", "gold_source_turn": 25}
+  ]
+}

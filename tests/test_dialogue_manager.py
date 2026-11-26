@@ -134,29 +134,71 @@ def test_confirm_without_pending_action_never_calls_booking_tool():
     assert "haven't made" in result["reply"].lower() or "no pending" in result["reply"].lower()
 
 
-def test_summary_request_with_ambiguous_slot_asks_for_choice_without_pending_action():
-    class MultipleSlotTools(FakeTools):
-        def check_pickup_slots(self, pickup_date, requested_window, address_summary):
-            self.calls.append(("check_pickup_slots", pickup_date))
-            return [
-                {"slot_id": "SLOT-A", "window_start": "18:00", "window_end": "20:00"},
-                {"slot_id": "SLOT-B", "window_start": "20:00", "window_end": "22:00"},
-            ]
+class _MultipleSlotTools(FakeTools):
+    def check_pickup_slots(self, pickup_date, requested_window, address_summary):
+        self.calls.append(("check_pickup_slots", pickup_date))
+        return [
+            {"slot_id": "SLOT-B", "window_start": "20:00", "window_end": "22:00"},
+            {"slot_id": "SLOT-A", "window_start": "18:00", "window_end": "20:00"},
+        ]
 
-    tools = MultipleSlotTools()
+
+def _manager_after_open_window_followup():
+    tools = _MultipleSlotTools()
     tracker = DialogueStateTracker(session_id="A", user_id="CUST-MAYA-1042")
     manager = DialogueManager(tracker=tracker, tools=tools, user_id="CUST-MAYA-1042", logger=None)
     manager.handle_turn("I need to return the wireless earbuds from order ORD-74021.", turn=12)
     manager.handle_turn("The left earbud does not charge.", turn=13)
     manager.handle_turn("Saturday, 28 November 2026 would work.", turn=14)
-    manager.handle_turn("And for Saturday, please make it after 6 pm.", turn=15)
+    offered = manager.handle_turn("And for Saturday, please make it after 6 pm.", turn=15)
+    return manager, tools, tracker, offered
+
+
+def test_open_window_followup_still_lists_every_matching_slot():
+    """P10 behaviour: the follow-up turn offers all slots and proposes nothing."""
+    _, tools, tracker, offered = _manager_after_open_window_followup()
+    assert "choose one" in offered["reply"].lower()
+    assert "SLOT-A" in offered["reply"] and "SLOT-B" in offered["reply"]
+    assert tracker.state["pending_confirmation"] is False
+    assert not any(name == "book_slot" for name, *_ in tools.calls)
+
+
+def test_summary_request_proposes_earliest_open_window_slot_and_books_only_after_yes():
+    manager, tools, tracker, _ = _manager_after_open_window_followup()
+
+    summary = manager.handle_turn(
+        "Please repeat the complete return pickup summary so I can confirm it.", turn=22
+    )
+    # The earliest slot satisfying "after 18:00" is proposed, the alternative is named,
+    # and nothing is written until the customer explicitly confirms.
+    assert tracker.state["pending_confirmation"] is True
+    assert tracker.state["pending_action"]["arguments"]["slot_id"] == "SLOT-A"
+    assert tracker.state["slots"]["pickup_time_window"] == {"start": "18:00", "end": "20:00"}
+    assert "SLOT-A" in summary["reply"] and "SLOT-B" in summary["reply"]
+    assert "confirm" in summary["reply"].lower()
+    assert not any(name == "book_slot" for name, *_ in tools.calls)
+
+    booked = manager.handle_turn(
+        "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.", turn=23
+    )
+    book_calls = [call for call in tools.calls if call[0] == "book_slot"]
+    assert len(book_calls) == 1
+    assert book_calls[0][1]["slot_id"] == "SLOT-A"
+    assert book_calls[0][1]["explicit_confirmation"] is True
+    assert booked["completed"] is True
+
+
+def test_summary_request_without_time_window_makes_no_proposal_or_write():
+    tools = _MultipleSlotTools()
+    tracker = DialogueStateTracker(session_id="A", user_id="CUST-MAYA-1042")
+    manager = DialogueManager(tracker=tracker, tools=tools, user_id="CUST-MAYA-1042", logger=None)
+    manager.handle_turn("I need to return the wireless earbuds from order ORD-74021.", turn=12)
+    manager.handle_turn("The left earbud does not charge.", turn=13)
+    manager.handle_turn("Saturday, 28 November 2026 would work.", turn=14)
 
     response = manager.handle_turn("Please repeat the complete return pickup summary so I can confirm it.", turn=22)
-    assert "choose one" in response["reply"].lower()
-    assert "SLOT-A" in response["reply"] and "SLOT-B" in response["reply"]
+    assert "time window" in response["reply"].lower()
     assert tracker.state["pending_confirmation"] is False
-    assert tracker.state["pending_action"] is None
-    assert not any(name == "book_slot" for name, *_ in tools.calls)
 
     confirmation = manager.handle_turn("Yes, I confirm the return pickup.", turn=23)
     assert "no pending" in confirmation["reply"].lower()

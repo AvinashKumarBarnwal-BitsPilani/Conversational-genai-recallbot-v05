@@ -67,6 +67,48 @@ def test_real_database_write_runs_only_after_dialogue_manager_confirmation(tmp_p
     assert any(event["extra"].get("tool_name") == "book_slot" and event["turn"] == 17 for event in tool_events)
 
 
+def test_scripted_session_a_turns_book_earliest_after_6pm_slot_with_real_json_tools(tmp_path):
+    """Replays scripted turns 12-15, 22 and 23 against the real JSON tool gateway."""
+    tool_events = []
+    runtime_path = tmp_path / "runtime_pickup_slots.json"
+    tools = RecallBotToolGateway(
+        orders_path=ROOT / "db" / "seed_orders.json",
+        seed_slots_path=ROOT / "db" / "seed_pickup_slots.json",
+        runtime_slots_path=runtime_path,
+        logger=lambda **record: tool_events.append(record),
+        token_counter=lambda text: len(text.split()),
+    )
+    tracker = DialogueStateTracker(session_id="A", user_id="CUST-MAYA-1042")
+    manager = DialogueManager(tracker=tracker, tools=tools, user_id="CUST-MAYA-1042", logger=None)
+
+    manager.handle_turn("I need to return the wireless earbuds from order ORD-74021.", turn=12)
+    manager.handle_turn("The left earbud does not charge even after I tried the charging case.", turn=13)
+    manager.handle_turn("Saturday, 28 November 2026 would work.", turn=14)
+    offered = manager.handle_turn("And for Saturday, please make it after 6 pm.", turn=15)
+    assert "PICK-20261128-E1" in offered["reply"] and "PICK-20261128-E2" in offered["reply"]
+
+    summary = manager.handle_turn(
+        "Please repeat the complete return pickup summary so I can confirm it.", turn=22
+    )
+    assert tracker.state["pending_action"]["arguments"]["slot_id"] == "PICK-20261128-E1"
+    assert "PICK-20261128-E2" in summary["reply"]
+    assert not json.loads(runtime_path.read_text(encoding="utf-8"))["bookings"]
+
+    booked = manager.handle_turn(
+        "Yes, I confirm the return pickup for the AUR-220 earbuds on 28 November after 6 pm.", turn=23
+    )
+    assert booked["completed"] is True
+    assert "RMA-" in booked["reply"]
+    persisted = json.loads(runtime_path.read_text(encoding="utf-8"))
+    assert len(persisted["bookings"]) == 1
+    booking = persisted["bookings"][0]
+    assert booking["slot_id"] == "PICK-20261128-E1"
+    assert booking["sku"] == "SKU-AUR-220"
+    assert booking["confirmation_received"] is True
+    book_events = [e for e in tool_events if e["extra"].get("tool_name") == "book_slot"]
+    assert [e["turn"] for e in book_events] == [23]
+
+
 def test_user_can_select_displayed_24_hour_slot_label_verbatim(tmp_path):
     """A displayed 18:00–20:00 slot can be selected without retyping am/pm."""
     tool_events = []
