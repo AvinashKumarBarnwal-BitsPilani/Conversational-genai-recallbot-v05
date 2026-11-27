@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="100%" style="font-family:'Segoe UI',Arial,sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#12245a"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2f7d32"/>
+    </marker>
+    <style>
+      .t{font-size:13px;font-weight:700;fill:#12245a}
+      .f{font-size:10.5px;font-family:Consolas,monospace;fill:#1b2233}
+      .s{font-size:10.5px;fill:#333}
+      .tg{font-size:13px;font-weight:700;fill:#1d5a2a}
+      .lbl{font-size:11px;font-weight:700;fill:#555;letter-spacing:.5px}
+    </style>
+  </defs>
+
+  <!-- band labels -->
+  <text x="8" y="16" class="lbl">ONE TURN — DialogueManager.handle_turn()  (src/dialogue, src/context)</text>
+
+  <!-- row 1: pipeline -->
+  <rect x="6" y="28" width="86" height="92" rx="8" fill="#fff" stroke="#9aa5bd"/>
+  <text x="49" y="62" text-anchor="middle" class="t">Customer</text>
+  <text x="49" y="80" text-anchor="middle" class="s">message</text>
+  <text x="49" y="95" text-anchor="middle" class="s">(Session A/B)</text>
+
+  <rect x="104" y="28" width="132" height="92" rx="8" fill="#eef2fa" stroke="#12245a"/>
+  <text x="170" y="48" text-anchor="middle" class="t">NLU</text>
+  <text x="170" y="66" text-anchor="middle" class="f">analyze_utterance()</text>
+  <text x="170" y="84" text-anchor="middle" class="s">rules + regex, no LLM</text>
+  <text x="170" y="99" text-anchor="middle" class="s">1 intent + entities</text>
+  <text x="170" y="114" text-anchor="middle" class="s">(order, SKU, date, window)</text>
+
+  <rect x="248" y="28" width="150" height="92" rx="8" fill="#eef2fa" stroke="#12245a"/>
+  <text x="323" y="48" text-anchor="middle" class="t">State tracker</text>
+  <text x="323" y="66" text-anchor="middle" class="f">DialogueStateTracker</text>
+  <text x="323" y="80" text-anchor="middle" class="f">.update_from_nlu()</text>
+  <text x="323" y="98" text-anchor="middle" class="s">slots, missing_slots,</text>
+  <text x="323" y="112" text-anchor="middle" class="s">pending_confirmation</text>
+
+  <rect x="410" y="28" width="150" height="92" rx="8" fill="#eef2fa" stroke="#12245a"/>
+  <text x="485" y="48" text-anchor="middle" class="t">Dialogue manager</text>
+  <text x="485" y="66" text-anchor="middle" class="f">DialogueManager</text>
+  <text x="485" y="80" text-anchor="middle" class="f">.handle_turn()</text>
+  <text x="485" y="98" text-anchor="middle" class="s">routes, asks, confirms;</text>
+  <text x="485" y="112" text-anchor="middle" class="s">writes the DRAFT</text>
+
+  <rect x="572" y="28" width="168" height="92" rx="8" fill="#fff6e6" stroke="#c77700"/>
+  <text x="656" y="48" text-anchor="middle" class="t">Context assembler</text>
+  <text x="656" y="66" text-anchor="middle" class="f">ContextAssembler.assemble()</text>
+  <text x="656" y="84" text-anchor="middle" class="s">1,856 input + 160 reply</text>
+  <text x="656" y="99" text-anchor="middle" class="s">+ 32 safety = 2,048; whole-</text>
+  <text x="656" y="114" text-anchor="middle" class="s">item cuts, drop log</text>
+
+  <rect x="752" y="28" width="132" height="92" rx="8" fill="#eef2fa" stroke="#12245a"/>
+  <text x="818" y="48" text-anchor="middle" class="t">NLG</text>
+  <text x="818" y="66" text-anchor="middle" class="f">QwenNLG</text>
+  <text x="818" y="80" text-anchor="middle" class="f">.generate_reply()</text>
+  <text x="818" y="98" text-anchor="middle" class="s">qwen3:1.7b (Ollama)</text>
+  <text x="818" y="112" text-anchor="middle" class="s">IDs kept, else draft</text>
+
+  <rect x="896" y="28" width="98" height="92" rx="8" fill="#fff" stroke="#9aa5bd"/>
+  <text x="945" y="62" text-anchor="middle" class="t">Reply</text>
+  <text x="945" y="80" text-anchor="middle" class="s">with [SM-…]</text>
+  <text x="945" y="95" text-anchor="middle" class="s">[EP-…] [KB-…]</text>
+
+  <g stroke="#12245a" stroke-width="1.8" fill="none" marker-end="url(#a)">
+    <line x1="92" y1="74" x2="102" y2="74"/>
+    <line x1="236" y1="74" x2="246" y2="74"/>
+    <line x1="398" y1="74" x2="408" y2="74"/>
+    <line x1="560" y1="74" x2="570" y2="74"/>
+    <line x1="740" y1="74" x2="750" y2="74"/>
+    <line x1="884" y1="74" x2="894" y2="74"/>
+  </g>
+
+  <!-- row 2: KB, tools, memory manager -->
+  <rect x="6" y="168" width="262" height="140" rx="8" fill="#f4f6fa" stroke="#9aa5bd"/>
+  <text x="137" y="188" text-anchor="middle" class="t">Knowledge base retrieval</text>
+  <text x="16" y="208" class="s">16 docs → 84 chunks (128 tok) / 24 (512),</text>
+  <text x="16" y="224" class="s">15% overlap; BGE-small, CLS pooling, 384-d</text>
+  <text x="16" y="240" class="f">index/dense_128  flat inner product</text>
+  <text x="16" y="256" class="f">BM25 (own) + RRF k=60 (own)</text>
+  <text x="16" y="274" class="s">metadata: doc, section, version, status;</text>
+  <text x="16" y="290" class="s">superseded chunks dropped for current questions</text>
+
+  <rect x="282" y="168" width="330" height="140" rx="8" fill="#fff6e6" stroke="#c77700"/>
+  <text x="447" y="188" text-anchor="middle" class="t">Tools (JSON back-end in db/)</text>
+  <text x="294" y="210" class="f">search_kb(query)</text><text x="440" y="210" class="s">hybrid KB search</text>
+  <text x="294" y="230" class="f">get_order(order_id)</text><text x="440" y="230" class="s">verified order read</text>
+  <text x="294" y="250" class="f">check_pickup_slots(…)</text><text x="440" y="250" class="s">availability read</text>
+  <text x="294" y="270" class="f">book_slot(details)</text><text x="440" y="270" class="s">WRITE, only after an</text>
+  <text x="440" y="285" class="s">explicit "yes" to the summary</text>
+  <text x="294" y="300" class="s" font-style="italic">returns real RMA reference</text>
+
+  <rect x="626" y="168" width="368" height="140" rx="8" fill="#eef7ee" stroke="#2f7d32"/>
+  <text x="810" y="188" text-anchor="middle" class="tg">Memory manager — MemoryManager</text>
+  <text x="636" y="208" class="f">observe_user_turn()</text><text x="790" y="208" class="s">FactExtractor: rules, Qwen fallback</text>
+  <text x="636" y="226" class="f">record_episode()</text><text x="790" y="226" class="s">rule importance 1–10</text>
+  <text x="636" y="244" class="f">retrieve_for_turn()</text><text x="790" y="244" class="s">facts + score_episodes()</text>
+  <text x="636" y="262" class="f">forget()</text><text x="790" y="262" class="s">facts, vectors, episodes, tombstone</text>
+  <text x="636" y="280" class="f">write_reflection()</text><text x="790" y="280" class="s">end of Session A</text>
+  <text x="636" y="298" class="s">every call logged to logs/calls.jsonl (nlu, chat, embed, extract …)</text>
+
+  <g stroke="#12245a" stroke-width="1.6" fill="none">
+    <line x1="470" y1="120" x2="470" y2="166" marker-end="url(#a)"/>
+    <line x1="500" y1="166" x2="500" y2="122" marker-end="url(#a)"/>
+    <line x1="282" y1="210" x2="270" y2="210" marker-end="url(#a)"/>
+  </g>
+  <g stroke="#2f7d32" stroke-width="1.6" fill="none">
+    <path d="M545,120 L545,145 L700,145 L700,166" marker-end="url(#g)"/>
+    <line x1="660" y1="166" x2="660" y2="122" marker-end="url(#g)"/>
+  </g>
+
+  <!-- row 3: four memory types -->
+  <g>
+    <rect x="6" y="342" width="240" height="104" rx="8" fill="#eef7ee" stroke="#2f7d32"/>
+    <text x="126" y="362" text-anchor="middle" class="tg">1 Short-term</text>
+    <text x="126" y="380" text-anchor="middle" class="f">ConversationHistory</text>
+    <text x="126" y="398" text-anchor="middle" class="s">trim: last k = 3 exchanges</text>
+    <text x="126" y="413" text-anchor="middle" class="s">(full / summary compared in Task 2)</text>
+    <text x="126" y="434" text-anchor="middle" class="s" font-style="italic">model-native: in the prompt</text>
+
+    <rect x="254" y="342" width="240" height="104" rx="8" fill="#eef7ee" stroke="#2f7d32"/>
+    <text x="374" y="362" text-anchor="middle" class="tg">2 Semantic</text>
+    <text x="374" y="380" text-anchor="middle" class="f">SemanticMemory  [SM-…]</text>
+    <text x="374" y="398" text-anchor="middle" class="s">keyed facts; update supersedes,</text>
+    <text x="374" y="413" text-anchor="middle" class="s">forget deletes record + vector</text>
+    <text x="374" y="434" text-anchor="middle" class="s" font-style="italic">external: memory/semantic_* + index</text>
+
+    <rect x="502" y="342" width="240" height="104" rx="8" fill="#eef7ee" stroke="#2f7d32"/>
+    <text x="622" y="362" text-anchor="middle" class="tg">3 Episodic</text>
+    <text x="622" y="380" text-anchor="middle" class="f">EpisodicMemory  [EP-…]</text>
+    <text x="622" y="398" text-anchor="middle" class="s">events + reflection; score =</text>
+    <text x="622" y="413" text-anchor="middle" class="s">0.2·recency + 0.3·importance + 0.5·rel.</text>
+    <text x="622" y="434" text-anchor="middle" class="s" font-style="italic">external: memory/episodes.json + index</text>
+
+    <rect x="750" y="342" width="244" height="104" rx="8" fill="#eef7ee" stroke="#2f7d32"/>
+    <text x="872" y="362" text-anchor="middle" class="tg">4 Procedural</text>
+    <text x="872" y="380" text-anchor="middle" class="f">skills/system_prompt_v2.txt</text>
+    <text x="872" y="396" text-anchor="middle" class="f">return_pickup_workflow_v1.json</text>
+    <text x="872" y="413" text-anchor="middle" class="s">persona, rules, current step</text>
+    <text x="872" y="434" text-anchor="middle" class="s" font-style="italic">external file → prompt</text>
+  </g>
+  <g stroke="#2f7d32" stroke-width="1.3" fill="none" stroke-dasharray="4 3">
+    <line x1="126" y1="342" x2="126" y2="318"/>
+    <line x1="374" y1="342" x2="374" y2="318"/>
+    <line x1="622" y1="342" x2="622" y2="318"/>
+    <line x1="872" y1="342" x2="872" y2="318"/>
+    <line x1="622" y1="318" x2="872" y2="318"/>
+    <line x1="126" y1="318" x2="619" y2="318"/>
+    <line x1="619" y1="318" x2="619" y2="124" marker-end="url(#g)"/>
+  </g>
+  <text x="660" y="333" class="lbl" fill="#2f7d32">FOUR MEMORY TYPES → assembler</text>
+
+  <!-- row 4: sessions -->
+  <rect x="6" y="458" width="988" height="56" rx="8" fill="#f4f6fa" stroke="#9aa5bd"/>
+  <text x="18" y="480" class="t">Session continuity</text>
+  <text x="18" y="500" class="f">python -m src.dialogue.run_session --session A</text>
+  <text x="352" y="490" class="s">→ saves memory/ + db/ with SHA-256 manifest → process exits →</text>
+  <text x="706" y="480" class="f">run_session --session B</text>
+  <text x="706" y="497" class="s">new PID; loads only from disk;</text>
+  <text x="706" y="511" class="s">refuses to start if any hash differs</text>
+</svg>

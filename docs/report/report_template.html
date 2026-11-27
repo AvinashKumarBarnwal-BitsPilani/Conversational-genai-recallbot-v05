@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RecallBot V05 — Mini Project 1 Report</title>
+<style>
+@page { size: A4; margin: 13mm 14mm 14mm 14mm;
+  @bottom-center { content: counter(page); font: 8pt "Segoe UI", Arial, sans-serif; color: #666; } }
+* { box-sizing: border-box; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.9pt; line-height: 1.36; color: #1b2233; margin: 0; }
+h1 { font-size: 16pt; margin: 0 0 2px; color: #12245a; }
+h2 { font-size: 11.5pt; color: #12245a; border-bottom: 1.5px solid #12245a; padding-bottom: 1px; margin: 10px 0 5px; }
+h2, h3 { break-after: avoid; page-break-after: avoid; }
+h3 { font-size: 9.6pt; color: #1d5a2a; margin: 8px 0 3px; }
+p { margin: 3px 0 4px; }
+ul { margin: 2px 0 4px 16px; padding: 0; }
+li { margin: 1px 0; }
+table { border-collapse: collapse; width: 100%; margin: 4px 0 6px; font-size: 8pt; page-break-inside: avoid; }
+th, td { border: 1px solid #c4cad8; padding: 2px 4px; vertical-align: top; text-align: left; }
+th { background: #e9edf6; font-weight: 600; }
+td.n, th.n { text-align: right; white-space: nowrap; }
+tr.hl td { background: #eef7ee; font-weight: 600; }
+code { font-family: Consolas, monospace; font-size: 7.9pt; background: #f2f4f8; padding: 0 2px; border-radius: 2px; }
+.meta { font-size: 8.4pt; color: #333; margin-bottom: 4px; }
+.meta b { color: #12245a; }
+.box { border: 1px solid #c4cad8; background: #f7f9fc; padding: 4px 7px; margin: 4px 0 6px; border-radius: 3px; }
+.cap { font-size: 7.6pt; color: #555; margin: 1px 0 6px; }
+.two { display: flex; gap: 10px; }
+.two > div { flex: 1; min-width: 0; }
+img { max-width: 100%; }
+.pb { page-break-before: always; }
+pre { font-family: Consolas, monospace; font-size: 7.5pt; background: #f4f6fa; border: 1px solid #d5dae5; padding: 5px 7px;
+      white-space: pre-wrap; word-wrap: break-word; margin: 3px 0 7px; page-break-inside: avoid; }
+.small { font-size: 7.8pt; }
+.ok { color: #1d6b2a; font-weight: 600; } .bad { color: #b3261e; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>RecallBot V05 — a returns assistant with long-term memory</h1>
+<div class="meta"><b>Mini Project 1</b> · Conversational Gen AI · <b>Student:</b> Avinash Kumar Barnwal · <b>BITS ID:</b> {{BITS_ID}} ·
+<b>Variant:</b> V05, e-commerce orders and returns, Twist E (2,048-token context window, trim k = 3, 25,000 daily users) ·
+<b>Demo video (Task 6(a)):</b> {{VIDEO_LINK}}</div>
+<p class="small">Every number below is read from <code>logs/calls.jsonl</code> (append-only; never edited) or from the named file in <code>results/</code>. Run IDs are given so each figure can be recomputed; the README lists the commands.</p>
+
+<h2>1. Variant, models, index and hardware</h2>
+<table>
+<tr><th style="width:22%">Item</th><th>Choice</th></tr>
+<tr><td>Variant</td><td>V05 — ShopSphere e-commerce orders and returns; Twist E small context window: <b>2,048 tokens</b>, trim window <b>k = 3</b> exchanges, 25,000 daily users.</td></tr>
+<tr><td>Chat LLM</td><td><code>qwen3:1.7b</code> served locally by Ollama 0.40.17, <code>think=False</code>, <code>num_ctx</code> 2,048. The same model writes summaries (Task 2), LLM-fallback fact extraction, the reflection and the Task 4 judge.</td></tr>
+<tr><td>Embeddings and pooling</td><td><code>BAAI/bge-small-en-v1.5</code>, 384-d, model-defined <b>CLS pooling</b>, L2-normalised; BGE query instruction on queries only. Chunks are counted with the Qwen3 tokenizer.</td></tr>
+<tr><td>Index</td><td>Exact <b>flat</b> inner-product index (NumPy) for the knowledge base (84 chunks at 128 tokens, 24 at 512) and for each memory store; own BM25 and own RRF (k = 60). HNSW is evaluated for scale in 5(b).</td></tr>
+<tr><td>Back-end</td><td>JSON database in <code>db/</code> (orders, pickup slots, bookings); memory stores as JSON + <code>.npy</code> vectors in <code>memory/</code>.</td></tr>
+<tr><td>Hardware</td><td>Windows 11 laptop, AMD Ryzen AI 7 350 (8 cores), 23 GB usable RAM, Radeon 860M integrated GPU; Python 3.12.9; no cloud API calls.</td></tr>
+</table>
+
+<h2>2. Architecture</h2>
+{{ARCH_SVG}}
+<p class="cap">Figure 1. One turn of RecallBot, labelled with the function names in <code>src/</code>. Solid arrows: the turn's data flow. Green boxes: the four memory types (short-term, semantic, episodic, procedural) and where each lives. Session A and Session B run as separate processes; only <code>memory/</code> and <code>db/</code> carry information between them.</p>
+<p>Every customer message passes through <b>rule-based NLU</b> (one intent plus entities), the <b>state tracker</b> (task slots, clarification, pending confirmation, write authorisation) and the <b>dialogue manager</b>, which calls tools and writes a deterministic draft (the authoritative text for actions and references). The <b>memory manager</b> extracts facts, records episodes and retrieves memories for the turn; the <b>context assembler</b> fits system prompt, tools, workflow step, state, draft, memories, knowledge-base chunks and trimmed history into 1,856 input tokens; <b>QwenNLG</b> phrases the reply and keeps every ID. If the model drops a protected value (ID, date, amount) the draft is used instead.</p>
+
+<h2>3. Tasks 1 to 5</h2>
+
+<h3>Task 1 — Test data and probes</h3>
+<table>
+<tr><th>File</th><th>Required</th><th>Built</th></tr>
+<tr><td><code>data/test_conversation.json</code></td><td>≥ 40 turns, ≥ 8 facts, ≥ 2 updates, ≥ 1 forget, ≥ 3 episodes, ≥ 5 low-importance turns, 1 slot-filling task ending in a confirmed write, ≥ 2 state follow-ups, ≥ 1 clarification, ≥ 5 KB questions</td>
+<td>40 turns (A: 1–25, B: 26–40); 9 planted fact records (7 facts + 2 updates: delivery window turn 19, email → SMS turn 20); forget of the delivery note (turn 24); 4 episodes (complaint 10, decision 17, booking 23, preference 6); 7 low-importance turns (1, 3, 11, 25, 26, 38, 40); return-pickup task turns 12–23 (summary at 22, "yes" at 23); follow-ups 15, 22, 33; clarification 37; KB questions 16, 18, 21, 22, 31, 33–35.</td></tr>
+<tr><td><code>data/kb_questions.json</code></td><td>≥ 25; ≥ 5 code/ID; ≥ 5 paraphrased; ≥ 2 newer-version-only</td><td>32 questions with gold span and document ID: 10 code/ID, 5 paraphrased with no answer keyword, 7 version-sensitive of which 2 are answerable only from the newer version (Q030 KB-002 2026 returns, Q032 KB-005 2026 shipping).</td></tr>
+<tr><td><code>data/probes.json</code></td><td>≥ 14, all 7 categories + 2 twist</td><td>16 probes: R 2, U 1, F 1, E 3, K 3, N 2, S 2, Twist E 2 (P15 budget behaviour, P16 a fact older than the trim window).</td></tr>
+</table>
+<p>The knowledge base has 16 synthetic ShopSphere documents (6,579 words, codes such as <code>RET-E14</code>, <code>ERR-RMA-04</code>) with two superseded/active pairs (returns KB-001 → KB-002, shipping KB-016 → KB-005). <code>python -m src.main --check</code> and <code>tests/test_task1_full_coverage.py</code> verify every minimum and that each gold span exists in its document.</p>
+
+<h3>2(a) Pipeline, prompts and procedural memory</h3>
+<p><b>NLU</b> is rule-based (normalisation, regular expressions, phrase rules in <code>src/dialogue/nlu.py</code>; no LLM). On 40 labelled utterances (<code>data/nlu_test_cases.json</code>, turns 1–40) it gets <b>40/40</b> intents and expected entities right (<code>results/nlu_accuracy.json</code>). This is accuracy on the scripted set the rules were written next to, not an estimate for unseen traffic.</p>
+<p><b>State-tracker fields</b> (<code>DialogueStateTracker</code>): <code>session_id, user_id, turn, last_user_text, current_intent, current_entities, active_task, task_status, slots</code> (order, item, reason, pickup date, window, address, explicit_confirmation), <code>missing_slots, available_order_items, clarification_required, clarification_prompt, pending_confirmation, confirmation_status, pending_action, database_write_authorized, last_tool_result</code>. <code>explicit_confirmation</code> cannot be set by slot filling; it needs a separate "yes" while a concrete pending action exists, and <code>book_slot</code> re-checks order, SKU and slot before writing.</p>
+<p><b>Procedural memory</b> is versioned in <code>skills/</code>: <code>system_prompt_v1.txt</code> (Task 2), <code>system_prompt_v2.txt</code> (Tasks 3–4, compact for the 2,048 window) and <code>return_pickup_workflow_v1.json</code> (the step list); <code>QwenNLG</code> loads them at start-up. The prompts cover <i>persona</i> (calm, concise ShopSphere assistant), <i>scope</i> (orders, delivery, returns, refunds, exchanges), <i>error handling</i> (no invented bookings or references; the exact fallback sentence; ask for the next missing detail; never reveal forgotten data) and <i>format</i> (≤ 90 words, IDs preserved, no JSON or source footer — citations are appended by the code). Full text in Appendix B.</p>
+<table>
+<tr><th>Turn type</th><th class="n">temperature</th><th class="n">top_p</th><th class="n">num_ctx</th><th class="n">num_predict</th><th>Why</th></tr>
+<tr><td>Task turns (slot filling, bookings, policy)</td><td class="n">0.0</td><td class="n">0.9</td><td class="n">2,048</td><td class="n">160</td><td>Deterministic and repeatable; IDs, dates and slots must not vary.</td></tr>
+<tr><td>Open turns (greetings, thanks, small talk)</td><td class="n">0.3</td><td class="n">0.9</td><td class="n">2,048</td><td class="n">128</td><td>Slightly more natural wording; nothing factual depends on it.</td></tr>
+</table>
+
+<h3>2(b) Short-term memory strategies</h3>
+<div style="overflow:hidden;width:84%;margin:0 auto"><img src="../../results/task2b_input_tokens_per_turn.png" alt="Input tokens per turn" style="width:138%;max-width:none;display:block"></div>
+<p class="cap">Figure 2. Session A input tokens per turn, drawn from <code>logs/calls.jsonl</code> by <code>scripts/analyze_task2b_logs.py</code>. Crosses are prompts that exceeded the safe budget and were not sent (deterministic fallback used).</p>
+<div class="two"><div>
+<table>
+<tr><th>Strategy (run)</th><th class="n">Input</th><th class="n">Output</th><th class="n">Total</th></tr>
+<tr><td>full (<code>task2b_full_run3</code>)</td><td class="n">53,116</td><td class="n">313</td><td class="n">53,429</td></tr>
+<tr><td>trim k=3 (<code>task2b_trim_run2</code>)</td><td class="n">42,220</td><td class="n">773</td><td class="n">42,993</td></tr>
+<tr><td>summary (<code>task2b_summary_run2</code>)</td><td class="n">52,815</td><td class="n">3,127</td><td class="n">55,942</td></tr>
+</table>
+</div><div><p class="small">Totals include NLU, embedding and model calls; summary's total includes its <b>22 summary calls = 10,903 tokens</b> (8,197 in + 2,706 out). Same model, prompt v1, decoding and seed database in all three; 25 turns each.</p>
+<p class="small">Budget fallbacks: full 12 (turns 14–25), trim 3, summary 9. Full's low Ollama-processed total (22,091) only reflects prompts that were never sent.</p>
+</div></div>
+
+<h3>2(c) Context-handling analysis</h3>
+<p><b>Probe accuracy per strategy (Session A probes P08, P10):</b> full 2/2, trim 2/2, summary 2/2 (<code>results/task2c_probe_results.csv</code>). Because the official Session A probes do not test old facts, the failed probe per strategy is taken from the fact probes P01 (window, updated turn 19) and P03 (channel, updated turn 20) asked at the end of Session A (supplemental, not counted above):</p>
+<table>
+<tr><th>Strategy</th><th>Failed probe</th><th>Turn where the information was lost or distorted</th></tr>
+<tr><td>full</td><td>P01, P03</td><td>Not lost but <b>cut by the budget</b>: the full history needed 3,035 / 3,031 tokens against 1,888, so the prompt was never sent (turn-25 state).</td></tr>
+<tr><td>trim</td><td>P01</td><td><b>Turn 19</b> (the update) had left the window: history held turns 23–25; the reply used the active pickup's "after 6 pm".</td></tr>
+<tr><td>summary</td><td>P03</td><td><b>Turn 20</b> (SMS) is missing from the final rolling summary (cursor at 22); intermediate summaries were not kept, so the exact summary update that dropped it is unknown.</td></tr>
+</table>
+<p><b>First turn trim can no longer recall:</b> turn 2 (preferred name). At incoming turn 6 the last three completed exchanges are 3–5, so turn 2 is the first fact out of the window (email, turn 4, leaves at turn 8).</p>
+<p><b>State follow-up and clarification.</b> Turn 15 "And for Saturday, please make it after 6 pm." (NLU <code>state_followup</code>, entity <code>{start: 18:00}</code>) is resolved from the state before the turn — order <code>ORD-74021</code>, item <code>SKU-AUR-220</code>, pickup date <code>2026-11-28</code>, no window — so the window is merged into the open task and <code>check_pickup_slots</code> offers <code>PICK-20261128-E1</code> (18:00–20:00) and <code>-E2</code> (20:00–22:00). Turn 22 shows the full summary from <code>pending_action</code>. Turn 37 "book a pickup for the other item" has no order/item in state, so the bot asks <i>"Which order and item do you mean? Please provide the order ID or select an item."</i> with no tool call. <b>Write only after confirmation:</b> in the official memory run <code>t3_hm_01_A</code> the log has <code>book_slot</code> only at turn 23, after the "yes", returning <code>RMA-20261126-69EC2A24</code>; tests also show that a mismatched confirmation and a duplicate booking are refused (<code>tests/test_live_tool_integration.py</code>).</p>
+
+<h3>3(a) Chunking and indexing</h3>
+<p>Two chunk sizes, <b>128 and 512 Qwen3 tokens</b>, with <b>15 % overlap</b> counted in tokens (19 and 77). Each chunk stores <code>chunk_id, doc_id, section, version, status (active/superseded), effective_from/to, start_char/end_char</code>. Embeddings: BGE-small, CLS pooling, normalised; a chunk longer than BGE's 512-token limit is split and token-weighted-averaged rather than truncated. Index: exact flat inner product — with 84 / 24 chunks a brute-force search is exact and sub-millisecond, so an approximate graph index would only add error and build cost (<code>index/dense_*/index_manifest.json</code>).</p>
+
+<h3>3(b) Dense, BM25 and hybrid</h3>
+<p>Own BM25 (k₁ 1.5, b 0.75; keeps codes like <code>RET-E14</code> as one token) and own RRF (k = 60) pass the CS4 worked examples (<code>tests/test_bm25.py</code>: 4.160; <code>tests/test_rrf.py</code>: order A, B, C, D, then E/F tied). A hit means the top-k chunks cover the whole gold answer span. From <code>results/hit_rate.csv</code> (32 questions × 3 methods × 2 sizes × 3 k):</p>
+<table>
+<tr><th rowspan="2">Method</th><th colspan="3" class="n">All 32, 128 tok</th><th colspan="3" class="n">All 32, 512 tok</th><th colspan="3" class="n">Code/ID (10), 128</th><th colspan="3" class="n">Code/ID (10), 512</th><th colspan="3" class="n">Paraphrased (5), 128</th><th colspan="3" class="n">Paraphrased (5), 512</th></tr>
+<tr><th class="n">@1</th><th class="n">@3</th><th class="n">@5</th><th class="n">@1</th><th class="n">@3</th><th class="n">@5</th><th class="n">@1</th><th class="n">@3</th><th class="n">@5</th><th class="n">@1</th><th class="n">@3</th><th class="n">@5</th><th class="n">@1</th><th class="n">@3</th><th class="n">@5</th><th class="n">@1</th><th class="n">@3</th><th class="n">@5</th></tr>
+{{HIT_ROWS}}
+</table>
+<p class="small">Readings: 512-token chunks win overall (more spans fit in one chunk); BM25 leads on codes at 128 tokens (exact tokens) and is weakest on paraphrases (0/5 @3 at 128), where dense is strongest; hybrid gives the best @1 at both sizes.</p>
+<p><b>Hybrid fixed — Q014</b> "What must the bot show before it creates a pickup booking?" (128 tokens, @1). Dense top-1 KB-013-C128-0004 (packaging, 0.656), BM25 top-1 KB-002-C128-0005 (9.574): both miss. The answer chunk KB-013-C128-0002 is <b>2nd in both lists</b>, so RRF = 1/62 + 1/62 = 0.03226 puts it first. <b>Hybrid did not fix — Q023</b> "Which team should handle a refund settlement mismatch?" (512, @5). BM25 has KB-014-C512-0001 at rank 2 (6.720); dense does not retrieve it. Its single RRF contribution 1/62 = 0.01613 is beaten by chunks found by both lists (KB-001-C512-0002 0.03175, KB-010 0.03150, KB-004 0.03126, KB-003 0.01639, KB-008 0.01639), so it falls to rank 6 (<code>results/retrieval_rankings.csv</code>).</p>
+
+<h3>3(c) Semantic memory of the user</h3>
+<p><code>SemanticMemory</code> stores keyed records <code>{memory_id, user, key, value, source_turn, session, date, status, supersedes, extraction_method}</code> with a deletable flat vector index of the <i>active</i> facts. Extraction (<code>FactExtractor</code>, logged as <code>extract</code>): rules map NLU entities to canonical keys; only when a fact-like turn yields nothing, Qwen returns JSON that is validated (known key format, value grounded in the message, ≤ 80 chars, no secrets). Greetings, small talk, thanks and confirmations never reach extraction.</p>
+<table>
+<tr><th>Extractor (official run <code>t3_hm_01</code>, 9 planted Session A facts)</th><th class="n">Predicted</th><th class="n">Correct</th><th class="n">Precision</th><th class="n">Recall</th><th>Missed</th></tr>
+<tr><td>Rules only</td><td class="n">8</td><td class="n">8</td><td class="n">1.00</td><td class="n">0.89</td><td>turn 8 return method ("a pickup from my home")</td></tr>
+<tr class="hl"><td>Rules + Qwen fallback (used)</td><td class="n">9</td><td class="n">9</td><td class="n">1.00</td><td class="n">1.00</td><td>— (fallback ran on turn 8 only)</td></tr>
+</table>
+<p>Filler turns 1, 3, 11, 25 produced no record and no extraction attempt (<code>results/task3_semantic_memory_metrics.json</code>). Caveat: rules were written with this script in view, so 1.00 is optimistic. <b>Update:</b> turn 19 marks SM-0005 (18:00–21:00) <code>superseded</code> and removes its vector; SM-0008 (19:00–21:00) is the only active window, so a stale value cannot be retrieved. <b>Forget</b> (turn 24, <code>MemoryManager.forget</code>): the delivery-note record and its vector are deleted and a tombstone keeps only a SHA-256 fingerprint of the value. Retrieval thresholds are intent-dependent (memory questions ≥ 0.60, other turns ≥ 0.72), calibrated on the pilot because no single cosine cut-off separated relevant from irrelevant (<code>results/task3_threshold_calibration.json</code>).</p>
+
+<h3>3(d) Episodic memory</h3>
+<p><code>EpisodicMemory</code> keeps time-stamped episodes (type, description, entities, linked memory IDs) with <b>rule-based importance 1–10</b>: booking 9, complaint 8, decision 7, reflection 6, task event 5, preference update 4, preference/forget event 3, small talk 1 (write threshold 3). Retrieval score = <b>w<sub>r</sub>·R̂ + w<sub>i</sub>·Î + w<sub>s</sub>·Ŝ</b>, R = <b>0.995<sup>hours</sup></b> on a logical clock (Session A 21 Nov 10:00, Session B 24 Nov 10:00, +2 min/turn), I = importance/10, S = BGE cosine; each min-max normalised over the candidates (<code>score_episodes()</code>).</p>
+<table>
+<tr><th>Weighting (recency / importance / relevance)</th><th class="n">hit@1, 12 episodic queries</th><th class="n">MRR</th><th class="n">hit@1 on the 3 E probes</th></tr>
+<tr class="hl"><td>A — relevance-focused 0.20 / 0.30 / 0.50 (kept)</td><td class="n">0.583</td><td class="n">0.757</td><td class="n">0.667</td></tr>
+<tr><td>B — recency-focused 0.40 / 0.30 / 0.30</td><td class="n">0.417</td><td class="n">0.607</td><td class="n">0.333</td></tr>
+<tr><td>C — equal ⅓ / ⅓ / ⅓</td><td class="n">0.417</td><td class="n">0.646</td><td class="n">0.333</td></tr>
+</table>
+<p><b>Kept A:</b> all Session A events lie within 50 minutes, but min-max normalisation stretches that to [0, 1], so recency-heavy weights let the latest important booking win almost every query (<code>results/task3_episodic_weight_comparison.csv</code>). <b>Reflection:</b> at the end of Session A one <code>reflect</code> call wrote EP-0015 (importance 6, linked to complaint, return, decision, booking, preference updates). Session B uses it: EP-0015 is in the prompt at turn 27 and for P01–P03, P05, P13, P16 (context-assembly records in <code>results/task3_sessions/t3_hm_01_session_B.json</code>); in <code>t4_hybrid_mem</code> it answers P13. <b>Forget after restart:</b> the linked preference episode EP-0004 is deleted, any other episode or reflection mentioning the note is redacted and re-embedded; after Session B (new process) <code>grep -ril "side door" memory/</code> and the Session B transcript return nothing, and P04 answers that the note was deleted at the customer's request.</p>
+
+<h3>3(e) Context engineering</h3>
+<p><code>ContextAssembler.assemble()</code> builds every Task 3–4 prompt. Budget <b>2,048 − 160 reply − 32 safety = 1,856 input tokens</b>. It counts with the Qwen3 chat template plus a measured Ollama offset of 8 tokens; on all <b>51</b> official chat calls the count equals Ollama's <code>prompt_eval_count</code>. Mandatory items always go in; memories, chunks and history follow an intent-dependent priority and are cut whole, and every cut is logged.</p>
+<table>
+<tr><th>Component — Session B turn 27 "What delivery window do I currently prefer?" (<code>t3_hm_01_B</code>)</th><th class="n">Tokens</th><th>Memory type</th><th>Model-native / external</th><th>IDs</th></tr>
+<tr><td>System and instructions (<code>system_prompt_v2</code>)</td><td class="n">274</td><td>procedural</td><td>external file <code>skills/</code> → prompt</td><td>system_prompt_v2</td></tr>
+<tr><td>Tools</td><td class="n">55</td><td>procedural</td><td>model-native (prompt)</td><td>TOOLS</td></tr>
+<tr><td>Long-term memory</td><td class="n">456</td><td>semantic + episodic</td><td>external stores + vector indexes</td><td>SM-0008, SM-0003, SM-0006, EP-0011, EP-0015, EP-0013</td></tr>
+<tr><td>Conversation history (trim, within session)</td><td class="n">36</td><td>short-term</td><td>model-native</td><td>HISTORY-1</td></tr>
+<tr><td>Retrieved knowledge</td><td class="n">0</td><td>—</td><td>external KB index</td><td>none needed</td></tr>
+<tr><td>Current task (user turn, dialogue state, draft)</td><td class="n">66</td><td>working</td><td>model-native</td><td>USER-TURN, STATE, DRAFT</td></tr>
+<tr><td>Chat template and headings</td><td class="n">51</td><td>—</td><td>model-native</td><td>—</td></tr>
+<tr class="hl"><td>Total input (+160 reserved for the reply)</td><td class="n">938 / 1,856</td><td colspan="3">938 input + 160 reply reserve = 1,098 of the 2,048-token window</td></tr>
+</table>
+<p><b>Grounding rules</b> (system_prompt_v2): customer facts only from <code>[SM-…]</code>, events only from <code>[EP-…]</code>, policy only from active <code>[KB-…]</code> chunks; cite the ID of every item used; the draft is authoritative for actions; never reveal forgotten data. The reply cites e.g. <code>[SM-0008]</code> for the window; KB answers cite their chunk (P07 → <code>KB-002-C128-0002</code>). <b>Exact fallback sentence</b> (emitted by the dialogue manager, P09): <i>"{{FALLBACK}}"</i></p>
+
+<h3>3(f) Twist E — small context window</h3>
+<p><b>Implementation:</b> (1) compact <code>system_prompt_v2</code> + tools + only the current workflow step ≈ 330–390 tokens instead of 1,095 for v1 + full workflow JSON (which caused Task 2's 24 budget fallbacks); (2) the budgeted assembler with whole-item cuts and a drop log; (3) trim k = 3 for history while older facts stay retrievable from semantic memory. Result: <b>0 budget fallbacks in 51 official chat calls</b>, largest prompt 1,465 tokens. A stress replay of turn 31 with 512-token chunks and full history (<code>t3_hm_01_budget_stress2</code>) kept 1,836/1,856 tokens and logged the cuts: KB-002-C512-0002 (302, "would reach 1,858"), two other chunks, the reflection EP-0015 and history exchanges 1–4.</p>
+<table>
+<tr><th>Twist probe</th><th>Before (<code>t3_hm_01</code>)</th><th>After (<code>t4_hybrid_mem</code>)</th><th>Explanation</th></tr>
+<tr><td>P16 latest delivery preference, older than the last 3 turns</td><td class="ok">pass</td><td class="ok">pass</td><td>19:00–21:00 from semantic memory; turn 19 is outside the trim window.</td></tr>
+<tr><td>P15 what RecallBot does when context exceeds 2,048 tokens</td><td class="bad">fail</td><td class="ok">pass</td><td>The draft was right but Qwen rewrote it as "ask for the next missing detail" (NLG fault); the answer is now emitted verbatim with the previous turn's live numbers (passes in all four Task 4 configurations).</td></tr>
+</table>
+<p><b>Session B in a new process</b> (final store, <code>memory/session_manifest.json</code>): Session A PID 22308 → Session B PID 110392, <code>different_process_from_session_a: true</code>, and the SHA-256 of all 7 memory files Session B loaded equals what Session A saved (<code>loaded_hashes_match_session_a: true</code>). Session B refuses to start if any file changed.</p>
+
+<h3>4(a) Ablation and dialogue quality</h3>
+<p>Four configurations, each Session A then Session B in separate processes, same prompt v2, model, decoding, trim k = 3; a disabled memory type is neither written nor read. From <code>results/task4_ablation_table.csv</code> and <code>results/probe_results.csv</code> (all marks reviewed manually):</p>
+<table>
+<tr><th>Config (runs <code>t4_*_A/B</code>)</th><th class="n">R</th><th class="n">U</th><th class="n">F</th><th class="n">E</th><th class="n">K</th><th class="n">N</th><th class="n">S</th><th class="n">Twist</th><th class="n">Overall</th><th class="n">Mean input tok/turn</th><th class="n">Median chat latency</th><th class="n">Median turn latency</th><th class="n">Total tokens</th></tr>
+<tr><td>no_rag (short-term only)</td><td class="n">0/2</td><td class="n">0/1</td><td class="n">1/1</td><td class="n">0/3</td><td class="n">0/3</td><td class="n">2/2</td><td class="n">1/2</td><td class="n">1/2</td><td class="n"><b>5/16</b></td><td class="n">636.8</td><td class="n">1,589.5 ms</td><td class="n">1,585.0 ms</td><td class="n">33,114</td></tr>
+<tr><td>hybrid (+ knowledge base)</td><td class="n">0/2</td><td class="n">0/1</td><td class="n">1/1</td><td class="n">0/3</td><td class="n">2/3</td><td class="n">2/2</td><td class="n">1/2</td><td class="n">1/2</td><td class="n"><b>7/16</b></td><td class="n">795.3</td><td class="n">2,034.5 ms</td><td class="n">1,841.5 ms</td><td class="n">42,242</td></tr>
+<tr><td>hybrid_sem (+ semantic)</td><td class="n">2/2</td><td class="n">1/1</td><td class="n">1/1</td><td class="n">0/3</td><td class="n">3/3</td><td class="n">2/2</td><td class="n">1/2</td><td class="n">2/2</td><td class="n"><b>12/16</b></td><td class="n">794.7</td><td class="n">2,105.5 ms</td><td class="n">2,120.5 ms</td><td class="n">43,026</td></tr>
+<tr class="hl"><td>hybrid_mem (+ episodic)</td><td class="n">2/2</td><td class="n">1/1</td><td class="n">1/1</td><td class="n">3/3</td><td class="n">3/3</td><td class="n">2/2</td><td class="n">1/2</td><td class="n">2/2</td><td class="n">15/16</td><td class="n">835.2</td><td class="n">2,180.0 ms</td><td class="n">2,439.0 ms</td><td class="n">49,704</td></tr>
+</table>
+<p class="small">Mean input tokens and median chat latency: customer-facing <code>chat</code> calls on the 40 scripted turns; median turn latency: all calls of a turn; total tokens: every logged call of both sessions (<code>scripts/ablation_metrics.py</code>). Each layer earns its cost: the KB adds K (+2 probes, +158 tokens/turn); semantic memory adds R, U and P16 (+5) at almost no prompt cost; episodic memory adds E (+3) for +16 % total tokens, the largest step. P11 fails everywhere (see 4(b)).</p>
+<table>
+<tr><th>CS1 rubric, 15 Session B replies per config (manual)</th><th class="n">Coherence</th><th class="n">Relevance</th><th class="n">Groundedness</th><th class="n">Safety</th><th class="n">Mean</th></tr>
+<tr><td>no_rag</td><td class="n">4.93</td><td class="n">3.27</td><td class="n">5.00</td><td class="n">5.00</td><td class="n">4.55</td></tr>
+<tr><td>hybrid</td><td class="n">4.27</td><td class="n">3.73</td><td class="n">4.27</td><td class="n">4.80</td><td class="n">4.27</td></tr>
+<tr><td>hybrid_sem</td><td class="n">4.53</td><td class="n">4.13</td><td class="n">4.73</td><td class="n">5.00</td><td class="n">4.60</td></tr>
+<tr><td>hybrid_mem</td><td class="n">3.87</td><td class="n">4.33</td><td class="n">4.80</td><td class="n">5.00</td><td class="n">4.50</td></tr>
+</table>
+<p>Relevance rises with every memory type. no_rag's high groundedness and safety come from refusing almost everything with the fallback sentence; hybrid is least safe (turn 36 told the customer a <i>shipped</i> order can be cancelled); hybrid_mem loses coherence to stray "Missing detail:" lines. <b>LLM judge check:</b> the same qwen3:1.7b rated all 60 replies (60/60 valid JSON). Against my ratings, exact agreement was 0.667 / 0.350 / 0.417 / 0.967 and Cohen's κ 0.23 / 0.18 / −0.11 / −0.01 (coherence / relevance / groundedness / safety). Safety's 97 % is chance agreement (both nearly always 5). The judge is not reliable at this size, so the manual ratings are reported (<code>results/task4_rubric_ratings.csv</code>).</p>
+
+<h3>4(b) Error analysis — three failed hybrid_mem probes</h3>
+<p>Source: official hybrid_mem run <code>t3_hm_01</code> (13/16); evidence rebuilt by <code>scripts/error_analysis.py</code> → <code>results/task4_error_analysis.json</code>.</p>
+<table>
+<tr><th style="width:15%">Probe · stage</th><th>Evidence</th><th style="width:30%">Fix at that stage and result</th></tr>
+<tr><td><b>P13</b> "Which choice did I make for the USB-C charger order?" · <b>memory write</b></td>
+<td>State: <code>episodic_memory_query</code>, no task. Ranked (weighting A): EP-0013 booking S 0.619 score 0.902; EP-0015 reflection 0.637 / 0.850; <b>EP-0010 decision (gold) 0.606 / 0.696, rank 3</b>. Prompt excerpt: <code>[EP-0010] decision: Customer chose exchange rather than refund for order ORD-66310.</code> — in the prompt but third; the draft answered from the top episode. The decision summary had dropped the product the customer named, so relevance was weak.</td>
+<td>Decision and complaint episodes also store the customer's own words (through the forget-redaction guard). Same memory: S 0.606 → 0.799, rank 3 → 1. After-fix run <code>t4fix_hybrid_mem</code>: <span class="ok">correct</span>.</td></tr>
+<tr><td><b>P11</b> "And what happens next after the pickup is completed?" · <b>retrieval</b> (residual: prompt/NLG)</td>
+<td>State: <code>state_followup</code>, no active task (fresh Session B tracker). Ranked lists for the gold chunk KB-003-C128-0001 (received → inspected → refund initiated): dense top-3 KB-002-C128-0005 0.670, KB-013-C128-0005 0.659, KB-002-C128-0006 0.649, gold <b>rank 12</b>; BM25 top KB-010-C128-0004 8.47, gold rank 15; RRF gold rank 12. The query shares no content word with the chunk. Answer: "the carrier will inspect the item".</td>
+<td>A follow-up "what happens next / after the pickup" is rewritten for retrieval with a generic topic phrase "(next stage of the return and refund process)" — no answer terms added. After fix the gold chunk is <b>rank 1</b> in the prompt, but the 1.7B model still says the carrier inspects: <span class="bad">still incorrect</span>; the fault moved to the prompt/NLG stage (next: an extractive draft quoting the top chunk).</td></tr>
+<tr><td><b>P15</b> "When the combined instructions … exceed 2,048 tokens, what should RecallBot do?" · <b>NLG / prompt</b></td>
+<td>State: <code>context_budget_query</code>. Prompt 857 tokens: system 274, tools 55, history 31 + 148 + 149, user 27, state 18, <b>draft 93 containing the correct policy</b>. The model answered the hypothetical framing ("ask for the next missing detail") and ignored the draft; the same draft for turn 39 was paraphrased correctly.</td>
+<td>The dialogue manager emits the budget answer verbatim (no model call) with the previous turn's live numbers. After: <span class="ok">correct</span> in all four configurations.</td></tr>
+</table>
+<p class="small">Before → after: P13 0 → 1, P11 0 → 0, P15 0 → 1; after-fix hybrid_mem 15/16 (<code>t4fix_hybrid_mem</code>, reported separately from the 4(a) table). Seen on the way and not probed: turn 29 still returns the booking instead of the complaint (same importance pull as P13).</p>
+
+<h3>4(c) Surprise probes</h3>
+<p>On 24 November 2026 the instructor announced that <b>no extra work is required for the surprise probes</b>; new questions will be put to the model live instead. <code>data/surprise_probes.json</code> records this announcement and contains no invented probes, so there are no surprise-probe results to report. Unseen questions rely on the mechanisms measured above: intent-dependent memory thresholds, active-only KB evidence and the exact fallback sentence (N 2/2 in every configuration).</p>
+
+<h3>5(a) Token economics</h3>
+<p>Volume: 25,000 users × 1 conversation/day × 40 turns × 30 days = <b>30 M turns/month</b>. Price row: <b>GPT-4o (OpenAI), CS3 slide 17</b> — $2.50 input, $10.00 output, $1.25 cached input per 1 M tokens; caching rules from slide 18 (minimum 1,024 tokens, 50 % OpenAI discount, 5-minute TTL). Measured billable tokens per turn (chat, summary, LLM extraction, reflection; rule-based steps, tools and the local embedder cost $0) from <code>logs/calls.jsonl</code> (<code>scripts/token_economics.py</code>):</p>
+<table>
+<tr><th>Config (runs)</th><th class="n">Input tok/turn</th><th class="n">Output tok/turn</th><th class="n">Fixed prefix</th><th>≥ 1,024?</th><th class="n">No caching $/month</th><th class="n">With prefix caching</th><th class="n">Saving</th></tr>
+<tr><td>trim (<code>task2b_trim_run2</code>, prompt v1 + workflow JSON)</td><td class="n">1,440.2</td><td class="n">30.9</td><td class="n">1,100</td><td>yes</td><td class="n">$117,291</td><td class="n">$81,001</td><td class="n">30.9 %</td></tr>
+<tr class="hl"><td>hybrid_mem (<code>t4_hybrid_mem_A/B</code>, prompt v2 + tools)</td><td class="n">815.3</td><td class="n">36.9</td><td class="n">334</td><td>no</td><td class="n">$72,219</td><td class="n">$72,219</td><td class="n">0 %</td></tr>
+</table>
+<p class="small">Working (trim): 1,440.2 × 30 M × $2.50/1 M = $108,018 input + 30.9 × 30 M × $10/1 M = $9,270 output. Caching bills the 1,100-token prefix of each chat call (0.88 calls/turn) at $1.25: 29.03 B cached tokens save $36,289. The shared prefix is hit ~694 times a minute, so it never idles past the 5-minute TTL (hit rate 0.9997). Token counts are Qwen3 counts; GPT-4o's tokenizer would differ slightly.</p>
+<p><b>Does the prefix reach the minimum?</b> trim: yes (1,100 tokens). hybrid_mem: <b>no</b> — Twist E forced a 334-token prefix, below 1,024. <b>What I would change:</b> not padding. Padding to 1,024 with few-shot examples would <i>raise</i> the GPT-4o bill by $12,683/month (690 extra tokens at $1.25 cost more than 50 % saved on 334) and use 37 % of the 1,856-token input budget. hybrid_mem is already cheaper than <i>cached</i> trim ($72.2 k vs $81.0 k). Better savings: cap reply length (output costs 4× input) and send tool definitions only on tool turns; add genuinely useful few-shot examples only with a larger context window.</p>
+
+<h3>5(b) Vector index sizing</h3>
+<p>Measured per conversation in the final hybrid_mem indexes: 6 semantic vectors (active facts only) and 14 episodic vectors; KB 84 chunks. <b>Realistic year</b> (returning users, facts supersede, episodes accumulate): 84 + 6 × 25,000 + 14 × 25,000 × 365 = <b>127.9 M vectors</b> (upper bound, new facts every day: 182.5 M). CS3 per-vector formula (slides 48–49), d = 384: flat = d × 4 = 1,536 B; HNSW = d × 4 + 1 + 2M × 4 = 1,665 B at M = 16.</p>
+<div class="two"><div>
+<table>
+<tr><th>Scenario</th><th class="n">Vectors</th><th class="n">Flat float32</th><th class="n">HNSW M=16</th><th class="n">Budget 1.2–1.5×</th></tr>
+<tr class="hl"><td>Realistic</td><td class="n">127.9 M</td><td class="n">196.5 GB</td><td class="n">213.0 GB</td><td class="n">236–295 GB</td></tr>
+<tr><td>Upper bound</td><td class="n">182.5 M</td><td class="n">280.3 GB</td><td class="n">303.9 GB</td><td class="n">336–421 GB</td></tr>
+</table>
+<p class="small">Episodes are 99.9 % of the vectors. FAISS on this machine measured 1,680 B/vector at M = 16 (formula 1,665).</p>
+</div><div>
+<table>
+<tr><th>100 k vectors, clustered padding</th><th class="n">p50 latency</th><th class="n">recall@1</th><th class="n">recall@5</th></tr>
+<tr><td>Flat (exact)</td><td class="n">4.53 ms</td><td class="n">1.000</td><td class="n">1.000</td></tr>
+<tr><td>HNSW M=16, ef_search 100</td><td class="n">0.26 ms</td><td class="n">1.000</td><td class="n">0.856</td></tr>
+<tr><td>HNSW M=16, ef_search 200</td><td class="n">0.36 ms</td><td class="n">1.000</td><td class="n">0.912</td></tr>
+<tr class="hl"><td>HNSW M=32, ef_search 200</td><td class="n">0.43 ms</td><td class="n">1.000</td><td class="n">0.962</td></tr>
+<tr><td>HNSW M=64, ef_search 500</td><td class="n">1.20 ms</td><td class="n">1.000</td><td class="n">0.988</td></tr>
+</table></div></div>
+<p><b>Measurement</b> (<code>scripts/benchmark_ann.py</code>, FAISS 1.16, <code>IndexFlatIP</code> vs <code>IndexHNSWFlat</code>, ef_construction 200, single-threaded, 3 repeats): our 104 real vectors padded to 100,000, queried with the 32 kb_questions. With <i>random</i> padding recall@5 is 1.000 for every M at ef ≥ 50 — trivially easy because real questions are far from noise — so I also padded with noisy copies of the real vectors (cosine 0.6–0.9), the realistic case shown above; full grid in <code>results/task5_ann_benchmark*.csv</code>. <b>Recommendation: HNSW, M = 32, ef_search = 200</b>: the cheapest setting with recall@5 above 0.95 (0.962) at 0.43 ms, while flat would take about 5.8 s per query at 127.9 M vectors. It costs about +16 GB over M = 16; if memory is the constraint, M = 16 with ef_search = 200 keeps recall@1 = 1.0. Expiring low-importance episodes would shrink the index more than any tuning.</p>
+
+<h2>4. Limitations and what I would change with one more week</h2>
+<ul>
+<li><b>Small model, small test set.</b> qwen3:1.7b misreads correct evidence (P11) and adds stray "Missing detail" lines; 16 probes with 1–3 per category cannot separate configurations by one probe. With a week: an extractive draft for policy sequences, a 7–8B model comparison, and 3× more probes, including unscripted paraphrases.</li>
+<li><b>Rules fitted to the script.</b> NLU (40/40) and extraction (precision and recall 1.00) were built next to the test conversation; I would measure both on new, held-out conversations and extend the LLM fallback.</li>
+<li><b>Episodic ranking</b> still favours the high-importance booking for loosely worded questions (turn 29); I would add type-aware boosts ("problem" → complaint) and tune weights on more than 12 queries.</li>
+<li><b>Missing handler:</b> cancellation eligibility (turn 36) has no <code>get_order</code>-backed check, so a KB-only answer can over-promise.</li>
+<li><b>Judge:</b> the 1.7B judge does not agree with manual ratings (κ ≤ 0.23); a larger judge with calibration examples would be needed before using it.</li>
+<li><b>Scale:</b> one flat index per user is fine locally; at 25,000 users I would move to one HNSW index (M 32, ef 200) with a user filter and an episode retention policy.</li>
+</ul>
+
+<div class="pb"></div>
+<h2>Appendix A — AI-use declaration</h2>
+<table>
+<tr><th style="width:24%">Tool</th><th>Used for</th></tr>
+<tr><td><b>Claude Code</b> (Anthropic, Claude Opus 5.5, in VS Code)</td><td>Days 4–7: Task 3 memory design and implementation (semantic and episodic stores, forget cascade, reflection, context assembler, session runner); Task 4 evaluation scripts (ablation runner, metrics, Qwen judge, error-analysis evidence and the P11/P13 fixes); Task 5 cost, sizing and ANN-benchmark scripts; unit tests; evidence documents, figures, README and this report's layout; git commits made only after my review.</td></tr>
+<tr><td><b>ChatGPT</b> and <b>OpenAI Codex</b></td><td>Days 1–3: drafting the synthetic knowledge base, test conversation and probes (Day 1); retrieval code (Day 2); dialogue-pipeline patches and the hang investigation (Day 3).</td></tr>
+<tr><td><i>Models inside RecallBot (not assistants)</i></td><td><code>qwen3:1.7b</code> via Ollama (replies, LLM fact extraction, reflection, the judge); <code>BAAI/bge-small-en-v1.5</code> (embeddings).</td></tr>
+</table>
+<p><b>What I did myself:</b> chose and approved every design decision (variant settings, memory design, thresholds, weighting, fixes); ran all experiments locally; reviewed and confirmed every probe mark and every dialogue-quality rating (the assistant proposed them with reasons; I checked each answer against the transcript before setting <code>judged_by = manual</code>); reviewed every change before it was committed and merged each pull request. All numbers come from my own runs and logs.</p>
+<p><b>A case where the AI's suggestion was wrong.</b> <i>What it suggested:</i> for the 2,048-token context assembler, the assistant counted tokens as <code>len(tokenizer.apply_chat_template(messages, tokenize=True, ...))</code>, assuming the call returns a list of token IDs. <i>How I found out:</i> in the pilot run <code>t3_hm_pilot_A</code> the context-assembly records showed "2 / 1,856 tokens" on every turn, while Ollama's <code>prompt_eval_count</code> in <code>logs/calls.jsonl</code> reported 463–1,506 tokens for the same calls. With transformers 5.x the call returns a <code>BatchEncoding</code>, so <code>len()</code> counted its two keys and the budget check enforced nothing (the log confirmed no pilot prompt had exceeded the budget). <i>What I changed:</i> (1) count <code>encoded["input_ids"]</code>; (2) a plausibility test — the templated total must lie between the sum of the parts and that sum + 120 — so a silent miscount now fails the suite; (3) compared with Ollama on all 26 pilot Session B calls, found a constant +8 (the empty <code>&lt;think&gt;</code> block) and added it as a measured offset. In the official run the count matched Ollama on 51 of 51 chat calls. The pilot stays in the log, labelled as a pilot.</p>
+<p class="small">Two smaller corrections of the same kind: the first P11 query rewrite proposed words from the expected answer ("returns centre, inspection, refund"), which would leak the answer into retrieval — I rejected it for a generic topic phrase; and the original forget rule would have treated the probe question "What delivery note did I ask you to forget?" as a forget request — questions can no longer trigger a forget.</p>
+
+<div class="pb"></div>
+<h2>Appendix B — Prompts</h2>
+<p class="small">Copied at build time from the files and constants the code actually uses (<code>scripts/build_report.py</code>).</p>
+<h3>B.1 System prompt v2 — <code>skills/system_prompt_v2.txt</code> (Tasks 3–5, all four Task 4 configurations)</h3>
+<pre>{{SYSTEM_V2}}</pre>
+<h3>B.2 Tool definitions appended to the system message — <code>TOOLS_TEXT</code> in <code>src/context/context_assembler.py</code></h3>
+<pre>{{TOOLS}}</pre>
+<h3>B.3 RAG / turn prompt layout — <code>ContextAssembler.build_messages()</code></h3>
+<pre>{{RAG_LAYOUT}}</pre>
+<h3>B.4 Fact-extraction prompt (LLM fallback) — <code>_LLM_SYSTEM_PROMPT</code> in <code>src/memory/fact_extractor.py</code></h3>
+<pre>{{EXTRACTION}}</pre>
+<h3>B.5 Importance — rule-based, no LLM prompt — <code>IMPORTANCE_BY_TYPE</code> in <code>src/memory/episodic_memory.py</code></h3>
+<pre>{{IMPORTANCE}}</pre>
+<h3>B.6 Reflection prompt — <code>REFLECTION_SYSTEM_PROMPT</code> in <code>src/memory/reflection.py</code> (user message: JSON of events ≥ threshold and saved facts)</h3>
+<pre>{{REFLECTION}}</pre>
+<h3>B.7 Rolling-summary prompt (Task 2 summary strategy) — <code>_SUMMARY_INSTRUCTION</code> in <code>src/dialogue/qwen_nlg.py</code></h3>
+<pre>{{SUMMARY}}</pre>
+<h3>B.8 Judge prompt (Task 4(a)) — <code>RUBRIC</code> in <code>scripts/llm_judge.py</code> (user message: customer message, reply and the evidence that was in the prompt)</h3>
+<pre>{{JUDGE}}</pre>
+<h3>B.9 System prompt v1 — <code>skills/system_prompt_v1.txt</code> (Task 2 full / trim / summary runs, with <code>return_pickup_workflow_v1.json</code>)</h3>
+<pre>{{SYSTEM_V1}}</pre>
+</body>
+</html>
