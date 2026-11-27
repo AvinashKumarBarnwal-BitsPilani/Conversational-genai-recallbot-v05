@@ -1,0 +1,264 @@
+{
+  "next_id": 16,
+  "episodes": [
+    {
+      "episode_id": "EP-0001",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:02:00+05:30",
+      "source_turn": 2,
+      "type": "preference_event",
+      "description": "Customer saved their preferred name: Maya.",
+      "importance": 3,
+      "importance_method": "rule",
+      "entities": {
+        "key": "preferred_name"
+      },
+      "linked_memory_ids": [
+        "SM-0001"
+      ],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0002",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:06:00+05:30",
+      "source_turn": 4,
+      "type": "preference_event",
+      "description": "Customer saved their notification channel for routine updates: email.",
+      "importance": 3,
+      "importance_method": "rule",
+      "entities": {
+        "key": "notification_channel"
+      },
+      "linked_memory_ids": [
+        "SM-0002"
+      ],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0003",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:08:00+05:30",
+      "source_turn": 5,
+      "type": "preference_event",
+      "description": "Customer saved their usual delivery city: Bengaluru.",
+      "importance": 3,
+      "importance_method": "rule",
+      "entities": {
+        "key": "preferred_city"
+      },
+      "linked_memory_ids": [
+        "SM-0003"
+      ],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0005",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:12:00+05:30",
+      "source_turn": 7,
+      "type": "preference_event",
+      "description": "Customer saved their preferred delivery window: 18:00-21:00.",
+      "importance": 3,
+      "importance_method": "rule",
+      "entities": {
+        "key": "preferred_delivery_window"
+      },
+      "linked_memory_ids": [
+        "SM-0005"
+      ],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0006",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:14:00+05:30",
+      "source_turn": 8,
+      "type": "preference_event",
+      "description": "Customer saved their preferred return method: pickup from home.",
+      "importance": 3,
+      "importance_method": "rule",
+      "entities": {
+        "key": "return_method_preference"
+      },
+      "linked_memory_ids": [
+        "SM-0006"
+      ],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0007",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:16:00+05:30",
+      "source_turn": 9,
+      "type": "preference_event",
+      "description": "Customer saved their packaging preference: recyclable.",
+      "importance": 3,
+      "importance_method": "rule",
+      "entities": {
+        "key": "packaging_preference"
+      },
+      "linked_memory_ids": [
+        "SM-0007"
+      ],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0008",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:18:00+05:30",
+      "source_turn": 10,
+      "type": "complaint",
+      "description": "Customer reported a late delivery for order ORD-88216 (order status ORD-DEL). Recorded as a customer-reported issue; no formal complaint case was created. Customer's words: \"I had a frustrating late delivery on order ORD-88216. Please remember that issue.\"",
+      "importance": 8,
+      "importance_method": "rule",
+      "entities": {
+        "order_id": "ORD-88216",
+        "issue": "late delivery"
+      },
+      "linked_memory_ids": [],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0009",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:22:00+05:30",
+      "source_turn": 12,
+      "type": "task_event",
+      "description": "Customer started a return request for AUR-220 Wireless Earbuds (SKU-AUR-220) in order ORD-74021.",
+      "importance": 5,
+      "importance_method": "rule",
+      "entities": {
+        "order_id": "ORD-74021",
+        "sku": "SKU-AUR-220"
+      },
+      "linked_memory_ids": [],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0010",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:32:00+05:30",
+      "source_turn": 17,
+      "type": "decision",
+      "description": "Customer chose exchange rather than refund for order ORD-66310. Customer's words: \"I also chose an exchange rather than a refund for my USB-C charger order ORD-66310 last month.\"",
+      "importance": 7,
+      "importance_method": "rule",
+      "entities": {
+        "order_id": "ORD-66310",
+        "decision": "chose exchange rather than refund"
+      },
+      "linked_memory_ids": [],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0011",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:36:00+05:30",
+      "source_turn": 19,
+      "type": "preference_update",
+      "description": "Customer changed their preferred delivery window from 18:00-21:00 to 19:00-21:00.",
+      "importance": 4,
+      "importance_method": "rule",
+      "entities": {
+        "key": "preferred_delivery_window"
+      },
+      "linked_memory_ids": [
+        "SM-0008",
+        "SM-0005"
+      ],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0012",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:38:00+05:30",
+      "source_turn": 20,
+      "type": "preference_update",
+      "description": "Customer changed their notification channel for routine updates from email to SMS.",
+      "importance": 4,
+      "importance_method": "rule",
+      "entities": {
+        "key": "notification_channel"
+      },
+      "linked_memory_ids": [
+        "SM-0009",
+        "SM-0002"
+      ],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0013",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:44:00+05:30",
+      "source_turn": 23,
+      "type": "booking",
+      "description": "Return pickup booked for SKU-AUR-220 in order ORD-74021 on 2026-11-28, 18:00-20:00 (slot PICK-20261128-E1); reason defective_left_earbud; RMA RMA-20261127-E8A44C41, booking PICKUP-20261127-360B23CD, status confirmed.",
+      "importance": 9,
+      "importance_method": "rule",
+      "entities": {
+        "order_id": "ORD-74021",
+        "sku": "SKU-AUR-220",
+        "slot_id": "PICK-20261128-E1",
+        "rma_id": "RMA-20261127-E8A44C41",
+        "booking_id": "PICKUP-20261127-360B23CD",
+        "pickup_date": "2026-11-28"
+      },
+      "linked_memory_ids": [],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0014",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:46:00+05:30",
+      "source_turn": 24,
+      "type": "forget_event",
+      "description": "Customer asked RecallBot to forget their saved delivery note.",
+      "importance": 3,
+      "importance_method": "rule",
+      "entities": {
+        "keys": [
+          "delivery_note"
+        ]
+      },
+      "linked_memory_ids": [],
+      "redacted": false
+    },
+    {
+      "episode_id": "EP-0015",
+      "user": "CUST-MAYA-1042",
+      "session": "A",
+      "timestamp": "2026-11-21T10:50:00+05:30",
+      "source_turn": 25,
+      "type": "reflection",
+      "description": "1. The customer reported a late delivery for order ORD-88216, indicating a preference for earlier delivery times, which was addressed by adjusting the preferred delivery window to 19:00-21:00. 2. The customer opted for an exchange rather than a refund for order ORD-66310, reflecting a stable preference for the exchange method. 3. A return pickup was booked for SKU-AUR-220 in order ORD-74021, with the customer's preferred return method and a confirmed RMA reference.",
+      "importance": 6,
+      "importance_method": "rule",
+      "entities": {
+        "session": "A"
+      },
+      "linked_memory_ids": [
+        "EP-0008",
+        "EP-0009",
+        "EP-0010",
+        "EP-0011",
+        "EP-0012",
+        "EP-0013"
+      ],
+      "redacted": false
+    }
+  ]
+}

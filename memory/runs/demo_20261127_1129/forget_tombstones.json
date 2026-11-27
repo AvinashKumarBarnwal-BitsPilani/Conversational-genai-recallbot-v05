@@ -1,0 +1,17 @@
+{
+  "tombstones": [
+    {
+      "user": "CUST-MAYA-1042",
+      "key": "delivery_note",
+      "fingerprints": [
+        {
+          "sha256": "1c4b2d1d6eaf00ff364af0a4ff4f5b98a0c0f5c6fb24d3db9833e0847003358b",
+          "words": 2
+        }
+      ],
+      "forgotten_at": "2026-11-21T10:46:00+05:30",
+      "source_turn": 24,
+      "session": "A"
+    }
+  ]
+}
