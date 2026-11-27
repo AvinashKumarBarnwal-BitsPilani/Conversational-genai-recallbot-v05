@@ -1,5 +1,8 @@
 # RecallBot — V05 Mini Project 1
 
+**Source code (GitHub):** https://github.com/AvinashKumarBarnwal-BitsPilani/Conversational-genai-recallbot-v05  
+**Demo video:** https://drive.google.com/file/d/1PhMvSISE-9Vf2P8JsMvJd4gturEVcDt0/view?usp=drive_link
+
 **Domain:** E-commerce orders and returns  
 **Variant:** V05  
 **Twist:** E — Small context window  
