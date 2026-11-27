@@ -7,10 +7,26 @@
 **Trim window:** k = 3 turns  
 **Local chat model configured:** `qwen3:1.7b` via Ollama
 
+## Demo video
+
+**Video link:** https://drive.google.com/file/d/1PhMvSISE-9Vf2P8JsMvJd4gturEVcDt0/view?usp=drive_link
+
+At most 5 minutes, viewable by anyone with the link (the same link is in `video_link.txt`). It shows Session A with a confirmed booking, the process restart, Session B recalling a fact and an episode, a forget request honoured after restart, a knowledge-base answer with its cited chunk, one failure case and the episodic scoring walkthrough. Mapping and AI-use declaration: [Task 6 — Demo and AI-Use Declaration](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md).
+
+## Report
+
+[`report.pdf`](report.pdf): main body 7 pages, sub-parts labelled 1 to 5(b), Appendix A (AI-use declaration) and Appendix B (prompts). It is built from [`docs/report/report_template.html`](docs/report/report_template.html); hit rates are computed from `results/hit_rate.csv` and the prompts are read from the code at build time:
+
+```powershell
+python scripts/make_hit_rate_figure.py      # images/retrieval-hit-rate-comparison.png from results/hit_rate.csv
+python scripts/build_report.py --bits-id <BITS_ID>   # prints with headless Microsoft Edge -> report.pdf
+```
 
 <!-- TOC -->
 ## Table of contents
 
+- [Demo video](#demo-video)
+- [Report](#report)
 - [About the Project and Target Scope](#about-the-project-and-target-scope)
 - [Target End-to-End Architecture](#target-end-to-end-architecture)
 - [Day 1 project assets](#day-1-project-assets)
@@ -287,7 +303,7 @@ Evaluated three retrieval strategies across two chunk sizes using 32 knowledge-b
 
 ![RecallBot Retrieval Performance](images/retrieval-hit-rate-comparison.png)
 
-[View / Open Retrieval Performance Chart](images/retrieval-hit-rate-comparison.png)
+[View / Open Retrieval Performance Chart](images/retrieval-hit-rate-comparison.png) · drawn only from `results/hit_rate.csv` by `python scripts/make_hit_rate_figure.py`
 
 
 ### Hit-Rate Breakdown by Question Category
@@ -321,9 +337,9 @@ To further analyse retrieval performance, the 32 evaluation questions were divid
 
 ### Key Observations
 
-1. **512-token chunks performed better overall:** Hybrid retrieval achieved 96.9% Hit Rate @5, compared with 84.4% using 128-token chunks.
+1. **512-token chunks performed better overall:** Hybrid retrieval achieved 96.9% Hit Rate @5, compared with 87.5% using 128-token chunks.
 
-2. **Hybrid improved first-result relevance:** With 512-token chunks, Hybrid achieved 75% at @1, outperforming Dense (71.9%) and BM25 (62.5%).
+2. **Hybrid improved first-result relevance:** With 512-token chunks, Hybrid achieved 78.1% at @1, outperforming Dense (75.0%) and BM25 (65.6%).
 
 3. **BM25 performed particularly well:** With 512-token chunks, BM25 achieved 100% Hit Rate @5 across the evaluation questions.
 
