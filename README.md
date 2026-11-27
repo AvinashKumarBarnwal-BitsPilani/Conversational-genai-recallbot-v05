@@ -142,7 +142,7 @@ Every real LLM, embedding and tool call must be timed and appended through `src.
 | Task 3(c–f) | Semantic, episodic, context engineering and twist | Completed — official run `t3_hm_01`, probes manually judged 13/16 — [evidence](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md) |
 | Task 4 | Evaluation, ablation and error analysis | Completed — 4 configs (5/7/12/15 of 16), rubric + judge agreement, 3 failures traced (P13, P15 fixed; P11 retrieval fixed, NLG fault remains); [evidence](docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md) |
 | Task 5 | Cost and scalability | Completed — GPT-4o monthly cost (trim $117.3k / $81.0k cached; hybrid_mem $72.2k, prefix too short to cache), 127.9 M vectors after a year, HNSW M=32 ef=200 recommended — [evidence](docs/task-evidence/Task-5-Cost-and-Scale.md) |
-| Task 6 | Demo video and AI-use declaration | Pending |
+| Task 6 | Demo video and AI-use declaration | AI-use declaration written; demo command ready (`python -m src.dialogue.demo_memory`); video to be recorded — [evidence](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md) |
 
 ## Task evidence documents
 
@@ -155,7 +155,7 @@ Each task has a detailed evidence document (with a summary figure and its own ta
 | Task 3 — Retrieval and long-term memory | 6 | [Task-3-Retrieval-and-Long-Term-Memory.md](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md) | [task3-summary.png](images/task3-summary.png) |
 | Task 4 — Evaluation and error analysis | 4 | [Task-4-Evaluation-and-Error-Analysis.md](docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md) | [task4-summary.png](images/task4-summary.png) |
 | Task 5 — Cost and scale | 2 | [Task-5-Cost-and-Scale.md](docs/task-evidence/Task-5-Cost-and-Scale.md) | [task5-summary.png](images/task5-summary.png) |
-| Task 6 — Demo video and AI-use declaration | 2 | [Task-6-Demo-and-AI-Use-Declaration.md](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md) (pending) | — |
+| Task 6 — Demo video and AI-use declaration | 2 | [Task-6-Demo-and-AI-Use-Declaration.md](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md) | — |
 
 Design notes: [Task 3 long-term memory design](docs/design/Task-3-Long-Term-Memory-Design.md).
 
@@ -1015,6 +1015,8 @@ python scripts/context_assembly_report.py --experiment t3_hm_01 --run-id t3_hm_0
 A rerun needs a new experiment name: memory directories, transcripts and run IDs are never overwritten. Runs `t3_hm_pilot_*` and `t3_calibration` are the pilot and threshold calibration; `t3_hm_01_budget_stress` was superseded by `t3_hm_01_budget_stress2`.
 
 ### Demo: Task 3 in one command
+
+> **Video checklist mapping and AI-use declaration:** [Task 6 — Demo Video and AI-Use Declaration](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md)
 
 ```powershell
 # Live: Session A and Session B run as two separate processes (~5-6 min with qwen3:1.7b), then verified

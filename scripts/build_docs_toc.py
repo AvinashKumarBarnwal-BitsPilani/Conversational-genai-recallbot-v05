@@ -24,6 +24,7 @@ DEFAULT_FILES = {
     "docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md": (2, 3),
     "docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md": (2, 3),
     "docs/task-evidence/Task-5-Cost-and-Scale.md": (2, 3),
+    "docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md": (2, 3),
 }
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*?)\s*#*\s*$")
 FENCE_RE = re.compile(r"^\s*(```|~~~)")

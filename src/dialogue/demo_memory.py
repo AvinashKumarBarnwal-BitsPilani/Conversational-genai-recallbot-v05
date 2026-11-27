@@ -157,15 +157,32 @@ def show_session_b(run: dict) -> None:
           f"in Session B transcript: {'YES' if in_b else 'no'}")
 
 
-def show_failure(run: dict) -> None:
-    banner("5", "An honest failure case (P13) and where it comes from", "one failure case")
-    probe, row = run["probes"]["P13"], answer_of(run, "P13")
+FAILURE_NOTES = {
+    "P11": [
+        "Stage: knowledge-base retrieval, then the reply. 'What happens next after the pickup?' shares no",
+        "words with the refund-lifecycle chunk KB-003-C128-0001 (ranked 12th). Task 4(b) added a query",
+        "rewrite that now ranks it 1st, yet the 1.7B model still says the carrier inspects the item:",
+        "the right text is in the prompt but misread (prompt/NLG fault). Evidence:",
+        "results/task4_error_analysis.json and docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md.",
+    ],
+    "P13": [
+        "Stage: memory write, surfacing as an episodic ranking error. The decision episode did not",
+        "mention the 'USB-C charger', so the booking episode (importance 9) ranked first. Fixed in",
+        "Task 4(b) by storing the customer's own words (run t4fix_hybrid_mem). Evidence: Q-E03 in",
+        "results/task3_episodic_weight_comparison.csv and results/task4_error_analysis.json.",
+    ],
+}
+
+
+def show_failure(run: dict, probe_id: str) -> None:
+    banner("5", f"An honest failure case ({probe_id}) and where it comes from", "one failure case")
+    probe, row = run["probes"][probe_id], answer_of(run, probe_id)
     print(f"  Q:        {probe['question']}")
     print(f"  Expected: {probe['expected']}")
     print(wrap(f"Got:      {row['assistant_response']}", indent="  "))
-    print("\n  Stage: episodic retrieval scoring. The decision episode was not ranked first, so the booking")
-    print("  episode (importance 9, more recent) was answered instead. Evidence: query Q-E03 in")
-    print("  results/task3_episodic_weight_comparison.csv (gold rank 3 under weighting A).")
+    print()
+    for line in FAILURE_NOTES.get(probe_id, ["See docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md."]):
+        print(f"  {line}")
 
 
 def show_scoring(experiment: str, run: dict, query: str) -> None:
@@ -223,6 +240,8 @@ def main() -> int:
     parser.add_argument("--experiment", default=None, help="experiment to verify (default: a new demo run)")
     parser.add_argument("--no-scoring", action="store_true", help="skip section 6 (it makes 1 logged embed call)")
     parser.add_argument("--query", default="What did we arrange for my earbuds last time?")
+    parser.add_argument("--failure", default="P11", choices=sorted(FAILURE_NOTES),
+                        help="probe shown in section 5 (P11 still fails with the current code)")
     args = parser.parse_args()
 
     experiment = args.experiment or f"demo_{datetime.now().strftime('%Y%m%d_%H%M')}"
@@ -239,7 +258,7 @@ def main() -> int:
     show_restart(run)
     show_memory(run)
     show_session_b(run)
-    show_failure(run)
+    show_failure(run, args.failure)
     if not args.no_scoring:
         show_scoring(experiment, run, args.query)
     show_budget(run)
