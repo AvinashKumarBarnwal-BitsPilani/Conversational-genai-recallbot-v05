@@ -1,0 +1,1247 @@
+{
+  "experiment": "sp_before_hybrid_mem",
+  "config": "hybrid_mem",
+  "session": "C",
+  "part": 2,
+  "run_id": "sp_before_hybrid_mem_C2",
+  "user_id": "CUST-MAYA-1042",
+  "model": "qwen3:1.7b",
+  "turns": [
+    {
+      "turn": 62,
+      "probe_id": "S2",
+      "user_message": "I need to return the laptop bag from order ORD-88216.",
+      "assistant_response": "What is the reason for returning the laptop bag?",
+      "intent": "start_return",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "failed",
+          "error_type": "ValueError"
+        },
+        {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216"
+        },
+        {
+          "tool": "episodic_memory_write",
+          "status": "failed",
+          "error_type": "ValueError"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "C",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 62,
+        "last_user_text": "I need to return the laptop bag from order ORD-88216.",
+        "current_intent": "start_return",
+        "current_entities": {
+          "order_ids": [
+            "ORD-88216"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-88216",
+          "sku": "SKU-BAG-410",
+          "reason": null,
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "reason",
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-BAG-410",
+            "name": "Everyday Laptop Bag"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216",
+          "item_count": 1
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 566,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 32,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 17
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 17
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 159
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 12
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 17,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 188,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 32,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 63,
+      "probe_id": "S2",
+      "user_message": "The strap is damaged and the stitching has come loose.",
+      "assistant_response": "Please provide the date you prefer for the pickup, and the time window during which you're available. Also, please share the pickup address summary.",
+      "intent": "provide_return_reason",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "failed",
+          "error_type": "ValueError"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "C",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 63,
+        "last_user_text": "The strap is damaged and the stitching has come loose.",
+        "current_intent": "provide_return_reason",
+        "current_entities": {
+          "return_reason": "damaged"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-88216",
+          "sku": "SKU-BAG-410",
+          "reason": "damaged",
+          "pickup_date": null,
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_date",
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-BAG-410",
+            "name": "Everyday Laptop Bag"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216",
+          "item_count": 1
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 592,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 42,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 15
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 11
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 159
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 9
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 15,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 27,
+            "ids": [
+              "HISTORY-1"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 179,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 42,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 64,
+      "probe_id": "S2",
+      "user_message": "Saturday, 28 November 2026 would work.",
+      "assistant_response": "Please provide the pickup address summary.",
+      "intent": "provide_pickup_date",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "failed",
+          "error_type": "ValueError"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "C",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 64,
+        "last_user_text": "Saturday, 28 November 2026 would work.",
+        "current_intent": "provide_pickup_date",
+        "current_entities": {
+          "date": "2026-11-28"
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-88216",
+          "sku": "SKU-BAG-410",
+          "reason": "damaged",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": null,
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_time_window",
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-BAG-410",
+            "name": "Everyday Laptop Bag"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216",
+          "item_count": 1
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 652,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 52,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 15
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 40
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 14
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 166
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 9
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 15,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 67,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 189,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 52,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 65,
+      "probe_id": "S2",
+      "user_message": "Please make it after 8 pm.",
+      "assistant_response": "Please provide the pickup address summary.",
+      "intent": "provide_pickup_window",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "failed",
+          "error_type": "ValueError"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "C",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 65,
+        "last_user_text": "Please make it after 8 pm.",
+        "current_intent": "provide_pickup_window",
+        "current_entities": {
+          "time_window": {
+            "start": "20:00",
+            "end": null,
+            "raw": "after 8 pm"
+          }
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-88216",
+          "sku": "SKU-BAG-410",
+          "reason": "damaged",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "20:00",
+            "end": null,
+            "raw": "after 8 pm"
+          },
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-BAG-410",
+            "name": "Everyday Laptop Bag"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216",
+          "item_count": 1
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 692,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 27
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 40
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 21
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 8
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 179
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 7
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 88,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 194,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": []
+      }
+    },
+    {
+      "turn": 66,
+      "probe_id": "S3",
+      "user_message": "How many days do I have to return headphones now, and is that different from the 2025 policy?",
+      "assistant_response": "The current return policy for non-personalised products is 30 calendar days from delivery. For electronics like headphones, the return window is 14 calendar days from delivery. The 7-day rule from 2025 no longer applies. You have 14 days from delivery to return the headphones. Is there any other detail you'd like to check?\n\nSources: KB-001 / KB-001-C128-0006 (version 1.0); KB-002 / KB-002-C128-0002 (version 2.0); KB-001 / KB-001-C128-0003 (version 1.0)",
+      "intent": "knowledge_base_query",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "failed",
+          "error_type": "ValueError"
+        },
+        {
+          "tool": "search_kb",
+          "status": "success",
+          "candidate_count": 8,
+          "result_count": 3,
+          "version_filter": "none"
+        }
+      ],
+      "sources": [
+        "KB-001 / KB-001-C128-0006 (version 1.0)",
+        "KB-002 / KB-002-C128-0002 (version 2.0)",
+        "KB-001 / KB-001-C128-0003 (version 1.0)"
+      ],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "C",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 66,
+        "last_user_text": "How many days do I have to return headphones now, and is that different from the 2025 policy?",
+        "current_intent": "knowledge_base_query",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-88216",
+          "sku": "SKU-BAG-410",
+          "reason": "damaged",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "20:00",
+            "end": null,
+            "raw": "after 8 pm"
+          },
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-BAG-410",
+            "name": "Everyday Laptop Bag"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216",
+          "item_count": 1
+        }
+      },
+      "context_assembly": {
+        "profile": "knowledge",
+        "total_input_tokens": 1203,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 464,
+        "overhead_tokens": 69,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 40
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 21
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 15
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 24
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 178
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 44
+          },
+          {
+            "id": "KB-001-C128-0006",
+            "component": "retrieved_knowledge",
+            "tokens": 125
+          },
+          {
+            "id": "KB-002-C128-0002",
+            "component": "retrieved_knowledge",
+            "tokens": 169
+          },
+          {
+            "id": "KB-001-C128-0003",
+            "component": "retrieved_knowledge",
+            "tokens": 170
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 76,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 246,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "retrieved_knowledge",
+            "memory_type": "semantic_kb",
+            "home": "external (KB index, hybrid RRF)",
+            "tokens": 464,
+            "ids": [
+              "KB-001-C128-0006",
+              "KB-002-C128-0002",
+              "KB-001-C128-0003"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 69,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 67,
+      "probe_id": "S4",
+      "user_message": "RET-E14?",
+      "assistant_response": "Please provide the pickup address summary.",
+      "intent": "unknown",
+      "nlg_status": "qwen",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "failed",
+          "error_type": "ValueError"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "C",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 67,
+        "last_user_text": "RET-E14?",
+        "current_intent": "unknown",
+        "current_entities": {
+          "domain_codes": [
+            "RET-E14"
+          ]
+        },
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-88216",
+          "sku": "SKU-BAG-410",
+          "reason": "damaged",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "20:00",
+            "end": null,
+            "raw": "after 8 pm"
+          },
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-BAG-410",
+            "name": "Everyday Laptop Bag"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216",
+          "item_count": 1
+        }
+      },
+      "context_assembly": {
+        "profile": "task",
+        "total_input_tokens": 816,
+        "input_budget": 1856,
+        "output_reserve": 160,
+        "context_window": 2048,
+        "retrieved_tokens": 0,
+        "overhead_tokens": 62,
+        "token_count_method": "qwen3_chat_template+ollama_offset",
+        "included": [
+          {
+            "id": "system_prompt_v2",
+            "component": "system",
+            "tokens": 274
+          },
+          {
+            "id": "TOOLS",
+            "component": "tools",
+            "tokens": 55
+          },
+          {
+            "id": "WORKFLOW-STEP",
+            "component": "instructions",
+            "tokens": 19
+          },
+          {
+            "id": "HISTORY-1",
+            "component": "conversation_history",
+            "tokens": 21
+          },
+          {
+            "id": "HISTORY-2",
+            "component": "conversation_history",
+            "tokens": 15
+          },
+          {
+            "id": "HISTORY-3",
+            "component": "conversation_history",
+            "tokens": 182
+          },
+          {
+            "id": "USER-TURN",
+            "component": "current_task",
+            "tokens": 5
+          },
+          {
+            "id": "STATE",
+            "component": "current_task",
+            "tokens": 176
+          },
+          {
+            "id": "DRAFT",
+            "component": "current_task",
+            "tokens": 7
+          }
+        ],
+        "dropped": [],
+        "component_table": [
+          {
+            "component": "system",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 274,
+            "ids": [
+              "system_prompt_v2"
+            ]
+          },
+          {
+            "component": "tools",
+            "memory_type": "procedural",
+            "home": "model-native (prompt)",
+            "tokens": 55,
+            "ids": [
+              "TOOLS"
+            ]
+          },
+          {
+            "component": "instructions",
+            "memory_type": "procedural",
+            "home": "external file skills/ -> prompt",
+            "tokens": 19,
+            "ids": [
+              "WORKFLOW-STEP"
+            ]
+          },
+          {
+            "component": "conversation_history",
+            "memory_type": "short_term",
+            "home": "model-native (prompt)",
+            "tokens": 218,
+            "ids": [
+              "HISTORY-1",
+              "HISTORY-2",
+              "HISTORY-3"
+            ]
+          },
+          {
+            "component": "current_task",
+            "memory_type": "working",
+            "home": "model-native (prompt)",
+            "tokens": 188,
+            "ids": [
+              "USER-TURN",
+              "STATE",
+              "DRAFT"
+            ]
+          },
+          {
+            "component": "chat template and section headings",
+            "memory_type": "-",
+            "home": "model-native",
+            "tokens": 62,
+            "ids": []
+          }
+        ],
+        "prompt_version": "system_prompt_v2",
+        "dropped_by_trim": [
+          {
+            "id": "EXCHANGE-1",
+            "component": "conversation_history",
+            "tokens": 27,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          },
+          {
+            "id": "EXCHANGE-2",
+            "component": "conversation_history",
+            "tokens": 40,
+            "reason": "trim strategy keeps the last 3 exchanges"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 68,
+      "probe_id": "S5",
+      "user_message": "Last time you told me I would get a free replacement charger with my refund, right?",
+      "assistant_response": "I don't have that information in my saved details or the ShopSphere knowledge base, so I won't guess.",
+      "intent": "episodic_memory_query",
+      "nlg_status": "verbatim",
+      "nlg_error": null,
+      "tool_calls": [
+        {
+          "tool": "memory_search",
+          "status": "failed",
+          "error_type": "ValueError"
+        }
+      ],
+      "sources": [],
+      "completed": false,
+      "dialogue_state": {
+        "session_id": "C",
+        "user_id": "CUST-MAYA-1042",
+        "turn": 68,
+        "last_user_text": "Last time you told me I would get a free replacement charger with my refund, right?",
+        "current_intent": "episodic_memory_query",
+        "current_entities": {},
+        "active_task": "return_pickup",
+        "task_status": "collecting_slots",
+        "slots": {
+          "customer_id": "CUST-MAYA-1042",
+          "order_id": "ORD-88216",
+          "sku": "SKU-BAG-410",
+          "reason": "damaged",
+          "pickup_date": "2026-11-28",
+          "pickup_time_window": {
+            "start": "20:00",
+            "end": null,
+            "raw": "after 8 pm"
+          },
+          "pickup_address_summary": null,
+          "explicit_confirmation": false
+        },
+        "missing_slots": [
+          "pickup_address_summary",
+          "explicit_confirmation"
+        ],
+        "available_order_items": [
+          {
+            "sku": "SKU-BAG-410",
+            "name": "Everyday Laptop Bag"
+          }
+        ],
+        "clarification_required": false,
+        "clarification_prompt": null,
+        "pending_confirmation": false,
+        "confirmation_status": "not_requested",
+        "confirmation_mismatch": false,
+        "pending_action": null,
+        "database_write_authorized": false,
+        "last_tool_result": {
+          "tool": "get_order",
+          "status": "success",
+          "order_id": "ORD-88216",
+          "item_count": 1
+        }
+      },
+      "context_assembly": null
+    }
+  ],
+  "session_info": {
+    "run_id": "sp_before_hybrid_mem_C2",
+    "pid": 139148,
+    "started_at": "2026-11-28T11:40:15+05:30",
+    "loaded_hashes": {
+      "semantic_facts.json": "94b7c8d733d01a4b24de27bb6a12403f34eebcf21c5ea10b784844d6890b2e1a",
+      "semantic_vectors.npy": "f93fcb8f5704802c98929d6b215996fd72238ce55539034a3387866d2512f3f9",
+      "semantic_index.json": "f6634be8ba7ec4ffadd8ddd6de48388a82af3867fdc35236d76df2822c9707be",
+      "episodes.json": "70258639c06cc6e556f6b02d5cf9dfadefd44d2f4af07b267ad2d7e82bfd6f53",
+      "episodic_vectors.npy": "63f49ad4e01d0044046fc04490830123ece4d340b549919d82917c46c6010da6",
+      "episodic_index.json": "4614da7ae46b572998ea363a3bdee91ce06b74624192ff6b82d917a32475d981",
+      "forget_tombstones.json": "5a5a2bb538aba2f83427c6c2c01287ba4760ea608905b27eafd72a488aa40469"
+    },
+    "loaded_hashes_match": true,
+    "part1_pid": 127844,
+    "different_process_from_part1": true,
+    "saved_hashes": {
+      "semantic_facts.json": "94b7c8d733d01a4b24de27bb6a12403f34eebcf21c5ea10b784844d6890b2e1a",
+      "semantic_vectors.npy": "f93fcb8f5704802c98929d6b215996fd72238ce55539034a3387866d2512f3f9",
+      "semantic_index.json": "f6634be8ba7ec4ffadd8ddd6de48388a82af3867fdc35236d76df2822c9707be",
+      "episodes.json": "70258639c06cc6e556f6b02d5cf9dfadefd44d2f4af07b267ad2d7e82bfd6f53",
+      "episodic_vectors.npy": "63f49ad4e01d0044046fc04490830123ece4d340b549919d82917c46c6010da6",
+      "episodic_index.json": "4614da7ae46b572998ea363a3bdee91ce06b74624192ff6b82d917a32475d981",
+      "forget_tombstones.json": "5a5a2bb538aba2f83427c6c2c01287ba4760ea608905b27eafd72a488aa40469"
+    },
+    "finished_at": "2026-11-28T11:40:40+05:30",
+    "status": "complete",
+    "last_turn": 68,
+    "db_sha256_before": "6ff7b938cea25dc1da976074be9ddf20ba0aa880b0581f60cc31fbd3212b0b0e",
+    "db_sha256_after": "6ff7b938cea25dc1da976074be9ddf20ba0aa880b0581f60cc31fbd3212b0b0e",
+    "memory_counts": {
+      "active_facts": 6,
+      "all_fact_records": 8,
+      "episodes": 14
+    },
+    "db_unchanged": true
+  }
+}

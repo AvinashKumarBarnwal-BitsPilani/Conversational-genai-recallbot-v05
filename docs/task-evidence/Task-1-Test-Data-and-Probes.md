@@ -144,7 +144,7 @@ Knowledge-base questions are included in both sessions of the scripted conversat
 
 The two Twist E probes check (1) enforcement of the 2,048-token context budget, including prioritisation and recording what is cut, and (2) retrieval of the latest delivery preference even when the fact is older than the last three raw turns.
 
-The five surprise probes released by the professor on 24 November are a separate Task 4(c) input. `data/surprise_probes.json` is intentionally a pending-release placeholder at this stage; no surprise probes have been invented or pre-populated.
+The five surprise probes released by the professor on 24 November are a separate Task 4(c) input. `data/surprise_probes.json` now holds our adapted wording of S1–S5; the results are in [Surprise_Probes_Findings.md](Surprise_Probes_Findings.md).
 
 ## 3. Validation and test evidence
 

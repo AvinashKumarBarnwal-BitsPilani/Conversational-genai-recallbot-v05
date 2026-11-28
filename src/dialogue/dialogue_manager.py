@@ -42,9 +42,16 @@ TASK4_CONFIGS = frozenset({"no_rag", "hybrid", "hybrid_sem", "hybrid_mem"})
 # Turns that never need long-term memory retrieval (saves embedding calls).
 NO_RETRIEVAL_INTENTS = frozenset({
     "greeting", "small_talk", "closing", "confirm_action", "cancel_action", "forget_request",
-    "forgotten_memory_query", "provide_user_fact", "update_user_fact",
+    "forgotten_memory_query", "provide_user_fact", "update_user_fact", "list_memories",
 })
 MEMORY_QUERY_INTENTS = frozenset({"semantic_memory_query", "episodic_memory_query"})
+# Surprise probe S1: the event types listed back to the customer. Preference
+# events repeat fact values (including superseded ones), reflections are model
+# text and forget events concern deleted data, so none of them is listed.
+LISTED_EPISODE_TYPES = frozenset({"complaint", "task_event", "decision", "booking"})
+LISTED_EPISODE_LIMIT = 5
+# Surprise probe S5: a claim about what the assistant itself said earlier.
+_ASSISTANT_CLAIM_RE = re.compile(r"\byou (?:told|said|promised|mentioned)\b", re.I)
 _NEXT_STAGE_RE = re.compile(r"\bwhat happens next\b|\bwhat(?:'s| is) next\b|\bnext step\b|\bafter (?:the )?pickup\b", re.I)
 
 
@@ -312,7 +319,9 @@ class DialogueManager:
         if intent == "semantic_memory_query":
             return self._answer_semantic(text, nlu, calls)
         if intent == "episodic_memory_query":
-            return self._answer_episodic(nlu, calls)
+            return self._answer_episodic(text, nlu, calls)
+        if intent == "list_memories":
+            return self._answer_list_memories(nlu, calls)
 
         if intent == "start_return":
             return self._start_return(text, nlu, calls)
@@ -452,9 +461,51 @@ class DialogueManager:
             nlu=nlu, tool_calls=calls,
         )
 
-    def _answer_episodic(self, nlu: Mapping[str, Any], calls: list[dict[str, Any]]) -> dict[str, Any]:
+    def _answer_list_memories(self, nlu: Mapping[str, Any], calls: list[dict[str, Any]]) -> dict[str, Any]:
+        """List current facts and recent events; nothing deleted or superseded (probe S1)."""
+        if not (self._semantic_on() or self._episodic_on()):
+            return self._no_memory_answer(nlu, calls)
+        lines: list[str] = []
+        superseded: set[str] = set()
+        if self._semantic_on():
+            facts = sorted(self.memory.semantic.active_facts(self.user_id), key=lambda f: f.memory_id)
+            active_values = {f.value.casefold() for f in facts}
+            superseded = {r.value.casefold() for r in self.memory.semantic.all_records(self.user_id)
+                          if r.status != "active" and r.value.casefold() not in active_values}
+            lines += [f"- {key_label(f.key)}: {f.value} [{f.memory_id}]" for f in facts]
+        events: list[Any] = []
+        if self._episodic_on():
+            for episode in sorted(self.memory.episodic.episodes(self.user_id), key=lambda e: e.timestamp, reverse=True):
+                text = episode.description.casefold()
+                if (episode.type in LISTED_EPISODE_TYPES and not self.memory.contains_forgotten(episode.description)
+                        and not any(re.search(rf"\b{re.escape(v)}\b", text) for v in superseded)):
+                    events.append(episode)
+                if len(events) == LISTED_EPISODE_LIMIT:
+                    break
+        calls.append({"tool": "memory_list", "status": "success",
+                      "facts": [line.rsplit("[", 1)[1].rstrip("]") for line in lines],
+                      "episodes": [e.episode_id for e in events]})
+        if not lines and not events:
+            return self._result(FALLBACK_SENTENCE, nlu=nlu, tool_calls=calls, verbatim=True)
+        reply = "Here is what I currently have saved about you:\n" + ("\n".join(lines) or "- no saved details")
+        if events:
+            reply += "\nRecent events:\n" + "\n".join(
+                f"- {e.timestamp[:10]} [{e.episode_id}]: {e.description}" for e in events)
+        # Verbatim: the list comes straight from storage, so the model cannot add
+        # a deleted or outdated value back in.
+        return self._result(reply, nlu=nlu, tool_calls=calls, verbatim=True)
+
+    def _answer_episodic(self, text: str, nlu: Mapping[str, Any], calls: list[dict[str, Any]]) -> dict[str, Any]:
         if not self._episodic_on():
             return self._no_memory_answer(nlu, calls)
+        if _ASSISTANT_CLAIM_RE.search(text):
+            # RecallBot stores customer events, not its own past replies, so a
+            # claim about what it said can never be confirmed (probe S5).
+            return self._result(
+                "I have no record of telling you that, so I can't confirm it. "
+                "If you share the order ID, I can check the order and the current policy for you.",
+                nlu=nlu, tool_calls=calls, verbatim=True,
+            )
         scored = list(self._turn_memory["episodes"])
         if not scored:
             return self._result(FALLBACK_SENTENCE, nlu=nlu, tool_calls=calls, verbatim=True)
@@ -1006,7 +1057,9 @@ class DialogueManager:
             self._render_booking_summary(action_arguments)
             + alternative_text
             + "\n\nWould you like me to confirm this pickup booking? Please reply yes or no.",
-            nlu=nlu, tool_calls=calls, needs_user_input=True,
+            # Verbatim (surprise probe S2): the model once rewrote this request
+            # as "yes / BOOKING CONFIRMED" although nothing was booked.
+            nlu=nlu, tool_calls=calls, needs_user_input=True, verbatim=True,
         )
 
     def _handle_confirmation(self, nlu: Mapping[str, Any], calls: list[dict[str, Any]]) -> dict[str, Any]:

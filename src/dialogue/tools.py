@@ -362,7 +362,16 @@ class RecallBotToolGateway:
             order = self._find_order(str(order_id))
             if str(order.get("customer_id", "")).casefold() != str(customer_id).casefold():
                 raise OrderOwnershipError("The requested order does not belong to this customer")
-            return deepcopy(dict(order))
+            result = deepcopy(dict(order))
+            if not result.get("address_summary"):
+                # An order without its own address uses the customer's default
+                # saved address; it is still shown in the summary for confirmation.
+                customer = next((c for c in self._load_orders().get("customers", [])
+                                 if str(c.get("customer_id", "")).casefold() == str(customer_id).casefold()), {})
+                if customer.get("default_address_summary"):
+                    result["address_summary"] = customer["default_address_summary"]
+                    result["address_source"] = "customer_default"
+            return result
 
         return self._run_logged_tool(
             tool_name="get_order", model="json-order-database", request=request, operation=operation
