@@ -4,7 +4,8 @@
       "customer_id": "CUST-MAYA-1042",
       "display_name": "Maya Rao",
       "membership_tier": "Gold",
-      "city": "Bengaluru"
+      "city": "Bengaluru",
+      "default_address_summary": "Customer saved Bengaluru delivery address (masked summary)"
     }
   ],
   "orders": [

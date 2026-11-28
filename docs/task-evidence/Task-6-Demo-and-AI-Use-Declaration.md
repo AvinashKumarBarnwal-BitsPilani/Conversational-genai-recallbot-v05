@@ -14,7 +14,9 @@
 
 ## 6(a) Demo video
 
-**Video link:** see `video_link.txt` in the submission root *(to be added after recording; viewable by anyone with the link, at most 5 minutes).*
+**Video link:** https://drive.google.com/file/d/1PhMvSISE-9Vf2P8JsMvJd4gturEVcDt0/view?usp=drive_link (also in `video_link.txt`; viewable by anyone with the link).
+
+**Length:** We tried to keep the demo video within 5 minutes, but because of the amount of content it had to cover, the video is about 6 minutes 45 seconds long.
 
 The demo is driven by one command, which runs Session A and Session B as two separate processes and then prints the evidence for each item on the checklist:
 

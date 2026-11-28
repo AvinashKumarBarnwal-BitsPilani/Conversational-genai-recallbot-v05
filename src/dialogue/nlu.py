@@ -209,6 +209,15 @@ _INTENT_RULES: tuple[tuple[str, re.Pattern[str], str], ...] = (
     ("forget_request", re.compile(
         rf"{_NOT_QUESTION}.*(?:\b(forget|delete|remove)\b.*\b(saved|memory|remember|note|fact|preference)\b|\bforget\b)",
         re.I | re.S), "R02_FORGET"),
+    # Surprise probes S1/S4 (Task 4(c)): a request to list every saved detail,
+    # and a message that is only a knowledge-base code, e.g. "RET-E14?".
+    ("list_memories", re.compile(
+        r"\b(?:list|show|tell me|give me)\b.*\b(?:everything|all)\b.*\b(?:remember|know|saved|stored)\b"
+        r"|\bwhat (?:else )?do you (?:currently )?(?:remember|know) about me\b", re.I | re.S),
+        "R02B_LIST_MEMORIES"),
+    ("knowledge_base_query", re.compile(
+        # Order, SKU, RMA, slot and customer IDs are slot values, not KB codes.
+        r"^\s*(?!(?:SKU|CUST|PICK|PICKUP)-|(?:ORD|RMA)-\d)[A-Z][A-Z0-9]+(?:-[A-Z0-9]+)+\s*\??\s*$"), "R02C_BARE_KB_CODE"),
     ("cancel_action", re.compile(r"^\s*(?:no,?\s*)?(?:cancel (?:the|this|that) (?:pickup|booking|return)|cancel that|do not book|don't book|do not proceed|don't proceed|stop the booking|never mind|nevermind)\b", re.I), "R03A_CANCEL"),
     ("confirm_action", re.compile(r"^\s*(yes|yep|i confirm|confirmed|go ahead|please proceed)\b", re.I), "R03_CONFIRM"),
     ("request_task_summary", re.compile(r"\b(repeat|show|read back)\b.*\b(summary|details|pickup|booking)\b|\bcomplete .*summary\b", re.I), "R04_TASK_SUMMARY"),
@@ -222,7 +231,9 @@ _INTENT_RULES: tuple[tuple[str, re.Pattern[str], str], ...] = (
         r"\b(what did we arrange|what problem did i ask you to register|what did i book|what happened last time)\b"
         rf"|{_IS_QUESTION}.*\b(?:did|have) (?:we|i|you)\b.*\b(?:arrange|book|schedule|register|report|complain|"
         r"choose|chose|decide|make|start|ask you to (?:register|record|note|log))\w*\b"
-        rf"|{_IS_QUESTION}.*\b(?:last time|last session|earlier session|previous(?:ly)? (?:session|visit|chat))\b",
+        rf"|{_IS_QUESTION}.*\b(?:last time|last session|earlier session|previous(?:ly)? (?:session|visit|chat))\b"
+        # A claim about what the assistant said before (surprise probe S5).
+        rf"|{_IS_QUESTION}.*\byou (?:told|said|promised|mentioned)\b",
         re.I | re.S), "R09_EPISODIC_QUERY"),
     ("semantic_memory_query", re.compile(
         r"\b(what .* do i currently prefer|what do i prefer|what is my current preference)\b"

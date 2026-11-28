@@ -144,7 +144,7 @@ After-fix `hybrid_mem` total: **15/16** (`t4fix_hybrid_mem`, manually judged). A
 
 ## 4(c) Surprise probes
 
-On 24 November 2026 the instructor told the class that **no extra work is required for the surprise probes**; new questions will instead be put to the model directly. `data/surprise_probes.json` records this; no probes were invented. Unseen questions are handled by the general mechanisms evaluated above: intent-dependent memory thresholds, active-only KB evidence, and the exact fallback sentence when nothing relevant is found (N 2/2 in every configuration).
+The instructor's five surprise probes (S1–S5) were adapted in `data/surprise_probes.json` and run as **Session C** on `hybrid_mem`, in two processes with a restart between them. The first results were **2/5** (S3 and, by luck, S5). Six fixes followed, each at the failing stage: the Session C clock, the S1 intent and memory list, the S4 bare-code routing, the S5 claim check, the S2 default address and a verbatim confirmation request. After them the result was **5/5**. All four runs, the evidence and the verbatim replies are in [Surprise_Probes_Findings.md](Surprise_Probes_Findings.md).
 
 ## Limitations found in Task 4
 

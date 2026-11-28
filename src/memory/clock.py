@@ -13,12 +13,14 @@ from datetime import datetime, timedelta, timezone
 IST = timezone(timedelta(hours=5, minutes=30))
 
 # Session A follows the dataset's date_context (2026-11-21); Session B is the
-# customer's return visit three days later.
+# customer's return visit three days later. Session C (the instructor's
+# surprise probes, Task 4(c)) is a further visit on 28 November.
 SESSION_STARTS: dict[str, datetime] = {
     "A": datetime(2026, 11, 21, 10, 0, tzinfo=IST),
     "B": datetime(2026, 11, 24, 10, 0, tzinfo=IST),
+    "C": datetime(2026, 11, 28, 10, 0, tzinfo=IST),
 }
-SESSION_FIRST_TURNS: dict[str, int] = {"A": 1, "B": 26}
+SESSION_FIRST_TURNS: dict[str, int] = {"A": 1, "B": 26, "C": 60}
 MINUTES_PER_TURN = 2
 
 

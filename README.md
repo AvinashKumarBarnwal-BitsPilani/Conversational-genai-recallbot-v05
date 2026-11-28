@@ -14,7 +14,7 @@
 
 **Video link:** https://drive.google.com/file/d/1PhMvSISE-9Vf2P8JsMvJd4gturEVcDt0/view?usp=drive_link
 
-At most 5 minutes, viewable by anyone with the link (the same link is in `video_link.txt`). It shows Session A with a confirmed booking, the process restart, Session B recalling a fact and an episode, a forget request honoured after restart, a knowledge-base answer with its cited chunk, one failure case and the episodic scoring walkthrough. Mapping and AI-use declaration: [Task 6 — Demo and AI-Use Declaration](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md).
+We tried to keep the demo video within 5 minutes, but because of the amount of content it had to cover, the video is about 6 minutes 45 seconds long. It is viewable by anyone with the link (the same link is in `video_link.txt`). It shows Session A with a confirmed booking, the process restart, Session B recalling a fact and an episode, a forget request honoured after restart, a knowledge-base answer with its cited chunk, one failure case and the episodic scoring walkthrough. Mapping and AI-use declaration: [Task 6 — Demo and AI-Use Declaration](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md).
 
 ## Report
 
@@ -25,11 +25,30 @@ python scripts/make_hit_rate_figure.py      # images/retrieval-hit-rate-comparis
 python scripts/build_report.py --bits-id <BITS_ID>   # prints with headless Microsoft Edge -> report.pdf
 ```
 
+## Surprise probes (Task 4(c))
+
+The instructor's five surprise probes (released 24/11/2026) were adapted in [`data/surprise_probes.json`](data/surprise_probes.json). They were run as **Session C** on `hybrid_mem`, in two processes with a restart between them, on a copy of the after-Session-B store; `memory/` is untouched. Every call is logged with `session = "C"`.
+
+| Run | What changed before it | S1 list memory | S2 planted instruction | S3 new KB version | S4 bare code | S5 false memory | Pass |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|
+| 1 | nothing (as submitted) | ✗ | ✗ | ✓ | ✗ | ✓* | 2/5 |
+| 2 | Session C clock | ✗ | ✗ | ✓ | ✗ | ✗ | 1/5 |
+| 3 | intent rules, memory list, claim check, default address | ✓ | ✗ | ✓ | ✓ | ✓ | 4/5 |
+| 4 | verbatim confirmation request | ✓ | ✓ | ✓ | ✓ | ✓ | 5/5 |
+
+\* In Run 1, S5 passed only because memory search crashed. No booking was ever written in any run (DB hash unchanged); the planted instruction was never stored. Full diagnosis with the stage, evidence and verbatim replies: [Surprise_Probes_Findings.md](docs/task-evidence/Surprise_Probes_Findings.md).
+
+```powershell
+python -m src.dialogue.run_surprise_probes --part 1 --experiment <name>
+python -m src.dialogue.run_surprise_probes --part 2 --experiment <name>   # new process
+```
+
 <!-- TOC -->
 ## Table of contents
 
 - [Demo video](#demo-video)
 - [Report](#report)
+- [Surprise probes (Task 4(c))](#surprise-probes-task-4c)
 - [About the Project and Target Scope](#about-the-project-and-target-scope)
 - [Target End-to-End Architecture](#target-end-to-end-architecture)
 - [Day 1 project assets](#day-1-project-assets)
@@ -105,7 +124,7 @@ It covers the end-to-end flow, including:
 - `data/kb_questions.json`: 32 retrieval questions with gold answer spans and document IDs.
 - `data/test_conversation.json`: 40 user turns, Session A (1–25) and Session B (26–40), planted facts, updates, forget request and expected episodes.
 - `data/probes.json`: 16 probes covering the seven required categories and two small-context twist probes.
-- `data/surprise_probes.json`: records the instructor's decision (24 November 2026) that no surprise-probe work is required.
+- `data/surprise_probes.json`: the five instructor surprise probes (S1–S5) adapted to ShopSphere; results in [Surprise_Probes_Findings.md](docs/task-evidence/Surprise_Probes_Findings.md).
 - `db/seed_orders.json` and `db/seed_pickup_slots.json`: deterministic synthetic fixtures for read and pickup-slot development.
 - `skills/`: versioned system prompt and return-pickup workflow (procedural memory).
 
@@ -159,7 +178,7 @@ Every real LLM, embedding and tool call must be timed and appended through `src.
 | Task 3(a) | Chunking, embeddings and indexing | Implemented and tested — [evidence](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md#3a-chunking-and-indexing--complete-day-2) |
 | Task 3(b) | Dense, BM25 and hybrid retrieval | Implemented, evaluated and documented — [evidence](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md#3b-dense-bm25-and-hybrid--complete-day-2) |
 | Task 3(c–f) | Semantic, episodic, context engineering and twist | Completed — official run `t3_hm_01`, probes manually judged 13/16 — [evidence](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md) |
-| Task 4 | Evaluation, ablation and error analysis | Completed — 4 configs (5/7/12/15 of 16), rubric + judge agreement, 3 failures traced (P13, P15 fixed; P11 retrieval fixed, NLG fault remains); [evidence](docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md) |
+| Task 4 | Evaluation, ablation and error analysis | Completed — 4 configs (5/7/12/15 of 16), rubric + judge agreement, 3 failures traced (P13, P15 fixed; P11 retrieval fixed, NLG fault remains); surprise probes 2/5 → 5/5 ([findings](docs/task-evidence/Surprise_Probes_Findings.md)); [evidence](docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md) |
 | Task 5 | Cost and scalability | Completed — GPT-4o monthly cost (trim $117.3k / $81.0k cached; hybrid_mem $72.2k, prefix too short to cache), 127.9 M vectors after a year, HNSW M=32 ef=200 recommended — [evidence](docs/task-evidence/Task-5-Cost-and-Scale.md) |
 | Task 6 | Demo video and AI-use declaration | AI-use declaration written; demo command ready (`python -m src.dialogue.demo_memory`); video to be recorded — [evidence](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md) |
 
@@ -173,6 +192,7 @@ Each task has a detailed evidence document (with a summary figure and its own ta
 | Task 2 — Dialogue pipeline and short-term memory | 4 | [Task-2-Dialogue-Pipeline-and-Short-Term-Memory.md](docs/task-evidence/Task-2-Dialogue-Pipeline-and-Short-Term-Memory.md) | [task2-summary.png](images/task2-summary.png) |
 | Task 3 — Retrieval and long-term memory | 6 | [Task-3-Retrieval-and-Long-Term-Memory.md](docs/task-evidence/Task-3-Retrieval-and-Long-Term-Memory.md) | [task3-summary.png](images/task3-summary.png) |
 | Task 4 — Evaluation and error analysis | 4 | [Task-4-Evaluation-and-Error-Analysis.md](docs/task-evidence/Task-4-Evaluation-and-Error-Analysis.md) | [task4-summary.png](images/task4-summary.png) |
+| Task 4(c) — Surprise probes | — | [Surprise_Probes_Findings.md](docs/task-evidence/Surprise_Probes_Findings.md) | — |
 | Task 5 — Cost and scale | 2 | [Task-5-Cost-and-Scale.md](docs/task-evidence/Task-5-Cost-and-Scale.md) | [task5-summary.png](images/task5-summary.png) |
 | Task 6 — Demo video and AI-use declaration | 2 | [Task-6-Demo-and-AI-Use-Declaration.md](docs/task-evidence/Task-6-Demo-and-AI-Use-Declaration.md) | — |
 
@@ -1064,7 +1084,7 @@ Sections: (1) Session A with the confirmed booking, (2) process restart with PID
 - Each memory type unlocks its own probe categories (KB → K; semantic → R, U, twist; episodic → E).
 - Qwen-judge agreement with manual ratings is poor (Cohen's κ ≤ 0.23); manual ratings are reported.
 - 4(b): P13 (memory write) and P15 (NLG) fixed; P11's retrieval fixed but a prompt/NLG fault remains (`t4fix_hybrid_mem`, 15/16).
-- 4(c): no surprise-probe work required by the instructor (`data/surprise_probes.json`).
+- 4(c): surprise probes S1–S5 run as Session C: 2/5 before any change, 5/5 after six fixes — [Surprise_Probes_Findings.md](docs/task-evidence/Surprise_Probes_Findings.md).
 - `memory/` now holds the final store after Session B of `t4fix_hybrid_mem` (see `memory/README.md`).
 
 ```powershell

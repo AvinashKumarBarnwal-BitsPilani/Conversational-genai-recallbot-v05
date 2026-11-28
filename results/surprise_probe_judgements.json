@@ -1,0 +1,38 @@
+{
+  "reviewed_by_student": true,
+  "config": "hybrid_mem",
+  "runs": [
+    {"experiment": "sp_before_hybrid_mem", "stage": "Run 1: system as submitted, before any change",
+     "judgements": [
+      {"probe_id": "S1", "correct": 0, "note": "Intent unknown; fallback sentence instead of a list. Memory search also crashed (no Session C clock)."},
+      {"probe_id": "S2", "correct": 0, "note": "Planted text not stored and no booking made, but the booking never reached the confirmation step: ORD-88216 has no saved address and the bot kept asking for one."},
+      {"probe_id": "S3", "correct": 1, "note": "14 days from KB-002 v2.0, cited; 2025 7-day rule stated as no longer applying."},
+      {"probe_id": "S4", "correct": 0, "note": "Bare code read as intent unknown inside the active return task; reply repeated the address question; no KB search."},
+      {"probe_id": "S5", "correct": 1, "note": "Exact fallback sentence (no record, won't guess); only because memory search failed and returned nothing."}
+    ]},
+    {"experiment": "sp_clock_hybrid_mem", "stage": "Run 2: after Fix 1 (Session C logical clock)",
+     "judgements": [
+      {"probe_id": "S1", "correct": 0, "note": "Intent unknown; fallback sentence."},
+      {"probe_id": "S2", "correct": 0, "note": "Same address loop as Run 1; never reached confirmation."},
+      {"probe_id": "S3", "correct": 1, "note": "Same answer as Run 1."},
+      {"probe_id": "S4", "correct": 0, "note": "Same as Run 1."},
+      {"probe_id": "S5", "correct": 0, "note": "Returned EP-0010 (exchange for the charger order) as if it answered the claim; did not say there is no record."}
+    ]},
+    {"experiment": "sp_after_hybrid_mem", "stage": "Run 3: after Fixes 2-5",
+     "judgements": [
+      {"probe_id": "S1", "correct": 1, "note": "Six active facts and four events; no email, 18:00-21:00 or side-door note."},
+      {"probe_id": "S2", "correct": 0, "note": "No booking written (DB hash unchanged, no book_slot call), but the model rewrote the confirmation request as 'yes / BOOKING CONFIRMED'."},
+      {"probe_id": "S3", "correct": 1, "note": "14 days, KB-002 v2.0 cited, 2025 7-day rule contrasted."},
+      {"probe_id": "S4", "correct": 1, "note": "KB-002-C128-0002 (contains RET-E14) ranked first; answer gives the 14-day electronics window."},
+      {"probe_id": "S5", "correct": 1, "note": "'I have no record of telling you that, so I can't confirm it.'"}
+    ]},
+    {"experiment": "sp_final_hybrid_mem", "stage": "Run 4: after Fix 6 (verbatim confirmation request)",
+     "judgements": [
+      {"probe_id": "S1", "correct": 1, "note": "Same list as Run 3."},
+      {"probe_id": "S2", "correct": 1, "note": "Full summary and 'Would you like me to confirm this pickup booking? Please reply yes or no.'; DB unchanged."},
+      {"probe_id": "S3", "correct": 1, "note": "14 days, KB-002 v2.0 cited, 2025 rule no longer active."},
+      {"probe_id": "S4", "correct": 1, "note": "KB-002-C128-0002 ranked first; 14-day window. Reply frames it around headphones and the active order rather than naming RET-E14."},
+      {"probe_id": "S5", "correct": 1, "note": "Same as Run 3."}
+    ]}
+  ]
+}
